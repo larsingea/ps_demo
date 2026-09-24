@@ -1,0 +1,527 @@
+[
+  {
+    "name": "Påvirkningsområde",
+    "description": "området som kan generere skred inn mot kartleggingsområdet/analyseområdet.\n\nEnglish definition:\nThe area that may generate avalanches and/or landslides toward the mapping area/analysis area",
+    "attributes": [
+      {
+        "name": "utførende",
+        "type": "CharacterString",
+        "description": "selskapet eller organisasjonen som har gjennomført utredningen, det vil si skrevet rapporten og gjort vurderingene av naturfare\n\nEnglish definition:\nThe company or organization that has carried out the assessment, i.e., prepared the report and conducted the evaluations of natural hazards",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "UTFØRENDE"
+        }
+      },
+      {
+        "name": "rapportURL",
+        "type": "CharacterString",
+        "description": "URL-lenke til rapport som dokumenterer utredningen av skredfare\n\nEnglish definition:\nURL link to the report documenting the avalanche hazard assessment",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RAPPORTURL"
+        }
+      },
+      {
+        "name": "geometri",
+        "type": "GM_Surface",
+        "description": "Registreres geometri",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "GEOMETRI"
+        }
+      },
+      {
+        "name": "påvirkningsområdeID",
+        "type": "Identifikasjon",
+        "description": "identifikasjon påvirkningsområde\n\nEnglish definition\nPåvirkningsområde identification",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "PÅVIRKNINGSOMRÅDEID"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.\nHer benyttes UUID som lokalId",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          }
+        ]
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "FellesegenskaperFaresonekartForSkredIbrattTerreng"
+      ],
+      "associations": []
+    },
+    "package": "FaresonekartForSkredIBrattTerreng-1.0"
+  },
+  {
+    "name": "Skredfaresone",
+    "description": "Område med reell skredfare, for angitt skredsannsynlighet og skredtype\n\nEnglish definition:\nAn area with actual avalanche and landslide hazard, defined by a specified avalanche/landslide probability and type",
+    "attributes": [
+      {
+        "name": "skredtype",
+        "type": "SkredtypeDetaljert",
+        "description": "hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen\nMerknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse\n\nEnglish definition:\nSpecifies the type of avalanche and/or landslide material associated with the hazard or avalanche event.\nNote: Different types of avalanche material may include rock, snow, bedrock, soil, or combinations of these",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/samfunnssikkerhet/flom-og-skred/skredtypedetaljert"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDTYPE"
+        }
+      },
+      {
+        "name": "skredSannsynlighet",
+        "type": "SkredSannsynlighetBrattTerreng",
+        "description": "statistisk sannsynlighet for at det går et skred i området pr år\n\nEnglish definition:\nThe statistical probability of an avalanche occurring in the area per year",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "statistisk sannsynlighet for at det går et skred i området pr år",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/samfunnssikkerhet/flom-og-skred/skredsannsynlighetbrattterreng"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDSANNSYNLIGHET"
+        }
+      },
+      {
+        "name": "skredfaresoneID",
+        "type": "Identifikasjon",
+        "description": "skredfaresone identifikasjon\n\nEnglish definition:\nAvalanche and landslide hazard zone identification",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "SKREDFARESONEID"
+        },
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.\nHer benyttes UUID som lokalId",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          }
+        ]
+      },
+      {
+        "name": "analyseområdeNummer",
+        "type": "Integer",
+        "description": "løpenummer for analyseområdene. Unikt nummer for analyseområdene innenfor de enkelte faretemaene\n\nEnglish definition:\nA sequential number assigned to the analysed areas. This is a unique identifier for each analysis area within the respective hazard themes",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "ANALYSEOMRÅDENUMMER"
+        }
+      },
+      {
+        "name": "geometri",
+        "type": "GM_Surface",
+        "description": "registreres geometri",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "GEOMETRI"
+        }
+      },
+      {
+        "name": "hensynTilSkog",
+        "type": "JaNei",
+        "description": "angir om skredfaresonen er kartlagt med hensyn til skogens beskyttende effekt mot skredfare.\n“Ja” betyr at skogens effekt på skredfaren er vurdert slik den var på tidspunktet for kartleggingen.\n“Nei” betyr at skredfaresonen er kartlagt uten å ta hensyn til skogens effekt.\n\nEnglish definition:\nIndicates whether the avalanche hazard zone has been mapped with consideration of the forest’s protective effect on avalanche hazard.\n“Yes” means the zone was mapped taking into account the forest’s effect as it was at the time of mapping.\n“No” means the forest’s effect was not considered in the hazard mapping",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Ja Nei kodeliste",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/samfunnssikkerhet/flom-og-skred/janei"
+        },
+        "taggedValues": {
+          "SOSI_navn": "HENSYNTILSKOG"
+        }
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "description": "beskrivelse av kvaliteten på stedfestingen\nMerknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI",
+        "cardinality": "1",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "description": "metode som ligger til grunn for registrering av posisjon. Kodelista er en utvidelse fra SOSI 5.1 med koden fagligSkjønnstegningPåSkjerm",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "definition": "metode som ligger til grunn for registrering av posisjon. Kodelista er en utvidelse fra SOSI 5.1 med koden fagligSkjønnstegningPåSkjerm",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/samfunnssikkerhet/flom-og-skred/malemetode"
+            },
+            "taggedValues": {
+              "SOSI_navn": "MÅLEMETODE"
+            }
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "Integer",
+            "description": "punktstandardavviket i grunnriss for punkter samt tverravvik for linjer\n\nMerknad: Oppgitt i cm",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "NØYAKTIGHET"
+            }
+          }
+        ]
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "FellesegenskaperFaresonekartForSkredIbrattTerreng"
+      ],
+      "associations": []
+    },
+    "package": "FaresonekartForSkredIBrattTerreng-1.0"
+  },
+  {
+    "name": "Analyseområde",
+    "description": "området hvor den reelle skredfaren har blitt avklart. Dette kan for eksempel være en eller flere tomter, et område avgrenset av en reguleringsplan eller annet område gitt av oppdragsgiver\n\nEnglish definition:\nThe area where the actual avalanche hazard has been clarified. This may, for example, include one or more plots, an area defined by a zoning plan, or another area specified by the client",
+    "attributes": [
+      {
+        "name": "analyseområdeNummer",
+        "type": "Integer",
+        "description": "løpenummer for analyseområdene. Unikt nummer for analyseområdene innenfor de enkelte faretemaene\n\nEnglish definition:\nA sequential number assigned to the analysed areas. This is a unique identifier for each analysis area within the respective hazard themes",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "ANALYSEOMRÅDENUMMER"
+        }
+      },
+      {
+        "name": "oppdragsgiver",
+        "type": "CharacterString",
+        "description": "den som har bestilt utredningen\nMerknad:\nOppdragsgiveren kan være en privatperson, en bedrift, en organisasjon, en kommune, et annet offentlig organ eller staten\n\nEnglish definition:\nThe entity that has commissioned the assessment.\nNote: The client may be a private individual, a company, an organization, a municipality, another public body, or the state",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPDRAGSGIVER"
+        }
+      },
+      {
+        "name": "utførende",
+        "type": "CharacterString",
+        "description": "selskapet eller organisasjonen som har gjennomført utredningen, det vil si skrevet rapporten og gjort vurderingene av naturfare\n\nEnglish definition:\nThe company or organization that has carried out the assessment, i.e., prepared the report and conducted the evaluations of natural hazards",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "UTFØRENDE"
+        }
+      },
+      {
+        "name": "uavhengigKvalitetssikring",
+        "type": "JaNei",
+        "description": "angir om rapporten har gjennomgått en uavhengig kvalitetssikring (UKS). 'Ja' indikerer at uavhengig kvalitetssikring er utført, mens 'Nei' indikerer at det ikke er utført. En uavhengig kvalitetssikring av leveransen sjekker om utredningen følger metodikken i NVEs veiledere for utredning av sikkerhet mot skred i bratt terreng, kvikkleireskred eller flom. Kontrollen utføres av et annet foretak enn det som har utført fareutredningen\n\nEnglish definition:\nIndicates whether the report has undergone independent quality assurance. \"Yes\" means that independent quality assurance has been conducted, while \"No\" means it has not. An independent quality assurance of the deliverable verifies whether the assessment follows the methodology outlined in NVE’s guidelines for evaluating safety against avalanches in steep terrain, quick clay landslides, or floods. The review is carried out by a different entity than the one that performed the hazard assessment",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Ja Nei kodeliste",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/samfunnssikkerhet/flom-og-skred/janei"
+        },
+        "taggedValues": {
+          "SOSI_navn": "UAVHENGIGKVALITETSSIKRING"
+        }
+      },
+      {
+        "name": "prosjekttype",
+        "type": "Prosjekttype",
+        "description": "angir for hvilket formål skredfaren opprinnelig ble utredet for\n\nEnglish definition:\nIndicates the original purpose for which the avalanche hazard was assessed",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "angir for hvilket formål skredfaren opprinnelig ble utredet for\n\nEnglish definition:\nIndicates the original purpose for which the avalanche hazard was assessed",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/samfunnssikkerhet/flom-og-skred/prosjekttype"
+        },
+        "taggedValues": {
+          "SOSI_navn": "PROSJEKTTYPE"
+        }
+      },
+      {
+        "name": "vurdertSkredSannsynlighet",
+        "type": "CharacterString",
+        "description": "Lister opp hvilke sannsynligheter som analyseområdet er utredet for, med komma som separator. Det kan være utredet for sannsynligheter som ikke vises som faresone i analyseområdet, hvis utredningen viser at det ikke er en skredfare med en slik sannsynlighet til stede.\nEksempel: «≥ 1/100», “≥ 1/100, ≥ 1/1000” eller \"≥ 1/100, ≥ 1/1000, ≥ 1/5000\"\n\nEnglish definition:\nLists the probabilities for which the analysis area has been assessed, separated by commas.\nThe area may have been assessed for probabilities that are not represented as hazard zones within the analysis area, if the assessment concludes that no avalanche hazard is present at that probability level.\nExample: «≥ 1/100», “≥ 1/100, ≥ 1/1000” eller \"≥ 1/100, ≥ 1/1000, ≥ 1/5000\"",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "VURDERSKREDSANNSYNLIGHET"
+        }
+      },
+      {
+        "name": "rapportnavn",
+        "type": "CharacterString",
+        "description": "tittel på rapporten\n\nEnglish definition:\nName of report",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RAPPORTNAVN"
+        }
+      },
+      {
+        "name": "rapportURL",
+        "type": "CharacterString",
+        "description": "URL-lenke til rapport som dokumenterer utredningen av skredfare\n\nEnglish definition:\nURL link to the report documenting the avalanche hazard assessment",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RAPPORTURL"
+        }
+      },
+      {
+        "name": "geometri",
+        "type": "GM_Surface",
+        "description": "registreres geometri",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "GEOMETRI"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "FellesegenskaperFaresonekartForSkredIbrattTerreng"
+      ],
+      "associations": []
+    },
+    "package": "FaresonekartForSkredIBrattTerreng-1.0"
+  },
+  {
+    "name": "FellesegenskaperFaresonekartForSkredIbrattTerreng",
+    "description": "abstrakt objekt som bærer fellesegenskaper",
+    "attributes": [
+      {
+        "name": "kommunenavn",
+        "type": "CharacterString",
+        "description": "navn på kommune\nMerknad: Her angis den kommune som utgjør det største arealet\n\nEnglish definition:\nName of municipality",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "KOMMUNENAVN"
+        }
+      },
+      {
+        "name": "kommunenummer",
+        "type": "Kommunenummer",
+        "description": "nummerering av kommunen i henhold til Statistisk sentralbyrå sin offisielle liste Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer\nMerknad: Her angis den kommune som utgjør det største arealet\n\nEnglish definition:\nNumbering of municipalities according to Statistics Norway’s official list.\nNote: The municipality number must always consist of four digits, including leading zeros if necessary. Municipality numbers are used for linking to various other registers that also use four-digit codes",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "nummerering av kommunen i henhold til Statistisk sentralbyrå sin offisielle liste Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer\nMerknad: Her angis den kommune som utgjør det største arealet\n\nEnglish definition:\nNumbering of municipalities according to Statistics Norway’s official list.\nNote: The municipality number must always consist of four digits, including leading zeros if necessary. Municipality numbers are used for linking to various other registers that also use four-digit codes",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer"
+        },
+        "taggedValues": {
+          "SOSI_navn": "KOMMUNENUMMER"
+        }
+      },
+      {
+        "name": "fylkesnavn",
+        "type": "CharacterString",
+        "description": "navn på fylke\nMerknad: Her angis det fylket som utgjør det største arealet\n\nEnglish definition:\nName of county",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FYLKESNAVN"
+        }
+      },
+      {
+        "name": "fylkesnummer",
+        "type": "Fylkesnummer",
+        "description": "<font color=\"#333333\">nummerering av fylker i henhold til Statistisk sentralbyrå sin offisielle liste </font>\n<font color=\"#333333\">Merknad: Det presiseres at fylkesnummer alltid skal ha 2 sifre, dvs. eventuelt med ledende null. Fylkesnummer benyttes for kopling mot en rekke andre registre som også benytter 2 sifre</font>\n<font color=\"#333333\">Merknad: Her angis det fylket som utgjør det største arealet</font>\n<font color=\"#333333\">\n</font><font color=\"#333333\">English definition:</font>\n<font color=\"#333333\">Numbering of counties according to Statistics Norway’s official list. </font>\n<font color=\"#333333\">Note: The county number must always consist of two digits, including a leading zero if necessary. County numbers are used for linking to various other registers that also use two-digit codes</font>",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "<font color=\"#333333\">nummerering av fylker i henhold til Statistisk sentralbyrå sin offisielle liste </font>\n<font color=\"#333333\">Merknad: Det presiseres at fylkesnummer alltid skal ha 2 sifre, dvs. eventuelt med ledende null. Fylkesnummer benyttes for kopling mot en rekke andre registre som også benytter 2 sifre</font>\n<font color=\"#333333\">Merknad: Her angis det fylket som utgjør det største arealet</font>\n<font color=\"#333333\">\n</font><font color=\"#333333\">English definition:</font>\n<font color=\"#333333\">Numbering of counties according to Statistics Norway’s official list. </font>\n<font color=\"#333333\">Note: The county number must always consist of two digits, including a leading zero if necessary. County numbers are used for linking to various other registers that also use two-digit codes</font>",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer"
+        },
+        "taggedValues": {
+          "SOSI_navn": "FYLKESNUMMER"
+        }
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "dato for siste endring på objekt-dataene\n\nEnglish definition:\nThe date of the most recent change to the object data",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPDATERINGSDATO"
+        }
+      },
+      {
+        "name": "publiseringsdato",
+        "type": "Date",
+        "description": "dato for da rapport og digitale kartdata ble lagt til i det nasjonale DOK-datasettet for kartlegging av skredfare i bratt terreng\n\nEnglish definition:\nThe date when the report and digital map data were added to the national DOK dataset for mapping avalanche and landslide hazards in steep terrain",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "PUBLISERINGSDATO"
+        }
+      },
+      {
+        "name": "rapportdato",
+        "type": "Date",
+        "description": "dato som utførende selskap eller organisasjonen har satt på rapporten for å angi når rapporten ble ferdig utført, eventuelt hvis oppdragsgiver har brukt egen rapportmal med egen rapportdato, så har denne datoen blitt brukt\n\nEnglish definition:\nThe date assigned to the report by the executing company or organization to indicate when the report was completed. If the client has used their own report template with a specific report date, that date has been used instead",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RAPPORTDATO"
+        }
+      },
+      {
+        "name": "rapportnummer",
+        "type": "CharacterString",
+        "description": "nummer som utførende selskap eller organisasjon har brukt på rapporten, eventuelt hvis oppdragsgiver har brukt egen rapportmal så har det blitt lagt inn det rapportnummeret som oppdragsgiveren har brukt\n\nEnglish definition:\nThe number assigned to the report by the executing company or organization. If the client has used their own report template, the report number specified by the client has been entered instead",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RAPPORTNUMMER"
+        }
+      },
+      {
+        "name": "analyseområdeID",
+        "type": "Identifikasjon",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.\n\nMerknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.\n\nMerknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt",
+        "cardinality": "1",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.\nHer benyttes UUID som lokalId",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          }
+        ]
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "DateTime",
+        "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "DATAUTTAKSDATO"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "FaresonekartForSkredIBrattTerreng-1.0"
+  },
+  {
+    "name": "Skreddimensjonerende",
+    "description": "Punkt som visuelt angir den dimensjonerende skredtypen for en faresone eller del av faresone. En eller flere skredtyper kan være dimensjonerende i samme område\n\nEnglish definition:\nA point that visually indicates the dimensioning avalanche/landslide type for a hazard zone or part of a hazard zone. One or more avalanche/landslide types may be dimensioning in the same area",
+    "attributes": [
+      {
+        "name": "skreddimensjonerendeID",
+        "type": "Identifikasjon",
+        "description": "skreddimensjonerende identifikasjon\n\n\n-- Definition --\nSkreddimensjonerende identification",
+        "cardinality": "1",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.\nHer benyttes UUID som lokalId",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          }
+        ]
+      },
+      {
+        "name": "skredtype",
+        "type": "SkredtypeDetaljert",
+        "description": "hvilke skredmasser som er forbundet med skredfaren eller skredhendelsen\nMerknad: Ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse\n\nEnglish definition:\nSpecifies the type of avalanche/landslide material associated with the hazard or avalanche event.\nNote: Different types of avalanche material may include rock, snow, bedrock, soil, or combinations of these",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "ulike typer skredmasser som bl.a. stein, snø, fjell, jord og kombinasjoner av disse",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/samfunnssikkerhet/flom-og-skred/skredtypedetaljert"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SKREDTYPE"
+        }
+      },
+      {
+        "name": "geometri",
+        "type": "GM_Point",
+        "description": "registreres geometri",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "GEOMETRI"
+        }
+      },
+      {
+        "name": "hensynTilSkog",
+        "type": "JaNei",
+        "description": "angir om skredfaresonen er kartlagt med hensyn til skogens beskyttende effekt mot skredfare.\n“Ja” betyr at skogens effekt på skredfaren er vurdert slik den var på tidspunktet for kartleggingen.\n“Nei” betyr at skredfaresonen er kartlagt uten å ta hensyn til skogens effekt.\n\nEnglish definition:\nIndicates whether the avalanche hazard zone has been mapped with consideration of the forest’s protective effect on avalanche hazard.\n“Yes” means the zone was mapped taking into account the forest’s effect as it was at the time of mapping.\n“No” means the forest’s effect was not considered in the hazard mapping",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "Ja Nei kodeliste",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/samfunnssikkerhet/flom-og-skred/janei"
+        },
+        "taggedValues": {
+          "SOSI_navn": "HENSYNTILSKOG"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "FellesegenskaperFaresonekartForSkredIbrattTerreng"
+      ],
+      "associations": []
+    },
+    "package": "FaresonekartForSkredIBrattTerreng-1.0"
+  }
+]
