@@ -1,0 +1,296 @@
+{
+  "overview": "Denne produktspesifikasjonen er autogenerert fra metadata i Geonorge og datamodell fra SOSI modellregister og/eller OGC API Features. Noe ekstra informasjon kan ha blitt lagt til gjennom manuell prosess. Produktspesifikasjonen er i henhold til standarden: 'Geografisk informasjon - Dataproduktspesifikasjoner' (ISO19131:2022)",
+  "title": "Faresonekart for skred i bratt terreng",
+  "format": "text/html",
+  "date": {
+    "creation": "2026-01-21"
+  },
+  "language": "nor",
+  "contact": {
+    "organizationName": "Norges vassdrags- og energidirektorat",
+    "logo": "https://register.geonorge.no/data/organizations/970205039_NVE_liten.png",
+    "electronicMailAddress": "gisstotte@nve.no",
+    "role": "owner"
+  },
+  "identificationSection": {
+    "title": "Faresonekart for skred i bratt terreng",
+    "abstract": "«Faresonekart for skred i bratt terreng» består av detaljerte skredfareutredninger/-kartlegginger som skal avdekke den reelle skredfaren og dokumentere om et område oppfyller sikkerhetskravene i Byggteknisk forskrift (TEK17 § 7-3) (https://www.dibk.no/regelverk/byggteknisk-forskrift-tek17/7/7-3/). Skredfaren kvantifiseres som nominell årlig sannsynlighet (≥1/100, ≥1/1000 og ≥1/5000) og presenteres i et faresonekart, med tilhørende skredfarerapport. \n\nDatasettet er en sammenstilling av prosjekter utført av eller for NVE, samt av andre aktører som har fulgt NVEs veileder \"Utredning av sikkerhet mot skred i bratt terreng\": https://veiledere.nve.no/utredning-av-sikkerhet-mot-skred-i-bratt-terreng/hvordan-utfore-en-skredfareutredning/ (UKS).\nVeilederen dekker kartlegging av skredtypene steinsprang-, stein-, snø-, sørpe-, jord- og flomskred. \n\nDatasettet inneholder også eldre rapporter/faresoner som ikke nødvendigvis oppfyller dagens veileder/krav.\n\nNVE kartlegger utvalgte områder prioritert etter \"Plan for skredfarekartlegging\" (https://publikasjoner.nve.no/rapport/2011/rapport2011_14.pdf), med hovedvekt på eksisterende bebyggelse og områder der mennesker oppholder seg. Det finnes en kartbasert oversikt (https://nve.maps.arcgis.com/apps/webappviewer/index.html?id=2e2412461a9d4ef6ac370edaa09a0a1e) over hvilke kommuner som er eller skal bli kartlagt i statlig regi. I tillegg utføres mange kartlegginger av konsulenter for kommuner, offentlige etater, private selskaper og privatpersoner, ofte som grunnlag for plan- og byggesaker. For enkelte områder er kun én faresone tilgjengelig (f.eks. 1000-årsfaresone), typisk når utredningen gjelder en spesifikk sikkerhetsklasse. Etter innføring av pliktig innmelding av grunnundersøkelser og naturfareutredninger fra 01.01.2025, har tilfanget av faresonekart økt betydelig.\n\nEksterne utredninger der NVE ikke er oppdragsgiver blir kun tilrettelagt for kart-presentasjon av NVE. NVE har ikke vurdert den faglige kvaliteten eller datagrunnlaget. Bruk av data og rapporter skjer derfor på eget ansvar og NVE fraskriver seg ansvar for feil og mangler i rapportene og i de digitale dataene. Det er en forutsetning at tilhørende rapporter gjennomgås nøye før faresoner tas i bruk, og at brukeren, eventuelt ved hjelp av konsulent, vurderer kvalitet og egnethet for formålet.\n\nDatasettet erstatter tidligere datasett  \"Skredfaresoner\" \nViktigste nyheter er:\nNye objekttyper: Påvirkningsområde og Skreddimensjonerende (punkt for visuell visning av skredtype)\nNy egenskap: HensynTilSkog (ja/nei), gir info om faresoner kartlagt uten hensyn til dagens skog.\nNye tegneregler (WMS) for punktene over og mulighet for detaljert visning av faresoner for hver enkelt skredtype. Det er fortsatt visning av faresoner over samlet skredfare for alle skredtyper i bratt terreng.",
+    "purpose": {
+      "summary": "Faresonekart for skred i bratt terreng har som overordnet formål å redusere risikoen ved skred. Kartene viser hvilke områder som har skredfare og hvilke som er antatt trygge, basert på angitt nominell årlig sannsynlighet i henhold til kravene i TEK17 § 7-3 Sikkerhet mot skred. Dette gir et viktig grunnlag for å sikre trygg arealbruk og forebygge skade på liv, helse og verdier.\n\nSkredfaresoner skal dekke de mest skredutsatte områdene der det bor mennesker i Norge og Spitsbergen.",
+      "useCase": {
+        "name": "Bruksområde",
+        "summary": "Faresonekartene brukes primært innen arealplanlegging og byggesaksbehandling, samt i beredskapsarbeid og som grunnlag for sikringstiltak mot skred. Hovedmålgruppen er kommunale og private arealplanleggere, samt saksbehandlere på kommunalt, regionalt og statlig nivå som arbeider med beredskap, arealplan og byggesak. Kartene er også sentrale i NVEs arbeid med arealplaner, skredsikring og beredskap. I beredskapssammenheng kan de benyttes både til planlegging og til vurderinger under akutte hendelser.\n\n\nDen nye karttjenesten gir en mer detaljert visning, med mulighet til å se faresoner for hver enkelt skredtype (der dette er tilgjengelig), i tillegg til samlede skredfaresoner. \nTjenesten gjør det også mulig å vise skredfaresoner uten hensyn til dagens skog. \nTjenesten skiller, gjennom forskjellig farge på Kartleggingsområde (analyseområde), på visning mellom faresonekart med og uten gjennomført uavhengig kvalitetssikring (UKS).\n\n Hvilke faresoner som bør brukes, avhenger av formålet:\n\nPlan- og byggesaker:\nKommunene skal bruke skredfaresoner som viser samlet skredfare i plan- og byggesaksarbeid.\n\nKommunal planlegging knyttet til skog:\nDet kan være hensiktsmessig å bruke skredfaresoner uten hensyn til dagens skog, dersom kommunen ikke legger begrensninger på hogst i skogområder som påvirker skredfare.\n\nBeredskap:\nFor beredskapsarbeid kan det være nyttig å se på faresonene for hver enkelt skredtype for å få bedre innsikt i hvilke prosesser som kan dominere ved ulike hendelser.\n\nSikringstiltak:\nVed vurdering eller prosjektering av sikringstiltak er faresoner for hver enkelt skredtype spesielt relevante."
+      }
+    },
+    "topicCategory": [
+      "Geovitenskapelig informasjon"
+    ],
+    "spatialRepresentationType": "Vektor",
+    "spatialResolution": {
+      "equivalentScale": "5000"
+    },
+    "uniqueId": "d4a61153-3a21-4593-900c-1587b5b1c42d",
+    "keyword": [
+      "Skred",
+      "Faresoner",
+      "Skredfaresoner",
+      "Farekart",
+      "Skredfareområder",
+      "Fastlands-Norge med øyer",
+      "Områder med naturbetingede farer",
+      "Samfunnssikkerhet",
+      "Påvirkningsområde",
+      "Skredfaresone",
+      "Analyseområde",
+      "Skreddimensjonerende",
+      "utførende",
+      "rapportURL",
+      "skredtype",
+      "skredSannsynlighet",
+      "analyseområdeNummer",
+      "hensynTilSkog",
+      "uavhengigKvalitetssikring",
+      "vurdertSkredSannsynlighet",
+      "rapportnavn",
+      "rapportdato"
+    ],
+    "restriction": {
+      "legalConstraints": {
+        "accessConstraints": "Åpne data",
+        "useConstraints": "Lisens",
+        "license": "Norsk lisens for offentlige data (NLOD)",
+        "licenseUrl": "http://data.norge.no/nlod/no/1.0"
+      }
+    },
+    "contact": [
+      {
+        "organizationName": "Norges vassdrags- og energidirektorat",
+        "electronicMailAddress": "gisstotte@nve.no",
+        "role": "owner"
+      },
+      {
+        "organizationName": "Norges vassdrags- og energidirektorat",
+        "electronicMailAddress": "gisstotte@nve.no",
+        "role": "pointOfContact"
+      },
+      {
+        "organizationName": "Norges vassdrags- og energidirektorat",
+        "electronicMailAddress": "gisstotte@nve.no",
+        "role": "publisher"
+      }
+    ],
+    "maintenance": "Kontinuerlig",
+    "extent": {
+      "geographicElement": {
+        "westBoundLongitude": "2.0",
+        "eastBoundLongitude": "33.0",
+        "southBoundLatitude": "57.0",
+        "northBoundLatitude": "72.0"
+      },
+      "temporalElement": {
+        "timePeriod": {
+          "beginPosition": "2026-01-21",
+          "endPosition": "2026-01-21"
+        }
+      }
+    },
+    "date": {
+      "creation": "2026-01-21",
+      "publication": "2026-01-21"
+    },
+    "language": "nor"
+  },
+  "scopeSection": [
+    {
+      "specificationScope": {
+        "scopeIdentification": "Hele datasettet",
+        "level": "dataset",
+        "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Fareson_skred_UML",
+        "level": "dataset",
+        "levelDescription": "Fra SOSI UML-modell"
+      }
+    }
+  ],
+  "dataQualitySection": {
+    "scope": {
+      "level": "dataset"
+    },
+    "report": [
+      {
+        "nameOfMeasure": "SOSI produktspesifikasjon: Faresonekart for skred i bratt terreng",
+        "descriptiveResult": "Dataene er ikke vurdert iht produktspesifikasjonen"
+      },
+      {
+        "nameOfMeasure": "Prosentvis dekning i forhold til datasettets utstrekning",
+        "measureDescription": "Datasettets faktiske kartlagte areal i forhold til datasettets spesifiserte utstrekning",
+        "result": "1"
+      }
+    ]
+  },
+  "maintenanceSection": {
+    "maintenanceAndUpdateFrequency": "Kontinuerlig",
+    "maintenanceAndUpdateStatement": "Kontinuerlig oppdatert"
+  },
+  "dataCaptureAndProductionSection": {
+    "DataAcquisitionAndProcessing": {
+      "processStep": [
+        {
+          "description": "I en faresonekartlegging for skred i bratt terreng vurderer man de faktiske forhold. For vurderingen av reell skredfare benytter man detaljerte terrengmodeller, informasjon om lokal geologi og geomorfologi og andre observasjoner gjort gjennom feltbefaring. Tidligere skredhendelser i området og mer avanserte utløpsmodeller for skred er også av betydelse for utstrekning av faresonene. De ulike skredtypene krever litt ulike grunnlagsdata og beregningsmetodikk for å produsere faresoner. Mer informasjon om hvordan de ulike skredtypene blir vurdert og kartlagt finnes via NVEs veileder for \"Utredning av sikkerhet mot skred i bratt terreng\": https://veiledere.nve.no/utredning-av-sikkerhet-mot-skred-i-bratt-terreng/\n\nDatasettet gir ikke en komplett oversikt over alle faresonekart for skred i bratt terreng, dvs. det finnes skredfareutredninger med eller uten faresoner som ikke fremkommer i denne tjenesten.\nSkredfarekartlegginger gjennomført av NVE inngår i NVEs program for farekartlegging, og disse dataene oppdateres i henhold til gjeldende prioriteringslister for skredfarekartlegging og etter gjennomført sikringstiltak. Samtidig vil datasettet jevnlig, pga. lovkrav om pliktig innmelding av naturefareutredninger, bli oppdatert med skredfareutredninger som blir meldt inn til NVE gjennom NVEs innmeldingsløsning."
+        }
+      ]
+    }
+  },
+  "portrayal": {
+    "name": "Tegneregler",
+    "linkage": "https://register.geonorge.no/tegneregler/faresonekart-for-skred-i-bratt-terreng"
+  },
+  "deliverySection": [
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "WMS-tjeneste",
+          "deliveryService": {
+            "serviceEndpoint": "https://kart.nve.no/enterprise/services/Skredfaresoner3/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+            "serviceProperty": {
+              "type": "WMS-tjeneste",
+              "value": "OGC:WMS"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GeoJSON"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "REST-API",
+          "deliveryService": {
+            "serviceEndpoint": "https://kart.nve.no/enterprise/rest/services/Skredfaresoner3/MapServer",
+            "serviceProperty": {
+              "type": "REST-API",
+              "value": "W3C:REST"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GeoJSON"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Faresonekart for skred i bratt terreng WMS",
+          "deliveryService": {
+            "serviceEndpoint": "https://kart.nve.no/enterprise/services/Skredfaresoner3/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+            "serviceProperty": {
+              "type": "Faresonekart for skred i bratt terreng WMS",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GeoJson"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "Faresonekart for skred i bratt terreng",
+          "deliveryService": {
+            "serviceEndpoint": "https://kart.nve.no/enterprise/services/Skredfaresoner3/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+            "serviceProperty": {
+              "type": "Faresonekart for skred i bratt terreng",
+              "value": "WMS-tjeneste"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GeoJSON"
+          }
+        ],
+        "deliveryScope": "Tjeneste"
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: fareson-skred-uml",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/faresonekart-for-skred-i-bratt-terreng/fareson-skred-uml/fareson-skred-uml.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    }
+  ],
+  "metadataSection": {
+    "metadataStandard": "ISO19115",
+    "metadataStandardVersion": "2003",
+    "metadataDate": "2026-09-18",
+    "language": "nor",
+    "contact": {
+      "organizationName": "Norges vassdrags- og energidirektorat",
+      "logo": "https://register.geonorge.no/data/organizations/970205039_NVE_liten.png",
+      "electronicMailAddress": "gisstotte@nve.no",
+      "role": "pointOfContact"
+    },
+    "metadataIdentifier": {
+      "authority": "Geonorge",
+      "code": "d4a61153-3a21-4593-900c-1587b5b1c42d",
+      "codeSpace": "https://kartkatalog.geonorge.no/metadata/",
+      "metadataLinkage": "https://kartkatalog.geonorge.no/metadata/d4a61153-3a21-4593-900c-1587b5b1c42d"
+    }
+  },
+  "additionalReferences": [
+    {
+      "title": "Produktark",
+      "href": "https://register.geonorge.no/produktark/faresonekart-for-skred-i-bratt-terreng"
+    },
+    {
+      "title": "Produktside",
+      "href": "https://www.nve.no/naturfare/utredning-av-naturfare/om-kart-og-kartlegging-av-naturfare/om-kartlegging-av-skredfare-i-bratt-terreng/"
+    }
+  ],
+  "chapterAutofill": {
+    "om_spesifikasjonen": 9,
+    "om_produktet": 403,
+    "formaal": 78,
+    "bruksomraade": 219,
+    "omfang": 27,
+    "datainnhold_og_struktur": 0,
+    "referansesystem": 0,
+    "datakvalitet": 33,
+    "datafangst_og_produksjon": 167,
+    "vedlikehold": 3,
+    "presentasjon": 2,
+    "leveranse": 50,
+    "metadata": 15,
+    "tilleggsinformasjon": 4,
+    "datamodell": 2387
+  }
+}

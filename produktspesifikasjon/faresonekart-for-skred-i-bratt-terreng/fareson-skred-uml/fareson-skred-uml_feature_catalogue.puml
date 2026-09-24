@@ -1,0 +1,98 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Faresonekart for skred i bratt terreng - Fareson_skred_UML - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class "Påvirkningsområde" as P_virkningsomr_de <<featureType>> {
+    + utførende [0..1] : CharacterString
+    + rapportURL [0..1] : CharacterString
+    + geometri [1] : GM_Surface
+    + påvirkningsområdeID [1] : Identifikasjon
+  }
+
+  class Skredfaresone <<featureType>> {
+    + skredtype [1] : SkredtypeDetaljert
+    + skredSannsynlighet [1] : SkredSannsynlighetBrattTerreng
+    + skredfaresoneID [1] : Identifikasjon
+    + analyseområdeNummer [1] : Integer
+    + geometri [1] : GM_Surface
+    + hensynTilSkog [0..1] : JaNei
+    + kvalitet [1] : Posisjonskvalitet
+  }
+
+  class "Analyseområde" as Analyseomr_de <<featureType>> {
+    + analyseområdeNummer [1] : Integer
+    + oppdragsgiver [0..1] : CharacterString
+    + utførende [0..1] : CharacterString
+    + uavhengigKvalitetssikring [0..1] : JaNei
+    + prosjekttype [0..1] : Prosjekttype
+    + vurdertSkredSannsynlighet [0..1] : CharacterString
+    + rapportnavn [0..1] : CharacterString
+    + rapportURL [0..1] : CharacterString
+    + geometri [1] : GM_Surface
+  }
+
+  abstract class FellesegenskaperFaresonekartForSkredIbrattTerreng <<featureType>> {
+    + kommunenavn [0..1] : CharacterString
+    + kommunenummer [0..1] : Kommunenummer
+    + fylkesnavn [0..1] : CharacterString
+    + fylkesnummer [0..1] : Fylkesnummer
+    + oppdateringsdato [0..1] : Date
+    + publiseringsdato [0..1] : Date
+    + rapportdato [0..1] : Date
+    + rapportnummer [0..1] : CharacterString
+    + analyseområdeID [1] : Identifikasjon
+    + datauttaksdato [0..1] : Date
+  }
+
+  class Skreddimensjonerende <<featureType>> {
+    + skreddimensjonerendeID [1] : Identifikasjon
+    + skredtype [1] : SkredtypeDetaljert
+    + geometri [1] : GM_Point
+    + hensynTilSkog [1] : JaNei
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+  }
+
+  class Posisjonskvalitet <<dataType>> {
+    + målemetode [1] : Målemetode
+    + nøyaktighet [0..1] : Integer
+  }
+}
+
+  FellesegenskaperFaresonekartForSkredIbrattTerreng <|-- P_virkningsomr_de
+  FellesegenskaperFaresonekartForSkredIbrattTerreng <|-- Skredfaresone
+  FellesegenskaperFaresonekartForSkredIbrattTerreng <|-- Analyseomr_de
+  FellesegenskaperFaresonekartForSkredIbrattTerreng <|-- Skreddimensjonerende
+
+@enduml
