@@ -1,0 +1,10 @@
+metadataId: d4a61153-3a21-4593-900c-1587b5b1c42d
+output_directory: produktspesifikasjon
+product_slug: faresonekart_for_skred_i_bratt_terreng
+updated: '2026-09-24'
+outputs: geopackage
+scopes:
+- name: Fareson_skred_UML
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Norges%20vassdrags-%20og%20energidirektorat/FaresonekartForSkredIBrattTerreng.xml
+  generator: xmi
+  description: Fra SOSI UML-modell
