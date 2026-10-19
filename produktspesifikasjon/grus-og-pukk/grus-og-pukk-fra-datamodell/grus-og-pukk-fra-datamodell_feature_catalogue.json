@@ -1,0 +1,2230 @@
+[
+  {
+    "name": "KnustBergRegistrering",
+    "description": "Ethvert volum av økonomisk interessant bergart til byggeråstoff\n\n--Definition--\nAny volume of rock applicable for construction purposes.",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "MineralRegistrering"
+      ],
+      "associations": [
+        {
+          "target": "GeolAvgrLinje",
+          "role": "avgrensning",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "KNUSTBERGREGISTRERING"
+    }
+  },
+  {
+    "name": "GeolAvgrLinje",
+    "description": "generell avgrensning av geologisk objekt\n\n\n-- Definition --\ngeneral delimitation of geological object",
+    "attributes": [
+      {
+        "name": "grense",
+        "type": "Kurve",
+        "description": "forløp som følger overgang mellom ulike fenomener\n\n-- Definition --\ncourse follwing the transition between different real world phenomena",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KURVE"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "KURVE"
+    }
+  },
+  {
+    "name": "KnustBergForekomst",
+    "description": "En ansamling av bergarter som har eller kan få en økonomisk verdi som byggeråstoff. En forekomst må ha et estimat eller en beregning av volum og kvalitet.\n\n--Definition--\nA volume of naturally occurring rocks usually of economic value as construction material",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "FellesegenskapRåstoff"
+      ],
+      "associations": [
+        {
+          "target": "GeolAvgrLinje",
+          "role": "avgrensning",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "KNUSTBERGFOREKOMST"
+    }
+  },
+  {
+    "name": "KnustBergUttak",
+    "description": "uttakssted for produksjon av knust berg (pukk)\n\n-- Definition --\nCrushed rock aggregate extraction site",
+    "attributes": [
+      {
+        "name": "identRastoffobj",
+        "type": "Integer",
+        "description": "forekomstobjektets identifikasjonskode\n\nMerknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).\n\nEksempel: 17290010101",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "FOREKOM_ID"
+        }
+      },
+      {
+        "name": "forekomstNummer",
+        "type": "Integer",
+        "description": "unik nummerering av forekomsten som råstoffobjektet tilhører\n\nMerknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten\n\nEks. 1729001",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "R_FNR"
+        }
+      },
+      {
+        "name": "ressursType",
+        "type": "RessursType",
+        "description": "hvilken type råstoff som kan være/er gjenstand for utvinning.\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode\n\n-- Definition --\nValues indicating the type of commodity.\nwhat type of raw material that may be/is subject to extraction\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "edelmetaller",
+              "label": "Edelmetaller (Au,Ag,PGE); Gull, sølv og metaller i platinagruppen (Ru, Ro, Pd, Os, Ir, Pt) og rhenium.\n\nPrecious metals: gold, silver and platinum group metals and rhenium; ruthenium, rhodium, palladium, osmium, iridium, and platinum"
+            },
+            {
+              "value": "jernmetaller",
+              "label": "Jernmetaller (Fe, Mn, Ti); jern, mangan og titan\n\nOres of iron, manganese and titanium."
+            },
+            {
+              "value": "jernlegeringMetaller",
+              "label": "Jernlegeringsmetaller (Cr, Ni, Co, V, Mo, W); krom, nikkel, kobolt, vanadium, molybden og wolfram.\n\nMetals that are mined for their alloying properties with iron in the manufacture of steel; chromium, nickel, cobalt, vanadium, molybdenum and wolfram."
+            },
+            {
+              "value": "basemetaller",
+              "label": "Basemetaller (Cu, Zn, Pb inkl. Fe-sulfider, As, Sb, Bi, Sn); kobber, sink, bly, jern-sulfider, arsen, antimon, vismut og tinn\n\nBase metals; copper, zink, lead, iron-sulphides, arsenic, antimony, bismuth and tin.\nIn chemistry, the term base metal is used informally to refer to a metal that oxidizes or corrodes relatively easily and reacts variably with diluted hydrochloric acid (HCl) to form hydrogen. Examples include iron, nickel, lead and zinc. Copper is also considered a base metal because it oxidizes relatively easily, although it does not react with HCl. - http://en.wikipedia.org/wiki/Base_metal"
+            },
+            {
+              "value": "energimetaller",
+              "label": "Energimetaller (U, Th); uran og thorium\nEnergy minerals; uranium and thorium"
+            },
+            {
+              "value": "spesialmetaller",
+              "label": "Spesialmetaller omfatter metaller og grunnstoffer som normalt ikke passer inn i krystallstrukturen til vanlige mineraler (Nb, Ta, Be, Li, Sc, REE); niob, tantal, beryllium, litium, scandium og sjeldne jordartsmetaller.\n\nSpecial metals and incompatible elements (Nb, Ta, Be, Li, Sc, and REE)."
+            },
+            {
+              "value": "andreMetaller",
+              "label": "Andre metaller.\n\nOther metals: Cs, Ga, Ge, Hf, In, Cd, Hg, Re, Rb, Se, Si, Sr, S, Te, Tl, Zr, Mg and metallic elements used for non-metallic products: Ba, K, Ca, Na, Rb\nCommodity is a metal that is extracted from an ore material mined from the Earth"
+            },
+            {
+              "value": "karbonatMineraler",
+              "label": "Karbonatmineraler; Kalkstein, dolomittstein, kalkspatmarmor, dolomittmarmor og blandingsbergarter mellom disse. Ofte brukte forkortelser er kalk for både kalkstein og kalkspatmarmor og dolomitt for både dolomittstein og dolomittmarmor.\n\nLimestone, dolomite and calcite and dolomite marble.\n\nA trigonal calcium carbonate mineral CaCO3 used in large crystal form for optics and as compound additive for soil remediation, soil stabilization and concrete repair. http://www.webmineral.com/data/Calcite.shtml http://en.wikipedia.org/wiki/Calcite"
+            },
+            {
+              "value": "silika",
+              "label": "Kvarts: kvartssand, kvartssandstein, kvartsitt og hydrotermal kvarts.\n\nQuartz, quartz sand, quartz sandstone, quartzite and hydrothermal quartz.\nSilicon dioxide, also known as silica (from the Latin silex), is a chemical compound that is a dioxide of silicon with the chemical formula SiO2 - http://en.wikipedia.org/wiki/Silica"
+            },
+            {
+              "value": "talk",
+              "label": "Talk og serpentin-førende bergarter\n\nTalc and serpentinite.\nTalc is an important industrialMineral. Its resistance to heat, electricity and acids make it an ideal surface for lab counter tops and electrical switchboards. It is also an important filler material for paints, rubber and insecticides. Even with all these uses, most people only know talc as the primary ingredient in talcum powder.- http://www.galleries.com/Talc"
+            },
+            {
+              "value": "feltspat",
+              "label": "Feltspatmineraler; pegmatittisk feltspat og anortositt\nFeldspar minerals; pegmatittic feldspar og anorthosite\n\nFeldspars (KAlSi3O8 – NaAlSi3O8 – CaAl2Si2O8) are a group of rock-forming tectosilicate minerals that make up as much as 60% of the Earth's crust. - http://en.wikipedia.org/wiki/Feldspar"
+            },
+            {
+              "value": "olivin",
+              "label": "Olivin\n\nOlivine"
+            },
+            {
+              "value": "grafitt",
+              "label": "Grafitt; flak-grafitt eller amorf grafitt.\n\nGraphite\nGraphite is a polymorph of the element carbon. Diamond is another polymorph. The two share the same chemistry, carbon, but have very different structures and very different properties. - http://www.galleries.com/Graphite"
+            },
+            {
+              "value": "fossiltBrensel",
+              "label": "Fossilt brensel\n\nFossil fuel"
+            },
+            {
+              "value": "nefelinSyenitt",
+              "label": "Nefelin syenitt\n\nNepheline syenite"
+            },
+            {
+              "value": "magnesiumMineraler",
+              "label": "Magnesium-mineraler; magnesitt og brucitt.\n\nMagnesium minerals.; Magnesite and brucite"
+            },
+            {
+              "value": "zirkon",
+              "label": "Zirkon\n\nZirkon"
+            },
+            {
+              "value": "berylliumMineraler",
+              "label": "Beryllium-førende mineraler"
+            },
+            {
+              "value": "glimmermineraler",
+              "label": "Glimmermineraler; muskovitt, biotitt m.m.\n\nMica minerals; muscovite, biotite and more."
+            },
+            {
+              "value": "andreIndustrimineraler",
+              "label": "Andre industrimineraler\n\nOther industrial minerals\nA compound Earth material, or rock product that is directly used for industrial purposes. Not a specific mineral constituent in the mined material."
+            },
+            {
+              "value": "sandsteinOgKonglomerat",
+              "label": "Uomdannete sedimentære bergarter inklusiv sandstein og konglomerat, samt kvartsitt, benyttet som naturstein. Er i INSPIRE inkludert i «sandstone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone</u></font></a>"
+            },
+            {
+              "value": "skiferOgHellestein",
+              "label": "Alle typer omdannete bergarter som kan splittes etter naturlige sjikt til plater og benyttes som naturstein. Inkluderer leirskifer, fyllitt, glimmerskifer, kvartsskifer og grønnskifer. Leirskifer er i INSPIRE inkludert i «slate»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate</u></font></a>, grønnskifer i «greenstone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone</u></font></a> og resten i  «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a>"
+            },
+            {
+              "value": "kvernstein",
+              "label": "Bergarter som historisk er benyttet til produksjon av kvernstein, inklusiv glimmerskifer, amfibolitt og gneis"
+            },
+            {
+              "value": "brynestein",
+              "label": "Bergarter som historisk er benyttet til produksjon av brynestein, inklusiv siltstein, kvartsskifer og fyllitt"
+            },
+            {
+              "value": "murestein",
+              "label": "Uspesifiserte bergarter som benyttes til produksjon av tørrmurstein. Kan inkludere kvartsskifer og gneis"
+            },
+            {
+              "value": "spodumen",
+              "label": "Spodumen er et mineral i pyroksengruppa, et litiumaluminium-silikat, LiAlSi2O6. Det finnes på granittpegmatitter og er et viktig råstoff for framstilling av litiumsambindinger."
+            },
+            {
+              "value": "gneis",
+              "label": "Gneis benyttet som naturstein. Inkluderer alle typer gneis. Er i INSPIRE inkludert i «granite» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite</u></font></a>"
+            },
+            {
+              "value": "marmorOgKalkstein",
+              "label": "Karbonatrike bergarter benyttet som naturstein. Inkluderer marmor, dolomitt og kalkstein. Marmor er i INSPIRE inkludert i «marble» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble</u></font></a>\nog kalkstein i «limestone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone</u></font></a>"
+            },
+            {
+              "value": "klebersteinOgSerpentinitt",
+              "label": "Kleberstein og serpentinitt benyttet som naturstein. Kleberstein er i INSPIRE inkludert i «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a> og serpentinitt i «marble»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble</u></font></a>"
+            },
+            {
+              "value": "granittOgAndreStørkningsbergarter",
+              "label": "Alle dyp- og gangbergarter, inklusiv granitt, gabbro, syenitt, monzonitt, doleritt, larvikitt, anortositt, dioritt, mangeritt, tonalitt og trondhjemitt benyttet som naturstein. Er i INSPIRE inkludert i «granite»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite</u></font></a>"
+            },
+            {
+              "value": "knustBerg",
+              "label": "Knust berg\n\nBroad category for coarse particulate material used in construction, including sand, gravel, crushed stone, slag, recycled concrete and geosynthetic aggregates. - http://en.wikipedia.org/wiki/Construction_aggregate"
+            },
+            {
+              "value": "sandOgGrus",
+              "label": "Sand og grus\n\nDurable rock fragments (silicates, flints, etc) with a size range: 0.063 mm - 80mm, derived from the weathering, erosion and transport of rocks by glacial or fluvial processes. Used for aggregate purposes and construction fill."
+            },
+            {
+              "value": "grusOgAndreLøsmasser",
+              "label": "Grus og andre løsmasser\n\nSand and gravel and crushed rock extracted from the ground"
+            },
+            {
+              "value": "skredOgForvitring",
+              "label": "Skred og forvitringsmateriale"
+            },
+            {
+              "value": "skjellsand",
+              "label": "Skjellsand"
+            },
+            {
+              "value": "steintipp",
+              "label": "Steintipp"
+            },
+            {
+              "value": "leire",
+              "label": "Leire\n\nEnd use is determined by the properties of the material therefore it is a valid commodity type"
+            },
+            {
+              "value": "torv",
+              "label": "Torv\n\nAn accumulation of partially decayed vegetation or organic matter that forms in wetland conditions, where flooding obstructs flows of oxygen from the atmosphere, slowing rates of decomposition. Peat is commonly harvested as an important source of fuel in certain parts of the world. http://en.wikipedia.org/wiki/Peat"
+            },
+            {
+              "value": "annenNaturstein",
+              "label": "Annen naturstein utenom kategoriene, inklusiv eklogitt, thulitt og amfibolitt. Er i INSPIRE inkludert i «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a>"
+            },
+            {
+              "value": "uspesifisert",
+              "label": "Uspesifisert"
+            }
+          ],
+          "definition": "hvilken type råstoff som kan være/er gjenstand for utvinning.\n\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCodeValue\n\n-- Definition --\nValues indicating the type of commodity.\n\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc."
+        },
+        "taggedValues": {
+          "SOSI_navn": "RESSTYPE"
+        }
+      },
+      {
+        "name": "råstoffBetydning",
+        "type": "RåstoffBetydning",
+        "description": "hvilken betydning en mineralforekomst har med tanke på mulig økonomisk\nutnyttelse nå eller for framtiden. Skal begrunnes.\n\n-- Definition --\nhow important a geological resource or registration is as regards potential\ncommercial exploitation now or in the future",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "internasjonalBetydning",
+              "label": "1. Metall- og industrimineralforekomster med dokumenterte ressurser som kan gi et signifikant bidrag til internasjonale behov\n- herunder forekomster med meget høy dokumentert in situ-verdi basert på kvalitet og tonnasje\n- herunder forekomster med potensial for årsproduksjon som dekker signifikant andel av behov i EU/EØS\n\n2. Forekomster av strategisk viktige eller «kritiske» råstoff\n- herunder dokumenterte forekomster av mineraler på EU liste over kritiske råstoffer som utnyttes eller har potensial for framtidig utnyttelse\n\n3. Forekomster av byggeråstoffer med verdi eller potensial for eksport på minst 1 millioner tonn årlig"
+            },
+            {
+              "value": "nasjonalBetydning",
+              "label": "1. Mineralforekomster som har et bekreftet eller sannsynlig, betydelig fremtidig verdiskapingspotensial\n- herunder forekomster med betydelig in-situ verdi\n- herunder byggeråstoffer med betydelig potensial for eksport\n\n2. Mineralforekomster som har unike kvaliteter som gjør dem særlig egnet til foredlende industri\n- herunder industrimineraler og spesialmetaller av særlig høy kvalitet\n\n3. Mineralforekomster som har unike kvaliteter som byggeråstoff\n- herunder knust berg (pukk)- og grusforekomster med unike fysiske egenskaper\n- herunder natursteinsforekomster med unike egenskaper og attraktivitet i det internasjonale markedet\n- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til andre viktige samfunnsområder\n\n4. Forekomster av strategisk viktige eller «kritiske» råstoff\n- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til viktige norske samfunnsområder\n\n5. Forekomster som er særdeles viktig for Norges nasjonale infrastruktur\n- herunder grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger til større befolkningssentra i Norge"
+            },
+            {
+              "value": "regionalBetydning",
+              "label": "1. Mineralforekomster som har et bekreftet eller sannsynlig fremtidig verdiskapingspotensial med in situ-verdi på mellom 100 og 1000 millioner kroner\n\n2. Mineralforekomster som er særdeles viktig for regional infrastruktur\n- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger innen en region\n- herunder natursteinsforekomster som har eller har hatt særlig betydning for byggeskikk og arkitektur i en region"
+            },
+            {
+              "value": "lokalBetydning",
+              "label": "Mineralforekomster som er viktig for lokal infrastruktur\n- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som kan være viktig for forsyninger innen en kommune"
+            },
+            {
+              "value": "litenBetydning",
+              "label": "Forekomsten har liten eller ingen økonomisk betydning"
+            },
+            {
+              "value": "ikkeVurdert",
+              "label": "Forekomstens økonomiske betydning er ikke vurdert"
+            }
+          ],
+          "definition": "En mineralforekomsts antatte betydning for fremtidig verdiskaping, i forhold til lokale, regionale og nasjonale forvaltningsnivå.\n\nKodelisten finnes ikke i INSPIRE-spesifikasjonen, men er en tilpasning til begrepsbruk i norsk lovverk (PBL §5.4 og KU-forskrift §10), KMDs nasjonale forventninger (2019-2023), og fra europeiske spesifikasjoner i Raw Materials Initiative."
+        },
+        "taggedValues": {
+          "SOSI_navn": "RASTOFFBETYDNING"
+        }
+      },
+      {
+        "name": "mineralRegistreringType",
+        "type": "MineralRegistreringType",
+        "description": "hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.\nEksempler på dette er prospekt, registrering og forekomst.\n\n-- Definition -- The type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "forekomst",
+              "label": "Et punkt med et arealfestet område (polygon) der det finnes en dokumentert eller estimert ressurs, som antas å være økonomisk interessant og som enten er eller kan være utnyttbare i fremtida. En forekomst må ha et estimat eller en beregning av volum og kvalitet. For forekomster under bakken vil arealet definere projeksjon til overflaten.\nOmrådet omkranser en dokumentert (målt) reserve/ressurs eller antatt ressurs. Kan omfatte malmer, industrimineraler, og naturstein.\n\nINSPIRE Description:\nA mass of naturally occurring mineral material, e.g. metal ores or non-metallic minerals, usually of economic value, without regard to mode of origin. Accumulations of coal and petroleum may or may not be included."
+            },
+            {
+              "value": "registrering",
+              "label": "Et punkt med eller uten et arealfestet område (polygon) der det er observert og/eller analysert forhøyete verdier av utvinnbare mineraler og bergarter. Kan inneholde lite eller mye informasjon og kan også inkludere gamle steinbrudd, skjerp og nedlagte gruver og massetak. Kan omfatte malmer, industrimineraler og naturstein.\n\nINSPIRE Description:\nAny ore or economic mineral in any concentration found in bedrock or as float."
+            },
+            {
+              "value": "prospekt",
+              "label": "Et punkt med et arealfestet område (polygon) med høy sannsynlighet for funn av hittil lite eller ikke dokumenterte økonomisk interessante mineralressurser. Arealet kan være basert på kartlagt geologi, lovende analyser av borkjerner og andre prøver, geofysiske anomalier og lignende. Ytterligere ressursgeologiske undersøkelser er nødvendig for å avklare potensialet.\n\nINSPIRE Description:\nAn area that is a potential site of mineral deposits, based on preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration."
+            },
+            {
+              "value": "provins",
+              "label": "En mineralprovins er et eller flere arealfestete områder (polygoner) der det finnes forhøyete muligheter for funn av angitte mineralressurser. En mineralprovins kan omkranse en eller flere forekomster, prospekter og registreringer\n\nINSPIRE Description:\nGeologic provinces classified by mineral resources."
+            }
+          ],
+          "definition": "Klassifisering av objekter i henhold til tilgjengelig kunnskapsnivå\n\n-- Definition --\nThe type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit.",
+          "asDictionary": "false"
+        }
+      },
+      {
+        "name": "ressursUndertype",
+        "type": "CharacterString",
+        "description": "underinndeling av materialtypene som kan være/er gjenstand for utvinning\nMerknad: Er en mer detaljert inndeling av det råstoff som utvinnes\n(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)\n\nsub-classification of material types that may be/are subject to extraction\nNote: a more detailed classification of the raw material that is extracted\n(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RESSUNTYPE"
+        }
+      },
+      {
+        "name": "navnRastoffobj",
+        "type": "CharacterString",
+        "description": "navn på forekomsten",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FOREKNAVN"
+        }
+      },
+      {
+        "name": "lokalNummer",
+        "type": "Integer",
+        "description": "nummerering av lokalitet i forekomsten\n\nMerknad: Er en del av FOREKOM_ID: Eks: 1729001(01)01",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "R_LNR"
+        }
+      },
+      {
+        "name": "stedfestingVerifisert",
+        "type": "Boolean",
+        "description": "angir om stedfestingen (koordinatene) er kontrollert og funnet i orden (verifisert)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "STED_VERIF"
+        }
+      },
+      {
+        "name": "geolBeskrivelse",
+        "type": "CharacterString",
+        "description": "tekstlig beskrivelse av objektet",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GEOBESK"
+        }
+      },
+      {
+        "name": "geolBeskrivelseURL",
+        "type": "CharacterString",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GEOBESK_URL"
+        }
+      },
+      {
+        "name": "antallAnalyser",
+        "type": "Integer",
+        "description": "antallet utførte kjemiske og/eller mekaniske analyser",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "ANT_ANALYS"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Masseuttak"
+      ],
+      "associations": []
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "KNUSTBERGUTTAK"
+    }
+  },
+  {
+    "name": "MineralRegistrering",
+    "description": "registrering av en mineralansamling (opphopning, konsentrering) i naturen.\n\n-- Definition --\n<font color=\"#400040\">A mineral accumulation in the lithosphere. </font>",
+    "attributes": [
+      {
+        "name": "område",
+        "type": "Flate",
+        "description": "objektets utstrekning",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FLATE"
+        }
+      },
+      {
+        "name": "posisjon",
+        "type": "Punkt",
+        "description": "sted objektet eksisterer på",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "PUNKT"
+        }
+      },
+      {
+        "name": "identRåstoffobj",
+        "type": "Integer",
+        "description": "forekomstobjektets identifikasjonskode\n\nMerknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer). Eksempel: 17290010101\n\ndeposit object identification code   Note: Consists of a municipality number (4 digits) and a serial number (7 digits). Ideally the serial number should consist of an area number (3 digits), a location number (2 digits) and a test number (2 digits). For example: 17290010101",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "FOREKOM_ID"
+        }
+      },
+      {
+        "name": "forekomstNummer",
+        "type": "Integer",
+        "description": "unik nummerering av forekomsten som råstoffobjektet tilhører\n\nMerknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten\n\nEks. 1729001",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "R_FNR"
+        }
+      },
+      {
+        "name": "mineralRegistreringType",
+        "type": "MineralRegistreringType",
+        "description": "hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.\nEksempler på dette er prospekt, registrering og forekomst.\n\n-- Definition -- The type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "forekomst",
+              "label": "Et punkt med et arealfestet område (polygon) der det finnes en dokumentert eller estimert ressurs, som antas å være økonomisk interessant og som enten er eller kan være utnyttbare i fremtida. En forekomst må ha et estimat eller en beregning av volum og kvalitet. For forekomster under bakken vil arealet definere projeksjon til overflaten.\nOmrådet omkranser en dokumentert (målt) reserve/ressurs eller antatt ressurs. Kan omfatte malmer, industrimineraler, og naturstein.\n\nINSPIRE Description:\nA mass of naturally occurring mineral material, e.g. metal ores or non-metallic minerals, usually of economic value, without regard to mode of origin. Accumulations of coal and petroleum may or may not be included."
+            },
+            {
+              "value": "registrering",
+              "label": "Et punkt med eller uten et arealfestet område (polygon) der det er observert og/eller analysert forhøyete verdier av utvinnbare mineraler og bergarter. Kan inneholde lite eller mye informasjon og kan også inkludere gamle steinbrudd, skjerp og nedlagte gruver og massetak. Kan omfatte malmer, industrimineraler og naturstein.\n\nINSPIRE Description:\nAny ore or economic mineral in any concentration found in bedrock or as float."
+            },
+            {
+              "value": "prospekt",
+              "label": "Et punkt med et arealfestet område (polygon) med høy sannsynlighet for funn av hittil lite eller ikke dokumenterte økonomisk interessante mineralressurser. Arealet kan være basert på kartlagt geologi, lovende analyser av borkjerner og andre prøver, geofysiske anomalier og lignende. Ytterligere ressursgeologiske undersøkelser er nødvendig for å avklare potensialet.\n\nINSPIRE Description:\nAn area that is a potential site of mineral deposits, based on preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration."
+            },
+            {
+              "value": "provins",
+              "label": "En mineralprovins er et eller flere arealfestete områder (polygoner) der det finnes forhøyete muligheter for funn av angitte mineralressurser. En mineralprovins kan omkranse en eller flere forekomster, prospekter og registreringer\n\nINSPIRE Description:\nGeologic provinces classified by mineral resources."
+            }
+          ],
+          "definition": "Klassifisering av objekter i henhold til tilgjengelig kunnskapsnivå\n\n-- Definition --\nThe type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit.",
+          "asDictionary": "false"
+        }
+      },
+      {
+        "name": "ressursType",
+        "type": "RessursType",
+        "description": "hvilken type råstoff som kan være/er gjenstand for utvinning.\n\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode\n\n-- Definition --\nValues indicating the type of commodity.\nwhat type of raw material that may be/is subject to extraction\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "edelmetaller",
+              "label": "Edelmetaller (Au,Ag,PGE); Gull, sølv og metaller i platinagruppen (Ru, Ro, Pd, Os, Ir, Pt) og rhenium.\n\nPrecious metals: gold, silver and platinum group metals and rhenium; ruthenium, rhodium, palladium, osmium, iridium, and platinum"
+            },
+            {
+              "value": "jernmetaller",
+              "label": "Jernmetaller (Fe, Mn, Ti); jern, mangan og titan\n\nOres of iron, manganese and titanium."
+            },
+            {
+              "value": "jernlegeringMetaller",
+              "label": "Jernlegeringsmetaller (Cr, Ni, Co, V, Mo, W); krom, nikkel, kobolt, vanadium, molybden og wolfram.\n\nMetals that are mined for their alloying properties with iron in the manufacture of steel; chromium, nickel, cobalt, vanadium, molybdenum and wolfram."
+            },
+            {
+              "value": "basemetaller",
+              "label": "Basemetaller (Cu, Zn, Pb inkl. Fe-sulfider, As, Sb, Bi, Sn); kobber, sink, bly, jern-sulfider, arsen, antimon, vismut og tinn\n\nBase metals; copper, zink, lead, iron-sulphides, arsenic, antimony, bismuth and tin.\nIn chemistry, the term base metal is used informally to refer to a metal that oxidizes or corrodes relatively easily and reacts variably with diluted hydrochloric acid (HCl) to form hydrogen. Examples include iron, nickel, lead and zinc. Copper is also considered a base metal because it oxidizes relatively easily, although it does not react with HCl. - http://en.wikipedia.org/wiki/Base_metal"
+            },
+            {
+              "value": "energimetaller",
+              "label": "Energimetaller (U, Th); uran og thorium\nEnergy minerals; uranium and thorium"
+            },
+            {
+              "value": "spesialmetaller",
+              "label": "Spesialmetaller omfatter metaller og grunnstoffer som normalt ikke passer inn i krystallstrukturen til vanlige mineraler (Nb, Ta, Be, Li, Sc, REE); niob, tantal, beryllium, litium, scandium og sjeldne jordartsmetaller.\n\nSpecial metals and incompatible elements (Nb, Ta, Be, Li, Sc, and REE)."
+            },
+            {
+              "value": "andreMetaller",
+              "label": "Andre metaller.\n\nOther metals: Cs, Ga, Ge, Hf, In, Cd, Hg, Re, Rb, Se, Si, Sr, S, Te, Tl, Zr, Mg and metallic elements used for non-metallic products: Ba, K, Ca, Na, Rb\nCommodity is a metal that is extracted from an ore material mined from the Earth"
+            },
+            {
+              "value": "karbonatMineraler",
+              "label": "Karbonatmineraler; Kalkstein, dolomittstein, kalkspatmarmor, dolomittmarmor og blandingsbergarter mellom disse. Ofte brukte forkortelser er kalk for både kalkstein og kalkspatmarmor og dolomitt for både dolomittstein og dolomittmarmor.\n\nLimestone, dolomite and calcite and dolomite marble.\n\nA trigonal calcium carbonate mineral CaCO3 used in large crystal form for optics and as compound additive for soil remediation, soil stabilization and concrete repair. http://www.webmineral.com/data/Calcite.shtml http://en.wikipedia.org/wiki/Calcite"
+            },
+            {
+              "value": "silika",
+              "label": "Kvarts: kvartssand, kvartssandstein, kvartsitt og hydrotermal kvarts.\n\nQuartz, quartz sand, quartz sandstone, quartzite and hydrothermal quartz.\nSilicon dioxide, also known as silica (from the Latin silex), is a chemical compound that is a dioxide of silicon with the chemical formula SiO2 - http://en.wikipedia.org/wiki/Silica"
+            },
+            {
+              "value": "talk",
+              "label": "Talk og serpentin-førende bergarter\n\nTalc and serpentinite.\nTalc is an important industrialMineral. Its resistance to heat, electricity and acids make it an ideal surface for lab counter tops and electrical switchboards. It is also an important filler material for paints, rubber and insecticides. Even with all these uses, most people only know talc as the primary ingredient in talcum powder.- http://www.galleries.com/Talc"
+            },
+            {
+              "value": "feltspat",
+              "label": "Feltspatmineraler; pegmatittisk feltspat og anortositt\nFeldspar minerals; pegmatittic feldspar og anorthosite\n\nFeldspars (KAlSi3O8 – NaAlSi3O8 – CaAl2Si2O8) are a group of rock-forming tectosilicate minerals that make up as much as 60% of the Earth's crust. - http://en.wikipedia.org/wiki/Feldspar"
+            },
+            {
+              "value": "olivin",
+              "label": "Olivin\n\nOlivine"
+            },
+            {
+              "value": "grafitt",
+              "label": "Grafitt; flak-grafitt eller amorf grafitt.\n\nGraphite\nGraphite is a polymorph of the element carbon. Diamond is another polymorph. The two share the same chemistry, carbon, but have very different structures and very different properties. - http://www.galleries.com/Graphite"
+            },
+            {
+              "value": "fossiltBrensel",
+              "label": "Fossilt brensel\n\nFossil fuel"
+            },
+            {
+              "value": "nefelinSyenitt",
+              "label": "Nefelin syenitt\n\nNepheline syenite"
+            },
+            {
+              "value": "magnesiumMineraler",
+              "label": "Magnesium-mineraler; magnesitt og brucitt.\n\nMagnesium minerals.; Magnesite and brucite"
+            },
+            {
+              "value": "zirkon",
+              "label": "Zirkon\n\nZirkon"
+            },
+            {
+              "value": "berylliumMineraler",
+              "label": "Beryllium-førende mineraler"
+            },
+            {
+              "value": "glimmermineraler",
+              "label": "Glimmermineraler; muskovitt, biotitt m.m.\n\nMica minerals; muscovite, biotite and more."
+            },
+            {
+              "value": "andreIndustrimineraler",
+              "label": "Andre industrimineraler\n\nOther industrial minerals\nA compound Earth material, or rock product that is directly used for industrial purposes. Not a specific mineral constituent in the mined material."
+            },
+            {
+              "value": "sandsteinOgKonglomerat",
+              "label": "Uomdannete sedimentære bergarter inklusiv sandstein og konglomerat, samt kvartsitt, benyttet som naturstein. Er i INSPIRE inkludert i «sandstone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone</u></font></a>"
+            },
+            {
+              "value": "skiferOgHellestein",
+              "label": "Alle typer omdannete bergarter som kan splittes etter naturlige sjikt til plater og benyttes som naturstein. Inkluderer leirskifer, fyllitt, glimmerskifer, kvartsskifer og grønnskifer. Leirskifer er i INSPIRE inkludert i «slate»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate</u></font></a>, grønnskifer i «greenstone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone</u></font></a> og resten i  «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a>"
+            },
+            {
+              "value": "kvernstein",
+              "label": "Bergarter som historisk er benyttet til produksjon av kvernstein, inklusiv glimmerskifer, amfibolitt og gneis"
+            },
+            {
+              "value": "brynestein",
+              "label": "Bergarter som historisk er benyttet til produksjon av brynestein, inklusiv siltstein, kvartsskifer og fyllitt"
+            },
+            {
+              "value": "murestein",
+              "label": "Uspesifiserte bergarter som benyttes til produksjon av tørrmurstein. Kan inkludere kvartsskifer og gneis"
+            },
+            {
+              "value": "spodumen",
+              "label": "Spodumen er et mineral i pyroksengruppa, et litiumaluminium-silikat, LiAlSi2O6. Det finnes på granittpegmatitter og er et viktig råstoff for framstilling av litiumsambindinger."
+            },
+            {
+              "value": "gneis",
+              "label": "Gneis benyttet som naturstein. Inkluderer alle typer gneis. Er i INSPIRE inkludert i «granite» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite</u></font></a>"
+            },
+            {
+              "value": "marmorOgKalkstein",
+              "label": "Karbonatrike bergarter benyttet som naturstein. Inkluderer marmor, dolomitt og kalkstein. Marmor er i INSPIRE inkludert i «marble» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble</u></font></a>\nog kalkstein i «limestone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone</u></font></a>"
+            },
+            {
+              "value": "klebersteinOgSerpentinitt",
+              "label": "Kleberstein og serpentinitt benyttet som naturstein. Kleberstein er i INSPIRE inkludert i «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a> og serpentinitt i «marble»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble</u></font></a>"
+            },
+            {
+              "value": "granittOgAndreStørkningsbergarter",
+              "label": "Alle dyp- og gangbergarter, inklusiv granitt, gabbro, syenitt, monzonitt, doleritt, larvikitt, anortositt, dioritt, mangeritt, tonalitt og trondhjemitt benyttet som naturstein. Er i INSPIRE inkludert i «granite»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite</u></font></a>"
+            },
+            {
+              "value": "knustBerg",
+              "label": "Knust berg\n\nBroad category for coarse particulate material used in construction, including sand, gravel, crushed stone, slag, recycled concrete and geosynthetic aggregates. - http://en.wikipedia.org/wiki/Construction_aggregate"
+            },
+            {
+              "value": "sandOgGrus",
+              "label": "Sand og grus\n\nDurable rock fragments (silicates, flints, etc) with a size range: 0.063 mm - 80mm, derived from the weathering, erosion and transport of rocks by glacial or fluvial processes. Used for aggregate purposes and construction fill."
+            },
+            {
+              "value": "grusOgAndreLøsmasser",
+              "label": "Grus og andre løsmasser\n\nSand and gravel and crushed rock extracted from the ground"
+            },
+            {
+              "value": "skredOgForvitring",
+              "label": "Skred og forvitringsmateriale"
+            },
+            {
+              "value": "skjellsand",
+              "label": "Skjellsand"
+            },
+            {
+              "value": "steintipp",
+              "label": "Steintipp"
+            },
+            {
+              "value": "leire",
+              "label": "Leire\n\nEnd use is determined by the properties of the material therefore it is a valid commodity type"
+            },
+            {
+              "value": "torv",
+              "label": "Torv\n\nAn accumulation of partially decayed vegetation or organic matter that forms in wetland conditions, where flooding obstructs flows of oxygen from the atmosphere, slowing rates of decomposition. Peat is commonly harvested as an important source of fuel in certain parts of the world. http://en.wikipedia.org/wiki/Peat"
+            },
+            {
+              "value": "annenNaturstein",
+              "label": "Annen naturstein utenom kategoriene, inklusiv eklogitt, thulitt og amfibolitt. Er i INSPIRE inkludert i «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a>"
+            },
+            {
+              "value": "uspesifisert",
+              "label": "Uspesifisert"
+            }
+          ],
+          "definition": "hvilken type råstoff som kan være/er gjenstand for utvinning.\n\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCodeValue\n\n-- Definition --\nValues indicating the type of commodity.\n\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc."
+        },
+        "taggedValues": {
+          "SOSI_navn": "RESSTYPE"
+        }
+      },
+      {
+        "name": "ressursUndertype",
+        "type": "CharacterString",
+        "description": "underinndeling av materialtypene som kan være/er gjenstand for utvinning\nMerknad: Er en mer detaljert inndeling av det råstoff som utvinnes\n(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)\n\nsub-classification of material types that may be/are subject to extraction\nNote: a more detailed classification of the raw material that is extracted\n(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "RESSUNTYPE"
+        }
+      },
+      {
+        "name": "navnRåstoffobj",
+        "type": "CharacterString",
+        "description": "navn på mineralressursobjektet\n\nINSPIRE: name of raw material object",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FOREKNAVN"
+        }
+      },
+      {
+        "name": "omrNummer",
+        "type": "Integer",
+        "description": "nummerering av forekomsten (forekomstområdet) i kommunen.\nMerknad: Er en del av FOREKOM_ID. Eksempel 1729(001)01101.\n\ndeposit numbering (deposit area) in the municipality   Note: part of DEPOSIT_ID   For example: 1729(001)0101",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "R_ONR"
+        }
+      },
+      {
+        "name": "typeRåstoffVirksomhet",
+        "type": "TypeRastoffVirksomhet",
+        "description": "angir type på eventuell aktivitet\n\nindicates type of any activities",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "prospektering",
+              "label": "prospektering"
+            },
+            {
+              "value": "røsking",
+              "label": "røsking"
+            },
+            {
+              "value": "skjerp",
+              "label": "skjerp"
+            },
+            {
+              "value": "prøvedrift",
+              "label": "prøvedrift"
+            },
+            {
+              "value": "gruvedrift",
+              "label": "gruvedrift"
+            },
+            {
+              "value": "steinbrudd",
+              "label": "steinbrudd"
+            },
+            {
+              "value": "muligFremtidigUttaksområde",
+              "label": "muligFremtidigUttaksområde"
+            },
+            {
+              "value": "typelokalitet",
+              "label": "typelokalitet"
+            },
+            {
+              "value": "grustakMassetak",
+              "label": "grustakMassetak"
+            },
+            {
+              "value": "utplanertMassetakEllerEndretArealbruk",
+              "label": "utplanertMassetakEllerEndretArealbruk"
+            },
+            {
+              "value": "observasjonslokalitet",
+              "label": "observasjonslokalitet"
+            },
+            {
+              "value": "leirtak",
+              "label": "leirtak"
+            }
+          ],
+          "definition": "angir type på eventuell aktivitet"
+        },
+        "taggedValues": {
+          "SOSI_navn": "VIRKSOMHET"
+        }
+      },
+      {
+        "name": "geolBeskrivelse",
+        "type": "CharacterString",
+        "description": "beskrivende tekstfelt eller link (URL) til tekstlig beskrivelse\n\ndescriptive text field or link (URL) to textual description",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GEOBESK"
+        }
+      },
+      {
+        "name": "antallAnalyser",
+        "type": "Integer",
+        "description": "antallet utførte kjemiske og/eller mekaniske analyser\n\nthe number of chemical and/or mechanical analyses performed",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "ANT_ANALYS"
+        }
+      },
+      {
+        "name": "sisteBefaringDato",
+        "type": "Date",
+        "description": "dato for siste feltbefaring av forekomsten",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "SISTBEFART"
+        }
+      },
+      {
+        "name": "altForekomstNr",
+        "type": "Integer",
+        "description": "alternativ nummerering av forekomsten\nMerknad: Kan ha en bestemt form innen den enkelte forekomstdatabasen, og behøver ikke være unikt. Benyttes ofte for å peke tilbake på nummereringssystemer i eldre registre.\n\nalternative numbering of the deposit    Note: May have a specific form in the individual deposit database and does not need to be unique. Often used to refer back to numbering systems in older registers",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "ALTERN_FNR"
+        }
+      },
+      {
+        "name": "historiskViktig",
+        "type": "Boolean",
+        "description": "angivelse om forekomsten er historisk viktig",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "HIST_VIKTIG"
+        }
+      },
+      {
+        "name": "faktaarkURL",
+        "type": "CharacterString",
+        "description": "link (URL) til forekomstens oppdaterte faktaark ifra NGUs database",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FAKTAARK_URL"
+        }
+      },
+      {
+        "name": "sluttbrukType",
+        "type": "SluttbrukPotensial",
+        "description": "hva mineralet/bergarten kan brukes til. Eksempler på dette er byggeråstoffer, miljøkalk, slaggdanner etc.\n\n-- Definition -- The end-use potential of the mineral.\n-- Description --\nEXAMPLE: for energy, fertilizer, building raw material.",
+        "cardinality": "0..*",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "metaller",
+              "label": "metaller"
+            },
+            {
+              "value": "edelmetaller",
+              "label": "INSPIRE - Silver; Gold; Platinoids\ngeneral (Pt, Pd ..)"
+            },
+            {
+              "value": "jernlegeringsmetaller",
+              "label": "jernlegeringsmetaller"
+            },
+            {
+              "value": "naturstein",
+              "label": "INSPIRE - Building and dimension stone.\nNatural Stone used in a block, flag or slate form for construction or decorative purposes, or artifacts, e.g. millstones."
+            },
+            {
+              "value": "spesialmetaller",
+              "label": "Beryllium; Bismuth;\nCadmium; Germanium,\nGallium; Hafnium; Mercury;\nIndium; Lithium; Rubidium,\nCesium; Rhenium; Rare\nEarths (undifferentiated);\nAntimony; Selenium;\nTantalum; Tellurium;\nTitanium (ilmenite, rutile);\nZirconium (zircon,\nbaddeleyite)"
+            },
+            {
+              "value": "industrimineraler",
+              "label": "INSPIRE - Industrial minerals"
+            },
+            {
+              "value": "byggeråstoffer",
+              "label": "INSPIRE - Construction aggregates.\nAny of several hard, inert materials, such as sand, gravel, slag, or crushed stone, used for mixing with a cementing or bituminous material to form concrete or asphalt or used alone, as in railroad ballast or graded fill. Excludes materials for cement making and plaster making."
+            }
+          ],
+          "definition": "bruksområde for type mineralressurs\n\n-- Definition --\nValues indicating the end-use potential of the mineral.\n\n-- Description --\n<font color=\"#211d1e\">EXAMPLE: </font>for energy, fertilizer, building raw material etc.",
+          "asDictionary": "true",
+          "codeList": "http://inspire.ec.europa.eu/codelist/EndusePotentialValue"
+        },
+        "taggedValues": {
+          "SOSI_navn": "SLUTTBRUKTYPE"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [
+        "FellesegenskaperGrus"
+      ],
+      "associations": []
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "MINERALREGISTRERING"
+    }
+  },
+  {
+    "name": "Esker",
+    "description": "langstrakt, smal og ofte slynget rygg eller ås av lagdelt og sortert sand, grus eller rullestein, dannet ved avsetning fra smeltevannelver i en tunnel under eller inne i en isbre",
+    "attributes": [
+      {
+        "name": "senterlinje",
+        "type": "Kurve",
+        "description": "forløp som følger objektets sentrale del",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KURVE"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "ESKER"
+    }
+  },
+  {
+    "name": "SandGrusForekomst",
+    "description": "En ansamling av naturlig avsatt sand og grus  som har eller kan få en økonomisk verdi. En forekomst må ha et estimat eller en beregning av volum og kvalitet.\n\n--Definition--\nA mass of naturally occurring sand and gravel, usually of economic value, without regard to mode of origin.",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "FellesegenskapRåstoff"
+      ],
+      "associations": [
+        {
+          "target": "GeolAvgrLinje",
+          "role": "avgrensning",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "SANDGRUSFOREKOMST"
+    }
+  },
+  {
+    "name": "SandGrusProspekt",
+    "description": "område der det er potensial for en eller flere forekomster av naturlig avsatt sand og grus basert på tidligere undersøkelser eller observasjoner, og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner for mineralressurser.\n\n--Definition--\nAn  area  that  is  a  potential  site  of  mineral  deposits,  based  on  preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration.",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "MineralRegistrering"
+      ],
+      "associations": [
+        {
+          "target": "GeolAvgrLinje",
+          "role": "avgrensning",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "SANDGRUSPROSPEKT"
+    }
+  },
+  {
+    "name": "MasseuttakAktivitet",
+    "description": "hvilken aktivitet det er i masseuttaket\n\n-- Definition --\nThe process of extracting metallic, non-metallic mineral, or industrial rock deposits from the Earth.\n\n-- Description --\nThe term may also include preliminary treatment eg. cleaning or sizing.",
+    "attributes": [
+      {
+        "name": "uttakPeriodeFraTil",
+        "type": "TM_Period",
+        "description": "den perioden masseuttaket/mineralutvinningen foregikk i\n-- Definition --\nPeriod, or extent in time, of  the mining activity.\n\n-- Description --\nThe beginning of the activity links the TM_Period to the TM_Instant at which it starts.  The ending links the TM_Period to the TM_Instant at which it ends.  For a variety of reasons, the position of the TM_Instant designated by 'begin' or 'end' may be inderterminate.",
+        "cardinality": "1"
+      },
+      {
+        "name": "aktivitetUttak",
+        "type": "AktivitetUttakType",
+        "description": "hvilken driftsmetode som er brukt ved uttaket\n\n-- Definition --\nThe type of mining activity.\n\n-- Description --\nEXAMPLE: Open Pit, Underground Mine, multiple, unspecified) or processing activity (eg Ore Processing) or production.\nUsing activity to distinguish between the extraction, processing and production activities allows distinguishing between ore mined/grade/recovery, ore treated/grade/recovery and produced payable/plant recovery.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "DRIFTMETODEUTTAK"
+        }
+      },
+      {
+        "name": "uttakMengde",
+        "type": "Quantity",
+        "description": "hvor mye som er utvunnet\n\n-- Definition -- The amount of ore processed by the activity.",
+        "cardinality": "1"
+      },
+      {
+        "name": "prosessType",
+        "type": "ProsessAktivitetType",
+        "description": "hvilken type prosesser som er benyttet ved uttaket\n\n-- Definition -- The type of processing carried out during the mining activity.",
+        "cardinality": "1"
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "MassetakGruppeBeskrivelse"
+      ],
+      "associations": [
+        {
+          "target": "Masseuttak",
+          "role": "assosiert masseuttak",
+          "cardinality": "1",
+          "sourceRole": "relatert aktivitet",
+          "sourceCardinality": "1..*"
+        }
+      ]
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "MASSEUTTAKAKTIVITET"
+    }
+  },
+  {
+    "name": "FellesegenskapRåstoff",
+    "description": "fellesegenskaper for natursteinforekomster, industrimineralforekomster og malmforekomster",
+    "attributes": [
+      {
+        "name": "råstoffBetydning",
+        "type": "RåstoffBetydning",
+        "description": "hvilken betydning en mineralforekomst har med tanke på mulig økonomisk utnyttelse nå eller for framtiden.  Skal begrunnes.\n\n-- Definition --\nhow important a geological resource or registration is as regards potential commercial exploitation now or in the future",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "internasjonalBetydning",
+              "label": "1. Metall- og industrimineralforekomster med dokumenterte ressurser som kan gi et signifikant bidrag til internasjonale behov\n- herunder forekomster med meget høy dokumentert in situ-verdi basert på kvalitet og tonnasje\n- herunder forekomster med potensial for årsproduksjon som dekker signifikant andel av behov i EU/EØS\n\n2. Forekomster av strategisk viktige eller «kritiske» råstoff\n- herunder dokumenterte forekomster av mineraler på EU liste over kritiske råstoffer som utnyttes eller har potensial for framtidig utnyttelse\n\n3. Forekomster av byggeråstoffer med verdi eller potensial for eksport på minst 1 millioner tonn årlig"
+            },
+            {
+              "value": "nasjonalBetydning",
+              "label": "1. Mineralforekomster som har et bekreftet eller sannsynlig, betydelig fremtidig verdiskapingspotensial\n- herunder forekomster med betydelig in-situ verdi\n- herunder byggeråstoffer med betydelig potensial for eksport\n\n2. Mineralforekomster som har unike kvaliteter som gjør dem særlig egnet til foredlende industri\n- herunder industrimineraler og spesialmetaller av særlig høy kvalitet\n\n3. Mineralforekomster som har unike kvaliteter som byggeråstoff\n- herunder knust berg (pukk)- og grusforekomster med unike fysiske egenskaper\n- herunder natursteinsforekomster med unike egenskaper og attraktivitet i det internasjonale markedet\n- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til andre viktige samfunnsområder\n\n4. Forekomster av strategisk viktige eller «kritiske» råstoff\n- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til viktige norske samfunnsområder\n\n5. Forekomster som er særdeles viktig for Norges nasjonale infrastruktur\n- herunder grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger til større befolkningssentra i Norge"
+            },
+            {
+              "value": "regionalBetydning",
+              "label": "1. Mineralforekomster som har et bekreftet eller sannsynlig fremtidig verdiskapingspotensial med in situ-verdi på mellom 100 og 1000 millioner kroner\n\n2. Mineralforekomster som er særdeles viktig for regional infrastruktur\n- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger innen en region\n- herunder natursteinsforekomster som har eller har hatt særlig betydning for byggeskikk og arkitektur i en region"
+            },
+            {
+              "value": "lokalBetydning",
+              "label": "Mineralforekomster som er viktig for lokal infrastruktur\n- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som kan være viktig for forsyninger innen en kommune"
+            },
+            {
+              "value": "litenBetydning",
+              "label": "Forekomsten har liten eller ingen økonomisk betydning"
+            },
+            {
+              "value": "ikkeVurdert",
+              "label": "Forekomstens økonomiske betydning er ikke vurdert"
+            }
+          ],
+          "definition": "En mineralforekomsts antatte betydning for fremtidig verdiskaping, i forhold til lokale, regionale og nasjonale forvaltningsnivå.\n\nKodelisten finnes ikke i INSPIRE-spesifikasjonen, men er en tilpasning til begrepsbruk i norsk lovverk (PBL §5.4 og KU-forskrift §10), KMDs nasjonale forventninger (2019-2023), og fra europeiske spesifikasjoner i Raw Materials Initiative."
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [
+        "MineralRegistrering"
+      ],
+      "associations": []
+    },
+    "package": "Grus-4.0_Utkast"
+  },
+  {
+    "name": "SandGrusUttak",
+    "description": "lokalitet hvor naturlig avsatt sand og grus tas ut\n\nMerknad:  (massetak)",
+    "attributes": [
+      {
+        "name": "identRastoffobj",
+        "type": "Integer",
+        "description": "forekomstobjektets identifikasjonskode\n\nMerknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).\n\nEksempel: 17290010101",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "FOREKOM_ID"
+        }
+      },
+      {
+        "name": "forekomstNummer",
+        "type": "Integer",
+        "description": "unik nummerering av forekomsten som råstoffobjektet tilhører\n\nMerknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten\n\nEks. 1729001",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "R_FNR"
+        }
+      },
+      {
+        "name": "ressursType",
+        "type": "RessursType",
+        "description": "hvilken type råstoff som kan være/er gjenstand for utvinning.\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode\n\n-- Definition --\nValues indicating the type of commodity.\nwhat type of raw material that may be/is subject to extraction\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "edelmetaller",
+              "label": "Edelmetaller (Au,Ag,PGE); Gull, sølv og metaller i platinagruppen (Ru, Ro, Pd, Os, Ir, Pt) og rhenium.\n\nPrecious metals: gold, silver and platinum group metals and rhenium; ruthenium, rhodium, palladium, osmium, iridium, and platinum"
+            },
+            {
+              "value": "jernmetaller",
+              "label": "Jernmetaller (Fe, Mn, Ti); jern, mangan og titan\n\nOres of iron, manganese and titanium."
+            },
+            {
+              "value": "jernlegeringMetaller",
+              "label": "Jernlegeringsmetaller (Cr, Ni, Co, V, Mo, W); krom, nikkel, kobolt, vanadium, molybden og wolfram.\n\nMetals that are mined for their alloying properties with iron in the manufacture of steel; chromium, nickel, cobalt, vanadium, molybdenum and wolfram."
+            },
+            {
+              "value": "basemetaller",
+              "label": "Basemetaller (Cu, Zn, Pb inkl. Fe-sulfider, As, Sb, Bi, Sn); kobber, sink, bly, jern-sulfider, arsen, antimon, vismut og tinn\n\nBase metals; copper, zink, lead, iron-sulphides, arsenic, antimony, bismuth and tin.\nIn chemistry, the term base metal is used informally to refer to a metal that oxidizes or corrodes relatively easily and reacts variably with diluted hydrochloric acid (HCl) to form hydrogen. Examples include iron, nickel, lead and zinc. Copper is also considered a base metal because it oxidizes relatively easily, although it does not react with HCl. - http://en.wikipedia.org/wiki/Base_metal"
+            },
+            {
+              "value": "energimetaller",
+              "label": "Energimetaller (U, Th); uran og thorium\nEnergy minerals; uranium and thorium"
+            },
+            {
+              "value": "spesialmetaller",
+              "label": "Spesialmetaller omfatter metaller og grunnstoffer som normalt ikke passer inn i krystallstrukturen til vanlige mineraler (Nb, Ta, Be, Li, Sc, REE); niob, tantal, beryllium, litium, scandium og sjeldne jordartsmetaller.\n\nSpecial metals and incompatible elements (Nb, Ta, Be, Li, Sc, and REE)."
+            },
+            {
+              "value": "andreMetaller",
+              "label": "Andre metaller.\n\nOther metals: Cs, Ga, Ge, Hf, In, Cd, Hg, Re, Rb, Se, Si, Sr, S, Te, Tl, Zr, Mg and metallic elements used for non-metallic products: Ba, K, Ca, Na, Rb\nCommodity is a metal that is extracted from an ore material mined from the Earth"
+            },
+            {
+              "value": "karbonatMineraler",
+              "label": "Karbonatmineraler; Kalkstein, dolomittstein, kalkspatmarmor, dolomittmarmor og blandingsbergarter mellom disse. Ofte brukte forkortelser er kalk for både kalkstein og kalkspatmarmor og dolomitt for både dolomittstein og dolomittmarmor.\n\nLimestone, dolomite and calcite and dolomite marble.\n\nA trigonal calcium carbonate mineral CaCO3 used in large crystal form for optics and as compound additive for soil remediation, soil stabilization and concrete repair. http://www.webmineral.com/data/Calcite.shtml http://en.wikipedia.org/wiki/Calcite"
+            },
+            {
+              "value": "silika",
+              "label": "Kvarts: kvartssand, kvartssandstein, kvartsitt og hydrotermal kvarts.\n\nQuartz, quartz sand, quartz sandstone, quartzite and hydrothermal quartz.\nSilicon dioxide, also known as silica (from the Latin silex), is a chemical compound that is a dioxide of silicon with the chemical formula SiO2 - http://en.wikipedia.org/wiki/Silica"
+            },
+            {
+              "value": "talk",
+              "label": "Talk og serpentin-førende bergarter\n\nTalc and serpentinite.\nTalc is an important industrialMineral. Its resistance to heat, electricity and acids make it an ideal surface for lab counter tops and electrical switchboards. It is also an important filler material for paints, rubber and insecticides. Even with all these uses, most people only know talc as the primary ingredient in talcum powder.- http://www.galleries.com/Talc"
+            },
+            {
+              "value": "feltspat",
+              "label": "Feltspatmineraler; pegmatittisk feltspat og anortositt\nFeldspar minerals; pegmatittic feldspar og anorthosite\n\nFeldspars (KAlSi3O8 – NaAlSi3O8 – CaAl2Si2O8) are a group of rock-forming tectosilicate minerals that make up as much as 60% of the Earth's crust. - http://en.wikipedia.org/wiki/Feldspar"
+            },
+            {
+              "value": "olivin",
+              "label": "Olivin\n\nOlivine"
+            },
+            {
+              "value": "grafitt",
+              "label": "Grafitt; flak-grafitt eller amorf grafitt.\n\nGraphite\nGraphite is a polymorph of the element carbon. Diamond is another polymorph. The two share the same chemistry, carbon, but have very different structures and very different properties. - http://www.galleries.com/Graphite"
+            },
+            {
+              "value": "fossiltBrensel",
+              "label": "Fossilt brensel\n\nFossil fuel"
+            },
+            {
+              "value": "nefelinSyenitt",
+              "label": "Nefelin syenitt\n\nNepheline syenite"
+            },
+            {
+              "value": "magnesiumMineraler",
+              "label": "Magnesium-mineraler; magnesitt og brucitt.\n\nMagnesium minerals.; Magnesite and brucite"
+            },
+            {
+              "value": "zirkon",
+              "label": "Zirkon\n\nZirkon"
+            },
+            {
+              "value": "berylliumMineraler",
+              "label": "Beryllium-førende mineraler"
+            },
+            {
+              "value": "glimmermineraler",
+              "label": "Glimmermineraler; muskovitt, biotitt m.m.\n\nMica minerals; muscovite, biotite and more."
+            },
+            {
+              "value": "andreIndustrimineraler",
+              "label": "Andre industrimineraler\n\nOther industrial minerals\nA compound Earth material, or rock product that is directly used for industrial purposes. Not a specific mineral constituent in the mined material."
+            },
+            {
+              "value": "sandsteinOgKonglomerat",
+              "label": "Uomdannete sedimentære bergarter inklusiv sandstein og konglomerat, samt kvartsitt, benyttet som naturstein. Er i INSPIRE inkludert i «sandstone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone</u></font></a>"
+            },
+            {
+              "value": "skiferOgHellestein",
+              "label": "Alle typer omdannete bergarter som kan splittes etter naturlige sjikt til plater og benyttes som naturstein. Inkluderer leirskifer, fyllitt, glimmerskifer, kvartsskifer og grønnskifer. Leirskifer er i INSPIRE inkludert i «slate»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate</u></font></a>, grønnskifer i «greenstone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone</u></font></a> og resten i  «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a>"
+            },
+            {
+              "value": "kvernstein",
+              "label": "Bergarter som historisk er benyttet til produksjon av kvernstein, inklusiv glimmerskifer, amfibolitt og gneis"
+            },
+            {
+              "value": "brynestein",
+              "label": "Bergarter som historisk er benyttet til produksjon av brynestein, inklusiv siltstein, kvartsskifer og fyllitt"
+            },
+            {
+              "value": "murestein",
+              "label": "Uspesifiserte bergarter som benyttes til produksjon av tørrmurstein. Kan inkludere kvartsskifer og gneis"
+            },
+            {
+              "value": "spodumen",
+              "label": "Spodumen er et mineral i pyroksengruppa, et litiumaluminium-silikat, LiAlSi2O6. Det finnes på granittpegmatitter og er et viktig råstoff for framstilling av litiumsambindinger."
+            },
+            {
+              "value": "gneis",
+              "label": "Gneis benyttet som naturstein. Inkluderer alle typer gneis. Er i INSPIRE inkludert i «granite» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite</u></font></a>"
+            },
+            {
+              "value": "marmorOgKalkstein",
+              "label": "Karbonatrike bergarter benyttet som naturstein. Inkluderer marmor, dolomitt og kalkstein. Marmor er i INSPIRE inkludert i «marble» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble</u></font></a>\nog kalkstein i «limestone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone</u></font></a>"
+            },
+            {
+              "value": "klebersteinOgSerpentinitt",
+              "label": "Kleberstein og serpentinitt benyttet som naturstein. Kleberstein er i INSPIRE inkludert i «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a> og serpentinitt i «marble»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble</u></font></a>"
+            },
+            {
+              "value": "granittOgAndreStørkningsbergarter",
+              "label": "Alle dyp- og gangbergarter, inklusiv granitt, gabbro, syenitt, monzonitt, doleritt, larvikitt, anortositt, dioritt, mangeritt, tonalitt og trondhjemitt benyttet som naturstein. Er i INSPIRE inkludert i «granite»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite</u></font></a>"
+            },
+            {
+              "value": "knustBerg",
+              "label": "Knust berg\n\nBroad category for coarse particulate material used in construction, including sand, gravel, crushed stone, slag, recycled concrete and geosynthetic aggregates. - http://en.wikipedia.org/wiki/Construction_aggregate"
+            },
+            {
+              "value": "sandOgGrus",
+              "label": "Sand og grus\n\nDurable rock fragments (silicates, flints, etc) with a size range: 0.063 mm - 80mm, derived from the weathering, erosion and transport of rocks by glacial or fluvial processes. Used for aggregate purposes and construction fill."
+            },
+            {
+              "value": "grusOgAndreLøsmasser",
+              "label": "Grus og andre løsmasser\n\nSand and gravel and crushed rock extracted from the ground"
+            },
+            {
+              "value": "skredOgForvitring",
+              "label": "Skred og forvitringsmateriale"
+            },
+            {
+              "value": "skjellsand",
+              "label": "Skjellsand"
+            },
+            {
+              "value": "steintipp",
+              "label": "Steintipp"
+            },
+            {
+              "value": "leire",
+              "label": "Leire\n\nEnd use is determined by the properties of the material therefore it is a valid commodity type"
+            },
+            {
+              "value": "torv",
+              "label": "Torv\n\nAn accumulation of partially decayed vegetation or organic matter that forms in wetland conditions, where flooding obstructs flows of oxygen from the atmosphere, slowing rates of decomposition. Peat is commonly harvested as an important source of fuel in certain parts of the world. http://en.wikipedia.org/wiki/Peat"
+            },
+            {
+              "value": "annenNaturstein",
+              "label": "Annen naturstein utenom kategoriene, inklusiv eklogitt, thulitt og amfibolitt. Er i INSPIRE inkludert i «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a>"
+            },
+            {
+              "value": "uspesifisert",
+              "label": "Uspesifisert"
+            }
+          ],
+          "definition": "hvilken type råstoff som kan være/er gjenstand for utvinning.\n\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCodeValue\n\n-- Definition --\nValues indicating the type of commodity.\n\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc."
+        },
+        "taggedValues": {
+          "SOSI_navn": "RESSTYPE"
+        }
+      },
+      {
+        "name": "råstoffBetydning",
+        "type": "RåstoffBetydning",
+        "description": "hvilken betydning en mineralforekomst har med tanke på mulig økonomisk\nutnyttelse nå eller for framtiden. Skal begrunnes.\n\n-- Definition --\nhow important a geological resource or registration is as regards potential\ncommercial exploitation now or in the future",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "internasjonalBetydning",
+              "label": "1. Metall- og industrimineralforekomster med dokumenterte ressurser som kan gi et signifikant bidrag til internasjonale behov\n- herunder forekomster med meget høy dokumentert in situ-verdi basert på kvalitet og tonnasje\n- herunder forekomster med potensial for årsproduksjon som dekker signifikant andel av behov i EU/EØS\n\n2. Forekomster av strategisk viktige eller «kritiske» råstoff\n- herunder dokumenterte forekomster av mineraler på EU liste over kritiske råstoffer som utnyttes eller har potensial for framtidig utnyttelse\n\n3. Forekomster av byggeråstoffer med verdi eller potensial for eksport på minst 1 millioner tonn årlig"
+            },
+            {
+              "value": "nasjonalBetydning",
+              "label": "1. Mineralforekomster som har et bekreftet eller sannsynlig, betydelig fremtidig verdiskapingspotensial\n- herunder forekomster med betydelig in-situ verdi\n- herunder byggeråstoffer med betydelig potensial for eksport\n\n2. Mineralforekomster som har unike kvaliteter som gjør dem særlig egnet til foredlende industri\n- herunder industrimineraler og spesialmetaller av særlig høy kvalitet\n\n3. Mineralforekomster som har unike kvaliteter som byggeråstoff\n- herunder knust berg (pukk)- og grusforekomster med unike fysiske egenskaper\n- herunder natursteinsforekomster med unike egenskaper og attraktivitet i det internasjonale markedet\n- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til andre viktige samfunnsområder\n\n4. Forekomster av strategisk viktige eller «kritiske» råstoff\n- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til viktige norske samfunnsområder\n\n5. Forekomster som er særdeles viktig for Norges nasjonale infrastruktur\n- herunder grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger til større befolkningssentra i Norge"
+            },
+            {
+              "value": "regionalBetydning",
+              "label": "1. Mineralforekomster som har et bekreftet eller sannsynlig fremtidig verdiskapingspotensial med in situ-verdi på mellom 100 og 1000 millioner kroner\n\n2. Mineralforekomster som er særdeles viktig for regional infrastruktur\n- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger innen en region\n- herunder natursteinsforekomster som har eller har hatt særlig betydning for byggeskikk og arkitektur i en region"
+            },
+            {
+              "value": "lokalBetydning",
+              "label": "Mineralforekomster som er viktig for lokal infrastruktur\n- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som kan være viktig for forsyninger innen en kommune"
+            },
+            {
+              "value": "litenBetydning",
+              "label": "Forekomsten har liten eller ingen økonomisk betydning"
+            },
+            {
+              "value": "ikkeVurdert",
+              "label": "Forekomstens økonomiske betydning er ikke vurdert"
+            }
+          ],
+          "definition": "En mineralforekomsts antatte betydning for fremtidig verdiskaping, i forhold til lokale, regionale og nasjonale forvaltningsnivå.\n\nKodelisten finnes ikke i INSPIRE-spesifikasjonen, men er en tilpasning til begrepsbruk i norsk lovverk (PBL §5.4 og KU-forskrift §10), KMDs nasjonale forventninger (2019-2023), og fra europeiske spesifikasjoner i Raw Materials Initiative."
+        },
+        "taggedValues": {
+          "SOSI_navn": "RASTOFFBETYDNING"
+        }
+      },
+      {
+        "name": "mineralRegistreringType",
+        "type": "MineralRegistreringType",
+        "description": "hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.\nEksempler på dette er prospekt, registrering og forekomst.\n\n-- Definition -- The type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "forekomst",
+              "label": "Et punkt med et arealfestet område (polygon) der det finnes en dokumentert eller estimert ressurs, som antas å være økonomisk interessant og som enten er eller kan være utnyttbare i fremtida. En forekomst må ha et estimat eller en beregning av volum og kvalitet. For forekomster under bakken vil arealet definere projeksjon til overflaten.\nOmrådet omkranser en dokumentert (målt) reserve/ressurs eller antatt ressurs. Kan omfatte malmer, industrimineraler, og naturstein.\n\nINSPIRE Description:\nA mass of naturally occurring mineral material, e.g. metal ores or non-metallic minerals, usually of economic value, without regard to mode of origin. Accumulations of coal and petroleum may or may not be included."
+            },
+            {
+              "value": "registrering",
+              "label": "Et punkt med eller uten et arealfestet område (polygon) der det er observert og/eller analysert forhøyete verdier av utvinnbare mineraler og bergarter. Kan inneholde lite eller mye informasjon og kan også inkludere gamle steinbrudd, skjerp og nedlagte gruver og massetak. Kan omfatte malmer, industrimineraler og naturstein.\n\nINSPIRE Description:\nAny ore or economic mineral in any concentration found in bedrock or as float."
+            },
+            {
+              "value": "prospekt",
+              "label": "Et punkt med et arealfestet område (polygon) med høy sannsynlighet for funn av hittil lite eller ikke dokumenterte økonomisk interessante mineralressurser. Arealet kan være basert på kartlagt geologi, lovende analyser av borkjerner og andre prøver, geofysiske anomalier og lignende. Ytterligere ressursgeologiske undersøkelser er nødvendig for å avklare potensialet.\n\nINSPIRE Description:\nAn area that is a potential site of mineral deposits, based on preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration."
+            },
+            {
+              "value": "provins",
+              "label": "En mineralprovins er et eller flere arealfestete områder (polygoner) der det finnes forhøyete muligheter for funn av angitte mineralressurser. En mineralprovins kan omkranse en eller flere forekomster, prospekter og registreringer\n\nINSPIRE Description:\nGeologic provinces classified by mineral resources."
+            }
+          ],
+          "definition": "Klassifisering av objekter i henhold til tilgjengelig kunnskapsnivå\n\n-- Definition --\nThe type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit.",
+          "asDictionary": "false"
+        },
+        "taggedValues": {
+          "SOSI_navn": "MINERALREGTYPE"
+        }
+      },
+      {
+        "name": "ressursUndertype",
+        "type": "CharacterString",
+        "description": "underinndeling av materialtypene som kan være/er gjenstand for utvinning\nMerknad: Er en mer detaljert inndeling av det råstoff som utvinnes\n(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)\n\nsub-classification of material types that may be/are subject to extraction\nNote: a more detailed classification of the raw material that is extracted\n(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RESSUNTYPE"
+        }
+      },
+      {
+        "name": "navnRastoffobj",
+        "type": "CharacterString",
+        "description": "navn på råstoffobjekt",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FOREKNAVN"
+        }
+      },
+      {
+        "name": "lokalNummer",
+        "type": "Integer",
+        "description": "nummerering av lokalitet i forekomsten\n\nMerknad: Er en del av FOREKOM_ID: Eks: 1729001(01)01",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "R_LNR"
+        }
+      },
+      {
+        "name": "løsmassetype",
+        "type": "Losmassetype",
+        "description": "kvartærgeologiske løsmassetyper (jordartstyper)",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Løsmasser/berggrunn under vann, uspesifisert",
+              "label": "Brukes for en avsetning der genetisk opprinnelse ikke er påvist, og det er heller ikke bestemt  om sedimentet er av marin opprinnelse."
+            },
+            {
+              "value": "Morenemateriale, uspesifisert",
+              "label": "Materiale plukket opp, transportert og avsatt av isbreen. Det er vanligvis dårlig sortert og kan inneholde alt fra leir til stein og blokk. Mektighet, morenetype og overflateform kan variere. Benyttes ved kartframstilling i svært små målestokker."
+            },
+            {
+              "value": "Morenemateriale, sammenhengende dekke, stedvis med stor mektighet",
+              "label": "Materiale transportert og avsatt av isbreer. Materialet er dårlig sortert, ofte kompakt og kan inneholde alle kornstørrelser, alt fra leir til stein og store blokker. Avsetningens tykkelse kan variere fra noen desimeter til mange titalls meter. Eventuelle fjellblotninger er markert som punktsymboler."
+            },
+            {
+              "value": "Morenemateriale, usammenhengende eller tynt dekke over berggrunnen",
+              "label": "Materiale transportert og avsatt av isbreer. Materialet er dårlig sortert, ofte kompakt og kan inneholde alle kornstørrelser, alt fra leir til stein og store blokker. Avsetningen er normalt usammenhengende med hyppige fjellblotninger. Den er sjelden mer enn 0.5 m tykk, men kan enkelte steder være mektigere."
+            },
+            {
+              "value": "Moreneleire",
+              "label": "Morenemateriale med særlig høyt leir- og siltinnhold, oftest meget kompakt."
+            },
+            {
+              "value": "Avsmeltningsmorene (Ablasjonsmorene)",
+              "label": "Løst lagret, delvis sortert morenemateriale. Forekommer ofte som tilfeldig orienterte hauger og rygger, dannet ved passiv isnedsmelting (dødis)."
+            },
+            {
+              "value": "Randmorene/randmorenesone",
+              "label": "Enkeltrygger eller større områder med morenemateriale som er avsatt langs en brefront. Materialet er usortert og kan inneholde alle kornstørrelser fra leir til stein og store blokker."
+            },
+            {
+              "value": "Drumlin",
+              "label": "Strømlinjeformet løsmasserygg. Vanligvis utformet i morenemateriale, men kan også bestå av sorterte sedimenter. Hvis løsmasseavsetningen er akkumulert på lesiden av oppstikkende fjell, kan formen kalles knaus-og-hale. Ryggformen orientert parallelt med tidligere isbevegelsesretning."
+            },
+            {
+              "value": "Rogenmorene",
+              "label": "Område med bølgende rygger av hovedsakelig morenemateriale, orientert på tvers av brebevegelsen."
+            },
+            {
+              "value": "Breelvavsetning (Glasifluvial avsetning)",
+              "label": "Materiale transportert og avsatt av breelver. Sedimentet består av sorterte, ofte lagdelte avsetninger av forskjellig kornstørrelse fra fin sand til stein og blokk. Breelvavsetninger har ofte tydelige overflateformer som tørrlagte kanaler, terrasser og rygger. Mektigheten er ofte flere ti-talls meter."
+            },
+            {
+              "value": "Breelv- og elveavsetning",
+              "label": "Materiale transportert og avsatt av elver eller breelver. Sedimentet består av sorterte lag av forskjellig kornstørrelse fra fin sand til grus og stein. Det er ikke skilt mellom breelv- og elveavsetninger. Brukes kun i spesielle tilfeller."
+            },
+            {
+              "value": "Ryggformet breelvavsetning (Esker)",
+              "label": "Materiale transportert og avsatt av breelver. Sorterte og lagdelte sedimenter, vesentlig sand, grus og stein, avsatt i tunneler eller sprekker i isbreer. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og linjesymbolet for esker til å angi ryggformer."
+            },
+            {
+              "value": "Haugformet breelvavsetning (Kame)",
+              "label": "Område med hauger av breelvmateriale, opprinnelig avsatt i hulrom i en bre eller langs en brekant. Kan ha terrasseform hvis materialet ble avsatt langs en iskant. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og punktsymbolet for kame til å angi haugformer."
+            },
+            {
+              "value": "Bresjø- eller brekammeravsetning (Glasilakustrin avsetning)",
+              "label": "Sortert, ofte finkornet materiale avsatt i bresjø eller vannfylt brekammer, hvor tykkelsen er mer enn 0,5 m. Mektigheten kan være flere ti-talls meter."
+            },
+            {
+              "value": "Breelv- og bresjø-/brekammeravsetning (Glasifluvial og glasilakustrin avsetning)",
+              "label": "Materiale avsatt av breelv eller i bredemte sjøer eller brekammer. Det er ikke skilt mellom breelv- og bresjø-/kammeravsetninger."
+            },
+            {
+              "value": "Innsjøavsetning (Lakustrin avsetning)",
+              "label": "Sortert, ofte finkornet og organisk-rikt materiale avsatt i innsjø."
+            },
+            {
+              "value": "Bresjø-/brekammer og innsjøavsetning (Glasilakustrin og lakustrin avsetning)",
+              "label": "Brukt der de to avsetningstypene bresjø-/brekammer og innsjøavsetning ikke separeres."
+            },
+            {
+              "value": "Strandavsetning innsjø og/eller bresjø",
+              "label": "Avsetning av sortert og godt rundet materiale dannet ved bølgeaktivitet i strandsonen i innsjø eller bredemt sjø. Kornstørrelse varierer, men grus og stein er vanlig."
+            },
+            {
+              "value": "Hav- og fjordavsetning, uspesifisert",
+              "label": "Finkornet, marin avsetning. Brukt for kart i små målestokker der avsetningen ikke er inndelt etter mektighet"
+            },
+            {
+              "value": "Hav- og fjordavsetning, sammenhengende dekke, stedvis med stor mektighet",
+              "label": "Sammenhengende, finkornet marin avsetning med mektighet opp til mange ti-talls meter. Avsetningstypen kan også omfatteskredmasser fra kvikkleireskred, ofte angitt med tilleggssymbol."
+            },
+            {
+              "value": "Marin strandavsetning, sammenhengende dekke",
+              "label": "Sammenhengende avsetning av strandvaskede, marine sedimenter, dannet av bølge- og strømaktivitet i strandsonen. Avsetningen danner ofte strandvoller. Materialet er ofte rundet og godt sortert. Kornstørrelsen varierer fra sand til blokk, men sand, grus og stein er vanligst. Strandavsetninger ligger som et forholdsvis tynt dekke over berggrunn eller andre sedimenter. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og linjesymbolet for strandvoll til å angi ryggformer."
+            },
+            {
+              "value": "Hav-, fjord- og strandavsetning, usammenhengende eller tynt dekke over berggrunnen",
+              "label": "Område med ulike typer marine avsetninger. Tykkelsen på avsetningene er normalt mindre enn 0,5 m, men den kan helt lokalt være noe større. Kornstørrelser angis normalt ikke, men kan være alt fra leir til blokk."
+            },
+            {
+              "value": "Skjellsand (maringeologi)",
+              "label": "Avsetning som i stor grad består av knuste skall av kalkutskillende organismer. Er en type av bioklastisk materiale. Kornstørrelse varierer fra nesten hele skall til sand. Det kan være ansamlet store mengder av skjellsand i umiddelbar nærhet av gode skjellvekstområder."
+            },
+            {
+              "value": "Marin gytje",
+              "label": "Avsetning som består av finkornet materiale med høyt organisk innhold. Det organiske materialet er primærprodusert i saltvann."
+            },
+            {
+              "value": "Elve- og bekkeavsetning (Fluvial avsetning)",
+              "label": "Materiale som er transportert og avsatt av elver og bekker. Sortert sand og grus dominerer og partiklene er ofte godt rundet. Avsetningene kan ha meget varierende mektigheter. Typiske overflateformer er elvesletter, terrasser og vifter."
+            },
+            {
+              "value": "Elveavsetning, sammenhengende dekke",
+              "label": "Materiale som er transportert og avsatt av elver og bekker. De mest typiske formene er elvesletter, terrasser og vifter. Sand og grus dominerer, og materialet er sortert og rundet. Brukes kun i spesielle tilfeller."
+            },
+            {
+              "value": "Elve- og bekkeavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale som er transportert og avsatt av elver og bekker. Sortert sand og grus dominerer og partiklene er ofte godt rundet. Tykkelsen på avsetningene er normalt mindre enn 0,5 m, men den kan helt lokalt være noe større."
+            },
+            {
+              "value": "Flomavsetning bresjøtapping (uspesifisert)",
+              "label": "Brukes for spesielle sedimenter avsatt ved plutselig uttapning av bresjøer."
+            },
+            {
+              "value": "Flomavsetning fra bresjøtapping, sammenhengende",
+              "label": "Materiale transportert og avsatt av vann ved katastrofal tapping av bresjø."
+            },
+            {
+              "value": "Flomavsetning fra bresjøtapping, usammenhengende eller tynt dekke over berggrunnen",
+              "label": "Materiale transportert og avsatt av vann ved katastrofal tapping av bresjø. Tykkelse mindre enn 0,5 m."
+            },
+            {
+              "value": "Flomavsetning",
+              "label": "Materiale som er transportert og avsatt fra elver og bekker ved unormalt høy vannføring. I flate områder (elvesletter) vil avsetningen være finkornet (silt og sand), mens i brattere vassdrag vil relativt grovt materiale bli avsatt i vifteform der terrenget flater ut."
+            },
+            {
+              "value": "Flomavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale som er transportert og avsatt fra elver og bekker ved unormalt høy vannføring. I flate områder (elvesletter) vil avsetningen være finkornet (silt og sand), mens i brattere vassdrag vil relativt grovt materiale bli avsatt i vifteform der terrenget flater ut."
+            },
+            {
+              "value": "Vindavsetning (Eolisk avsetning)",
+              "label": "Godt sortert sand og grov silt, transportert og avsatt av vind. Ofte kalt flygesand."
+            },
+            {
+              "value": "Forvitringsmateriale, ikke inndelt etter mektighet",
+              "label": "Løsmasser dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell. Brukes når en ikke skiller mellom sammenhengende og usammenhengende dekke av denne avsetningstypen."
+            },
+            {
+              "value": "Forvitringsmateriale",
+              "label": "Usorterte løsmasser av varierende kornstrørrelse. Materalet er dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell. Tykkelsen er mer enn 0,5 m."
+            },
+            {
+              "value": "Forvitringsmateriale, usammenhengende eller tynt dekke over berggrunnen",
+              "label": "Usorterte løsmasser av varierende kornstrørrelse. Materalet er dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell."
+            },
+            {
+              "value": "Forvitringsmateriale, stein- og blokkrikt (blokkhav)",
+              "label": "Blokkrike avsetninger, ofte kalt blokkhav. Mest vanlig i høyfjellsområder. Dannet på stedet, primært ved frostforvitring av berggrunnen over lange tidsrom. Materialet er mer finkornet under overflaten."
+            },
+            {
+              "value": "Skredmateriale, ikke inndelt etter mektighet",
+              "label": "Avsetninger dannet ved steinsprang, fjellskred, snø- eller løsmasseskred fra bratte dalsider. Uspesifisert tykkelse"
+            },
+            {
+              "value": "Skredmateriale, sammenhengende dekke",
+              "label": "Avsetninger dannet ved steinsprang, fjellskred, snøskred eller løsmasseskred fra bratte dalsider. Materialet kan inneholde alle kornstørrelser og ha varierende sorteringsgrad. Punktsymbol viser dominerende skredtype."
+            },
+            {
+              "value": "Skredmateriale, usammenhengende eller tynt dekke",
+              "label": "Avsetninger dannet ved steinsprang, fjellskred, snø- og løsmasseskred fra bratte dalsider. Materialet kan inneholde alle kornstørrelser og ha varierende sorteringsgrad. Punktsymbol viser dominerende skredtype."
+            },
+            {
+              "value": "Steinbreavsetning",
+              "label": "Tungeformet masse av usortert materiale som inneholder, eller har inneholdt is og derfor er, eller har vært i bevegelse. Bevegelsen skyldes intern deformasjon av isen under påvirkning av tyngdekraften. Avsetningstypen dannes under permafrostforhold. De fleste steinbreer i Norge er i dag inaktive uten bevegelse."
+            },
+            {
+              "value": "Torv og myr",
+              "label": "Organisk materiale dannet av ikke nedbrutte planterester, akkumulert gjennom perioden etter siste istid. Det skilles ikke mellom ulike torvtyper."
+            },
+            {
+              "value": "Tynt dekke av organisk materiale over berggrunn",
+              "label": "Område med tynt dekke av bakkevegetasjon og delvis nedbrutte planterester, som ligger direkte på berggrunn. Fjellblotninger opptrer hyppig innen slike områder."
+            },
+            {
+              "value": "Usammenhengende eller tynt løsmassedekke over berggrunnen, flere løsmassetyper, uspesifisert",
+              "label": "Forskjellige sedimenter som danner et tynt eller usammenhengende dekke over berggrunnen. Denne betegnelsen brukes bare når en ikke velger å skille mellom ulike typer av løsmasser."
+            },
+            {
+              "value": "Sammenhengende løsmassedekke av flere jordarter",
+              "label": "Vanligvis skredmateriale med morenemateriale, forvitringsmateriale, torv og humus sterkt blanda ved skråningsprosesser. Brukes kun i spesielle tilfeller der det er meget vanskelig å skille mellom opprinnelige løsmassetyper."
+            },
+            {
+              "value": "Bart fjell/fjell med tynt torvdekke, uspesifisert",
+              "label": "Brukes når en ikke velger å skille mellom bart fjell og humusdekke eller tynt torvdekke over berggrunnen."
+            },
+            {
+              "value": "Fyllmasse (antropogent materiale)",
+              "label": "Løsmasser som i hovedsak er transportert og avsatt av mennesker. Løsmassetypen finnes ofte i områder med nyere bygningsmasse og ved store veganlegg."
+            },
+            {
+              "value": "Steintipp",
+              "label": "Masser av sprengt fjell, transportert og avsatt av mennesker. Ofte knyttet til gruvedrift."
+            },
+            {
+              "value": "Menneskepåvirket materiale, ikke nærmere spesifisert",
+              "label": "Dominerende stedegne masser, omarbeidet i overflaten slik at opprinnelig løsmassetype ikke er gjenkjennelig."
+            },
+            {
+              "value": "Bart fjell",
+              "label": "Fjelloverflate uten løsmassedekke."
+            },
+            {
+              "value": "Bart fjell/fjell med usammenhengende eller tynt løsmassedekke",
+              "label": "Brukes på oversiktskart der bart fjell slås sammen med alle typer tynt eller usammenhengende løsmassedekke."
+            },
+            {
+              "value": "Harde sedimenter eller sedimentære bergarter (maringeologi)",
+              "label": "Blotning av konsoliderte sedimenter eller sedimentære bergarter på havbunnen."
+            },
+            {
+              "value": "Marin suspensjonsavsetning (maringeologi)",
+              "label": "Finkornete (leire, silt) sedimenter transportert og avsatt fra suspensjon. Draperer vanligvis underliggende sedimenter eller fjell og er oftest lagdelt."
+            },
+            {
+              "value": "Marin bunnstrømavsetning (maringeologi)",
+              "label": "Sedimenter som består av hovedsaklig sand og grus transportert og avsatt fra bunnstrømmer. Dekker bunnen av undersjøiske kanaler laget av bunnstrømmer. Har ofte kryss-sjiktet og lentikulær- sjiktet indre struktur."
+            },
+            {
+              "value": "Glasimarin avsetning (maringeologi)",
+              "label": "Hovedsakelig finkornete suspensjonsavsetninger (silt, leire) avsatt i nærhet av is/isbreer. Kan være påvirket av bunnstrømmer og utjevner topografien mer enn draperer. Forekommer i mektige lag i områder på kontinentalhyllen langs kysten og i fjorder."
+            },
+            {
+              "value": "Iskontaktavsetning (maringeologi)",
+              "label": "Sedimenter avsatt i kontakt med is. Kan være morene, glasifluvialt materiale, eller en blanding av glasialt avsatte sedimenter. Kornstørrelsen veksler mellom leire og grus alt etter hvilke prosesser som virket."
+            },
+            {
+              "value": "Utvaskingslag (maringeologi)",
+              "label": "Sedimenter bestående av sand, grus og bergartsfragmenter etter at finstoffet er vasket vekk av bølger og strøm. Danner et dekkende lag over morene eller andre jordarter med stor variasjon i kornstørrelser."
+            },
+            {
+              "value": "Glasifluvial deltaavsetning (maringeologi)",
+              "label": "Sedimenter transportert av breelver og avsatt i hav, bresjø eller innsjø."
+            },
+            {
+              "value": "Fluvial deltaavsetning (maringeologi)",
+              "label": "Sedimenter avsatt ved utløpet av en elv i en fjord, innsjø eller i havet. Kornstørrelsen er ofte i sandfraksjonen nær elveutløpet og mer finkornete på dypere vann. Har typisk skrålaging med helling i strømretningen."
+            },
+            {
+              "value": "Tidevannsavsetning (maringeologi)",
+              "label": "Avsetning dannet i kystnære områder ved tidevannstransport. Sedimentene er sandige til leirholdige med typiske strukturer som sanddyner, rifler, kryss-sjikting, mikro-kryss-sjikting, flasersjikting og lentikulær sjikting."
+            },
+            {
+              "value": "Estuarin avsetning (maringeologi)",
+              "label": "Et sediment avsatt i brakkvann i et estuarie. Sedimentet er karakterisert av finkornet materiale (silt, leire) av marin og fluvial opprinnelse blandet med en høy andel rester av terrestrisk organisk materiale."
+            },
+            {
+              "value": "Levé avsetning (maringeologi)",
+              "label": "Avsetning dannet som en forhøyning av sedimenter langs en eller begge sidene  av en undersjøisk kanal (kløft, viftedal eller dyphavskanal). Avsetningen kan ha varierende kornstørrelse, fra finkornet (leir) til nokså grovt materiale (sand)."
+            },
+            {
+              "value": "Grunnmarin avsetning (maringeologi)",
+              "label": "Sedimenter avsatt i turbulent grunt marint miljø der det fineste materialet er vasket ut og transportert til dypere vann av strømmer og bølger. Består av sand, grus og stein. I områder med mye sand kan sandbølger bygges med en karakteristisk kryss-sjikting og skrålaging."
+            },
+            {
+              "value": "Konturittavsetning (maringeologi)",
+              "label": "Klastiske sedimenter transportert og avsatt av kontur-strømmer langs egga kanten. Består av fint, velsortert materiale (silt og leir). Avsetningene har vanligvis horisontal- eller kryss-sjiktning og normal- eller omvendt gradering."
+            },
+            {
+              "value": "Turbidittavsetning (maringeologi)",
+              "label": "Avsetninger dannet ved sedimenttransport og utfelling fra en turbidittstrøm.  Består av materiale i kornstørrelse fra leire til sand og er ofte karakterisert ved normalgradert lagning og moderat til dårlig sortering. Finnes oftest ved foten av skråninger med stor mektighet av løse sedimenter (for eksempel langs kontinentalskråningen)."
+            },
+            {
+              "value": "Debrisstrømavsetning (maringeologi)",
+              "label": "Avsetning fra en flytende masse av stein, jord og slam. Den består av usortert materiale der mer enn halvparten av partiklene er større enn sandstørrelse."
+            },
+            {
+              "value": "Undersjøisk vifteavsetning (maringeologi)",
+              "label": "En konisk eller vifteformet avsetning beliggende ved munningen av en undersjøisk kløft. Består for det meste av fine sedimenter (leire, silt). Viften har en finlaget indre struktur med en svak helling av lagene mot dyphavet."
+            },
+            {
+              "value": "Kanalsavsetning (maringeologi)",
+              "label": "Sedimenter avsatt i en kanal. Avsetningene vil vanligvis bestå av relativt grove sedimenter (sand, grus)"
+            },
+            {
+              "value": "Dypmarin avsetning (maringeologi)",
+              "label": "Samlebetegnelse på dyphavssedimenter. Kan være både konturittisk, hemipelagisk, eupelagisk osv. Dette er fine sedimenter bunnfelt utenfor kontinentalmarginen. Består i stor grad av leire og rester av pelagiske organismer."
+            },
+            {
+              "value": "Bioklastisk avsetning (maringeologi)",
+              "label": "Sediment som for en stor del består av små partikler av biologisk opprinnelse (skjell, korall). Kornstørrelsen kan variere fra sand til hele skjell eller korallkolonier. Forekommer i begrensete områder der vekstforholdene har vært optimale over lengre tid og mengden av annet klastisk materiale liten."
+            },
+            {
+              "value": "Vulkanosedimentær avsetning (maringeologi)",
+              "label": "Avsetning som består av materiale av vulkansk opprinnelse. Alt etter kornstørrelse kan sedimentene deles inn i vulkansk aske, lapilli (2-64 mm) og breksje (>64mm)."
+            },
+            {
+              "value": "Lagdelte sedimenter (>1 m) over debrisstrøm (maringeologi)",
+              "label": "Lagdelte sedimenter (>1m) over debrisstrømavsetning."
+            },
+            {
+              "value": "Karbonatskorpe (maringeologi)",
+              "label": "Forekomster av karbonatsementerte sedimenter som danner opp til flere desimeter tykke skorper på havbunnen"
+            },
+            {
+              "value": "Morene med tynt dekke av glasimarine sedimenter",
+              "label": "Morene med tynt dekke (mindre enn 1-2 m) av glasimarine sedimenter"
+            },
+            {
+              "value": "Morene med tynt dekke av finkornige sedimenter",
+              "label": "Morene med tynt dekke (mindre enn 1-2 m) av finkornige sedimenter"
+            },
+            {
+              "value": "Skredmateriale, dekket av yngre sedimenter (maringeologi)",
+              "label": "Skredmateriale, dekket av yngre sedimenter"
+            },
+            {
+              "value": "Skredmateriale, delvis dekket av yngre sedimenter (maringeologi)",
+              "label": "Skredmateriale, delvis dekket av yngre sedimenter"
+            },
+            {
+              "value": "Skredmateriale og hemipelagiske avsetninger (maringeologi)",
+              "label": "Veksling mellom skredavsetninger og hemipelagiske avsetninger. Hemipelagiske avsetninger består stort sett av finkornet materiale, delvis produsert i vannmassene lokalt, og delvis tilført utenifra."
+            },
+            {
+              "value": "Uspesifisert marin avsetning (maringeologi)",
+              "label": "Marin avsetning med ukjent opprinnelse"
+            },
+            {
+              "value": "Jord- og flomskredavsetning",
+              "label": "Materiale transportert og avsatt av løsmasseskred (ikke leirskred). Avsetningene danner gjerne rygger, lober eller vifteformer."
+            },
+            {
+              "value": "Jord- og flomskredavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale transportert og avsatt av løsmasseskred (ikke leirskred). Avsetningene danner gjerne rygger, lober eller vifteformer."
+            },
+            {
+              "value": "Leirskredavsetning, stedvis med stor mektighet",
+              "label": "Avsetning som dannes når leirholdige sedimenter løsner og glir ut."
+            },
+            {
+              "value": "Leirskredavsetning, usammenhengende eller tynt dekke over berggrunnen",
+              "label": "Avsetning som dannes når leirholdige sedimenter løsner og glir ut."
+            },
+            {
+              "value": "Fjellskredavsetning, stedvis med stor mektighet",
+              "label": "Materiale transportert og avsatt av fjellskred. Fjellskred har stort volum og svært lang utløpslengde og avsetningen har derfor typisk stor utstrekning. Avsetningens overflate er ofte dominert av kantete blokker."
+            },
+            {
+              "value": "Fjellskredavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale transportert og avsatt av fjellskred. Fjellskred har stort volum og svært lang utløpslengde og avsetningen har derfor typisk stor utstrekning. Avsetningens overflate er ofte dominert av kantete blokker."
+            },
+            {
+              "value": "Steinsprangavsetning, stedvis med stor mektighet",
+              "label": "Avsetning bestående av usortert materiale nedenfor en bratt kant i fast fjell, hvor stein og blokk over tid har løsnet og falt ned til skråningsfoten. Materialet varierer i kornstørrelse fra sand til blokk, med generelt økende kornstørrelse med lengre avstand fra løsneområdet."
+            },
+            {
+              "value": "Steinsprangavsetning, usammenhengende eller tynt dekke",
+              "label": "Avsetning bestående av usortert materiale nedenfor en bratt kant i fast fjell, hvor stein og blokk over tid har løsnet og falt ned til skråningsfoten. Materialet varierer i kornstørrelse fra sand til blokk, med generelt økende kornstørrelse med lengre avstand fra løsneområdet."
+            },
+            {
+              "value": "Snøskredavsetning, stedvis med stor mektighet",
+              "label": "Materiale transportert og avsatt av snøskred. Kan omfatte alle kornstørrelser og er usortert. Gjentatt snøskredaktivitet over tid kan bygge store vifteformete avsetninger."
+            },
+            {
+              "value": "Snøskredavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale transportert og avsatt av snøskred. Kan omfatte alle kornstørrelser og er usortert."
+            },
+            {
+              "value": "Steinskredavsetning, stedvis med stor mektighet",
+              "label": "Materiale transportert og avsatt av steinskred. Steinskred har mindre volum og kortere utløpslengde enn fjellskred, men består hovedsakelig av større blokker enn nærliggende steinsprangavsetninger. Avsetningens overflate er ofte dominert av kantete blokker."
+            },
+            {
+              "value": "Steinskredavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale transportert og avsatt av steinskred. Steinskred har mindre volum og kortere utløpslengde enn fjellskred, men består hovedsakelig av større blokker enn nærliggende steinsprangavsetninger. Avsetningens overflate er ofte dominert av kantete blokker."
+            },
+            {
+              "value": "Snø- og jordskredavsetning, stedvis med stor mektighet",
+              "label": "Materiale transportert og avsatt av snøskred og jordskred. Begge prosessene er aktive ulike tider på året. Materialet omfatter alle kornstørrelser og er usortert. Gjentatt skredaktivitet over tid kan bygge store vifteformete avsetninger."
+            },
+            {
+              "value": "Snø- og jordskredavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale transportert og avsatt av snøskred og jordskred. Begge prosessene er aktive ulike tider på året. Materialet omfatter alle kornstørrelser og er usortert."
+            },
+            {
+              "value": "Jordskred- og steinsprangavsetning, stedvis  med stor mektighet",
+              "label": "Materiale transportert og avsatt av jordskred og steinsprang. Sorteringsgraden er varierende i avsetningen. Gjentatt skredaktivitet over tid kan danne tykke avsetninger."
+            },
+            {
+              "value": "Jordskred- og steinsprangavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale transportert og avsatt av jordskred og steinsprang. Sorteringsgraden er varierende i avsetningen."
+            },
+            {
+              "value": "Snø- og steinsprangavsetning, stedvis med stor mektighet",
+              "label": "Materiale transportert og avsatt av snøskred og steinsprang. Sorteringsgraden er varierende i avsetningen. Gjentatt skredaktivitet over tid kan danne tykke avsetninger."
+            },
+            {
+              "value": "Snø- og steinsprangavsetning, usammenhengende eller tynt dekke",
+              "label": "Materiale transportert og avsatt av snøskred og steinsprang. Sorteringsgraden er varierende i avsetningen."
+            },
+            {
+              "value": "Sigejord med høyt organisk innhold",
+              "label": "Sterkt frostpåvirket blandingsmateriale som beveger seg sakte nedover en slak skråning. Materialet har opprinnelse i en eller flere finstoffholdige løsmassetyper, ofte morene."
+            },
+            {
+              "value": "Steinrikt, sigende skråningsmateriale",
+              "label": "Grovkornet, frostpåvirket blandingsmateriale som beveger seg sakte nedover en skråning. Materialet har opprinnelse i forvitret fjell eller skredmateriale."
+            }
+          ],
+          "definition": "kvartærgeologiske løsmassetyper (jordartstyper)\n\nMerknad: Nærmere forklaring til definisjoner og dannelsesmåte er å finne i heftet; Kvartærgeologisk kart over Norge, 1:1 mill., tema jordarter (Thoresen M, Norges geologiske undersøkelse, 1991) og i NGU intern-rapport 2001.018 (Bergstrøm m.fl.)."
+        },
+        "taggedValues": {
+          "SOSI_navn": "JORDART"
+        }
+      },
+      {
+        "name": "stedfestingVerifisert",
+        "type": "Boolean",
+        "description": "angir om stedfestingen (koordinatene) er kontrollert og funnet i orden (verifisert)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "STED_VERIF"
+        }
+      },
+      {
+        "name": "geolBeskrivelse",
+        "type": "CharacterString",
+        "description": "tekstlig beskrivelse av objektet",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GEOBESK"
+        }
+      },
+      {
+        "name": "geolBeskrivelseURL",
+        "type": "CharacterString",
+        "description": "lenke (URL) til tekstlig beskrivelse av objektet",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GEOBESK_URL"
+        }
+      },
+      {
+        "name": "antallAnalyser",
+        "type": "Integer",
+        "description": "antallet utførte kjemiske og/eller mekaniske analyser",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "ANT_ANALYS"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Masseuttak"
+      ],
+      "associations": []
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "SANDGRUSUTTAK"
+    }
+  },
+  {
+    "name": "FellesegenskaperGrus",
+    "description": "abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper\n\nMerknad:\nSpesielt i produktspesifikasjonsarbeid vil en velge egenskaper og avgrensningslinjer fra denne klassen.",
+    "attributes": [
+      {
+        "name": "datauttaksdato",
+        "type": "DateTime",
+        "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "DATAUTTAKSDATO"
+        }
+      },
+      {
+        "name": "førsteDatafangstdato",
+        "type": "DateTime",
+        "description": "dato når data ble registrert/observert/målt første gang, som utgangspunkt for første digitalisering\n\nMerknad:\nførsteDatafangstdato brukes hvis det er av interesse å forvalte informasjon om når en ble klar over objektet. Dette kan for eksempel gjelde datoen for første flybilde som var utgangspunkt for registrering i en database.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FØRSTEDATAFANGSTDATO"
+        }
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPDATERINGSDATO"
+        }
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.\n\nMerknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.\n\nMerknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "cardinality": "0..1",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "LOKALID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans)",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "VERSJONID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "description": "beskrivelse av kvaliteten på stedfestingen\n\nMerknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "cardinality": "0..1",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "Målemetode",
+            "description": "metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+            "cardinality": "1",
+            "valueDomain": {
+              "codeList": "http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.0/Målemetode"
+            },
+            "taggedValues": {
+              "SOSI_navn": "MÅLEMETODE"
+            }
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "Integer",
+            "description": "punktstandardavviket i grunnriss for punkter samt tverravvik for linjer\n\nMerknad:\nOppgitt i cm",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "NØYAKTIGHET"
+            }
+          }
+        ]
+      },
+      {
+        "name": "stedfestingVerifisert",
+        "type": "Boolean",
+        "description": "angivelse om stedfestingen (koordinatene) er  kontrollert  og funnet i orden (verifisert)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "STED_VERIF"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Grus-4.0_Utkast"
+  },
+  {
+    "name": "KnustBergProvins",
+    "description": "område definert av geologiske egenskaper som avgrenser mulighetene for funn av bestemte økonomisk interessante bergarter til byggeråstoff\n\n--Definition--\nGeologic provinces classified by (hard) rock aggregate resources.",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "MineralRegistrering"
+      ],
+      "associations": [
+        {
+          "target": "GeolAvgrLinje",
+          "role": "avgrensning",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "KNUSTBERGPROVINS"
+    }
+  },
+  {
+    "name": "KnustBergProspekt",
+    "description": "område der det er potensial for en eller flere forekomster av bergarter egnet for byggeråstoffer basert på tidligere undersøkelser eller observasjoner, og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner for mineralressurser.\n\n--Definition--\nAn area that is a potential site of rock aggregate deposits, based on preliminary exploration, previous exploration.",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "MineralRegistrering"
+      ],
+      "associations": [
+        {
+          "target": "GeolAvgrLinje",
+          "role": "avgrensning",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "KNUSTBERGPROSPEKT"
+    }
+  },
+  {
+    "name": "MinresPrøvepunkt",
+    "description": "lokalitet hvor det er tatt (innsamlet) prøve(r) for videre bearbeidelse/analyse",
+    "attributes": [
+      {
+        "name": "posisjon",
+        "type": "Punkt",
+        "description": "sted som objektet eksisterer på",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "PUNKT"
+        }
+      },
+      {
+        "name": "ressursType",
+        "type": "RessursType",
+        "description": "hvilken type råstoff som kan være/er gjenstand for utvinning",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "edelmetaller",
+              "label": "Edelmetaller (Au,Ag,PGE); Gull, sølv og metaller i platinagruppen (Ru, Ro, Pd, Os, Ir, Pt) og rhenium.\n\nPrecious metals: gold, silver and platinum group metals and rhenium; ruthenium, rhodium, palladium, osmium, iridium, and platinum"
+            },
+            {
+              "value": "jernmetaller",
+              "label": "Jernmetaller (Fe, Mn, Ti); jern, mangan og titan\n\nOres of iron, manganese and titanium."
+            },
+            {
+              "value": "jernlegeringMetaller",
+              "label": "Jernlegeringsmetaller (Cr, Ni, Co, V, Mo, W); krom, nikkel, kobolt, vanadium, molybden og wolfram.\n\nMetals that are mined for their alloying properties with iron in the manufacture of steel; chromium, nickel, cobalt, vanadium, molybdenum and wolfram."
+            },
+            {
+              "value": "basemetaller",
+              "label": "Basemetaller (Cu, Zn, Pb inkl. Fe-sulfider, As, Sb, Bi, Sn); kobber, sink, bly, jern-sulfider, arsen, antimon, vismut og tinn\n\nBase metals; copper, zink, lead, iron-sulphides, arsenic, antimony, bismuth and tin.\nIn chemistry, the term base metal is used informally to refer to a metal that oxidizes or corrodes relatively easily and reacts variably with diluted hydrochloric acid (HCl) to form hydrogen. Examples include iron, nickel, lead and zinc. Copper is also considered a base metal because it oxidizes relatively easily, although it does not react with HCl. - http://en.wikipedia.org/wiki/Base_metal"
+            },
+            {
+              "value": "energimetaller",
+              "label": "Energimetaller (U, Th); uran og thorium\nEnergy minerals; uranium and thorium"
+            },
+            {
+              "value": "spesialmetaller",
+              "label": "Spesialmetaller omfatter metaller og grunnstoffer som normalt ikke passer inn i krystallstrukturen til vanlige mineraler (Nb, Ta, Be, Li, Sc, REE); niob, tantal, beryllium, litium, scandium og sjeldne jordartsmetaller.\n\nSpecial metals and incompatible elements (Nb, Ta, Be, Li, Sc, and REE)."
+            },
+            {
+              "value": "andreMetaller",
+              "label": "Andre metaller.\n\nOther metals: Cs, Ga, Ge, Hf, In, Cd, Hg, Re, Rb, Se, Si, Sr, S, Te, Tl, Zr, Mg and metallic elements used for non-metallic products: Ba, K, Ca, Na, Rb\nCommodity is a metal that is extracted from an ore material mined from the Earth"
+            },
+            {
+              "value": "karbonatMineraler",
+              "label": "Karbonatmineraler; Kalkstein, dolomittstein, kalkspatmarmor, dolomittmarmor og blandingsbergarter mellom disse. Ofte brukte forkortelser er kalk for både kalkstein og kalkspatmarmor og dolomitt for både dolomittstein og dolomittmarmor.\n\nLimestone, dolomite and calcite and dolomite marble.\n\nA trigonal calcium carbonate mineral CaCO3 used in large crystal form for optics and as compound additive for soil remediation, soil stabilization and concrete repair. http://www.webmineral.com/data/Calcite.shtml http://en.wikipedia.org/wiki/Calcite"
+            },
+            {
+              "value": "silika",
+              "label": "Kvarts: kvartssand, kvartssandstein, kvartsitt og hydrotermal kvarts.\n\nQuartz, quartz sand, quartz sandstone, quartzite and hydrothermal quartz.\nSilicon dioxide, also known as silica (from the Latin silex), is a chemical compound that is a dioxide of silicon with the chemical formula SiO2 - http://en.wikipedia.org/wiki/Silica"
+            },
+            {
+              "value": "talk",
+              "label": "Talk og serpentin-førende bergarter\n\nTalc and serpentinite.\nTalc is an important industrialMineral. Its resistance to heat, electricity and acids make it an ideal surface for lab counter tops and electrical switchboards. It is also an important filler material for paints, rubber and insecticides. Even with all these uses, most people only know talc as the primary ingredient in talcum powder.- http://www.galleries.com/Talc"
+            },
+            {
+              "value": "feltspat",
+              "label": "Feltspatmineraler; pegmatittisk feltspat og anortositt\nFeldspar minerals; pegmatittic feldspar og anorthosite\n\nFeldspars (KAlSi3O8 – NaAlSi3O8 – CaAl2Si2O8) are a group of rock-forming tectosilicate minerals that make up as much as 60% of the Earth's crust. - http://en.wikipedia.org/wiki/Feldspar"
+            },
+            {
+              "value": "olivin",
+              "label": "Olivin\n\nOlivine"
+            },
+            {
+              "value": "grafitt",
+              "label": "Grafitt; flak-grafitt eller amorf grafitt.\n\nGraphite\nGraphite is a polymorph of the element carbon. Diamond is another polymorph. The two share the same chemistry, carbon, but have very different structures and very different properties. - http://www.galleries.com/Graphite"
+            },
+            {
+              "value": "fossiltBrensel",
+              "label": "Fossilt brensel\n\nFossil fuel"
+            },
+            {
+              "value": "nefelinSyenitt",
+              "label": "Nefelin syenitt\n\nNepheline syenite"
+            },
+            {
+              "value": "magnesiumMineraler",
+              "label": "Magnesium-mineraler; magnesitt og brucitt.\n\nMagnesium minerals.; Magnesite and brucite"
+            },
+            {
+              "value": "zirkon",
+              "label": "Zirkon\n\nZirkon"
+            },
+            {
+              "value": "berylliumMineraler",
+              "label": "Beryllium-førende mineraler"
+            },
+            {
+              "value": "glimmermineraler",
+              "label": "Glimmermineraler; muskovitt, biotitt m.m.\n\nMica minerals; muscovite, biotite and more."
+            },
+            {
+              "value": "andreIndustrimineraler",
+              "label": "Andre industrimineraler\n\nOther industrial minerals\nA compound Earth material, or rock product that is directly used for industrial purposes. Not a specific mineral constituent in the mined material."
+            },
+            {
+              "value": "sandsteinOgKonglomerat",
+              "label": "Uomdannete sedimentære bergarter inklusiv sandstein og konglomerat, samt kvartsitt, benyttet som naturstein. Er i INSPIRE inkludert i «sandstone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone</u></font></a>"
+            },
+            {
+              "value": "skiferOgHellestein",
+              "label": "Alle typer omdannete bergarter som kan splittes etter naturlige sjikt til plater og benyttes som naturstein. Inkluderer leirskifer, fyllitt, glimmerskifer, kvartsskifer og grønnskifer. Leirskifer er i INSPIRE inkludert i «slate»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate</u></font></a>, grønnskifer i «greenstone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone</u></font></a> og resten i  «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a>"
+            },
+            {
+              "value": "kvernstein",
+              "label": "Bergarter som historisk er benyttet til produksjon av kvernstein, inklusiv glimmerskifer, amfibolitt og gneis"
+            },
+            {
+              "value": "brynestein",
+              "label": "Bergarter som historisk er benyttet til produksjon av brynestein, inklusiv siltstein, kvartsskifer og fyllitt"
+            },
+            {
+              "value": "murestein",
+              "label": "Uspesifiserte bergarter som benyttes til produksjon av tørrmurstein. Kan inkludere kvartsskifer og gneis"
+            },
+            {
+              "value": "spodumen",
+              "label": "Spodumen er et mineral i pyroksengruppa, et litiumaluminium-silikat, LiAlSi2O6. Det finnes på granittpegmatitter og er et viktig råstoff for framstilling av litiumsambindinger."
+            },
+            {
+              "value": "gneis",
+              "label": "Gneis benyttet som naturstein. Inkluderer alle typer gneis. Er i INSPIRE inkludert i «granite» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite</u></font></a>"
+            },
+            {
+              "value": "marmorOgKalkstein",
+              "label": "Karbonatrike bergarter benyttet som naturstein. Inkluderer marmor, dolomitt og kalkstein. Marmor er i INSPIRE inkludert i «marble» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble</u></font></a>\nog kalkstein i «limestone» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone</u></font></a>"
+            },
+            {
+              "value": "klebersteinOgSerpentinitt",
+              "label": "Kleberstein og serpentinitt benyttet som naturstein. Kleberstein er i INSPIRE inkludert i «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a> og serpentinitt i «marble»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble</u></font></a>"
+            },
+            {
+              "value": "granittOgAndreStørkningsbergarter",
+              "label": "Alle dyp- og gangbergarter, inklusiv granitt, gabbro, syenitt, monzonitt, doleritt, larvikitt, anortositt, dioritt, mangeritt, tonalitt og trondhjemitt benyttet som naturstein. Er i INSPIRE inkludert i «granite»\n<a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite</u></font></a>"
+            },
+            {
+              "value": "knustBerg",
+              "label": "Knust berg\n\nBroad category for coarse particulate material used in construction, including sand, gravel, crushed stone, slag, recycled concrete and geosynthetic aggregates. - http://en.wikipedia.org/wiki/Construction_aggregate"
+            },
+            {
+              "value": "sandOgGrus",
+              "label": "Sand og grus\n\nDurable rock fragments (silicates, flints, etc) with a size range: 0.063 mm - 80mm, derived from the weathering, erosion and transport of rocks by glacial or fluvial processes. Used for aggregate purposes and construction fill."
+            },
+            {
+              "value": "grusOgAndreLøsmasser",
+              "label": "Grus og andre løsmasser\n\nSand and gravel and crushed rock extracted from the ground"
+            },
+            {
+              "value": "skredOgForvitring",
+              "label": "Skred og forvitringsmateriale"
+            },
+            {
+              "value": "skjellsand",
+              "label": "Skjellsand"
+            },
+            {
+              "value": "steintipp",
+              "label": "Steintipp"
+            },
+            {
+              "value": "leire",
+              "label": "Leire\n\nEnd use is determined by the properties of the material therefore it is a valid commodity type"
+            },
+            {
+              "value": "torv",
+              "label": "Torv\n\nAn accumulation of partially decayed vegetation or organic matter that forms in wetland conditions, where flooding obstructs flows of oxygen from the atmosphere, slowing rates of decomposition. Peat is commonly harvested as an important source of fuel in certain parts of the world. http://en.wikipedia.org/wiki/Peat"
+            },
+            {
+              "value": "annenNaturstein",
+              "label": "Annen naturstein utenom kategoriene, inklusiv eklogitt, thulitt og amfibolitt. Er i INSPIRE inkludert i «miscellaneous dimension stones» <a href=\"https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones\"><font color=\"#0563c1\"><u>https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones</u></font></a>"
+            },
+            {
+              "value": "uspesifisert",
+              "label": "Uspesifisert"
+            }
+          ],
+          "definition": "hvilken type råstoff som kan være/er gjenstand for utvinning.\n\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCodeValue\n\n-- Definition --\nValues indicating the type of commodity.\n\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc."
+        },
+        "taggedValues": {
+          "SOSI_navn": "RESSTYPE"
+        }
+      },
+      {
+        "name": "ressursUndertype",
+        "type": "CharacterString",
+        "description": "underinndeling av materialtypene som kan være/er gjenstand for utvinning",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "RESSUNTYPE"
+        }
+      },
+      {
+        "name": "identRåstoffobj",
+        "type": "Integer",
+        "description": "forekomstobjektets identifikasjonskode\n\nMerknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).\n\nEksempel: 17290010101",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "FOREKOM_ID"
+        }
+      },
+      {
+        "name": "forekomstNummer",
+        "type": "Integer",
+        "description": "unik nummerering av forekomsten som råstoffobjektet tilhører\n\nMerknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten\n\nEks. 1729001",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "R_FNR"
+        }
+      },
+      {
+        "name": "navnRåstoffobj",
+        "type": "CharacterString",
+        "description": "navn på råstoffobjekt",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "FOREKNAVN"
+        }
+      },
+      {
+        "name": "prøveNummer",
+        "type": "Integer",
+        "description": "nummerering av prøvepunkt i forekomsten eller i lokaliteten\n\nMerknad: Er en del av FOREKOM_ID: Eks: 172900101(01)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "R_PNR"
+        }
+      },
+      {
+        "name": "antallAnalyser",
+        "type": "CharacterString",
+        "description": "antallet utførte kjemiske og/eller mekaniske analyser",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "ANT_ANALYS"
+        }
+      },
+      {
+        "name": "geolBeskrivelse",
+        "type": "CharacterString",
+        "description": "beskrivende tekstfelt eller link (URL) til tekstlig beskrivelse",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GEOBESK"
+        }
+      },
+      {
+        "name": "geolBeskrivelseURL",
+        "type": "CharacterString",
+        "description": "lenke (URL) til tekstlig beskrivelse av objektet",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "GEOBESK_URL"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "MINRESPROEVEPKT"
+    }
+  },
+  {
+    "name": "SandGrusRegistrering",
+    "description": "Enhver ansamling av naturlig avsatt sand og grus\n\n--Definition--\nAny natural occurence of sand and gravel",
+    "attributes": [],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "MineralRegistrering"
+      ],
+      "associations": [
+        {
+          "target": "GeolAvgrLinje",
+          "role": "avgrensning",
+          "cardinality": "0..*"
+        }
+      ]
+    },
+    "package": "Grus-4.0_Utkast",
+    "taggedValues": {
+      "SOSI_navn": "SANDGRUSREGISTRERING"
+    }
+  }
+]

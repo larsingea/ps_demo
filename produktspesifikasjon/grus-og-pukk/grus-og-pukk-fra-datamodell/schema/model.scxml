@@ -1,0 +1,4561 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sc:Model xmlns:sc="http://shapechange.net/model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="UTF-8" scxmlProducer="ps.editor.actions" scxmlProducerVersion="1.0" xsi:schemaLocation="http://shapechange.net/model http://shapechange.net/resources/schema/ShapeChangeExportedModel.xsd">
+ <sc:packages>
+  <sc:Package>
+   <sc:name>grus-og-pukk-fra-datamodell</sc:name>
+   <sc:id>P1</sc:id>
+   <sc:stereotypes>
+    <sc:Stereotype>application schema</sc:Stereotype>
+   </sc:stereotypes>
+   <sc:taggedValues>
+    <sc:TaggedValue>
+     <sc:name>targetNamespace</sc:name>
+     <sc:values>
+      <sc:Value>https://skjema.geonorge.no/SOSI/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/1.0</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>xmlns</sc:name>
+     <sc:values>
+      <sc:Value>grusogpukkfradatamodell</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>version</sc:name>
+     <sc:values>
+      <sc:Value>1.0</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>xsdDocument</sc:name>
+     <sc:values>
+      <sc:Value>grus-og-pukk-fra-datamodell.xsd</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>jsonDocument</sc:name>
+     <sc:values>
+      <sc:Value>grus-og-pukk-fra-datamodell.json</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+   </sc:taggedValues>
+   <sc:classes>
+    <sc:Class>
+     <sc:name>Identifikasjon</sc:name>
+     <sc:id>C17</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>datatype</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>lokalId</sc:name>
+       <sc:id>C17_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>LOKALID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+       <sc:typeName>CharacterString</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>navnerom</sc:name>
+       <sc:id>C17_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>NAVNEROM</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+       <sc:typeName>CharacterString</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>versjonId</sc:name>
+       <sc:id>C17_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>identifikasjon av en spesiell versjon av et geografisk objekt (instans)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>VERSJONID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>0..1</sc:cardinality>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+       <sc:typeName>CharacterString</sc:typeName>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>Posisjonskvalitet</sc:name>
+     <sc:id>C18</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>datatype</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>målemetode</sc:name>
+       <sc:id>C18_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>MÅLEMETODE</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+       <sc:typeId>C25</sc:typeId>
+       <sc:typeName>Målemetode</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>nøyaktighet</sc:name>
+       <sc:id>C18_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>punktstandardavviket i grunnriss for punkter samt tverravvik for linjer
+
+Merknad:
+Oppgitt i cm</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>NØYAKTIGHET</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>0..1</sc:cardinality>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>RessursType</sc:name>
+     <sc:id>C19</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>hvilken type råstoff som kan være/er gjenstand for utvinning.
+
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCodeValue
+
+-- Definition --
+Values indicating the type of commodity.
+
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>edelmetaller</sc:name>
+       <sc:id>C19_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Edelmetaller (Au,Ag,PGE); Gull, sølv og metaller i platinagruppen (Ru, Ro, Pd, Os, Ir, Pt) og rhenium.
+
+Precious metals: gold, silver and platinum group metals and rhenium; ruthenium, rhodium, palladium, osmium, iridium, and platinum</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>jernmetaller</sc:name>
+       <sc:id>C19_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Jernmetaller (Fe, Mn, Ti); jern, mangan og titan
+
+Ores of iron, manganese and titanium.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>jernlegeringMetaller</sc:name>
+       <sc:id>C19_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Jernlegeringsmetaller (Cr, Ni, Co, V, Mo, W); krom, nikkel, kobolt, vanadium, molybden og wolfram.
+
+Metals that are mined for their alloying properties with iron in the manufacture of steel; chromium, nickel, cobalt, vanadium, molybdenum and wolfram.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>basemetaller</sc:name>
+       <sc:id>C19_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Basemetaller (Cu, Zn, Pb inkl. Fe-sulfider, As, Sb, Bi, Sn); kobber, sink, bly, jern-sulfider, arsen, antimon, vismut og tinn
+
+Base metals; copper, zink, lead, iron-sulphides, arsenic, antimony, bismuth and tin.
+In chemistry, the term base metal is used informally to refer to a metal that oxidizes or corrodes relatively easily and reacts variably with diluted hydrochloric acid (HCl) to form hydrogen. Examples include iron, nickel, lead and zinc. Copper is also considered a base metal because it oxidizes relatively easily, although it does not react with HCl. - http://en.wikipedia.org/wiki/Base_metal</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>energimetaller</sc:name>
+       <sc:id>C19_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Energimetaller (U, Th); uran og thorium
+Energy minerals; uranium and thorium</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>spesialmetaller</sc:name>
+       <sc:id>C19_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Spesialmetaller omfatter metaller og grunnstoffer som normalt ikke passer inn i krystallstrukturen til vanlige mineraler (Nb, Ta, Be, Li, Sc, REE); niob, tantal, beryllium, litium, scandium og sjeldne jordartsmetaller.
+
+Special metals and incompatible elements (Nb, Ta, Be, Li, Sc, and REE).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>andreMetaller</sc:name>
+       <sc:id>C19_7</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Andre metaller.
+
+Other metals: Cs, Ga, Ge, Hf, In, Cd, Hg, Re, Rb, Se, Si, Sr, S, Te, Tl, Zr, Mg and metallic elements used for non-metallic products: Ba, K, Ca, Na, Rb
+Commodity is a metal that is extracted from an ore material mined from the Earth</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>karbonatMineraler</sc:name>
+       <sc:id>C19_8</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Karbonatmineraler; Kalkstein, dolomittstein, kalkspatmarmor, dolomittmarmor og blandingsbergarter mellom disse. Ofte brukte forkortelser er kalk for både kalkstein og kalkspatmarmor og dolomitt for både dolomittstein og dolomittmarmor.
+
+Limestone, dolomite and calcite and dolomite marble.
+
+A trigonal calcium carbonate mineral CaCO3 used in large crystal form for optics and as compound additive for soil remediation, soil stabilization and concrete repair. http://www.webmineral.com/data/Calcite.shtml http://en.wikipedia.org/wiki/Calcite</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>8</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>silika</sc:name>
+       <sc:id>C19_9</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kvarts: kvartssand, kvartssandstein, kvartsitt og hydrotermal kvarts.
+
+Quartz, quartz sand, quartz sandstone, quartzite and hydrothermal quartz.
+Silicon dioxide, also known as silica (from the Latin silex), is a chemical compound that is a dioxide of silicon with the chemical formula SiO2 - http://en.wikipedia.org/wiki/Silica</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>9</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>talk</sc:name>
+       <sc:id>C19_10</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Talk og serpentin-førende bergarter
+
+Talc and serpentinite.
+Talc is an important industrialMineral. Its resistance to heat, electricity and acids make it an ideal surface for lab counter tops and electrical switchboards. It is also an important filler material for paints, rubber and insecticides. Even with all these uses, most people only know talc as the primary ingredient in talcum powder.- http://www.galleries.com/Talc</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>10</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>feltspat</sc:name>
+       <sc:id>C19_11</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Feltspatmineraler; pegmatittisk feltspat og anortositt
+Feldspar minerals; pegmatittic feldspar og anorthosite
+
+Feldspars (KAlSi3O8 – NaAlSi3O8 – CaAl2Si2O8) are a group of rock-forming tectosilicate minerals that make up as much as 60% of the Earth's crust. - http://en.wikipedia.org/wiki/Feldspar</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>11</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>olivin</sc:name>
+       <sc:id>C19_12</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Olivin
+
+Olivine</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>12</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>grafitt</sc:name>
+       <sc:id>C19_13</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Grafitt; flak-grafitt eller amorf grafitt.
+
+Graphite
+Graphite is a polymorph of the element carbon. Diamond is another polymorph. The two share the same chemistry, carbon, but have very different structures and very different properties. - http://www.galleries.com/Graphite</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>13</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>fossiltBrensel</sc:name>
+       <sc:id>C19_14</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Fossilt brensel
+
+Fossil fuel</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>14</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>nefelinSyenitt</sc:name>
+       <sc:id>C19_15</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Nefelin syenitt
+
+Nepheline syenite</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>15</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>magnesiumMineraler</sc:name>
+       <sc:id>C19_16</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Magnesium-mineraler; magnesitt og brucitt.
+
+Magnesium minerals.; Magnesite and brucite</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>16</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>zirkon</sc:name>
+       <sc:id>C19_17</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Zirkon
+
+Zirkon</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>17</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>berylliumMineraler</sc:name>
+       <sc:id>C19_18</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Beryllium-førende mineraler</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>18</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>glimmermineraler</sc:name>
+       <sc:id>C19_19</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Glimmermineraler; muskovitt, biotitt m.m.
+
+Mica minerals; muscovite, biotite and more.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>19</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>andreIndustrimineraler</sc:name>
+       <sc:id>C19_20</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Andre industrimineraler
+
+Other industrial minerals
+A compound Earth material, or rock product that is directly used for industrial purposes. Not a specific mineral constituent in the mined material.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>20</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>sandsteinOgKonglomerat</sc:name>
+       <sc:id>C19_21</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Uomdannete sedimentære bergarter inklusiv sandstein og konglomerat, samt kvartsitt, benyttet som naturstein. Er i INSPIRE inkludert i «sandstone» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>21</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>skiferOgHellestein</sc:name>
+       <sc:id>C19_22</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Alle typer omdannete bergarter som kan splittes etter naturlige sjikt til plater og benyttes som naturstein. Inkluderer leirskifer, fyllitt, glimmerskifer, kvartsskifer og grønnskifer. Leirskifer er i INSPIRE inkludert i «slate»
+&lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, grønnskifer i «greenstone» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; og resten i  «miscellaneous dimension stones» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>22</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>kvernstein</sc:name>
+       <sc:id>C19_23</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bergarter som historisk er benyttet til produksjon av kvernstein, inklusiv glimmerskifer, amfibolitt og gneis</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>23</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>brynestein</sc:name>
+       <sc:id>C19_24</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bergarter som historisk er benyttet til produksjon av brynestein, inklusiv siltstein, kvartsskifer og fyllitt</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>24</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>murestein</sc:name>
+       <sc:id>C19_25</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Uspesifiserte bergarter som benyttes til produksjon av tørrmurstein. Kan inkludere kvartsskifer og gneis</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>25</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>spodumen</sc:name>
+       <sc:id>C19_26</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Spodumen er et mineral i pyroksengruppa, et litiumaluminium-silikat, LiAlSi2O6. Det finnes på granittpegmatitter og er et viktig råstoff for framstilling av litiumsambindinger.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>26</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>gneis</sc:name>
+       <sc:id>C19_27</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Gneis benyttet som naturstein. Inkluderer alle typer gneis. Er i INSPIRE inkludert i «granite» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>27</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>marmorOgKalkstein</sc:name>
+       <sc:id>C19_28</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Karbonatrike bergarter benyttet som naturstein. Inkluderer marmor, dolomitt og kalkstein. Marmor er i INSPIRE inkludert i «marble» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;
+og kalkstein i «limestone» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>28</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>klebersteinOgSerpentinitt</sc:name>
+       <sc:id>C19_29</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kleberstein og serpentinitt benyttet som naturstein. Kleberstein er i INSPIRE inkludert i «miscellaneous dimension stones» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; og serpentinitt i «marble»
+&lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>29</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>granittOgAndreStørkningsbergarter</sc:name>
+       <sc:id>C19_30</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Alle dyp- og gangbergarter, inklusiv granitt, gabbro, syenitt, monzonitt, doleritt, larvikitt, anortositt, dioritt, mangeritt, tonalitt og trondhjemitt benyttet som naturstein. Er i INSPIRE inkludert i «granite»
+&lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>30</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>knustBerg</sc:name>
+       <sc:id>C19_31</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Knust berg
+
+Broad category for coarse particulate material used in construction, including sand, gravel, crushed stone, slag, recycled concrete and geosynthetic aggregates. - http://en.wikipedia.org/wiki/Construction_aggregate</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>31</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>sandOgGrus</sc:name>
+       <sc:id>C19_32</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sand og grus
+
+Durable rock fragments (silicates, flints, etc) with a size range: 0.063 mm - 80mm, derived from the weathering, erosion and transport of rocks by glacial or fluvial processes. Used for aggregate purposes and construction fill.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>32</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>grusOgAndreLøsmasser</sc:name>
+       <sc:id>C19_33</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Grus og andre løsmasser
+
+Sand and gravel and crushed rock extracted from the ground</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>33</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>skredOgForvitring</sc:name>
+       <sc:id>C19_34</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Skred og forvitringsmateriale</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>34</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>skjellsand</sc:name>
+       <sc:id>C19_35</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Skjellsand</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>35</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>steintipp</sc:name>
+       <sc:id>C19_36</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Steintipp</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>36</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>leire</sc:name>
+       <sc:id>C19_37</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Leire
+
+End use is determined by the properties of the material therefore it is a valid commodity type</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>37</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>torv</sc:name>
+       <sc:id>C19_38</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Torv
+
+An accumulation of partially decayed vegetation or organic matter that forms in wetland conditions, where flooding obstructs flows of oxygen from the atmosphere, slowing rates of decomposition. Peat is commonly harvested as an important source of fuel in certain parts of the world. http://en.wikipedia.org/wiki/Peat</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>38</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>annenNaturstein</sc:name>
+       <sc:id>C19_39</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen naturstein utenom kategoriene, inklusiv eklogitt, thulitt og amfibolitt. Er i INSPIRE inkludert i «miscellaneous dimension stones» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>39</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>uspesifisert</sc:name>
+       <sc:id>C19_40</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Uspesifisert</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>40</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>RåstoffBetydning</sc:name>
+     <sc:id>C20</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>En mineralforekomsts antatte betydning for fremtidig verdiskaping, i forhold til lokale, regionale og nasjonale forvaltningsnivå.
+
+Kodelisten finnes ikke i INSPIRE-spesifikasjonen, men er en tilpasning til begrepsbruk i norsk lovverk (PBL §5.4 og KU-forskrift §10), KMDs nasjonale forventninger (2019-2023), og fra europeiske spesifikasjoner i Raw Materials Initiative.</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>internasjonalBetydning</sc:name>
+       <sc:id>C20_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>1. Metall- og industrimineralforekomster med dokumenterte ressurser som kan gi et signifikant bidrag til internasjonale behov
+- herunder forekomster med meget høy dokumentert in situ-verdi basert på kvalitet og tonnasje
+- herunder forekomster med potensial for årsproduksjon som dekker signifikant andel av behov i EU/EØS
+
+2. Forekomster av strategisk viktige eller «kritiske» råstoff
+- herunder dokumenterte forekomster av mineraler på EU liste over kritiske råstoffer som utnyttes eller har potensial for framtidig utnyttelse
+
+3. Forekomster av byggeråstoffer med verdi eller potensial for eksport på minst 1 millioner tonn årlig</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>nasjonalBetydning</sc:name>
+       <sc:id>C20_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>1. Mineralforekomster som har et bekreftet eller sannsynlig, betydelig fremtidig verdiskapingspotensial
+- herunder forekomster med betydelig in-situ verdi
+- herunder byggeråstoffer med betydelig potensial for eksport
+
+2. Mineralforekomster som har unike kvaliteter som gjør dem særlig egnet til foredlende industri
+- herunder industrimineraler og spesialmetaller av særlig høy kvalitet
+
+3. Mineralforekomster som har unike kvaliteter som byggeråstoff
+- herunder knust berg (pukk)- og grusforekomster med unike fysiske egenskaper
+- herunder natursteinsforekomster med unike egenskaper og attraktivitet i det internasjonale markedet
+- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til andre viktige samfunnsområder
+
+4. Forekomster av strategisk viktige eller «kritiske» råstoff
+- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til viktige norske samfunnsområder
+
+5. Forekomster som er særdeles viktig for Norges nasjonale infrastruktur
+- herunder grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger til større befolkningssentra i Norge</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>regionalBetydning</sc:name>
+       <sc:id>C20_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>1. Mineralforekomster som har et bekreftet eller sannsynlig fremtidig verdiskapingspotensial med in situ-verdi på mellom 100 og 1000 millioner kroner
+
+2. Mineralforekomster som er særdeles viktig for regional infrastruktur
+- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger innen en region
+- herunder natursteinsforekomster som har eller har hatt særlig betydning for byggeskikk og arkitektur i en region</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>lokalBetydning</sc:name>
+       <sc:id>C20_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Mineralforekomster som er viktig for lokal infrastruktur
+- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som kan være viktig for forsyninger innen en kommune</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>litenBetydning</sc:name>
+       <sc:id>C20_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Forekomsten har liten eller ingen økonomisk betydning</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>ikkeVurdert</sc:name>
+       <sc:id>C20_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Forekomstens økonomiske betydning er ikke vurdert</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>MineralRegistreringType</sc:name>
+     <sc:id>C21</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>Klassifisering av objekter i henhold til tilgjengelig kunnskapsnivå
+
+-- Definition --
+The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit.</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:taggedValues>
+      <sc:TaggedValue>
+       <sc:name>asDictionary</sc:name>
+       <sc:values>
+        <sc:Value>false</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+     </sc:taggedValues>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>forekomst</sc:name>
+       <sc:id>C21_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Et punkt med et arealfestet område (polygon) der det finnes en dokumentert eller estimert ressurs, som antas å være økonomisk interessant og som enten er eller kan være utnyttbare i fremtida. En forekomst må ha et estimat eller en beregning av volum og kvalitet. For forekomster under bakken vil arealet definere projeksjon til overflaten.
+Området omkranser en dokumentert (målt) reserve/ressurs eller antatt ressurs. Kan omfatte malmer, industrimineraler, og naturstein.
+
+INSPIRE Description:
+A mass of naturally occurring mineral material, e.g. metal ores or non-metallic minerals, usually of economic value, without regard to mode of origin. Accumulations of coal and petroleum may or may not be included.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>registrering</sc:name>
+       <sc:id>C21_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Et punkt med eller uten et arealfestet område (polygon) der det er observert og/eller analysert forhøyete verdier av utvinnbare mineraler og bergarter. Kan inneholde lite eller mye informasjon og kan også inkludere gamle steinbrudd, skjerp og nedlagte gruver og massetak. Kan omfatte malmer, industrimineraler og naturstein.
+
+INSPIRE Description:
+Any ore or economic mineral in any concentration found in bedrock or as float.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>prospekt</sc:name>
+       <sc:id>C21_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Et punkt med et arealfestet område (polygon) med høy sannsynlighet for funn av hittil lite eller ikke dokumenterte økonomisk interessante mineralressurser. Arealet kan være basert på kartlagt geologi, lovende analyser av borkjerner og andre prøver, geofysiske anomalier og lignende. Ytterligere ressursgeologiske undersøkelser er nødvendig for å avklare potensialet.
+
+INSPIRE Description:
+An area that is a potential site of mineral deposits, based on preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>provins</sc:name>
+       <sc:id>C21_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>En mineralprovins er et eller flere arealfestete områder (polygoner) der det finnes forhøyete muligheter for funn av angitte mineralressurser. En mineralprovins kan omkranse en eller flere forekomster, prospekter og registreringer
+
+INSPIRE Description:
+Geologic provinces classified by mineral resources.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>TypeRastoffVirksomhet</sc:name>
+     <sc:id>C22</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>angir type på eventuell aktivitet</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>prospektering</sc:name>
+       <sc:id>C22_1</sc:id>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>røsking</sc:name>
+       <sc:id>C22_2</sc:id>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>skjerp</sc:name>
+       <sc:id>C22_3</sc:id>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>prøvedrift</sc:name>
+       <sc:id>C22_4</sc:id>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>gruvedrift</sc:name>
+       <sc:id>C22_5</sc:id>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>steinbrudd</sc:name>
+       <sc:id>C22_6</sc:id>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>muligFremtidigUttaksområde</sc:name>
+       <sc:id>C22_7</sc:id>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>typelokalitet</sc:name>
+       <sc:id>C22_8</sc:id>
+       <sc:sequenceNumber>8</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>grustakMassetak</sc:name>
+       <sc:id>C22_9</sc:id>
+       <sc:sequenceNumber>9</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>utplanertMassetakEllerEndretArealbruk</sc:name>
+       <sc:id>C22_10</sc:id>
+       <sc:sequenceNumber>10</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>observasjonslokalitet</sc:name>
+       <sc:id>C22_11</sc:id>
+       <sc:sequenceNumber>11</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>leirtak</sc:name>
+       <sc:id>C22_12</sc:id>
+       <sc:sequenceNumber>12</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>SluttbrukPotensial</sc:name>
+     <sc:id>C23</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>bruksområde for type mineralressurs
+
+-- Definition --
+Values indicating the end-use potential of the mineral.
+
+-- Description --
+&lt;font color="#211d1e"&gt;EXAMPLE: &lt;/font&gt;for energy, fertilizer, building raw material etc.</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:taggedValues>
+      <sc:TaggedValue>
+       <sc:name>codeList</sc:name>
+       <sc:values>
+        <sc:Value>http://inspire.ec.europa.eu/codelist/EndusePotentialValue</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+      <sc:TaggedValue>
+       <sc:name>asDictionary</sc:name>
+       <sc:values>
+        <sc:Value>true</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+     </sc:taggedValues>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>metaller</sc:name>
+       <sc:id>C23_1</sc:id>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>edelmetaller</sc:name>
+       <sc:id>C23_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>INSPIRE - Silver; Gold; Platinoids
+general (Pt, Pd ..)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>jernlegeringsmetaller</sc:name>
+       <sc:id>C23_3</sc:id>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>naturstein</sc:name>
+       <sc:id>C23_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>INSPIRE - Building and dimension stone.
+Natural Stone used in a block, flag or slate form for construction or decorative purposes, or artifacts, e.g. millstones.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>spesialmetaller</sc:name>
+       <sc:id>C23_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Beryllium; Bismuth;
+Cadmium; Germanium,
+Gallium; Hafnium; Mercury;
+Indium; Lithium; Rubidium,
+Cesium; Rhenium; Rare
+Earths (undifferentiated);
+Antimony; Selenium;
+Tantalum; Tellurium;
+Titanium (ilmenite, rutile);
+Zirconium (zircon,
+baddeleyite)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>industrimineraler</sc:name>
+       <sc:id>C23_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>INSPIRE - Industrial minerals</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>byggeråstoffer</sc:name>
+       <sc:id>C23_7</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>INSPIRE - Construction aggregates.
+Any of several hard, inert materials, such as sand, gravel, slag, or crushed stone, used for mixing with a cementing or bituminous material to form concrete or asphalt or used alone, as in railroad ballast or graded fill. Excludes materials for cement making and plaster making.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>Losmassetype</sc:name>
+     <sc:id>C24</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>kvartærgeologiske løsmassetyper (jordartstyper)
+
+Merknad: Nærmere forklaring til definisjoner og dannelsesmåte er å finne i heftet; Kvartærgeologisk kart over Norge, 1:1 mill., tema jordarter (Thoresen M, Norges geologiske undersøkelse, 1991) og i NGU intern-rapport 2001.018 (Bergstrøm m.fl.).</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>Løsmasser/berggrunn under vann, uspesifisert</sc:name>
+       <sc:id>C24_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Brukes for en avsetning der genetisk opprinnelse ikke er påvist, og det er heller ikke bestemt  om sedimentet er av marin opprinnelse.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Morenemateriale, uspesifisert</sc:name>
+       <sc:id>C24_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale plukket opp, transportert og avsatt av isbreen. Det er vanligvis dårlig sortert og kan inneholde alt fra leir til stein og blokk. Mektighet, morenetype og overflateform kan variere. Benyttes ved kartframstilling i svært små målestokker.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Morenemateriale, sammenhengende dekke, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av isbreer. Materialet er dårlig sortert, ofte kompakt og kan inneholde alle kornstørrelser, alt fra leir til stein og store blokker. Avsetningens tykkelse kan variere fra noen desimeter til mange titalls meter. Eventuelle fjellblotninger er markert som punktsymboler.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Morenemateriale, usammenhengende eller tynt dekke over berggrunnen</sc:name>
+       <sc:id>C24_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av isbreer. Materialet er dårlig sortert, ofte kompakt og kan inneholde alle kornstørrelser, alt fra leir til stein og store blokker. Avsetningen er normalt usammenhengende med hyppige fjellblotninger. Den er sjelden mer enn 0.5 m tykk, men kan enkelte steder være mektigere.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Moreneleire</sc:name>
+       <sc:id>C24_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Morenemateriale med særlig høyt leir- og siltinnhold, oftest meget kompakt.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Avsmeltningsmorene (Ablasjonsmorene)</sc:name>
+       <sc:id>C24_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Løst lagret, delvis sortert morenemateriale. Forekommer ofte som tilfeldig orienterte hauger og rygger, dannet ved passiv isnedsmelting (dødis).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Randmorene/randmorenesone</sc:name>
+       <sc:id>C24_7</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Enkeltrygger eller større områder med morenemateriale som er avsatt langs en brefront. Materialet er usortert og kan inneholde alle kornstørrelser fra leir til stein og store blokker.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Drumlin</sc:name>
+       <sc:id>C24_8</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Strømlinjeformet løsmasserygg. Vanligvis utformet i morenemateriale, men kan også bestå av sorterte sedimenter. Hvis løsmasseavsetningen er akkumulert på lesiden av oppstikkende fjell, kan formen kalles knaus-og-hale. Ryggformen orientert parallelt med tidligere isbevegelsesretning.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>8</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Rogenmorene</sc:name>
+       <sc:id>C24_9</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Område med bølgende rygger av hovedsakelig morenemateriale, orientert på tvers av brebevegelsen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>9</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Breelvavsetning (Glasifluvial avsetning)</sc:name>
+       <sc:id>C24_10</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av breelver. Sedimentet består av sorterte, ofte lagdelte avsetninger av forskjellig kornstørrelse fra fin sand til stein og blokk. Breelvavsetninger har ofte tydelige overflateformer som tørrlagte kanaler, terrasser og rygger. Mektigheten er ofte flere ti-talls meter.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>10</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Breelv- og elveavsetning</sc:name>
+       <sc:id>C24_11</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av elver eller breelver. Sedimentet består av sorterte lag av forskjellig kornstørrelse fra fin sand til grus og stein. Det er ikke skilt mellom breelv- og elveavsetninger. Brukes kun i spesielle tilfeller.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>11</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ryggformet breelvavsetning (Esker)</sc:name>
+       <sc:id>C24_12</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av breelver. Sorterte og lagdelte sedimenter, vesentlig sand, grus og stein, avsatt i tunneler eller sprekker i isbreer. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og linjesymbolet for esker til å angi ryggformer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>12</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Haugformet breelvavsetning (Kame)</sc:name>
+       <sc:id>C24_13</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Område med hauger av breelvmateriale, opprinnelig avsatt i hulrom i en bre eller langs en brekant. Kan ha terrasseform hvis materialet ble avsatt langs en iskant. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og punktsymbolet for kame til å angi haugformer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>13</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bresjø- eller brekammeravsetning (Glasilakustrin avsetning)</sc:name>
+       <sc:id>C24_14</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sortert, ofte finkornet materiale avsatt i bresjø eller vannfylt brekammer, hvor tykkelsen er mer enn 0,5 m. Mektigheten kan være flere ti-talls meter.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>14</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Breelv- og bresjø-/brekammeravsetning (Glasifluvial og glasilakustrin avsetning)</sc:name>
+       <sc:id>C24_15</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale avsatt av breelv eller i bredemte sjøer eller brekammer. Det er ikke skilt mellom breelv- og bresjø-/kammeravsetninger.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>15</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Innsjøavsetning (Lakustrin avsetning)</sc:name>
+       <sc:id>C24_16</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sortert, ofte finkornet og organisk-rikt materiale avsatt i innsjø.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>16</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bresjø-/brekammer og innsjøavsetning (Glasilakustrin og lakustrin avsetning)</sc:name>
+       <sc:id>C24_17</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Brukt der de to avsetningstypene bresjø-/brekammer og innsjøavsetning ikke separeres.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>17</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Strandavsetning innsjø og/eller bresjø</sc:name>
+       <sc:id>C24_18</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning av sortert og godt rundet materiale dannet ved bølgeaktivitet i strandsonen i innsjø eller bredemt sjø. Kornstørrelse varierer, men grus og stein er vanlig.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>18</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Hav- og fjordavsetning, uspesifisert</sc:name>
+       <sc:id>C24_19</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Finkornet, marin avsetning. Brukt for kart i små målestokker der avsetningen ikke er inndelt etter mektighet</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>19</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Hav- og fjordavsetning, sammenhengende dekke, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_20</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sammenhengende, finkornet marin avsetning med mektighet opp til mange ti-talls meter. Avsetningstypen kan også omfatteskredmasser fra kvikkleireskred, ofte angitt med tilleggssymbol.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>20</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Marin strandavsetning, sammenhengende dekke</sc:name>
+       <sc:id>C24_21</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sammenhengende avsetning av strandvaskede, marine sedimenter, dannet av bølge- og strømaktivitet i strandsonen. Avsetningen danner ofte strandvoller. Materialet er ofte rundet og godt sortert. Kornstørrelsen varierer fra sand til blokk, men sand, grus og stein er vanligst. Strandavsetninger ligger som et forholdsvis tynt dekke over berggrunn eller andre sedimenter. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og linjesymbolet for strandvoll til å angi ryggformer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>21</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Hav-, fjord- og strandavsetning, usammenhengende eller tynt dekke over berggrunnen</sc:name>
+       <sc:id>C24_22</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Område med ulike typer marine avsetninger. Tykkelsen på avsetningene er normalt mindre enn 0,5 m, men den kan helt lokalt være noe større. Kornstørrelser angis normalt ikke, men kan være alt fra leir til blokk.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>22</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skjellsand (maringeologi)</sc:name>
+       <sc:id>C24_23</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning som i stor grad består av knuste skall av kalkutskillende organismer. Er en type av bioklastisk materiale. Kornstørrelse varierer fra nesten hele skall til sand. Det kan være ansamlet store mengder av skjellsand i umiddelbar nærhet av gode skjellvekstområder.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>23</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Marin gytje</sc:name>
+       <sc:id>C24_24</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning som består av finkornet materiale med høyt organisk innhold. Det organiske materialet er primærprodusert i saltvann.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>24</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Elve- og bekkeavsetning (Fluvial avsetning)</sc:name>
+       <sc:id>C24_25</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale som er transportert og avsatt av elver og bekker. Sortert sand og grus dominerer og partiklene er ofte godt rundet. Avsetningene kan ha meget varierende mektigheter. Typiske overflateformer er elvesletter, terrasser og vifter.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>25</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Elveavsetning, sammenhengende dekke</sc:name>
+       <sc:id>C24_26</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale som er transportert og avsatt av elver og bekker. De mest typiske formene er elvesletter, terrasser og vifter. Sand og grus dominerer, og materialet er sortert og rundet. Brukes kun i spesielle tilfeller.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>26</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Elve- og bekkeavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_27</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale som er transportert og avsatt av elver og bekker. Sortert sand og grus dominerer og partiklene er ofte godt rundet. Tykkelsen på avsetningene er normalt mindre enn 0,5 m, men den kan helt lokalt være noe større.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>27</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Flomavsetning bresjøtapping (uspesifisert)</sc:name>
+       <sc:id>C24_28</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Brukes for spesielle sedimenter avsatt ved plutselig uttapning av bresjøer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>28</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Flomavsetning fra bresjøtapping, sammenhengende</sc:name>
+       <sc:id>C24_29</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av vann ved katastrofal tapping av bresjø.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>29</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Flomavsetning fra bresjøtapping, usammenhengende eller tynt dekke over berggrunnen</sc:name>
+       <sc:id>C24_30</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av vann ved katastrofal tapping av bresjø. Tykkelse mindre enn 0,5 m.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>30</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Flomavsetning</sc:name>
+       <sc:id>C24_31</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale som er transportert og avsatt fra elver og bekker ved unormalt høy vannføring. I flate områder (elvesletter) vil avsetningen være finkornet (silt og sand), mens i brattere vassdrag vil relativt grovt materiale bli avsatt i vifteform der terrenget flater ut.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>31</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Flomavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_32</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale som er transportert og avsatt fra elver og bekker ved unormalt høy vannføring. I flate områder (elvesletter) vil avsetningen være finkornet (silt og sand), mens i brattere vassdrag vil relativt grovt materiale bli avsatt i vifteform der terrenget flater ut.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>32</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Vindavsetning (Eolisk avsetning)</sc:name>
+       <sc:id>C24_33</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Godt sortert sand og grov silt, transportert og avsatt av vind. Ofte kalt flygesand.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>33</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Forvitringsmateriale, ikke inndelt etter mektighet</sc:name>
+       <sc:id>C24_34</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Løsmasser dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell. Brukes når en ikke skiller mellom sammenhengende og usammenhengende dekke av denne avsetningstypen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>34</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Forvitringsmateriale</sc:name>
+       <sc:id>C24_35</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Usorterte løsmasser av varierende kornstrørrelse. Materalet er dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell. Tykkelsen er mer enn 0,5 m.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>35</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Forvitringsmateriale, usammenhengende eller tynt dekke over berggrunnen</sc:name>
+       <sc:id>C24_36</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Usorterte løsmasser av varierende kornstrørrelse. Materalet er dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>36</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Forvitringsmateriale, stein- og blokkrikt (blokkhav)</sc:name>
+       <sc:id>C24_37</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Blokkrike avsetninger, ofte kalt blokkhav. Mest vanlig i høyfjellsområder. Dannet på stedet, primært ved frostforvitring av berggrunnen over lange tidsrom. Materialet er mer finkornet under overflaten.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>37</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skredmateriale, ikke inndelt etter mektighet</sc:name>
+       <sc:id>C24_38</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetninger dannet ved steinsprang, fjellskred, snø- eller løsmasseskred fra bratte dalsider. Uspesifisert tykkelse</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>38</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skredmateriale, sammenhengende dekke</sc:name>
+       <sc:id>C24_39</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetninger dannet ved steinsprang, fjellskred, snøskred eller løsmasseskred fra bratte dalsider. Materialet kan inneholde alle kornstørrelser og ha varierende sorteringsgrad. Punktsymbol viser dominerende skredtype.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>39</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skredmateriale, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_40</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetninger dannet ved steinsprang, fjellskred, snø- og løsmasseskred fra bratte dalsider. Materialet kan inneholde alle kornstørrelser og ha varierende sorteringsgrad. Punktsymbol viser dominerende skredtype.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>40</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Steinbreavsetning</sc:name>
+       <sc:id>C24_41</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Tungeformet masse av usortert materiale som inneholder, eller har inneholdt is og derfor er, eller har vært i bevegelse. Bevegelsen skyldes intern deformasjon av isen under påvirkning av tyngdekraften. Avsetningstypen dannes under permafrostforhold. De fleste steinbreer i Norge er i dag inaktive uten bevegelse.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>41</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Torv og myr</sc:name>
+       <sc:id>C24_42</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Organisk materiale dannet av ikke nedbrutte planterester, akkumulert gjennom perioden etter siste istid. Det skilles ikke mellom ulike torvtyper.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>42</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Tynt dekke av organisk materiale over berggrunn</sc:name>
+       <sc:id>C24_43</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Område med tynt dekke av bakkevegetasjon og delvis nedbrutte planterester, som ligger direkte på berggrunn. Fjellblotninger opptrer hyppig innen slike områder.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>43</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Usammenhengende eller tynt løsmassedekke over berggrunnen, flere løsmassetyper, uspesifisert</sc:name>
+       <sc:id>C24_44</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Forskjellige sedimenter som danner et tynt eller usammenhengende dekke over berggrunnen. Denne betegnelsen brukes bare når en ikke velger å skille mellom ulike typer av løsmasser.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>44</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Sammenhengende løsmassedekke av flere jordarter</sc:name>
+       <sc:id>C24_45</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Vanligvis skredmateriale med morenemateriale, forvitringsmateriale, torv og humus sterkt blanda ved skråningsprosesser. Brukes kun i spesielle tilfeller der det er meget vanskelig å skille mellom opprinnelige løsmassetyper.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>45</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bart fjell/fjell med tynt torvdekke, uspesifisert</sc:name>
+       <sc:id>C24_46</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Brukes når en ikke velger å skille mellom bart fjell og humusdekke eller tynt torvdekke over berggrunnen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>46</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Fyllmasse (antropogent materiale)</sc:name>
+       <sc:id>C24_47</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Løsmasser som i hovedsak er transportert og avsatt av mennesker. Løsmassetypen finnes ofte i områder med nyere bygningsmasse og ved store veganlegg.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>47</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Steintipp</sc:name>
+       <sc:id>C24_48</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Masser av sprengt fjell, transportert og avsatt av mennesker. Ofte knyttet til gruvedrift.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>48</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Menneskepåvirket materiale, ikke nærmere spesifisert</sc:name>
+       <sc:id>C24_49</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Dominerende stedegne masser, omarbeidet i overflaten slik at opprinnelig løsmassetype ikke er gjenkjennelig.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>49</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bart fjell</sc:name>
+       <sc:id>C24_50</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Fjelloverflate uten løsmassedekke.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>50</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bart fjell/fjell med usammenhengende eller tynt løsmassedekke</sc:name>
+       <sc:id>C24_51</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Brukes på oversiktskart der bart fjell slås sammen med alle typer tynt eller usammenhengende løsmassedekke.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>51</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Harde sedimenter eller sedimentære bergarter (maringeologi)</sc:name>
+       <sc:id>C24_52</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Blotning av konsoliderte sedimenter eller sedimentære bergarter på havbunnen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>52</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Marin suspensjonsavsetning (maringeologi)</sc:name>
+       <sc:id>C24_53</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Finkornete (leire, silt) sedimenter transportert og avsatt fra suspensjon. Draperer vanligvis underliggende sedimenter eller fjell og er oftest lagdelt.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>53</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Marin bunnstrømavsetning (maringeologi)</sc:name>
+       <sc:id>C24_54</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sedimenter som består av hovedsaklig sand og grus transportert og avsatt fra bunnstrømmer. Dekker bunnen av undersjøiske kanaler laget av bunnstrømmer. Har ofte kryss-sjiktet og lentikulær- sjiktet indre struktur.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>54</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Glasimarin avsetning (maringeologi)</sc:name>
+       <sc:id>C24_55</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Hovedsakelig finkornete suspensjonsavsetninger (silt, leire) avsatt i nærhet av is/isbreer. Kan være påvirket av bunnstrømmer og utjevner topografien mer enn draperer. Forekommer i mektige lag i områder på kontinentalhyllen langs kysten og i fjorder.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>55</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Iskontaktavsetning (maringeologi)</sc:name>
+       <sc:id>C24_56</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sedimenter avsatt i kontakt med is. Kan være morene, glasifluvialt materiale, eller en blanding av glasialt avsatte sedimenter. Kornstørrelsen veksler mellom leire og grus alt etter hvilke prosesser som virket.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>56</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Utvaskingslag (maringeologi)</sc:name>
+       <sc:id>C24_57</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sedimenter bestående av sand, grus og bergartsfragmenter etter at finstoffet er vasket vekk av bølger og strøm. Danner et dekkende lag over morene eller andre jordarter med stor variasjon i kornstørrelser.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>57</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Glasifluvial deltaavsetning (maringeologi)</sc:name>
+       <sc:id>C24_58</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sedimenter transportert av breelver og avsatt i hav, bresjø eller innsjø.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>58</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Fluvial deltaavsetning (maringeologi)</sc:name>
+       <sc:id>C24_59</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sedimenter avsatt ved utløpet av en elv i en fjord, innsjø eller i havet. Kornstørrelsen er ofte i sandfraksjonen nær elveutløpet og mer finkornete på dypere vann. Har typisk skrålaging med helling i strømretningen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>59</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Tidevannsavsetning (maringeologi)</sc:name>
+       <sc:id>C24_60</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning dannet i kystnære områder ved tidevannstransport. Sedimentene er sandige til leirholdige med typiske strukturer som sanddyner, rifler, kryss-sjikting, mikro-kryss-sjikting, flasersjikting og lentikulær sjikting.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>60</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Estuarin avsetning (maringeologi)</sc:name>
+       <sc:id>C24_61</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Et sediment avsatt i brakkvann i et estuarie. Sedimentet er karakterisert av finkornet materiale (silt, leire) av marin og fluvial opprinnelse blandet med en høy andel rester av terrestrisk organisk materiale.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>61</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Levé avsetning (maringeologi)</sc:name>
+       <sc:id>C24_62</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning dannet som en forhøyning av sedimenter langs en eller begge sidene  av en undersjøisk kanal (kløft, viftedal eller dyphavskanal). Avsetningen kan ha varierende kornstørrelse, fra finkornet (leir) til nokså grovt materiale (sand).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>62</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Grunnmarin avsetning (maringeologi)</sc:name>
+       <sc:id>C24_63</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sedimenter avsatt i turbulent grunt marint miljø der det fineste materialet er vasket ut og transportert til dypere vann av strømmer og bølger. Består av sand, grus og stein. I områder med mye sand kan sandbølger bygges med en karakteristisk kryss-sjikting og skrålaging.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>63</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Konturittavsetning (maringeologi)</sc:name>
+       <sc:id>C24_64</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Klastiske sedimenter transportert og avsatt av kontur-strømmer langs egga kanten. Består av fint, velsortert materiale (silt og leir). Avsetningene har vanligvis horisontal- eller kryss-sjiktning og normal- eller omvendt gradering.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>64</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Turbidittavsetning (maringeologi)</sc:name>
+       <sc:id>C24_65</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetninger dannet ved sedimenttransport og utfelling fra en turbidittstrøm.  Består av materiale i kornstørrelse fra leire til sand og er ofte karakterisert ved normalgradert lagning og moderat til dårlig sortering. Finnes oftest ved foten av skråninger med stor mektighet av løse sedimenter (for eksempel langs kontinentalskråningen).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>65</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Debrisstrømavsetning (maringeologi)</sc:name>
+       <sc:id>C24_66</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning fra en flytende masse av stein, jord og slam. Den består av usortert materiale der mer enn halvparten av partiklene er større enn sandstørrelse.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>66</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Undersjøisk vifteavsetning (maringeologi)</sc:name>
+       <sc:id>C24_67</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>En konisk eller vifteformet avsetning beliggende ved munningen av en undersjøisk kløft. Består for det meste av fine sedimenter (leire, silt). Viften har en finlaget indre struktur med en svak helling av lagene mot dyphavet.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>67</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kanalsavsetning (maringeologi)</sc:name>
+       <sc:id>C24_68</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sedimenter avsatt i en kanal. Avsetningene vil vanligvis bestå av relativt grove sedimenter (sand, grus)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>68</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Dypmarin avsetning (maringeologi)</sc:name>
+       <sc:id>C24_69</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Samlebetegnelse på dyphavssedimenter. Kan være både konturittisk, hemipelagisk, eupelagisk osv. Dette er fine sedimenter bunnfelt utenfor kontinentalmarginen. Består i stor grad av leire og rester av pelagiske organismer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>69</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bioklastisk avsetning (maringeologi)</sc:name>
+       <sc:id>C24_70</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sediment som for en stor del består av små partikler av biologisk opprinnelse (skjell, korall). Kornstørrelsen kan variere fra sand til hele skjell eller korallkolonier. Forekommer i begrensete områder der vekstforholdene har vært optimale over lengre tid og mengden av annet klastisk materiale liten.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>70</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Vulkanosedimentær avsetning (maringeologi)</sc:name>
+       <sc:id>C24_71</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning som består av materiale av vulkansk opprinnelse. Alt etter kornstørrelse kan sedimentene deles inn i vulkansk aske, lapilli (2-64 mm) og breksje (&gt;64mm).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>71</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Lagdelte sedimenter (&gt;1 m) over debrisstrøm (maringeologi)</sc:name>
+       <sc:id>C24_72</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Lagdelte sedimenter (&gt;1m) over debrisstrømavsetning.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>72</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Karbonatskorpe (maringeologi)</sc:name>
+       <sc:id>C24_73</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Forekomster av karbonatsementerte sedimenter som danner opp til flere desimeter tykke skorper på havbunnen</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>73</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Morene med tynt dekke av glasimarine sedimenter</sc:name>
+       <sc:id>C24_74</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Morene med tynt dekke (mindre enn 1-2 m) av glasimarine sedimenter</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>74</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Morene med tynt dekke av finkornige sedimenter</sc:name>
+       <sc:id>C24_75</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Morene med tynt dekke (mindre enn 1-2 m) av finkornige sedimenter</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>75</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skredmateriale, dekket av yngre sedimenter (maringeologi)</sc:name>
+       <sc:id>C24_76</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Skredmateriale, dekket av yngre sedimenter</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>76</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skredmateriale, delvis dekket av yngre sedimenter (maringeologi)</sc:name>
+       <sc:id>C24_77</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Skredmateriale, delvis dekket av yngre sedimenter</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>77</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skredmateriale og hemipelagiske avsetninger (maringeologi)</sc:name>
+       <sc:id>C24_78</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Veksling mellom skredavsetninger og hemipelagiske avsetninger. Hemipelagiske avsetninger består stort sett av finkornet materiale, delvis produsert i vannmassene lokalt, og delvis tilført utenifra.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>78</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Uspesifisert marin avsetning (maringeologi)</sc:name>
+       <sc:id>C24_79</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Marin avsetning med ukjent opprinnelse</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>79</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Jord- og flomskredavsetning</sc:name>
+       <sc:id>C24_80</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av løsmasseskred (ikke leirskred). Avsetningene danner gjerne rygger, lober eller vifteformer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>80</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Jord- og flomskredavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_81</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av løsmasseskred (ikke leirskred). Avsetningene danner gjerne rygger, lober eller vifteformer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>81</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Leirskredavsetning, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_82</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning som dannes når leirholdige sedimenter løsner og glir ut.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>82</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Leirskredavsetning, usammenhengende eller tynt dekke over berggrunnen</sc:name>
+       <sc:id>C24_83</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning som dannes når leirholdige sedimenter løsner og glir ut.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>83</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Fjellskredavsetning, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_84</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av fjellskred. Fjellskred har stort volum og svært lang utløpslengde og avsetningen har derfor typisk stor utstrekning. Avsetningens overflate er ofte dominert av kantete blokker.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>84</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Fjellskredavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_85</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av fjellskred. Fjellskred har stort volum og svært lang utløpslengde og avsetningen har derfor typisk stor utstrekning. Avsetningens overflate er ofte dominert av kantete blokker.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>85</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Steinsprangavsetning, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_86</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning bestående av usortert materiale nedenfor en bratt kant i fast fjell, hvor stein og blokk over tid har løsnet og falt ned til skråningsfoten. Materialet varierer i kornstørrelse fra sand til blokk, med generelt økende kornstørrelse med lengre avstand fra løsneområdet.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>86</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Steinsprangavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_87</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Avsetning bestående av usortert materiale nedenfor en bratt kant i fast fjell, hvor stein og blokk over tid har løsnet og falt ned til skråningsfoten. Materialet varierer i kornstørrelse fra sand til blokk, med generelt økende kornstørrelse med lengre avstand fra løsneområdet.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>87</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Snøskredavsetning, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_88</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av snøskred. Kan omfatte alle kornstørrelser og er usortert. Gjentatt snøskredaktivitet over tid kan bygge store vifteformete avsetninger.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>88</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Snøskredavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_89</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av snøskred. Kan omfatte alle kornstørrelser og er usortert.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>89</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Steinskredavsetning, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_90</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av steinskred. Steinskred har mindre volum og kortere utløpslengde enn fjellskred, men består hovedsakelig av større blokker enn nærliggende steinsprangavsetninger. Avsetningens overflate er ofte dominert av kantete blokker.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>90</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Steinskredavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_91</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av steinskred. Steinskred har mindre volum og kortere utløpslengde enn fjellskred, men består hovedsakelig av større blokker enn nærliggende steinsprangavsetninger. Avsetningens overflate er ofte dominert av kantete blokker.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>91</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Snø- og jordskredavsetning, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_92</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av snøskred og jordskred. Begge prosessene er aktive ulike tider på året. Materialet omfatter alle kornstørrelser og er usortert. Gjentatt skredaktivitet over tid kan bygge store vifteformete avsetninger.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>92</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Snø- og jordskredavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_93</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av snøskred og jordskred. Begge prosessene er aktive ulike tider på året. Materialet omfatter alle kornstørrelser og er usortert.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>93</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Jordskred- og steinsprangavsetning, stedvis  med stor mektighet</sc:name>
+       <sc:id>C24_94</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av jordskred og steinsprang. Sorteringsgraden er varierende i avsetningen. Gjentatt skredaktivitet over tid kan danne tykke avsetninger.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>94</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Jordskred- og steinsprangavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_95</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av jordskred og steinsprang. Sorteringsgraden er varierende i avsetningen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>95</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Snø- og steinsprangavsetning, stedvis med stor mektighet</sc:name>
+       <sc:id>C24_96</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av snøskred og steinsprang. Sorteringsgraden er varierende i avsetningen. Gjentatt skredaktivitet over tid kan danne tykke avsetninger.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>96</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Snø- og steinsprangavsetning, usammenhengende eller tynt dekke</sc:name>
+       <sc:id>C24_97</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Materiale transportert og avsatt av snøskred og steinsprang. Sorteringsgraden er varierende i avsetningen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>97</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Sigejord med høyt organisk innhold</sc:name>
+       <sc:id>C24_98</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sterkt frostpåvirket blandingsmateriale som beveger seg sakte nedover en slak skråning. Materialet har opprinnelse i en eller flere finstoffholdige løsmassetyper, ofte morene.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>98</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Steinrikt, sigende skråningsmateriale</sc:name>
+       <sc:id>C24_99</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Grovkornet, frostpåvirket blandingsmateriale som beveger seg sakte nedover en skråning. Materialet har opprinnelse i forvitret fjell eller skredmateriale.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>99</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>Målemetode</sc:name>
+     <sc:id>C25</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:taggedValues>
+      <sc:TaggedValue>
+       <sc:name>codeList</sc:name>
+       <sc:values>
+        <sc:Value>http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.0/Målemetode</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+     </sc:taggedValues>
+    </sc:Class>
+   </sc:classes>
+   <sc:packages>
+    <sc:Package>
+     <sc:name>Grus-4.0_Utkast</sc:name>
+     <sc:id>P2</sc:id>
+     <sc:classes>
+      <sc:Class>
+       <sc:name>KnustBergRegistrering</sc:name>
+       <sc:id>C1</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Ethvert volum av økonomisk interessant bergart til byggeråstoff
+
+--Definition--
+Any volume of rock applicable for construction purposes.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>KNUSTBERGREGISTRERING</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>avgrensning</sc:name>
+         <sc:id>Sas1</sc:id>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C2</sc:typeId>
+         <sc:typeName>GeolAvgrLinje</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as1</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>GeolAvgrLinje</sc:name>
+       <sc:id>C2</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>generell avgrensning av geologisk objekt
+
+
+-- Definition --
+general delimitation of geological object</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>KURVE</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>grense</sc:name>
+         <sc:id>C2_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forløp som følger overgang mellom ulike fenomener
+
+-- Definition --
+course follwing the transition between different real world phenomena</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>KURVE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Curve</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>KnustBergForekomst</sc:name>
+       <sc:id>C3</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>En ansamling av bergarter som har eller kan få en økonomisk verdi som byggeråstoff. En forekomst må ha et estimat eller en beregning av volum og kvalitet.
+
+--Definition--
+A volume of naturally occurring rocks usually of economic value as construction material</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>KNUSTBERGFOREKOMST</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:supertypes>
+        <sc:SupertypeId>C10</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>avgrensning</sc:name>
+         <sc:id>Sas2</sc:id>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C2</sc:typeId>
+         <sc:typeName>GeolAvgrLinje</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as2</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>KnustBergUttak</sc:name>
+       <sc:id>C4</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>uttakssted for produksjon av knust berg (pukk)
+
+-- Definition --
+Crushed rock aggregate extraction site</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>KNUSTBERGUTTAK</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>identRastoffobj</sc:name>
+         <sc:id>C4_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forekomstobjektets identifikasjonskode
+
+Merknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).
+
+Eksempel: 17290010101</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FOREKOM_ID</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>forekomstNummer</sc:name>
+         <sc:id>C4_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>unik nummerering av forekomsten som råstoffobjektet tilhører
+
+Merknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten
+
+Eks. 1729001</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>R_FNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>ressursType</sc:name>
+         <sc:id>C4_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken type råstoff som kan være/er gjenstand for utvinning.
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode
+
+-- Definition --
+Values indicating the type of commodity.
+what type of raw material that may be/is subject to extraction
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RESSTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeId>C19</sc:typeId>
+         <sc:typeName>RessursType</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>råstoffBetydning</sc:name>
+         <sc:id>C4_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken betydning en mineralforekomst har med tanke på mulig økonomisk
+utnyttelse nå eller for framtiden. Skal begrunnes.
+
+-- Definition --
+how important a geological resource or registration is as regards potential
+commercial exploitation now or in the future</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RASTOFFBETYDNING</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeId>C20</sc:typeId>
+         <sc:typeName>RåstoffBetydning</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>mineralRegistreringType</sc:name>
+         <sc:id>C4_5</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.
+Eksempler på dette er prospekt, registrering og forekomst.
+
+-- Definition -- The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeId>C21</sc:typeId>
+         <sc:typeName>MineralRegistreringType</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>ressursUndertype</sc:name>
+         <sc:id>C4_6</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>underinndeling av materialtypene som kan være/er gjenstand for utvinning
+Merknad: Er en mer detaljert inndeling av det råstoff som utvinnes
+(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)
+
+sub-classification of material types that may be/are subject to extraction
+Note: a more detailed classification of the raw material that is extracted
+(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RESSUNTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>6</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>navnRastoffobj</sc:name>
+         <sc:id>C4_7</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>navn på forekomsten</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FOREKNAVN</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>7</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>lokalNummer</sc:name>
+         <sc:id>C4_8</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>nummerering av lokalitet i forekomsten
+
+Merknad: Er en del av FOREKOM_ID: Eks: 1729001(01)01</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>R_LNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>8</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>stedfestingVerifisert</sc:name>
+         <sc:id>C4_9</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angir om stedfestingen (koordinatene) er kontrollert og funnet i orden (verifisert)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>STED_VERIF</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>9</sc:sequenceNumber>
+         <sc:typeName>Boolean</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>geolBeskrivelse</sc:name>
+         <sc:id>C4_10</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>tekstlig beskrivelse av objektet</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>GEOBESK</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>10</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>geolBeskrivelseURL</sc:name>
+         <sc:id>C4_11</sc:id>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>GEOBESK_URL</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>11</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>antallAnalyser</sc:name>
+         <sc:id>C4_12</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>antallet utførte kjemiske og/eller mekaniske analyser</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>ANT_ANALYS</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>12</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>MineralRegistrering</sc:name>
+       <sc:id>C5</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>registrering av en mineralansamling (opphopning, konsentrering) i naturen.
+
+-- Definition --
+&lt;font color="#400040"&gt;A mineral accumulation in the lithosphere. &lt;/font&gt;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>MINERALREGISTRERING</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:isAbstract>true</sc:isAbstract>
+       <sc:supertypes>
+        <sc:SupertypeId>C12</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>område</sc:name>
+         <sc:id>C5_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>objektets utstrekning</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FLATE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Surface</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>posisjon</sc:name>
+         <sc:id>C5_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>sted objektet eksisterer på</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>PUNKT</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>GM_Point</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>identRåstoffobj</sc:name>
+         <sc:id>C5_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forekomstobjektets identifikasjonskode
+
+Merknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer). Eksempel: 17290010101
+
+deposit object identification code   Note: Consists of a municipality number (4 digits) and a serial number (7 digits). Ideally the serial number should consist of an area number (3 digits), a location number (2 digits) and a test number (2 digits). For example: 17290010101</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FOREKOM_ID</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>forekomstNummer</sc:name>
+         <sc:id>C5_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>unik nummerering av forekomsten som råstoffobjektet tilhører
+
+Merknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten
+
+Eks. 1729001</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>R_FNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>mineralRegistreringType</sc:name>
+         <sc:id>C5_5</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.
+Eksempler på dette er prospekt, registrering og forekomst.
+
+-- Definition -- The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeId>C21</sc:typeId>
+         <sc:typeName>MineralRegistreringType</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>ressursType</sc:name>
+         <sc:id>C5_6</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken type råstoff som kan være/er gjenstand for utvinning.
+
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode
+
+-- Definition --
+Values indicating the type of commodity.
+what type of raw material that may be/is subject to extraction
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RESSTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>6</sc:sequenceNumber>
+         <sc:typeId>C19</sc:typeId>
+         <sc:typeName>RessursType</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>ressursUndertype</sc:name>
+         <sc:id>C5_7</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>underinndeling av materialtypene som kan være/er gjenstand for utvinning
+Merknad: Er en mer detaljert inndeling av det råstoff som utvinnes
+(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)
+
+sub-classification of material types that may be/are subject to extraction
+Note: a more detailed classification of the raw material that is extracted
+(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RESSUNTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>7</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>navnRåstoffobj</sc:name>
+         <sc:id>C5_8</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>navn på mineralressursobjektet
+
+INSPIRE: name of raw material object</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FOREKNAVN</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>8</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>omrNummer</sc:name>
+         <sc:id>C5_9</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>nummerering av forekomsten (forekomstområdet) i kommunen.
+Merknad: Er en del av FOREKOM_ID. Eksempel 1729(001)01101.
+
+deposit numbering (deposit area) in the municipality   Note: part of DEPOSIT_ID   For example: 1729(001)0101</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>R_ONR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>9</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>typeRåstoffVirksomhet</sc:name>
+         <sc:id>C5_10</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angir type på eventuell aktivitet
+
+indicates type of any activities</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>VIRKSOMHET</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>10</sc:sequenceNumber>
+         <sc:typeId>C22</sc:typeId>
+         <sc:typeName>TypeRastoffVirksomhet</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>geolBeskrivelse</sc:name>
+         <sc:id>C5_11</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>beskrivende tekstfelt eller link (URL) til tekstlig beskrivelse
+
+descriptive text field or link (URL) to textual description</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>GEOBESK</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>11</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>antallAnalyser</sc:name>
+         <sc:id>C5_12</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>antallet utførte kjemiske og/eller mekaniske analyser
+
+the number of chemical and/or mechanical analyses performed</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>ANT_ANALYS</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>12</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>sisteBefaringDato</sc:name>
+         <sc:id>C5_13</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato for siste feltbefaring av forekomsten</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SISTBEFART</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>13</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>altForekomstNr</sc:name>
+         <sc:id>C5_14</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>alternativ nummerering av forekomsten
+Merknad: Kan ha en bestemt form innen den enkelte forekomstdatabasen, og behøver ikke være unikt. Benyttes ofte for å peke tilbake på nummereringssystemer i eldre registre.
+
+alternative numbering of the deposit    Note: May have a specific form in the individual deposit database and does not need to be unique. Often used to refer back to numbering systems in older registers</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>ALTERN_FNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>14</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>historiskViktig</sc:name>
+         <sc:id>C5_15</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angivelse om forekomsten er historisk viktig</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>HIST_VIKTIG</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>15</sc:sequenceNumber>
+         <sc:typeName>Boolean</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>faktaarkURL</sc:name>
+         <sc:id>C5_16</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>link (URL) til forekomstens oppdaterte faktaark ifra NGUs database</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FAKTAARK_URL</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>16</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>sluttbrukType</sc:name>
+         <sc:id>C5_17</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hva mineralet/bergarten kan brukes til. Eksempler på dette er byggeråstoffer, miljøkalk, slaggdanner etc.
+
+-- Definition -- The end-use potential of the mineral.
+-- Description --
+EXAMPLE: for energy, fertilizer, building raw material.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>SLUTTBRUKTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:sequenceNumber>17</sc:sequenceNumber>
+         <sc:typeId>C23</sc:typeId>
+         <sc:typeName>SluttbrukPotensial</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>Esker</sc:name>
+       <sc:id>C6</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>langstrakt, smal og ofte slynget rygg eller ås av lagdelt og sortert sand, grus eller rullestein, dannet ved avsetning fra smeltevannelver i en tunnel under eller inne i en isbre</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>ESKER</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>senterlinje</sc:name>
+         <sc:id>C6_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forløp som følger objektets sentrale del</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>KURVE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Curve</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SandGrusForekomst</sc:name>
+       <sc:id>C7</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>En ansamling av naturlig avsatt sand og grus  som har eller kan få en økonomisk verdi. En forekomst må ha et estimat eller en beregning av volum og kvalitet.
+
+--Definition--
+A mass of naturally occurring sand and gravel, usually of economic value, without regard to mode of origin.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>SANDGRUSFOREKOMST</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:supertypes>
+        <sc:SupertypeId>C10</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>avgrensning</sc:name>
+         <sc:id>Sas3</sc:id>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C2</sc:typeId>
+         <sc:typeName>GeolAvgrLinje</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as3</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SandGrusProspekt</sc:name>
+       <sc:id>C8</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>område der det er potensial for en eller flere forekomster av naturlig avsatt sand og grus basert på tidligere undersøkelser eller observasjoner, og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner for mineralressurser.
+
+--Definition--
+An  area  that  is  a  potential  site  of  mineral  deposits,  based  on  preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>SANDGRUSPROSPEKT</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>avgrensning</sc:name>
+         <sc:id>Sas4</sc:id>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C2</sc:typeId>
+         <sc:typeName>GeolAvgrLinje</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as4</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>MasseuttakAktivitet</sc:name>
+       <sc:id>C9</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>hvilken aktivitet det er i masseuttaket
+
+-- Definition --
+The process of extracting metallic, non-metallic mineral, or industrial rock deposits from the Earth.
+
+-- Description --
+The term may also include preliminary treatment eg. cleaning or sizing.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>MASSEUTTAKAKTIVITET</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>uttakPeriodeFraTil</sc:name>
+         <sc:id>C9_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>den perioden masseuttaket/mineralutvinningen foregikk i
+-- Definition --
+Period, or extent in time, of  the mining activity.
+
+-- Description --
+The beginning of the activity links the TM_Period to the TM_Instant at which it starts.  The ending links the TM_Period to the TM_Instant at which it ends.  For a variety of reasons, the position of the TM_Instant designated by 'begin' or 'end' may be inderterminate.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>TM_Period</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>aktivitetUttak</sc:name>
+         <sc:id>C9_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken driftsmetode som er brukt ved uttaket
+
+-- Definition --
+The type of mining activity.
+
+-- Description --
+EXAMPLE: Open Pit, Underground Mine, multiple, unspecified) or processing activity (eg Ore Processing) or production.
+Using activity to distinguish between the extraction, processing and production activities allows distinguishing between ore mined/grade/recovery, ore treated/grade/recovery and produced payable/plant recovery.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>DRIFTMETODEUTTAK</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>AktivitetUttakType</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>uttakMengde</sc:name>
+         <sc:id>C9_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvor mye som er utvunnet
+
+-- Definition -- The amount of ore processed by the activity.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>Quantity</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>prosessType</sc:name>
+         <sc:id>C9_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken type prosesser som er benyttet ved uttaket
+
+-- Definition -- The type of processing carried out during the mining activity.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeName>ProsessAktivitetType</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>FellesegenskapRåstoff</sc:name>
+       <sc:id>C10</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>fellesegenskaper for natursteinforekomster, industrimineralforekomster og malmforekomster</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:isAbstract>true</sc:isAbstract>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>råstoffBetydning</sc:name>
+         <sc:id>C10_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken betydning en mineralforekomst har med tanke på mulig økonomisk utnyttelse nå eller for framtiden.  Skal begrunnes.
+
+-- Definition --
+how important a geological resource or registration is as regards potential commercial exploitation now or in the future</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C20</sc:typeId>
+         <sc:typeName>RåstoffBetydning</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SandGrusUttak</sc:name>
+       <sc:id>C11</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>lokalitet hvor naturlig avsatt sand og grus tas ut
+
+Merknad:  (massetak)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>SANDGRUSUTTAK</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>identRastoffobj</sc:name>
+         <sc:id>C11_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forekomstobjektets identifikasjonskode
+
+Merknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).
+
+Eksempel: 17290010101</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FOREKOM_ID</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>forekomstNummer</sc:name>
+         <sc:id>C11_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>unik nummerering av forekomsten som råstoffobjektet tilhører
+
+Merknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten
+
+Eks. 1729001</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>R_FNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>ressursType</sc:name>
+         <sc:id>C11_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken type råstoff som kan være/er gjenstand for utvinning.
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode
+
+-- Definition --
+Values indicating the type of commodity.
+what type of raw material that may be/is subject to extraction
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RESSTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeId>C19</sc:typeId>
+         <sc:typeName>RessursType</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>råstoffBetydning</sc:name>
+         <sc:id>C11_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken betydning en mineralforekomst har med tanke på mulig økonomisk
+utnyttelse nå eller for framtiden. Skal begrunnes.
+
+-- Definition --
+how important a geological resource or registration is as regards potential
+commercial exploitation now or in the future</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RASTOFFBETYDNING</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeId>C20</sc:typeId>
+         <sc:typeName>RåstoffBetydning</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>mineralRegistreringType</sc:name>
+         <sc:id>C11_5</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.
+Eksempler på dette er prospekt, registrering og forekomst.
+
+-- Definition -- The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>MINERALREGTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeId>C21</sc:typeId>
+         <sc:typeName>MineralRegistreringType</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>ressursUndertype</sc:name>
+         <sc:id>C11_6</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>underinndeling av materialtypene som kan være/er gjenstand for utvinning
+Merknad: Er en mer detaljert inndeling av det råstoff som utvinnes
+(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)
+
+sub-classification of material types that may be/are subject to extraction
+Note: a more detailed classification of the raw material that is extracted
+(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RESSUNTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>6</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>navnRastoffobj</sc:name>
+         <sc:id>C11_7</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>navn på råstoffobjekt</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FOREKNAVN</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>7</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>lokalNummer</sc:name>
+         <sc:id>C11_8</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>nummerering av lokalitet i forekomsten
+
+Merknad: Er en del av FOREKOM_ID: Eks: 1729001(01)01</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>R_LNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>8</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>løsmassetype</sc:name>
+         <sc:id>C11_9</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>kvartærgeologiske løsmassetyper (jordartstyper)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>JORDART</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>9</sc:sequenceNumber>
+         <sc:typeId>C24</sc:typeId>
+         <sc:typeName>Losmassetype</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>stedfestingVerifisert</sc:name>
+         <sc:id>C11_10</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angir om stedfestingen (koordinatene) er kontrollert og funnet i orden (verifisert)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>STED_VERIF</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>10</sc:sequenceNumber>
+         <sc:typeName>Boolean</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>geolBeskrivelse</sc:name>
+         <sc:id>C11_11</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>tekstlig beskrivelse av objektet</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>GEOBESK</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>11</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>geolBeskrivelseURL</sc:name>
+         <sc:id>C11_12</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>lenke (URL) til tekstlig beskrivelse av objektet</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>GEOBESK_URL</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>12</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>antallAnalyser</sc:name>
+         <sc:id>C11_13</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>antallet utførte kjemiske og/eller mekaniske analyser</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>ANT_ANALYS</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>13</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>FellesegenskaperGrus</sc:name>
+       <sc:id>C12</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper
+
+Merknad:
+Spesielt i produktspesifikasjonsarbeid vil en velge egenskaper og avgrensningslinjer fra denne klassen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:isAbstract>true</sc:isAbstract>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>datauttaksdato</sc:name>
+         <sc:id>C12_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato for uttak fra en database
+
+Merknad:
+Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>DATAUTTAKSDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>førsteDatafangstdato</sc:name>
+         <sc:id>C12_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato når data ble registrert/observert/målt første gang, som utgangspunkt for første digitalisering
+
+Merknad:
+førsteDatafangstdato brukes hvis det er av interesse å forvalte informasjon om når en ble klar over objektet. Dette kan for eksempel gjelde datoen for første flybilde som var utgangspunkt for registrering i en database.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FØRSTEDATAFANGSTDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>oppdateringsdato</sc:name>
+         <sc:id>C12_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato for siste endring på objektetdataene
+
+Merknad:
+Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>OPPDATERINGSDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>identifikasjon</sc:name>
+         <sc:id>C12_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeId>C17</sc:typeId>
+         <sc:typeName>Identifikasjon</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>kvalitet</sc:name>
+         <sc:id>C12_5</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeId>C18</sc:typeId>
+         <sc:typeName>Posisjonskvalitet</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>stedfestingVerifisert</sc:name>
+         <sc:id>C12_6</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angivelse om stedfestingen (koordinatene) er  kontrollert  og funnet i orden (verifisert)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>STED_VERIF</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>6</sc:sequenceNumber>
+         <sc:typeName>Boolean</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>KnustBergProvins</sc:name>
+       <sc:id>C13</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>område definert av geologiske egenskaper som avgrenser mulighetene for funn av bestemte økonomisk interessante bergarter til byggeråstoff
+
+--Definition--
+Geologic provinces classified by (hard) rock aggregate resources.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>KNUSTBERGPROVINS</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>avgrensning</sc:name>
+         <sc:id>Sas5</sc:id>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C2</sc:typeId>
+         <sc:typeName>GeolAvgrLinje</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as5</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>KnustBergProspekt</sc:name>
+       <sc:id>C14</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>område der det er potensial for en eller flere forekomster av bergarter egnet for byggeråstoffer basert på tidligere undersøkelser eller observasjoner, og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner for mineralressurser.
+
+--Definition--
+An area that is a potential site of rock aggregate deposits, based on preliminary exploration, previous exploration.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>KNUSTBERGPROSPEKT</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>avgrensning</sc:name>
+         <sc:id>Sas6</sc:id>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C2</sc:typeId>
+         <sc:typeName>GeolAvgrLinje</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as6</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>MinresPrøvepunkt</sc:name>
+       <sc:id>C15</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>lokalitet hvor det er tatt (innsamlet) prøve(r) for videre bearbeidelse/analyse</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>MINRESPROEVEPKT</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>posisjon</sc:name>
+         <sc:id>C15_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>sted som objektet eksisterer på</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>PUNKT</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>GM_Point</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>ressursType</sc:name>
+         <sc:id>C15_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>hvilken type råstoff som kan være/er gjenstand for utvinning</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RESSTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeId>C19</sc:typeId>
+         <sc:typeName>RessursType</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>ressursUndertype</sc:name>
+         <sc:id>C15_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>underinndeling av materialtypene som kan være/er gjenstand for utvinning</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>RESSUNTYPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>identRåstoffobj</sc:name>
+         <sc:id>C15_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>forekomstobjektets identifikasjonskode
+
+Merknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).
+
+Eksempel: 17290010101</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FOREKOM_ID</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>forekomstNummer</sc:name>
+         <sc:id>C15_5</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>unik nummerering av forekomsten som råstoffobjektet tilhører
+
+Merknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten
+
+Eks. 1729001</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>R_FNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>navnRåstoffobj</sc:name>
+         <sc:id>C15_6</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>navn på råstoffobjekt</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>FOREKNAVN</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>6</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>prøveNummer</sc:name>
+         <sc:id>C15_7</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>nummerering av prøvepunkt i forekomsten eller i lokaliteten
+
+Merknad: Er en del av FOREKOM_ID: Eks: 172900101(01)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>R_PNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>7</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>antallAnalyser</sc:name>
+         <sc:id>C15_8</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>antallet utførte kjemiske og/eller mekaniske analyser</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>ANT_ANALYS</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>8</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>geolBeskrivelse</sc:name>
+         <sc:id>C15_9</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>beskrivende tekstfelt eller link (URL) til tekstlig beskrivelse</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>GEOBESK</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>9</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>geolBeskrivelseURL</sc:name>
+         <sc:id>C15_10</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>lenke (URL) til tekstlig beskrivelse av objektet</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>GEOBESK_URL</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>10</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SandGrusRegistrering</sc:name>
+       <sc:id>C16</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Enhver ansamling av naturlig avsatt sand og grus
+
+--Definition--
+Any natural occurence of sand and gravel</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>SANDGRUSREGISTRERING</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:supertypes>
+        <sc:SupertypeId>C5</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>avgrensning</sc:name>
+         <sc:id>Sas7</sc:id>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:isNavigable>true</sc:isNavigable>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C2</sc:typeId>
+         <sc:typeName>GeolAvgrLinje</sc:typeName>
+         <sc:isAttribute>false</sc:isAttribute>
+         <sc:associationId>as7</sc:associationId>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+     </sc:classes>
+    </sc:Package>
+   </sc:packages>
+  </sc:Package>
+ </sc:packages>
+ <sc:associations>
+  <sc:Association>
+   <sc:name>KnustBergRegistrering_GeolAvgrLinje</sc:name>
+   <sc:id>as1</sc:id>
+   <sc:end1 ref="Sas1" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas1</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C1</sc:typeId>
+     <sc:typeName>KnustBergRegistrering</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C2</sc:inClassId>
+     <sc:associationId>as1</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>KnustBergForekomst_GeolAvgrLinje</sc:name>
+   <sc:id>as2</sc:id>
+   <sc:end1 ref="Sas2" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas2</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C3</sc:typeId>
+     <sc:typeName>KnustBergForekomst</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C2</sc:inClassId>
+     <sc:associationId>as2</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>SandGrusForekomst_GeolAvgrLinje</sc:name>
+   <sc:id>as3</sc:id>
+   <sc:end1 ref="Sas3" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas3</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C7</sc:typeId>
+     <sc:typeName>SandGrusForekomst</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C2</sc:inClassId>
+     <sc:associationId>as3</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>SandGrusProspekt_GeolAvgrLinje</sc:name>
+   <sc:id>as4</sc:id>
+   <sc:end1 ref="Sas4" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas4</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C8</sc:typeId>
+     <sc:typeName>SandGrusProspekt</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C2</sc:inClassId>
+     <sc:associationId>as4</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>KnustBergProvins_GeolAvgrLinje</sc:name>
+   <sc:id>as5</sc:id>
+   <sc:end1 ref="Sas5" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas5</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C13</sc:typeId>
+     <sc:typeName>KnustBergProvins</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C2</sc:inClassId>
+     <sc:associationId>as5</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>KnustBergProspekt_GeolAvgrLinje</sc:name>
+   <sc:id>as6</sc:id>
+   <sc:end1 ref="Sas6" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas6</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C14</sc:typeId>
+     <sc:typeName>KnustBergProspekt</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C2</sc:inClassId>
+     <sc:associationId>as6</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+  <sc:Association>
+   <sc:name>SandGrusRegistrering_GeolAvgrLinje</sc:name>
+   <sc:id>as7</sc:id>
+   <sc:end1 ref="Sas7" />
+   <sc:end2>
+    <sc:Property>
+     <sc:id>Tas7</sc:id>
+     <sc:cardinality>0..*</sc:cardinality>
+     <sc:isNavigable>false</sc:isNavigable>
+     <sc:sequenceNumber>1</sc:sequenceNumber>
+     <sc:typeId>C16</sc:typeId>
+     <sc:typeName>SandGrusRegistrering</sc:typeName>
+     <sc:isAttribute>false</sc:isAttribute>
+     <sc:inClassId>C2</sc:inClassId>
+     <sc:associationId>as7</sc:associationId>
+    </sc:Property>
+   </sc:end2>
+  </sc:Association>
+ </sc:associations>
+</sc:Model>
