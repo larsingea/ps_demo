@@ -1,0 +1,9 @@
+metadataId: a26e57bc-15bd-46db-8504-6c6ed1e7c501
+output_directory: produktspesifikasjon
+product_slug: grus_og_pukk
+updated: '2026-10-19'
+scopes:
+- name: Grus og pukk fra datamodell
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/NGU/Grus-4.0_Utkast.xml
+  generator: xmi
+  description: ''
