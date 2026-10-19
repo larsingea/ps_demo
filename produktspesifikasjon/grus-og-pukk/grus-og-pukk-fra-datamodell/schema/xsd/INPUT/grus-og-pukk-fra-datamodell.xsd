@@ -1,0 +1,2138 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:grusogpukkfradatamodell="https://skjema.geonorge.no/SOSI/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/1.0" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="https://skjema.geonorge.no/SOSI/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/1.0" version="1.0">
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="https://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="Esker" substitutionGroup="gml:AbstractFeature" type="grusogpukkfradatamodell:EskerType">
+    <annotation>
+      <documentation>langstrakt, smal og ofte slynget rygg eller ås av lagdelt og sortert sand, grus eller rullestein, dannet ved avsetning fra smeltevannelver i en tunnel under eller inne i en isbre</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">ESKER</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="EskerType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger objektets sentrale del</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">KURVE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="EskerPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:Esker"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="FellesegenskapRåstoff" substitutionGroup="grusogpukkfradatamodell:MineralRegistrering" type="grusogpukkfradatamodell:FellesegenskapRåstoffType">
+    <annotation>
+      <documentation>fellesegenskaper for natursteinforekomster, industrimineralforekomster og malmforekomster</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="FellesegenskapRåstoffType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:MineralRegistreringType">
+        <sequence>
+          <element name="råstoffBetydning" type="grusogpukkfradatamodell:RåstoffBetydningType">
+            <annotation>
+              <documentation>hvilken betydning en mineralforekomst har med tanke på mulig økonomisk utnyttelse nå eller for framtiden.  Skal begrunnes.
+
+-- Definition --
+how important a geological resource or registration is as regards potential commercial exploitation now or in the future</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FellesegenskapRåstoffPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:FellesegenskapRåstoff"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="FellesegenskaperGrus" substitutionGroup="gml:AbstractFeature" type="grusogpukkfradatamodell:FellesegenskaperGrusType">
+    <annotation>
+      <documentation>abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper
+
+Merknad:
+Spesielt i produktspesifikasjonsarbeid vil en velge egenskaper og avgrensningslinjer fra denne klassen.</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="FellesegenskaperGrusType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="datauttaksdato" type="date">
+            <annotation>
+              <documentation>dato for uttak fra en database
+
+Merknad:
+Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">DATAUTTAKSDATO</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="førsteDatafangstdato" type="date">
+            <annotation>
+              <documentation>dato når data ble registrert/observert/målt første gang, som utgangspunkt for første digitalisering
+
+Merknad:
+førsteDatafangstdato brukes hvis det er av interesse å forvalte informasjon om når en ble klar over objektet. Dette kan for eksempel gjelde datoen for første flybilde som var utgangspunkt for registrering i en database.</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FØRSTEDATAFANGSTDATO</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="oppdateringsdato" type="date">
+            <annotation>
+              <documentation>dato for siste endring på objektetdataene
+
+Merknad:
+Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">OPPDATERINGSDATO</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="identifikasjon" type="grusogpukkfradatamodell:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="kvalitet" type="grusogpukkfradatamodell:PosisjonskvalitetPropertyType">
+            <annotation>
+              <documentation>beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="stedfestingVerifisert" type="boolean">
+            <annotation>
+              <documentation>angivelse om stedfestingen (koordinatene) er  kontrollert  og funnet i orden (verifisert)</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">STED_VERIF</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FellesegenskaperGrusPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:FellesegenskaperGrus"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="GeolAvgrLinje" substitutionGroup="gml:AbstractFeature" type="grusogpukkfradatamodell:GeolAvgrLinjeType">
+    <annotation>
+      <documentation>generell avgrensning av geologisk objekt
+
+
+-- Definition --
+general delimitation of geological object</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">KURVE</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="GeolAvgrLinjeType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener
+
+-- Definition --
+course follwing the transition between different real world phenomena</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">KURVE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GeolAvgrLinjePropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:GeolAvgrLinje"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Identifikasjon" substitutionGroup="gml:AbstractObject" type="grusogpukkfradatamodell:IdentifikasjonType"/>
+  <complexType name="IdentifikasjonType">
+    <sequence>
+      <element name="lokalId" type="string">
+        <annotation>
+          <documentation>lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.</documentation>
+          <appinfo>
+            <sc:taggedValue tag="SOSI_navn">LOKALID</sc:taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="navnerom" type="string">
+        <annotation>
+          <documentation>navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
+          <appinfo>
+            <sc:taggedValue tag="SOSI_navn">NAVNEROM</sc:taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="versjonId" type="string">
+        <annotation>
+          <documentation>identifikasjon av en spesiell versjon av et geografisk objekt (instans)</documentation>
+          <appinfo>
+            <sc:taggedValue tag="SOSI_navn">VERSJONID</sc:taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="IdentifikasjonPropertyType">
+    <sequence>
+      <element ref="grusogpukkfradatamodell:Identifikasjon"/>
+    </sequence>
+  </complexType>
+  <element name="KnustBergForekomst" substitutionGroup="grusogpukkfradatamodell:FellesegenskapRåstoff" type="grusogpukkfradatamodell:KnustBergForekomstType">
+    <annotation>
+      <documentation>En ansamling av bergarter som har eller kan få en økonomisk verdi som byggeråstoff. En forekomst må ha et estimat eller en beregning av volum og kvalitet.
+
+--Definition--
+A volume of naturally occurring rocks usually of economic value as construction material</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">KNUSTBERGFOREKOMST</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="KnustBergForekomstType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:FellesegenskapRåstoffType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensning" type="grusogpukkfradatamodell:GeolAvgrLinjePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KnustBergForekomstPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:KnustBergForekomst"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="KnustBergProspekt" substitutionGroup="grusogpukkfradatamodell:MineralRegistrering" type="grusogpukkfradatamodell:KnustBergProspektType">
+    <annotation>
+      <documentation>område der det er potensial for en eller flere forekomster av bergarter egnet for byggeråstoffer basert på tidligere undersøkelser eller observasjoner, og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner for mineralressurser.
+
+--Definition--
+An area that is a potential site of rock aggregate deposits, based on preliminary exploration, previous exploration.</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">KNUSTBERGPROSPEKT</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="KnustBergProspektType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:MineralRegistreringType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensning" type="grusogpukkfradatamodell:GeolAvgrLinjePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KnustBergProspektPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:KnustBergProspekt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="KnustBergProvins" substitutionGroup="grusogpukkfradatamodell:MineralRegistrering" type="grusogpukkfradatamodell:KnustBergProvinsType">
+    <annotation>
+      <documentation>område definert av geologiske egenskaper som avgrenser mulighetene for funn av bestemte økonomisk interessante bergarter til byggeråstoff
+
+--Definition--
+Geologic provinces classified by (hard) rock aggregate resources.</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">KNUSTBERGPROVINS</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="KnustBergProvinsType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:MineralRegistreringType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensning" type="grusogpukkfradatamodell:GeolAvgrLinjePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KnustBergProvinsPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:KnustBergProvins"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="KnustBergRegistrering" substitutionGroup="grusogpukkfradatamodell:MineralRegistrering" type="grusogpukkfradatamodell:KnustBergRegistreringType">
+    <annotation>
+      <documentation>Ethvert volum av økonomisk interessant bergart til byggeråstoff
+
+--Definition--
+Any volume of rock applicable for construction purposes.</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">KNUSTBERGREGISTRERING</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="KnustBergRegistreringType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:MineralRegistreringType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensning" type="grusogpukkfradatamodell:GeolAvgrLinjePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KnustBergRegistreringPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:KnustBergRegistrering"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="KnustBergUttak" substitutionGroup="gml:AbstractFeature" type="grusogpukkfradatamodell:KnustBergUttakType">
+    <annotation>
+      <documentation>uttakssted for produksjon av knust berg (pukk)
+
+-- Definition --
+Crushed rock aggregate extraction site</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">KNUSTBERGUTTAK</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="KnustBergUttakType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="identRastoffobj" type="integer">
+            <annotation>
+              <documentation>forekomstobjektets identifikasjonskode
+
+Merknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).
+
+Eksempel: 17290010101</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FOREKOM_ID</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="forekomstNummer" type="integer">
+            <annotation>
+              <documentation>unik nummerering av forekomsten som råstoffobjektet tilhører
+
+Merknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten
+
+Eks. 1729001</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">R_FNR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="ressursType" type="grusogpukkfradatamodell:RessursTypeType">
+            <annotation>
+              <documentation>hvilken type råstoff som kan være/er gjenstand for utvinning.
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode
+
+-- Definition --
+Values indicating the type of commodity.
+what type of raw material that may be/is subject to extraction
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RESSTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="råstoffBetydning" type="grusogpukkfradatamodell:RåstoffBetydningType">
+            <annotation>
+              <documentation>hvilken betydning en mineralforekomst har med tanke på mulig økonomisk
+utnyttelse nå eller for framtiden. Skal begrunnes.
+
+-- Definition --
+how important a geological resource or registration is as regards potential
+commercial exploitation now or in the future</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RASTOFFBETYDNING</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="mineralRegistreringType" type="grusogpukkfradatamodell:MineralRegistreringTypeType">
+            <annotation>
+              <documentation>hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.
+Eksempler på dette er prospekt, registrering og forekomst.
+
+-- Definition -- The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="ressursUndertype" type="string">
+            <annotation>
+              <documentation>underinndeling av materialtypene som kan være/er gjenstand for utvinning
+Merknad: Er en mer detaljert inndeling av det råstoff som utvinnes
+(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)
+
+sub-classification of material types that may be/are subject to extraction
+Note: a more detailed classification of the raw material that is extracted
+(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RESSUNTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="navnRastoffobj" type="string">
+            <annotation>
+              <documentation>navn på forekomsten</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FOREKNAVN</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="lokalNummer" type="integer">
+            <annotation>
+              <documentation>nummerering av lokalitet i forekomsten
+
+Merknad: Er en del av FOREKOM_ID: Eks: 1729001(01)01</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">R_LNR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="stedfestingVerifisert" type="boolean">
+            <annotation>
+              <documentation>angir om stedfestingen (koordinatene) er kontrollert og funnet i orden (verifisert)</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">STED_VERIF</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="geolBeskrivelse" type="string">
+            <annotation>
+              <documentation>tekstlig beskrivelse av objektet</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">GEOBESK</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="geolBeskrivelseURL" type="string">
+            <annotation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">GEOBESK_URL</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="antallAnalyser" type="integer">
+            <annotation>
+              <documentation>antallet utførte kjemiske og/eller mekaniske analyser</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">ANT_ANALYS</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KnustBergUttakPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:KnustBergUttak"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <simpleType name="LosmassetypeType">
+    <annotation>
+      <documentation>kvartærgeologiske løsmassetyper (jordartstyper)
+
+Merknad: Nærmere forklaring til definisjoner og dannelsesmåte er å finne i heftet; Kvartærgeologisk kart over Norge, 1:1 mill., tema jordarter (Thoresen M, Norges geologiske undersøkelse, 1991) og i NGU intern-rapport 2001.018 (Bergstrøm m.fl.).</documentation>
+    </annotation>
+    <union memberTypes="grusogpukkfradatamodell:LosmassetypeEnumerationType grusogpukkfradatamodell:LosmassetypeOtherType"/>
+  </simpleType>
+  <simpleType name="LosmassetypeEnumerationType">
+    <annotation>
+      <documentation>kvartærgeologiske løsmassetyper (jordartstyper)
+
+Merknad: Nærmere forklaring til definisjoner og dannelsesmåte er å finne i heftet; Kvartærgeologisk kart over Norge, 1:1 mill., tema jordarter (Thoresen M, Norges geologiske undersøkelse, 1991) og i NGU intern-rapport 2001.018 (Bergstrøm m.fl.).</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="Løsmasser/berggrunn under vann, uspesifisert">
+        <annotation>
+          <documentation>Brukes for en avsetning der genetisk opprinnelse ikke er påvist, og det er heller ikke bestemt  om sedimentet er av marin opprinnelse.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Morenemateriale, uspesifisert">
+        <annotation>
+          <documentation>Materiale plukket opp, transportert og avsatt av isbreen. Det er vanligvis dårlig sortert og kan inneholde alt fra leir til stein og blokk. Mektighet, morenetype og overflateform kan variere. Benyttes ved kartframstilling i svært små målestokker.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Morenemateriale, sammenhengende dekke, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av isbreer. Materialet er dårlig sortert, ofte kompakt og kan inneholde alle kornstørrelser, alt fra leir til stein og store blokker. Avsetningens tykkelse kan variere fra noen desimeter til mange titalls meter. Eventuelle fjellblotninger er markert som punktsymboler.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Morenemateriale, usammenhengende eller tynt dekke over berggrunnen">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av isbreer. Materialet er dårlig sortert, ofte kompakt og kan inneholde alle kornstørrelser, alt fra leir til stein og store blokker. Avsetningen er normalt usammenhengende med hyppige fjellblotninger. Den er sjelden mer enn 0.5 m tykk, men kan enkelte steder være mektigere.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Moreneleire">
+        <annotation>
+          <documentation>Morenemateriale med særlig høyt leir- og siltinnhold, oftest meget kompakt.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Avsmeltningsmorene (Ablasjonsmorene)">
+        <annotation>
+          <documentation>Løst lagret, delvis sortert morenemateriale. Forekommer ofte som tilfeldig orienterte hauger og rygger, dannet ved passiv isnedsmelting (dødis).</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Randmorene/randmorenesone">
+        <annotation>
+          <documentation>Enkeltrygger eller større områder med morenemateriale som er avsatt langs en brefront. Materialet er usortert og kan inneholde alle kornstørrelser fra leir til stein og store blokker.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Drumlin">
+        <annotation>
+          <documentation>Strømlinjeformet løsmasserygg. Vanligvis utformet i morenemateriale, men kan også bestå av sorterte sedimenter. Hvis løsmasseavsetningen er akkumulert på lesiden av oppstikkende fjell, kan formen kalles knaus-og-hale. Ryggformen orientert parallelt med tidligere isbevegelsesretning.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Rogenmorene">
+        <annotation>
+          <documentation>Område med bølgende rygger av hovedsakelig morenemateriale, orientert på tvers av brebevegelsen.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Breelvavsetning (Glasifluvial avsetning)">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av breelver. Sedimentet består av sorterte, ofte lagdelte avsetninger av forskjellig kornstørrelse fra fin sand til stein og blokk. Breelvavsetninger har ofte tydelige overflateformer som tørrlagte kanaler, terrasser og rygger. Mektigheten er ofte flere ti-talls meter.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Breelv- og elveavsetning">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av elver eller breelver. Sedimentet består av sorterte lag av forskjellig kornstørrelse fra fin sand til grus og stein. Det er ikke skilt mellom breelv- og elveavsetninger. Brukes kun i spesielle tilfeller.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Ryggformet breelvavsetning (Esker)">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av breelver. Sorterte og lagdelte sedimenter, vesentlig sand, grus og stein, avsatt i tunneler eller sprekker i isbreer. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og linjesymbolet for esker til å angi ryggformer.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Haugformet breelvavsetning (Kame)">
+        <annotation>
+          <documentation>Område med hauger av breelvmateriale, opprinnelig avsatt i hulrom i en bre eller langs en brekant. Kan ha terrasseform hvis materialet ble avsatt langs en iskant. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og punktsymbolet for kame til å angi haugformer.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Bresjø- eller brekammeravsetning (Glasilakustrin avsetning)">
+        <annotation>
+          <documentation>Sortert, ofte finkornet materiale avsatt i bresjø eller vannfylt brekammer, hvor tykkelsen er mer enn 0,5 m. Mektigheten kan være flere ti-talls meter.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Breelv- og bresjø-/brekammeravsetning (Glasifluvial og glasilakustrin avsetning)">
+        <annotation>
+          <documentation>Materiale avsatt av breelv eller i bredemte sjøer eller brekammer. Det er ikke skilt mellom breelv- og bresjø-/kammeravsetninger.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Innsjøavsetning (Lakustrin avsetning)">
+        <annotation>
+          <documentation>Sortert, ofte finkornet og organisk-rikt materiale avsatt i innsjø.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Bresjø-/brekammer og innsjøavsetning (Glasilakustrin og lakustrin avsetning)">
+        <annotation>
+          <documentation>Brukt der de to avsetningstypene bresjø-/brekammer og innsjøavsetning ikke separeres.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Strandavsetning innsjø og/eller bresjø">
+        <annotation>
+          <documentation>Avsetning av sortert og godt rundet materiale dannet ved bølgeaktivitet i strandsonen i innsjø eller bredemt sjø. Kornstørrelse varierer, men grus og stein er vanlig.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Hav- og fjordavsetning, uspesifisert">
+        <annotation>
+          <documentation>Finkornet, marin avsetning. Brukt for kart i små målestokker der avsetningen ikke er inndelt etter mektighet</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Hav- og fjordavsetning, sammenhengende dekke, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Sammenhengende, finkornet marin avsetning med mektighet opp til mange ti-talls meter. Avsetningstypen kan også omfatteskredmasser fra kvikkleireskred, ofte angitt med tilleggssymbol.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Marin strandavsetning, sammenhengende dekke">
+        <annotation>
+          <documentation>Sammenhengende avsetning av strandvaskede, marine sedimenter, dannet av bølge- og strømaktivitet i strandsonen. Avsetningen danner ofte strandvoller. Materialet er ofte rundet og godt sortert. Kornstørrelsen varierer fra sand til blokk, men sand, grus og stein er vanligst. Strandavsetninger ligger som et forholdsvis tynt dekke over berggrunn eller andre sedimenter. Der avsetningen er stor nok til å danne figur på kartet brukes løsmassetypen til å angi utbredelsen og linjesymbolet for strandvoll til å angi ryggformer.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Hav-, fjord- og strandavsetning, usammenhengende eller tynt dekke over berggrunnen">
+        <annotation>
+          <documentation>Område med ulike typer marine avsetninger. Tykkelsen på avsetningene er normalt mindre enn 0,5 m, men den kan helt lokalt være noe større. Kornstørrelser angis normalt ikke, men kan være alt fra leir til blokk.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Skjellsand (maringeologi)">
+        <annotation>
+          <documentation>Avsetning som i stor grad består av knuste skall av kalkutskillende organismer. Er en type av bioklastisk materiale. Kornstørrelse varierer fra nesten hele skall til sand. Det kan være ansamlet store mengder av skjellsand i umiddelbar nærhet av gode skjellvekstområder.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Marin gytje">
+        <annotation>
+          <documentation>Avsetning som består av finkornet materiale med høyt organisk innhold. Det organiske materialet er primærprodusert i saltvann.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Elve- og bekkeavsetning (Fluvial avsetning)">
+        <annotation>
+          <documentation>Materiale som er transportert og avsatt av elver og bekker. Sortert sand og grus dominerer og partiklene er ofte godt rundet. Avsetningene kan ha meget varierende mektigheter. Typiske overflateformer er elvesletter, terrasser og vifter.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Elveavsetning, sammenhengende dekke">
+        <annotation>
+          <documentation>Materiale som er transportert og avsatt av elver og bekker. De mest typiske formene er elvesletter, terrasser og vifter. Sand og grus dominerer, og materialet er sortert og rundet. Brukes kun i spesielle tilfeller.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Elve- og bekkeavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale som er transportert og avsatt av elver og bekker. Sortert sand og grus dominerer og partiklene er ofte godt rundet. Tykkelsen på avsetningene er normalt mindre enn 0,5 m, men den kan helt lokalt være noe større.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Flomavsetning bresjøtapping (uspesifisert)">
+        <annotation>
+          <documentation>Brukes for spesielle sedimenter avsatt ved plutselig uttapning av bresjøer.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Flomavsetning fra bresjøtapping, sammenhengende">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av vann ved katastrofal tapping av bresjø.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Flomavsetning fra bresjøtapping, usammenhengende eller tynt dekke over berggrunnen">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av vann ved katastrofal tapping av bresjø. Tykkelse mindre enn 0,5 m.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Flomavsetning">
+        <annotation>
+          <documentation>Materiale som er transportert og avsatt fra elver og bekker ved unormalt høy vannføring. I flate områder (elvesletter) vil avsetningen være finkornet (silt og sand), mens i brattere vassdrag vil relativt grovt materiale bli avsatt i vifteform der terrenget flater ut.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Flomavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale som er transportert og avsatt fra elver og bekker ved unormalt høy vannføring. I flate områder (elvesletter) vil avsetningen være finkornet (silt og sand), mens i brattere vassdrag vil relativt grovt materiale bli avsatt i vifteform der terrenget flater ut.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Vindavsetning (Eolisk avsetning)">
+        <annotation>
+          <documentation>Godt sortert sand og grov silt, transportert og avsatt av vind. Ofte kalt flygesand.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Forvitringsmateriale, ikke inndelt etter mektighet">
+        <annotation>
+          <documentation>Løsmasser dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell. Brukes når en ikke skiller mellom sammenhengende og usammenhengende dekke av denne avsetningstypen.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Forvitringsmateriale">
+        <annotation>
+          <documentation>Usorterte løsmasser av varierende kornstrørrelse. Materalet er dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell. Tykkelsen er mer enn 0,5 m.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Forvitringsmateriale, usammenhengende eller tynt dekke over berggrunnen">
+        <annotation>
+          <documentation>Usorterte løsmasser av varierende kornstrørrelse. Materalet er dannet på stedet ved fysisk eller kjemisk nedbryting av berggrunnen. Gradvis overgang til underliggende fast fjell.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Forvitringsmateriale, stein- og blokkrikt (blokkhav)">
+        <annotation>
+          <documentation>Blokkrike avsetninger, ofte kalt blokkhav. Mest vanlig i høyfjellsområder. Dannet på stedet, primært ved frostforvitring av berggrunnen over lange tidsrom. Materialet er mer finkornet under overflaten.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Skredmateriale, ikke inndelt etter mektighet">
+        <annotation>
+          <documentation>Avsetninger dannet ved steinsprang, fjellskred, snø- eller løsmasseskred fra bratte dalsider. Uspesifisert tykkelse</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Skredmateriale, sammenhengende dekke">
+        <annotation>
+          <documentation>Avsetninger dannet ved steinsprang, fjellskred, snøskred eller løsmasseskred fra bratte dalsider. Materialet kan inneholde alle kornstørrelser og ha varierende sorteringsgrad. Punktsymbol viser dominerende skredtype.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Skredmateriale, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Avsetninger dannet ved steinsprang, fjellskred, snø- og løsmasseskred fra bratte dalsider. Materialet kan inneholde alle kornstørrelser og ha varierende sorteringsgrad. Punktsymbol viser dominerende skredtype.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Steinbreavsetning">
+        <annotation>
+          <documentation>Tungeformet masse av usortert materiale som inneholder, eller har inneholdt is og derfor er, eller har vært i bevegelse. Bevegelsen skyldes intern deformasjon av isen under påvirkning av tyngdekraften. Avsetningstypen dannes under permafrostforhold. De fleste steinbreer i Norge er i dag inaktive uten bevegelse.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Torv og myr">
+        <annotation>
+          <documentation>Organisk materiale dannet av ikke nedbrutte planterester, akkumulert gjennom perioden etter siste istid. Det skilles ikke mellom ulike torvtyper.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Tynt dekke av organisk materiale over berggrunn">
+        <annotation>
+          <documentation>Område med tynt dekke av bakkevegetasjon og delvis nedbrutte planterester, som ligger direkte på berggrunn. Fjellblotninger opptrer hyppig innen slike områder.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Usammenhengende eller tynt løsmassedekke over berggrunnen, flere løsmassetyper, uspesifisert">
+        <annotation>
+          <documentation>Forskjellige sedimenter som danner et tynt eller usammenhengende dekke over berggrunnen. Denne betegnelsen brukes bare når en ikke velger å skille mellom ulike typer av løsmasser.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sammenhengende løsmassedekke av flere jordarter">
+        <annotation>
+          <documentation>Vanligvis skredmateriale med morenemateriale, forvitringsmateriale, torv og humus sterkt blanda ved skråningsprosesser. Brukes kun i spesielle tilfeller der det er meget vanskelig å skille mellom opprinnelige løsmassetyper.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Bart fjell/fjell med tynt torvdekke, uspesifisert">
+        <annotation>
+          <documentation>Brukes når en ikke velger å skille mellom bart fjell og humusdekke eller tynt torvdekke over berggrunnen.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Fyllmasse (antropogent materiale)">
+        <annotation>
+          <documentation>Løsmasser som i hovedsak er transportert og avsatt av mennesker. Løsmassetypen finnes ofte i områder med nyere bygningsmasse og ved store veganlegg.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Steintipp">
+        <annotation>
+          <documentation>Masser av sprengt fjell, transportert og avsatt av mennesker. Ofte knyttet til gruvedrift.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Menneskepåvirket materiale, ikke nærmere spesifisert">
+        <annotation>
+          <documentation>Dominerende stedegne masser, omarbeidet i overflaten slik at opprinnelig løsmassetype ikke er gjenkjennelig.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Bart fjell">
+        <annotation>
+          <documentation>Fjelloverflate uten løsmassedekke.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Bart fjell/fjell med usammenhengende eller tynt løsmassedekke">
+        <annotation>
+          <documentation>Brukes på oversiktskart der bart fjell slås sammen med alle typer tynt eller usammenhengende løsmassedekke.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Harde sedimenter eller sedimentære bergarter (maringeologi)">
+        <annotation>
+          <documentation>Blotning av konsoliderte sedimenter eller sedimentære bergarter på havbunnen.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Marin suspensjonsavsetning (maringeologi)">
+        <annotation>
+          <documentation>Finkornete (leire, silt) sedimenter transportert og avsatt fra suspensjon. Draperer vanligvis underliggende sedimenter eller fjell og er oftest lagdelt.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Marin bunnstrømavsetning (maringeologi)">
+        <annotation>
+          <documentation>Sedimenter som består av hovedsaklig sand og grus transportert og avsatt fra bunnstrømmer. Dekker bunnen av undersjøiske kanaler laget av bunnstrømmer. Har ofte kryss-sjiktet og lentikulær- sjiktet indre struktur.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Glasimarin avsetning (maringeologi)">
+        <annotation>
+          <documentation>Hovedsakelig finkornete suspensjonsavsetninger (silt, leire) avsatt i nærhet av is/isbreer. Kan være påvirket av bunnstrømmer og utjevner topografien mer enn draperer. Forekommer i mektige lag i områder på kontinentalhyllen langs kysten og i fjorder.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Iskontaktavsetning (maringeologi)">
+        <annotation>
+          <documentation>Sedimenter avsatt i kontakt med is. Kan være morene, glasifluvialt materiale, eller en blanding av glasialt avsatte sedimenter. Kornstørrelsen veksler mellom leire og grus alt etter hvilke prosesser som virket.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Utvaskingslag (maringeologi)">
+        <annotation>
+          <documentation>Sedimenter bestående av sand, grus og bergartsfragmenter etter at finstoffet er vasket vekk av bølger og strøm. Danner et dekkende lag over morene eller andre jordarter med stor variasjon i kornstørrelser.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Glasifluvial deltaavsetning (maringeologi)">
+        <annotation>
+          <documentation>Sedimenter transportert av breelver og avsatt i hav, bresjø eller innsjø.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Fluvial deltaavsetning (maringeologi)">
+        <annotation>
+          <documentation>Sedimenter avsatt ved utløpet av en elv i en fjord, innsjø eller i havet. Kornstørrelsen er ofte i sandfraksjonen nær elveutløpet og mer finkornete på dypere vann. Har typisk skrålaging med helling i strømretningen.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Tidevannsavsetning (maringeologi)">
+        <annotation>
+          <documentation>Avsetning dannet i kystnære områder ved tidevannstransport. Sedimentene er sandige til leirholdige med typiske strukturer som sanddyner, rifler, kryss-sjikting, mikro-kryss-sjikting, flasersjikting og lentikulær sjikting.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Estuarin avsetning (maringeologi)">
+        <annotation>
+          <documentation>Et sediment avsatt i brakkvann i et estuarie. Sedimentet er karakterisert av finkornet materiale (silt, leire) av marin og fluvial opprinnelse blandet med en høy andel rester av terrestrisk organisk materiale.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Levé avsetning (maringeologi)">
+        <annotation>
+          <documentation>Avsetning dannet som en forhøyning av sedimenter langs en eller begge sidene  av en undersjøisk kanal (kløft, viftedal eller dyphavskanal). Avsetningen kan ha varierende kornstørrelse, fra finkornet (leir) til nokså grovt materiale (sand).</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Grunnmarin avsetning (maringeologi)">
+        <annotation>
+          <documentation>Sedimenter avsatt i turbulent grunt marint miljø der det fineste materialet er vasket ut og transportert til dypere vann av strømmer og bølger. Består av sand, grus og stein. I områder med mye sand kan sandbølger bygges med en karakteristisk kryss-sjikting og skrålaging.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Konturittavsetning (maringeologi)">
+        <annotation>
+          <documentation>Klastiske sedimenter transportert og avsatt av kontur-strømmer langs egga kanten. Består av fint, velsortert materiale (silt og leir). Avsetningene har vanligvis horisontal- eller kryss-sjiktning og normal- eller omvendt gradering.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Turbidittavsetning (maringeologi)">
+        <annotation>
+          <documentation>Avsetninger dannet ved sedimenttransport og utfelling fra en turbidittstrøm.  Består av materiale i kornstørrelse fra leire til sand og er ofte karakterisert ved normalgradert lagning og moderat til dårlig sortering. Finnes oftest ved foten av skråninger med stor mektighet av løse sedimenter (for eksempel langs kontinentalskråningen).</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Debrisstrømavsetning (maringeologi)">
+        <annotation>
+          <documentation>Avsetning fra en flytende masse av stein, jord og slam. Den består av usortert materiale der mer enn halvparten av partiklene er større enn sandstørrelse.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Undersjøisk vifteavsetning (maringeologi)">
+        <annotation>
+          <documentation>En konisk eller vifteformet avsetning beliggende ved munningen av en undersjøisk kløft. Består for det meste av fine sedimenter (leire, silt). Viften har en finlaget indre struktur med en svak helling av lagene mot dyphavet.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Kanalsavsetning (maringeologi)">
+        <annotation>
+          <documentation>Sedimenter avsatt i en kanal. Avsetningene vil vanligvis bestå av relativt grove sedimenter (sand, grus)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Dypmarin avsetning (maringeologi)">
+        <annotation>
+          <documentation>Samlebetegnelse på dyphavssedimenter. Kan være både konturittisk, hemipelagisk, eupelagisk osv. Dette er fine sedimenter bunnfelt utenfor kontinentalmarginen. Består i stor grad av leire og rester av pelagiske organismer.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Bioklastisk avsetning (maringeologi)">
+        <annotation>
+          <documentation>Sediment som for en stor del består av små partikler av biologisk opprinnelse (skjell, korall). Kornstørrelsen kan variere fra sand til hele skjell eller korallkolonier. Forekommer i begrensete områder der vekstforholdene har vært optimale over lengre tid og mengden av annet klastisk materiale liten.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Vulkanosedimentær avsetning (maringeologi)">
+        <annotation>
+          <documentation>Avsetning som består av materiale av vulkansk opprinnelse. Alt etter kornstørrelse kan sedimentene deles inn i vulkansk aske, lapilli (2-64 mm) og breksje (&gt;64mm).</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Lagdelte sedimenter (&gt;1 m) over debrisstrøm (maringeologi)">
+        <annotation>
+          <documentation>Lagdelte sedimenter (&gt;1m) over debrisstrømavsetning.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Karbonatskorpe (maringeologi)">
+        <annotation>
+          <documentation>Forekomster av karbonatsementerte sedimenter som danner opp til flere desimeter tykke skorper på havbunnen</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Morene med tynt dekke av glasimarine sedimenter">
+        <annotation>
+          <documentation>Morene med tynt dekke (mindre enn 1-2 m) av glasimarine sedimenter</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Morene med tynt dekke av finkornige sedimenter">
+        <annotation>
+          <documentation>Morene med tynt dekke (mindre enn 1-2 m) av finkornige sedimenter</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Skredmateriale, dekket av yngre sedimenter (maringeologi)">
+        <annotation>
+          <documentation>Skredmateriale, dekket av yngre sedimenter</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Skredmateriale, delvis dekket av yngre sedimenter (maringeologi)">
+        <annotation>
+          <documentation>Skredmateriale, delvis dekket av yngre sedimenter</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Skredmateriale og hemipelagiske avsetninger (maringeologi)">
+        <annotation>
+          <documentation>Veksling mellom skredavsetninger og hemipelagiske avsetninger. Hemipelagiske avsetninger består stort sett av finkornet materiale, delvis produsert i vannmassene lokalt, og delvis tilført utenifra.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Uspesifisert marin avsetning (maringeologi)">
+        <annotation>
+          <documentation>Marin avsetning med ukjent opprinnelse</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Jord- og flomskredavsetning">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av løsmasseskred (ikke leirskred). Avsetningene danner gjerne rygger, lober eller vifteformer.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Jord- og flomskredavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av løsmasseskred (ikke leirskred). Avsetningene danner gjerne rygger, lober eller vifteformer.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Leirskredavsetning, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Avsetning som dannes når leirholdige sedimenter løsner og glir ut.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Leirskredavsetning, usammenhengende eller tynt dekke over berggrunnen">
+        <annotation>
+          <documentation>Avsetning som dannes når leirholdige sedimenter løsner og glir ut.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Fjellskredavsetning, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av fjellskred. Fjellskred har stort volum og svært lang utløpslengde og avsetningen har derfor typisk stor utstrekning. Avsetningens overflate er ofte dominert av kantete blokker.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Fjellskredavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av fjellskred. Fjellskred har stort volum og svært lang utløpslengde og avsetningen har derfor typisk stor utstrekning. Avsetningens overflate er ofte dominert av kantete blokker.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Steinsprangavsetning, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Avsetning bestående av usortert materiale nedenfor en bratt kant i fast fjell, hvor stein og blokk over tid har løsnet og falt ned til skråningsfoten. Materialet varierer i kornstørrelse fra sand til blokk, med generelt økende kornstørrelse med lengre avstand fra løsneområdet.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Steinsprangavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Avsetning bestående av usortert materiale nedenfor en bratt kant i fast fjell, hvor stein og blokk over tid har løsnet og falt ned til skråningsfoten. Materialet varierer i kornstørrelse fra sand til blokk, med generelt økende kornstørrelse med lengre avstand fra løsneområdet.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Snøskredavsetning, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av snøskred. Kan omfatte alle kornstørrelser og er usortert. Gjentatt snøskredaktivitet over tid kan bygge store vifteformete avsetninger.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Snøskredavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av snøskred. Kan omfatte alle kornstørrelser og er usortert.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Steinskredavsetning, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av steinskred. Steinskred har mindre volum og kortere utløpslengde enn fjellskred, men består hovedsakelig av større blokker enn nærliggende steinsprangavsetninger. Avsetningens overflate er ofte dominert av kantete blokker.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Steinskredavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av steinskred. Steinskred har mindre volum og kortere utløpslengde enn fjellskred, men består hovedsakelig av større blokker enn nærliggende steinsprangavsetninger. Avsetningens overflate er ofte dominert av kantete blokker.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Snø- og jordskredavsetning, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av snøskred og jordskred. Begge prosessene er aktive ulike tider på året. Materialet omfatter alle kornstørrelser og er usortert. Gjentatt skredaktivitet over tid kan bygge store vifteformete avsetninger.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Snø- og jordskredavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av snøskred og jordskred. Begge prosessene er aktive ulike tider på året. Materialet omfatter alle kornstørrelser og er usortert.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Jordskred- og steinsprangavsetning, stedvis  med stor mektighet">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av jordskred og steinsprang. Sorteringsgraden er varierende i avsetningen. Gjentatt skredaktivitet over tid kan danne tykke avsetninger.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Jordskred- og steinsprangavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av jordskred og steinsprang. Sorteringsgraden er varierende i avsetningen.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Snø- og steinsprangavsetning, stedvis med stor mektighet">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av snøskred og steinsprang. Sorteringsgraden er varierende i avsetningen. Gjentatt skredaktivitet over tid kan danne tykke avsetninger.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Snø- og steinsprangavsetning, usammenhengende eller tynt dekke">
+        <annotation>
+          <documentation>Materiale transportert og avsatt av snøskred og steinsprang. Sorteringsgraden er varierende i avsetningen.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sigejord med høyt organisk innhold">
+        <annotation>
+          <documentation>Sterkt frostpåvirket blandingsmateriale som beveger seg sakte nedover en slak skråning. Materialet har opprinnelse i en eller flere finstoffholdige løsmassetyper, ofte morene.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Steinrikt, sigende skråningsmateriale">
+        <annotation>
+          <documentation>Grovkornet, frostpåvirket blandingsmateriale som beveger seg sakte nedover en skråning. Materialet har opprinnelse i forvitret fjell eller skredmateriale.</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="LosmassetypeOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+  <element name="MasseuttakAktivitet" substitutionGroup="gml:AbstractFeature" type="grusogpukkfradatamodell:MasseuttakAktivitetType">
+    <annotation>
+      <documentation>hvilken aktivitet det er i masseuttaket
+
+-- Definition --
+The process of extracting metallic, non-metallic mineral, or industrial rock deposits from the Earth.
+
+-- Description --
+The term may also include preliminary treatment eg. cleaning or sizing.</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">MASSEUTTAKAKTIVITET</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="MasseuttakAktivitetType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="uttakPeriodeFraTil" type="gml:TimePeriodPropertyType">
+            <annotation>
+              <documentation>den perioden masseuttaket/mineralutvinningen foregikk i
+-- Definition --
+Period, or extent in time, of  the mining activity.
+
+-- Description --
+The beginning of the activity links the TM_Period to the TM_Instant at which it starts.  The ending links the TM_Period to the TM_Instant at which it ends.  For a variety of reasons, the position of the TM_Instant designated by 'begin' or 'end' may be inderterminate.</documentation>
+            </annotation>
+          </element>
+          <element name="aktivitetUttak">
+            <annotation>
+              <documentation>hvilken driftsmetode som er brukt ved uttaket
+
+-- Definition --
+The type of mining activity.
+
+-- Description --
+EXAMPLE: Open Pit, Underground Mine, multiple, unspecified) or processing activity (eg Ore Processing) or production.
+Using activity to distinguish between the extraction, processing and production activities allows distinguishing between ore mined/grade/recovery, ore treated/grade/recovery and produced payable/plant recovery.</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">DRIFTMETODEUTTAK</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="uttakMengde">
+            <annotation>
+              <documentation>hvor mye som er utvunnet
+
+-- Definition -- The amount of ore processed by the activity.</documentation>
+            </annotation>
+          </element>
+          <element name="prosessType">
+            <annotation>
+              <documentation>hvilken type prosesser som er benyttet ved uttaket
+
+-- Definition -- The type of processing carried out during the mining activity.</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MasseuttakAktivitetPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:MasseuttakAktivitet"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="MineralRegistrering" substitutionGroup="grusogpukkfradatamodell:FellesegenskaperGrus" type="grusogpukkfradatamodell:MineralRegistreringType">
+    <annotation>
+      <documentation>registrering av en mineralansamling (opphopning, konsentrering) i naturen.
+
+-- Definition --
+&lt;font color="#400040"&gt;A mineral accumulation in the lithosphere. &lt;/font&gt;</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">MINERALREGISTRERING</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="MineralRegistreringType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:FellesegenskaperGrusType">
+        <sequence>
+          <element minOccurs="0" name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>objektets utstrekning</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FLATE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>sted objektet eksisterer på</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">PUNKT</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="identRåstoffobj" type="integer">
+            <annotation>
+              <documentation>forekomstobjektets identifikasjonskode
+
+Merknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer). Eksempel: 17290010101
+
+deposit object identification code   Note: Consists of a municipality number (4 digits) and a serial number (7 digits). Ideally the serial number should consist of an area number (3 digits), a location number (2 digits) and a test number (2 digits). For example: 17290010101</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FOREKOM_ID</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="forekomstNummer" type="integer">
+            <annotation>
+              <documentation>unik nummerering av forekomsten som råstoffobjektet tilhører
+
+Merknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten
+
+Eks. 1729001</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">R_FNR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="mineralRegistreringType" type="grusogpukkfradatamodell:MineralRegistreringTypeType">
+            <annotation>
+              <documentation>hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.
+Eksempler på dette er prospekt, registrering og forekomst.
+
+-- Definition -- The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit</documentation>
+            </annotation>
+          </element>
+          <element name="ressursType" type="grusogpukkfradatamodell:RessursTypeType">
+            <annotation>
+              <documentation>hvilken type råstoff som kan være/er gjenstand for utvinning.
+
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode
+
+-- Definition --
+Values indicating the type of commodity.
+what type of raw material that may be/is subject to extraction
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RESSTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="ressursUndertype" type="string">
+            <annotation>
+              <documentation>underinndeling av materialtypene som kan være/er gjenstand for utvinning
+Merknad: Er en mer detaljert inndeling av det råstoff som utvinnes
+(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)
+
+sub-classification of material types that may be/are subject to extraction
+Note: a more detailed classification of the raw material that is extracted
+(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RESSUNTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="navnRåstoffobj" type="string">
+            <annotation>
+              <documentation>navn på mineralressursobjektet
+
+INSPIRE: name of raw material object</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FOREKNAVN</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="omrNummer" type="integer">
+            <annotation>
+              <documentation>nummerering av forekomsten (forekomstområdet) i kommunen.
+Merknad: Er en del av FOREKOM_ID. Eksempel 1729(001)01101.
+
+deposit numbering (deposit area) in the municipality   Note: part of DEPOSIT_ID   For example: 1729(001)0101</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">R_ONR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="typeRåstoffVirksomhet" type="grusogpukkfradatamodell:TypeRastoffVirksomhetType">
+            <annotation>
+              <documentation>angir type på eventuell aktivitet
+
+indicates type of any activities</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">VIRKSOMHET</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="geolBeskrivelse" type="string">
+            <annotation>
+              <documentation>beskrivende tekstfelt eller link (URL) til tekstlig beskrivelse
+
+descriptive text field or link (URL) to textual description</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">GEOBESK</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="antallAnalyser" type="integer">
+            <annotation>
+              <documentation>antallet utførte kjemiske og/eller mekaniske analyser
+
+the number of chemical and/or mechanical analyses performed</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">ANT_ANALYS</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="sisteBefaringDato" type="date">
+            <annotation>
+              <documentation>dato for siste feltbefaring av forekomsten</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">SISTBEFART</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="altForekomstNr" type="integer">
+            <annotation>
+              <documentation>alternativ nummerering av forekomsten
+Merknad: Kan ha en bestemt form innen den enkelte forekomstdatabasen, og behøver ikke være unikt. Benyttes ofte for å peke tilbake på nummereringssystemer i eldre registre.
+
+alternative numbering of the deposit    Note: May have a specific form in the individual deposit database and does not need to be unique. Often used to refer back to numbering systems in older registers</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">ALTERN_FNR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="historiskViktig" type="boolean">
+            <annotation>
+              <documentation>angivelse om forekomsten er historisk viktig</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">HIST_VIKTIG</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="faktaarkURL" type="string">
+            <annotation>
+              <documentation>link (URL) til forekomstens oppdaterte faktaark ifra NGUs database</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FAKTAARK_URL</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="sluttbrukType" type="gml:CodeType">
+            <annotation>
+              <documentation>hva mineralet/bergarten kan brukes til. Eksempler på dette er byggeråstoffer, miljøkalk, slaggdanner etc.
+
+-- Definition -- The end-use potential of the mineral.
+-- Description --
+EXAMPLE: for energy, fertilizer, building raw material.</documentation>
+              <appinfo>
+                <sc:targetCodeListURI>http://inspire.ec.europa.eu/codelist/EndusePotentialValue</sc:targetCodeListURI>
+                <sc:taggedValue tag="SOSI_navn">SLUTTBRUKTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MineralRegistreringPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:MineralRegistrering"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <simpleType name="MineralRegistreringTypeType">
+    <annotation>
+      <documentation>Klassifisering av objekter i henhold til tilgjengelig kunnskapsnivå
+
+-- Definition --
+The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit.</documentation>
+    </annotation>
+    <union memberTypes="grusogpukkfradatamodell:MineralRegistreringTypeEnumerationType grusogpukkfradatamodell:MineralRegistreringTypeOtherType"/>
+  </simpleType>
+  <simpleType name="MineralRegistreringTypeEnumerationType">
+    <annotation>
+      <documentation>Klassifisering av objekter i henhold til tilgjengelig kunnskapsnivå
+
+-- Definition --
+The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit.</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="forekomst">
+        <annotation>
+          <documentation>Et punkt med et arealfestet område (polygon) der det finnes en dokumentert eller estimert ressurs, som antas å være økonomisk interessant og som enten er eller kan være utnyttbare i fremtida. En forekomst må ha et estimat eller en beregning av volum og kvalitet. For forekomster under bakken vil arealet definere projeksjon til overflaten.
+Området omkranser en dokumentert (målt) reserve/ressurs eller antatt ressurs. Kan omfatte malmer, industrimineraler, og naturstein.
+
+INSPIRE Description:
+A mass of naturally occurring mineral material, e.g. metal ores or non-metallic minerals, usually of economic value, without regard to mode of origin. Accumulations of coal and petroleum may or may not be included.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="registrering">
+        <annotation>
+          <documentation>Et punkt med eller uten et arealfestet område (polygon) der det er observert og/eller analysert forhøyete verdier av utvinnbare mineraler og bergarter. Kan inneholde lite eller mye informasjon og kan også inkludere gamle steinbrudd, skjerp og nedlagte gruver og massetak. Kan omfatte malmer, industrimineraler og naturstein.
+
+INSPIRE Description:
+Any ore or economic mineral in any concentration found in bedrock or as float.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="prospekt">
+        <annotation>
+          <documentation>Et punkt med et arealfestet område (polygon) med høy sannsynlighet for funn av hittil lite eller ikke dokumenterte økonomisk interessante mineralressurser. Arealet kan være basert på kartlagt geologi, lovende analyser av borkjerner og andre prøver, geofysiske anomalier og lignende. Ytterligere ressursgeologiske undersøkelser er nødvendig for å avklare potensialet.
+
+INSPIRE Description:
+An area that is a potential site of mineral deposits, based on preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="provins">
+        <annotation>
+          <documentation>En mineralprovins er et eller flere arealfestete områder (polygoner) der det finnes forhøyete muligheter for funn av angitte mineralressurser. En mineralprovins kan omkranse en eller flere forekomster, prospekter og registreringer
+
+INSPIRE Description:
+Geologic provinces classified by mineral resources.</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="MineralRegistreringTypeOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+  <element name="MinresPrøvepunkt" substitutionGroup="gml:AbstractFeature" type="grusogpukkfradatamodell:MinresPrøvepunktType">
+    <annotation>
+      <documentation>lokalitet hvor det er tatt (innsamlet) prøve(r) for videre bearbeidelse/analyse</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">MINRESPROEVEPKT</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="MinresPrøvepunktType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>sted som objektet eksisterer på</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">PUNKT</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="ressursType" type="grusogpukkfradatamodell:RessursTypeType">
+            <annotation>
+              <documentation>hvilken type råstoff som kan være/er gjenstand for utvinning</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RESSTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="ressursUndertype" type="string">
+            <annotation>
+              <documentation>underinndeling av materialtypene som kan være/er gjenstand for utvinning</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RESSUNTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="identRåstoffobj" type="integer">
+            <annotation>
+              <documentation>forekomstobjektets identifikasjonskode
+
+Merknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).
+
+Eksempel: 17290010101</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FOREKOM_ID</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="forekomstNummer" type="integer">
+            <annotation>
+              <documentation>unik nummerering av forekomsten som råstoffobjektet tilhører
+
+Merknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten
+
+Eks. 1729001</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">R_FNR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="navnRåstoffobj" type="string">
+            <annotation>
+              <documentation>navn på råstoffobjekt</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FOREKNAVN</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="prøveNummer" type="integer">
+            <annotation>
+              <documentation>nummerering av prøvepunkt i forekomsten eller i lokaliteten
+
+Merknad: Er en del av FOREKOM_ID: Eks: 172900101(01)</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">R_PNR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="antallAnalyser" type="string">
+            <annotation>
+              <documentation>antallet utførte kjemiske og/eller mekaniske analyser</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">ANT_ANALYS</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="geolBeskrivelse" type="string">
+            <annotation>
+              <documentation>beskrivende tekstfelt eller link (URL) til tekstlig beskrivelse</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">GEOBESK</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="geolBeskrivelseURL" type="string">
+            <annotation>
+              <documentation>lenke (URL) til tekstlig beskrivelse av objektet</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">GEOBESK_URL</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MinresPrøvepunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:MinresPrøvepunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <simpleType name="MålemetodeType">
+    <union memberTypes="grusogpukkfradatamodell:MålemetodeEnumerationType grusogpukkfradatamodell:MålemetodeOtherType"/>
+  </simpleType>
+  <simpleType name="MålemetodeEnumerationType">
+    <restriction base="string"/>
+  </simpleType>
+  <simpleType name="MålemetodeOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+  <element name="Posisjonskvalitet" substitutionGroup="gml:AbstractObject" type="grusogpukkfradatamodell:PosisjonskvalitetType"/>
+  <complexType name="PosisjonskvalitetType">
+    <sequence>
+      <element name="målemetode" type="grusogpukkfradatamodell:MålemetodeType">
+        <annotation>
+          <documentation>metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss</documentation>
+          <appinfo>
+            <sc:targetCodeListURI>http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.0/Målemetode</sc:targetCodeListURI>
+            <sc:taggedValue tag="SOSI_navn">MÅLEMETODE</sc:taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighet" type="integer">
+        <annotation>
+          <documentation>punktstandardavviket i grunnriss for punkter samt tverravvik for linjer
+
+Merknad:
+Oppgitt i cm</documentation>
+          <appinfo>
+            <sc:taggedValue tag="SOSI_navn">NØYAKTIGHET</sc:taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PosisjonskvalitetPropertyType">
+    <sequence>
+      <element ref="grusogpukkfradatamodell:Posisjonskvalitet"/>
+    </sequence>
+  </complexType>
+  <simpleType name="RessursTypeType">
+    <annotation>
+      <documentation>hvilken type råstoff som kan være/er gjenstand for utvinning.
+
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCodeValue
+
+-- Definition --
+Values indicating the type of commodity.
+
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</documentation>
+    </annotation>
+    <union memberTypes="grusogpukkfradatamodell:RessursTypeEnumerationType grusogpukkfradatamodell:RessursTypeOtherType"/>
+  </simpleType>
+  <simpleType name="RessursTypeEnumerationType">
+    <annotation>
+      <documentation>hvilken type råstoff som kan være/er gjenstand for utvinning.
+
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCodeValue
+
+-- Definition --
+Values indicating the type of commodity.
+
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="edelmetaller">
+        <annotation>
+          <documentation>Edelmetaller (Au,Ag,PGE); Gull, sølv og metaller i platinagruppen (Ru, Ro, Pd, Os, Ir, Pt) og rhenium.
+
+Precious metals: gold, silver and platinum group metals and rhenium; ruthenium, rhodium, palladium, osmium, iridium, and platinum</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="jernmetaller">
+        <annotation>
+          <documentation>Jernmetaller (Fe, Mn, Ti); jern, mangan og titan
+
+Ores of iron, manganese and titanium.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="jernlegeringMetaller">
+        <annotation>
+          <documentation>Jernlegeringsmetaller (Cr, Ni, Co, V, Mo, W); krom, nikkel, kobolt, vanadium, molybden og wolfram.
+
+Metals that are mined for their alloying properties with iron in the manufacture of steel; chromium, nickel, cobalt, vanadium, molybdenum and wolfram.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="basemetaller">
+        <annotation>
+          <documentation>Basemetaller (Cu, Zn, Pb inkl. Fe-sulfider, As, Sb, Bi, Sn); kobber, sink, bly, jern-sulfider, arsen, antimon, vismut og tinn
+
+Base metals; copper, zink, lead, iron-sulphides, arsenic, antimony, bismuth and tin.
+In chemistry, the term base metal is used informally to refer to a metal that oxidizes or corrodes relatively easily and reacts variably with diluted hydrochloric acid (HCl) to form hydrogen. Examples include iron, nickel, lead and zinc. Copper is also considered a base metal because it oxidizes relatively easily, although it does not react with HCl. - http://en.wikipedia.org/wiki/Base_metal</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="energimetaller">
+        <annotation>
+          <documentation>Energimetaller (U, Th); uran og thorium
+Energy minerals; uranium and thorium</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="spesialmetaller">
+        <annotation>
+          <documentation>Spesialmetaller omfatter metaller og grunnstoffer som normalt ikke passer inn i krystallstrukturen til vanlige mineraler (Nb, Ta, Be, Li, Sc, REE); niob, tantal, beryllium, litium, scandium og sjeldne jordartsmetaller.
+
+Special metals and incompatible elements (Nb, Ta, Be, Li, Sc, and REE).</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="andreMetaller">
+        <annotation>
+          <documentation>Andre metaller.
+
+Other metals: Cs, Ga, Ge, Hf, In, Cd, Hg, Re, Rb, Se, Si, Sr, S, Te, Tl, Zr, Mg and metallic elements used for non-metallic products: Ba, K, Ca, Na, Rb
+Commodity is a metal that is extracted from an ore material mined from the Earth</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="karbonatMineraler">
+        <annotation>
+          <documentation>Karbonatmineraler; Kalkstein, dolomittstein, kalkspatmarmor, dolomittmarmor og blandingsbergarter mellom disse. Ofte brukte forkortelser er kalk for både kalkstein og kalkspatmarmor og dolomitt for både dolomittstein og dolomittmarmor.
+
+Limestone, dolomite and calcite and dolomite marble.
+
+A trigonal calcium carbonate mineral CaCO3 used in large crystal form for optics and as compound additive for soil remediation, soil stabilization and concrete repair. http://www.webmineral.com/data/Calcite.shtml http://en.wikipedia.org/wiki/Calcite</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="silika">
+        <annotation>
+          <documentation>Kvarts: kvartssand, kvartssandstein, kvartsitt og hydrotermal kvarts.
+
+Quartz, quartz sand, quartz sandstone, quartzite and hydrothermal quartz.
+Silicon dioxide, also known as silica (from the Latin silex), is a chemical compound that is a dioxide of silicon with the chemical formula SiO2 - http://en.wikipedia.org/wiki/Silica</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="talk">
+        <annotation>
+          <documentation>Talk og serpentin-førende bergarter
+
+Talc and serpentinite.
+Talc is an important industrialMineral. Its resistance to heat, electricity and acids make it an ideal surface for lab counter tops and electrical switchboards. It is also an important filler material for paints, rubber and insecticides. Even with all these uses, most people only know talc as the primary ingredient in talcum powder.- http://www.galleries.com/Talc</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="feltspat">
+        <annotation>
+          <documentation>Feltspatmineraler; pegmatittisk feltspat og anortositt
+Feldspar minerals; pegmatittic feldspar og anorthosite
+
+Feldspars (KAlSi3O8 – NaAlSi3O8 – CaAl2Si2O8) are a group of rock-forming tectosilicate minerals that make up as much as 60% of the Earth's crust. - http://en.wikipedia.org/wiki/Feldspar</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="olivin">
+        <annotation>
+          <documentation>Olivin
+
+Olivine</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="grafitt">
+        <annotation>
+          <documentation>Grafitt; flak-grafitt eller amorf grafitt.
+
+Graphite
+Graphite is a polymorph of the element carbon. Diamond is another polymorph. The two share the same chemistry, carbon, but have very different structures and very different properties. - http://www.galleries.com/Graphite</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="fossiltBrensel">
+        <annotation>
+          <documentation>Fossilt brensel
+
+Fossil fuel</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="nefelinSyenitt">
+        <annotation>
+          <documentation>Nefelin syenitt
+
+Nepheline syenite</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="magnesiumMineraler">
+        <annotation>
+          <documentation>Magnesium-mineraler; magnesitt og brucitt.
+
+Magnesium minerals.; Magnesite and brucite</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="zirkon">
+        <annotation>
+          <documentation>Zirkon
+
+Zirkon</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="berylliumMineraler">
+        <annotation>
+          <documentation>Beryllium-førende mineraler</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="glimmermineraler">
+        <annotation>
+          <documentation>Glimmermineraler; muskovitt, biotitt m.m.
+
+Mica minerals; muscovite, biotite and more.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="andreIndustrimineraler">
+        <annotation>
+          <documentation>Andre industrimineraler
+
+Other industrial minerals
+A compound Earth material, or rock product that is directly used for industrial purposes. Not a specific mineral constituent in the mined material.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="sandsteinOgKonglomerat">
+        <annotation>
+          <documentation>Uomdannete sedimentære bergarter inklusiv sandstein og konglomerat, samt kvartsitt, benyttet som naturstein. Er i INSPIRE inkludert i «sandstone» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/sandstone&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="skiferOgHellestein">
+        <annotation>
+          <documentation>Alle typer omdannete bergarter som kan splittes etter naturlige sjikt til plater og benyttes som naturstein. Inkluderer leirskifer, fyllitt, glimmerskifer, kvartsskifer og grønnskifer. Leirskifer er i INSPIRE inkludert i «slate»
+&lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/slate&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, grønnskifer i «greenstone» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/greenstone&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; og resten i  «miscellaneous dimension stones» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="kvernstein">
+        <annotation>
+          <documentation>Bergarter som historisk er benyttet til produksjon av kvernstein, inklusiv glimmerskifer, amfibolitt og gneis</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="brynestein">
+        <annotation>
+          <documentation>Bergarter som historisk er benyttet til produksjon av brynestein, inklusiv siltstein, kvartsskifer og fyllitt</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="murestein">
+        <annotation>
+          <documentation>Uspesifiserte bergarter som benyttes til produksjon av tørrmurstein. Kan inkludere kvartsskifer og gneis</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="spodumen">
+        <annotation>
+          <documentation>Spodumen er et mineral i pyroksengruppa, et litiumaluminium-silikat, LiAlSi2O6. Det finnes på granittpegmatitter og er et viktig råstoff for framstilling av litiumsambindinger.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="gneis">
+        <annotation>
+          <documentation>Gneis benyttet som naturstein. Inkluderer alle typer gneis. Er i INSPIRE inkludert i «granite» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="marmorOgKalkstein">
+        <annotation>
+          <documentation>Karbonatrike bergarter benyttet som naturstein. Inkluderer marmor, dolomitt og kalkstein. Marmor er i INSPIRE inkludert i «marble» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;
+og kalkstein i «limestone» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/limestone&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="klebersteinOgSerpentinitt">
+        <annotation>
+          <documentation>Kleberstein og serpentinitt benyttet som naturstein. Kleberstein er i INSPIRE inkludert i «miscellaneous dimension stones» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; og serpentinitt i «marble»
+&lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/marble&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="granittOgAndreStørkningsbergarter">
+        <annotation>
+          <documentation>Alle dyp- og gangbergarter, inklusiv granitt, gabbro, syenitt, monzonitt, doleritt, larvikitt, anortositt, dioritt, mangeritt, tonalitt og trondhjemitt benyttet som naturstein. Er i INSPIRE inkludert i «granite»
+&lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/granite&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="knustBerg">
+        <annotation>
+          <documentation>Knust berg
+
+Broad category for coarse particulate material used in construction, including sand, gravel, crushed stone, slag, recycled concrete and geosynthetic aggregates. - http://en.wikipedia.org/wiki/Construction_aggregate</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="sandOgGrus">
+        <annotation>
+          <documentation>Sand og grus
+
+Durable rock fragments (silicates, flints, etc) with a size range: 0.063 mm - 80mm, derived from the weathering, erosion and transport of rocks by glacial or fluvial processes. Used for aggregate purposes and construction fill.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="grusOgAndreLøsmasser">
+        <annotation>
+          <documentation>Grus og andre løsmasser
+
+Sand and gravel and crushed rock extracted from the ground</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="skredOgForvitring">
+        <annotation>
+          <documentation>Skred og forvitringsmateriale</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="skjellsand">
+        <annotation>
+          <documentation>Skjellsand</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="steintipp">
+        <annotation>
+          <documentation>Steintipp</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="leire">
+        <annotation>
+          <documentation>Leire
+
+End use is determined by the properties of the material therefore it is a valid commodity type</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="torv">
+        <annotation>
+          <documentation>Torv
+
+An accumulation of partially decayed vegetation or organic matter that forms in wetland conditions, where flooding obstructs flows of oxygen from the atmosphere, slowing rates of decomposition. Peat is commonly harvested as an important source of fuel in certain parts of the world. http://en.wikipedia.org/wiki/Peat</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="annenNaturstein">
+        <annotation>
+          <documentation>Annen naturstein utenom kategoriene, inklusiv eklogitt, thulitt og amfibolitt. Er i INSPIRE inkludert i «miscellaneous dimension stones» &lt;a href="https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones"&gt;&lt;font color="#0563c1"&gt;&lt;u&gt;https://inspire.ec.europa.eu/codelist/CommodityCodeValue/miscellaneousDimensionStones&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="uspesifisert">
+        <annotation>
+          <documentation>Uspesifisert</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="RessursTypeOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="RåstoffBetydningType">
+    <annotation>
+      <documentation>En mineralforekomsts antatte betydning for fremtidig verdiskaping, i forhold til lokale, regionale og nasjonale forvaltningsnivå.
+
+Kodelisten finnes ikke i INSPIRE-spesifikasjonen, men er en tilpasning til begrepsbruk i norsk lovverk (PBL §5.4 og KU-forskrift §10), KMDs nasjonale forventninger (2019-2023), og fra europeiske spesifikasjoner i Raw Materials Initiative.</documentation>
+    </annotation>
+    <union memberTypes="grusogpukkfradatamodell:RåstoffBetydningEnumerationType grusogpukkfradatamodell:RåstoffBetydningOtherType"/>
+  </simpleType>
+  <simpleType name="RåstoffBetydningEnumerationType">
+    <annotation>
+      <documentation>En mineralforekomsts antatte betydning for fremtidig verdiskaping, i forhold til lokale, regionale og nasjonale forvaltningsnivå.
+
+Kodelisten finnes ikke i INSPIRE-spesifikasjonen, men er en tilpasning til begrepsbruk i norsk lovverk (PBL §5.4 og KU-forskrift §10), KMDs nasjonale forventninger (2019-2023), og fra europeiske spesifikasjoner i Raw Materials Initiative.</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="internasjonalBetydning">
+        <annotation>
+          <documentation>1. Metall- og industrimineralforekomster med dokumenterte ressurser som kan gi et signifikant bidrag til internasjonale behov
+- herunder forekomster med meget høy dokumentert in situ-verdi basert på kvalitet og tonnasje
+- herunder forekomster med potensial for årsproduksjon som dekker signifikant andel av behov i EU/EØS
+
+2. Forekomster av strategisk viktige eller «kritiske» råstoff
+- herunder dokumenterte forekomster av mineraler på EU liste over kritiske råstoffer som utnyttes eller har potensial for framtidig utnyttelse
+
+3. Forekomster av byggeråstoffer med verdi eller potensial for eksport på minst 1 millioner tonn årlig</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="nasjonalBetydning">
+        <annotation>
+          <documentation>1. Mineralforekomster som har et bekreftet eller sannsynlig, betydelig fremtidig verdiskapingspotensial
+- herunder forekomster med betydelig in-situ verdi
+- herunder byggeråstoffer med betydelig potensial for eksport
+
+2. Mineralforekomster som har unike kvaliteter som gjør dem særlig egnet til foredlende industri
+- herunder industrimineraler og spesialmetaller av særlig høy kvalitet
+
+3. Mineralforekomster som har unike kvaliteter som byggeråstoff
+- herunder knust berg (pukk)- og grusforekomster med unike fysiske egenskaper
+- herunder natursteinsforekomster med unike egenskaper og attraktivitet i det internasjonale markedet
+- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til andre viktige samfunnsområder
+
+4. Forekomster av strategisk viktige eller «kritiske» råstoff
+- herunder forekomster av metaller og industrimineraler som har dokumentert eller sannsynlig framtidig betydning som råstoff til viktige norske samfunnsområder
+
+5. Forekomster som er særdeles viktig for Norges nasjonale infrastruktur
+- herunder grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger til større befolkningssentra i Norge</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="regionalBetydning">
+        <annotation>
+          <documentation>1. Mineralforekomster som har et bekreftet eller sannsynlig fremtidig verdiskapingspotensial med in situ-verdi på mellom 100 og 1000 millioner kroner
+
+2. Mineralforekomster som er særdeles viktig for regional infrastruktur
+- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som er særlig viktig for forsyninger innen en region
+- herunder natursteinsforekomster som har eller har hatt særlig betydning for byggeskikk og arkitektur i en region</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="lokalBetydning">
+        <annotation>
+          <documentation>Mineralforekomster som er viktig for lokal infrastruktur
+- herunder industrimineral-, naturstein-, grus- og knust berg (pukk)-forekomster som kan være viktig for forsyninger innen en kommune</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="litenBetydning">
+        <annotation>
+          <documentation>Forekomsten har liten eller ingen økonomisk betydning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ikkeVurdert">
+        <annotation>
+          <documentation>Forekomstens økonomiske betydning er ikke vurdert</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="RåstoffBetydningOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+  <element name="SandGrusForekomst" substitutionGroup="grusogpukkfradatamodell:FellesegenskapRåstoff" type="grusogpukkfradatamodell:SandGrusForekomstType">
+    <annotation>
+      <documentation>En ansamling av naturlig avsatt sand og grus  som har eller kan få en økonomisk verdi. En forekomst må ha et estimat eller en beregning av volum og kvalitet.
+
+--Definition--
+A mass of naturally occurring sand and gravel, usually of economic value, without regard to mode of origin.</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">SANDGRUSFOREKOMST</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="SandGrusForekomstType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:FellesegenskapRåstoffType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensning" type="grusogpukkfradatamodell:GeolAvgrLinjePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SandGrusForekomstPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:SandGrusForekomst"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SandGrusProspekt" substitutionGroup="grusogpukkfradatamodell:MineralRegistrering" type="grusogpukkfradatamodell:SandGrusProspektType">
+    <annotation>
+      <documentation>område der det er potensial for en eller flere forekomster av naturlig avsatt sand og grus basert på tidligere undersøkelser eller observasjoner, og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner for mineralressurser.
+
+--Definition--
+An  area  that  is  a  potential  site  of  mineral  deposits,  based  on  preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration.</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">SANDGRUSPROSPEKT</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="SandGrusProspektType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:MineralRegistreringType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensning" type="grusogpukkfradatamodell:GeolAvgrLinjePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SandGrusProspektPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:SandGrusProspekt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SandGrusRegistrering" substitutionGroup="grusogpukkfradatamodell:MineralRegistrering" type="grusogpukkfradatamodell:SandGrusRegistreringType">
+    <annotation>
+      <documentation>Enhver ansamling av naturlig avsatt sand og grus
+
+--Definition--
+Any natural occurence of sand and gravel</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">SANDGRUSREGISTRERING</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="SandGrusRegistreringType">
+    <complexContent>
+      <extension base="grusogpukkfradatamodell:MineralRegistreringType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensning" type="grusogpukkfradatamodell:GeolAvgrLinjePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SandGrusRegistreringPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:SandGrusRegistrering"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SandGrusUttak" substitutionGroup="gml:AbstractFeature" type="grusogpukkfradatamodell:SandGrusUttakType">
+    <annotation>
+      <documentation>lokalitet hvor naturlig avsatt sand og grus tas ut
+
+Merknad:  (massetak)</documentation>
+      <appinfo>
+        <sc:taggedValue tag="SOSI_navn">SANDGRUSUTTAK</sc:taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="SandGrusUttakType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="identRastoffobj" type="integer">
+            <annotation>
+              <documentation>forekomstobjektets identifikasjonskode
+
+Merknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).
+
+Eksempel: 17290010101</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FOREKOM_ID</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="forekomstNummer" type="integer">
+            <annotation>
+              <documentation>unik nummerering av forekomsten som råstoffobjektet tilhører
+
+Merknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten
+
+Eks. 1729001</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">R_FNR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="ressursType" type="grusogpukkfradatamodell:RessursTypeType">
+            <annotation>
+              <documentation>hvilken type råstoff som kan være/er gjenstand for utvinning.
+NB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode
+
+-- Definition --
+Values indicating the type of commodity.
+what type of raw material that may be/is subject to extraction
+-- Description --
+EXAMPLE: Cu, Au, Dimension Stone etc.</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RESSTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="råstoffBetydning" type="grusogpukkfradatamodell:RåstoffBetydningType">
+            <annotation>
+              <documentation>hvilken betydning en mineralforekomst har med tanke på mulig økonomisk
+utnyttelse nå eller for framtiden. Skal begrunnes.
+
+-- Definition --
+how important a geological resource or registration is as regards potential
+commercial exploitation now or in the future</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RASTOFFBETYDNING</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="mineralRegistreringType" type="grusogpukkfradatamodell:MineralRegistreringTypeType">
+            <annotation>
+              <documentation>hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.
+Eksempler på dette er prospekt, registrering og forekomst.
+
+-- Definition -- The type of mineral occurrence.
+
+-- Description --
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">MINERALREGTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="ressursUndertype" type="string">
+            <annotation>
+              <documentation>underinndeling av materialtypene som kan være/er gjenstand for utvinning
+Merknad: Er en mer detaljert inndeling av det råstoff som utvinnes
+(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)
+
+sub-classification of material types that may be/are subject to extraction
+Note: a more detailed classification of the raw material that is extracted
+(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">RESSUNTYPE</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="navnRastoffobj" type="string">
+            <annotation>
+              <documentation>navn på råstoffobjekt</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">FOREKNAVN</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="lokalNummer" type="integer">
+            <annotation>
+              <documentation>nummerering av lokalitet i forekomsten
+
+Merknad: Er en del av FOREKOM_ID: Eks: 1729001(01)01</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">R_LNR</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="løsmassetype" type="grusogpukkfradatamodell:LosmassetypeType">
+            <annotation>
+              <documentation>kvartærgeologiske løsmassetyper (jordartstyper)</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">JORDART</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="stedfestingVerifisert" type="boolean">
+            <annotation>
+              <documentation>angir om stedfestingen (koordinatene) er kontrollert og funnet i orden (verifisert)</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">STED_VERIF</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="geolBeskrivelse" type="string">
+            <annotation>
+              <documentation>tekstlig beskrivelse av objektet</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">GEOBESK</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="geolBeskrivelseURL" type="string">
+            <annotation>
+              <documentation>lenke (URL) til tekstlig beskrivelse av objektet</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">GEOBESK_URL</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="antallAnalyser" type="integer">
+            <annotation>
+              <documentation>antallet utførte kjemiske og/eller mekaniske analyser</documentation>
+              <appinfo>
+                <sc:taggedValue tag="SOSI_navn">ANT_ANALYS</sc:taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SandGrusUttakPropertyType">
+    <sequence minOccurs="0">
+      <element ref="grusogpukkfradatamodell:SandGrusUttak"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <simpleType name="TypeRastoffVirksomhetType">
+    <annotation>
+      <documentation>angir type på eventuell aktivitet</documentation>
+    </annotation>
+    <union memberTypes="grusogpukkfradatamodell:TypeRastoffVirksomhetEnumerationType grusogpukkfradatamodell:TypeRastoffVirksomhetOtherType"/>
+  </simpleType>
+  <simpleType name="TypeRastoffVirksomhetEnumerationType">
+    <annotation>
+      <documentation>angir type på eventuell aktivitet</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="prospektering"/>
+      <enumeration value="røsking"/>
+      <enumeration value="skjerp"/>
+      <enumeration value="prøvedrift"/>
+      <enumeration value="gruvedrift"/>
+      <enumeration value="steinbrudd"/>
+      <enumeration value="muligFremtidigUttaksområde"/>
+      <enumeration value="typelokalitet"/>
+      <enumeration value="grustakMassetak"/>
+      <enumeration value="utplanertMassetakEllerEndretArealbruk"/>
+      <enumeration value="observasjonslokalitet"/>
+      <enumeration value="leirtak"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="TypeRastoffVirksomhetOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+</schema>

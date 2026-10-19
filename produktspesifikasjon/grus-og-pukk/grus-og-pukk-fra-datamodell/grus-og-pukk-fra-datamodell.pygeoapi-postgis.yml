@@ -1,0 +1,652 @@
+# pygeoapi-konfigurasjon — generert fra datamodellen og metadata i Geonorge.
+# Verdier merket "<REPLACE_ME>" må fylles inn før tjenesten kan startes.
+server:
+  bind:
+    host: 0.0.0.0
+    port: 5000
+  cors: false
+  url: ${PYGEOAPI_SERVER_URL:-http://localhost:5000}
+  mimetype: application/json; charset=UTF-8
+  encoding: utf-8
+  gzip: false
+  languages:
+  - nb-NO
+  pretty_print: true
+  admin: ${PYGEOAPI_SERVER_ADMIN:-false}
+  limits:
+    default_items: 20
+    max_items: 100
+  map:
+    url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+    attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap
+      contributors</a>'
+logging:
+  level: ERROR
+metadata:
+  identification:
+    title: Grus og pukk
+    description: Grus- og Pukkdatabasen ved NGU inneholder opplysninger om de aller
+      fleste grus- og pukkforekomster og uttakssteder i Norge for utnyttelse som råstoff
+      for bygge- og anleggsvirksomhet. Databasen gir også informasjon om arealbruk,
+      volum, kvalitet og hvor viktige ressursene er som råstoff til byggetekniske
+      formål.
+    keywords:
+    - Byggeråstoffer
+    - Geologi
+    - Grus
+    - Løsmasser
+    - Pukk
+    - Ressurs
+    - Sand
+    - Steinindustri
+    - Mineralressurser
+    - Inspire
+    - Det offentlige kartgrunnlaget
+    - Norge digitalt
+    - geodataloven
+    - dataNorgeNo
+    - modellbaserteVegprosjekter
+    - fellesDatakatalog
+    keywords_type: theme
+    terms_of_service: Åpne data
+    url: https://kartkatalog.geonorge.no/metadata/a26e57bc-15bd-46db-8504-6c6ed1e7c501
+  license:
+    name: Norsk lisens for offentlige data (NLOD)
+    url: http://data.norge.no/nlod/no/1.0
+  provider:
+    name: Norges geologiske undersøkelse
+    url: "<REPLACE_ME>"
+  contact:
+    name: Norges geologiske undersøkelse
+    email: metadataansvarlig@ngu.no
+    url: "<REPLACE_ME>"
+resources:
+  knust-berg-registrering:
+    type: collection
+    title: KnustBergRegistrering
+    description: 'Ethvert volum av økonomisk interessant bergart til byggeråstoff
+
+
+      --Definition--
+
+      Any volume of rock applicable for construction purposes.'
+    keywords:
+    - KnustBergRegistrering
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: knustbergregistrering
+      geom_field: omraade
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  geol-avgr-linje:
+    type: collection
+    title: GeolAvgrLinje
+    description: 'generell avgrensning av geologisk objekt
+
+
+
+      -- Definition --
+
+      general delimitation of geological object'
+    keywords:
+    - GeolAvgrLinje
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: geolavgrlinje
+      geom_field: grense
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  knust-berg-forekomst:
+    type: collection
+    title: KnustBergForekomst
+    description: 'En ansamling av bergarter som har eller kan få en økonomisk verdi
+      som byggeråstoff. En forekomst må ha et estimat eller en beregning av volum
+      og kvalitet.
+
+
+      --Definition--
+
+      A volume of naturally occurring rocks usually of economic value as construction
+      material'
+    keywords:
+    - KnustBergForekomst
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: knustbergforekomst
+      geom_field: omraade
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  knust-berg-uttak:
+    type: collection
+    title: KnustBergUttak
+    description: 'uttakssted for produksjon av knust berg (pukk)
+
+
+      -- Definition --
+
+      Crushed rock aggregate extraction site'
+    keywords:
+    - KnustBergUttak
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: knustberguttak
+  esker:
+    type: collection
+    title: Esker
+    description: langstrakt, smal og ofte slynget rygg eller ås av lagdelt og sortert
+      sand, grus eller rullestein, dannet ved avsetning fra smeltevannelver i en tunnel
+      under eller inne i en isbre
+    keywords:
+    - Esker
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: esker
+      geom_field: senterlinje
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  sand-grus-forekomst:
+    type: collection
+    title: SandGrusForekomst
+    description: 'En ansamling av naturlig avsatt sand og grus  som har eller kan
+      få en økonomisk verdi. En forekomst må ha et estimat eller en beregning av volum
+      og kvalitet.
+
+
+      --Definition--
+
+      A mass of naturally occurring sand and gravel, usually of economic value, without
+      regard to mode of origin.'
+    keywords:
+    - SandGrusForekomst
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: sandgrusforekomst
+      geom_field: omraade
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  sand-grus-prospekt:
+    type: collection
+    title: SandGrusProspekt
+    description: 'område der det er potensial for en eller flere forekomster av naturlig
+      avsatt sand og grus basert på tidligere undersøkelser eller observasjoner, og
+      der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner
+      for mineralressurser.
+
+
+      --Definition--
+
+      An  area  that  is  a  potential  site  of  mineral  deposits,  based  on  preliminary
+      exploration, previous exploration. A geologic or geophysical anomaly, especially
+      one recommended for additional exploration.'
+    keywords:
+    - SandGrusProspekt
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: sandgrusprospekt
+      geom_field: omraade
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  masseuttak-aktivitet:
+    type: collection
+    title: MasseuttakAktivitet
+    description: 'hvilken aktivitet det er i masseuttaket
+
+
+      -- Definition --
+
+      The process of extracting metallic, non-metallic mineral, or industrial rock
+      deposits from the Earth.
+
+
+      -- Description --
+
+      The term may also include preliminary treatment eg. cleaning or sizing.'
+    keywords:
+    - MasseuttakAktivitet
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: masseuttakaktivitet
+  sand-grus-uttak:
+    type: collection
+    title: SandGrusUttak
+    description: 'lokalitet hvor naturlig avsatt sand og grus tas ut
+
+
+      Merknad:  (massetak)'
+    keywords:
+    - SandGrusUttak
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: sandgrusuttak
+  knust-berg-provins:
+    type: collection
+    title: KnustBergProvins
+    description: 'område definert av geologiske egenskaper som avgrenser mulighetene
+      for funn av bestemte økonomisk interessante bergarter til byggeråstoff
+
+
+      --Definition--
+
+      Geologic provinces classified by (hard) rock aggregate resources.'
+    keywords:
+    - KnustBergProvins
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: knustbergprovins
+      geom_field: omraade
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  knust-berg-prospekt:
+    type: collection
+    title: KnustBergProspekt
+    description: 'område der det er potensial for en eller flere forekomster av bergarter
+      egnet for byggeråstoffer basert på tidligere undersøkelser eller observasjoner,
+      og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner
+      for mineralressurser.
+
+
+      --Definition--
+
+      An area that is a potential site of rock aggregate deposits, based on preliminary
+      exploration, previous exploration.'
+    keywords:
+    - KnustBergProspekt
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: knustbergprospekt
+      geom_field: omraade
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  minres-proevepunkt:
+    type: collection
+    title: MinresPrøvepunkt
+    description: lokalitet hvor det er tatt (innsamlet) prøve(r) for videre bearbeidelse/analyse
+    keywords:
+    - MinresPrøvepunkt
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: minresproevepunkt
+      geom_field: posisjon
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833
+  sand-grus-registrering:
+    type: collection
+    title: SandGrusRegistrering
+    description: 'Enhver ansamling av naturlig avsatt sand og grus
+
+
+      --Definition--
+
+      Any natural occurence of sand and gravel'
+    keywords:
+    - SandGrusRegistrering
+    extents:
+      spatial:
+        bbox:
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        - "<REPLACE_ME>"
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: "<REPLACE_ME>"
+        port: "<REPLACE_ME>"
+        dbname: grus_og_pukk_fra_datamodell
+        user: "<REPLACE_ME>"
+        password: "<REPLACE_ME>"
+        search_path:
+        - public
+      id_field: objid
+      table: sandgrusregistrering
+      geom_field: omraade
+      crs:
+      - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      - http://www.opengis.net/def/crs/EPSG/0/25832
+      - http://www.opengis.net/def/crs/EPSG/0/25833
+      - http://www.opengis.net/def/crs/EPSG/0/25835
+      - http://www.opengis.net/def/crs/EPSG/0/5972
+      - http://www.opengis.net/def/crs/EPSG/0/5973
+      - http://www.opengis.net/def/crs/EPSG/0/5975
+      - http://www.opengis.net/def/crs/EPSG/0/3857
+      - http://www.opengis.net/def/crs/EPSG/0/3575
+      - http://www.opengis.net/def/crs/EPSG/0/4326
+      - http://www.opengis.net/def/crs/EPSG/0/3035
+      - http://www.opengis.net/def/crs/EPSG/0/4258
+      - http://www.opengis.net/def/crs/EPSG/0/5942
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/25833

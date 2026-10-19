@@ -1,0 +1,651 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://skjema.geonorge.no/SOSI/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/grusogpukkfradatamodell/grus-og-pukk-fra-datamodell.json",
+  "definitions": {
+    "Esker": {
+      "description": "langstrakt, smal og ofte slynget rygg eller ås av lagdelt og sortert sand, grus eller rullestein, dannet ved avsetning fra smeltevannelver i en tunnel under eller inne i en isbre",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    },
+    "FellesegenskapRåstoff": {
+      "description": "fellesegenskaper for natursteinforekomster, industrimineralforekomster og malmforekomster",
+      "allOf": [
+        {
+          "$ref": "#/definitions/MineralRegistrering"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "råstoffBetydning": {
+              "description": "hvilken betydning en mineralforekomst har med tanke på mulig økonomisk utnyttelse nå eller for framtiden.  Skal begrunnes.\n\n-- Definition --\nhow important a geological resource or registration is as regards potential commercial exploitation now or in the future",
+              "$ref": "#/definitions/RåstoffBetydning"
+            }
+          },
+          "required": [
+            "råstoffBetydning"
+          ]
+        }
+      ]
+    },
+    "FellesegenskaperGrus": {
+      "description": "abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper\n\nMerknad:\nSpesielt i produktspesifikasjonsarbeid vil en velge egenskaper og avgrensningslinjer fra denne klassen.",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "datauttaksdato": {
+          "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+          "type": "string",
+          "format": "date"
+        },
+        "førsteDatafangstdato": {
+          "description": "dato når data ble registrert/observert/målt første gang, som utgangspunkt for første digitalisering\n\nMerknad:\nførsteDatafangstdato brukes hvis det er av interesse å forvalte informasjon om når en ble klar over objektet. Dette kan for eksempel gjelde datoen for første flybilde som var utgangspunkt for registrering i en database.",
+          "type": "string",
+          "format": "date"
+        },
+        "oppdateringsdato": {
+          "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).",
+          "type": "string",
+          "format": "date"
+        },
+        "identifikasjon": {
+          "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.\n\nMerknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.\n\nMerknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "kvalitet": {
+          "description": "beskrivelse av kvaliteten på stedfestingen\n\nMerknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+          "$ref": "#/definitions/Posisjonskvalitet"
+        },
+        "stedfestingVerifisert": {
+          "description": "angivelse om stedfestingen (koordinatene) er  kontrollert  og funnet i orden (verifisert)",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "@type",
+        "datauttaksdato"
+      ]
+    },
+    "GeolAvgrLinje": {
+      "description": "generell avgrensning av geologisk objekt\n\n\n-- Definition --\ngeneral delimitation of geological object",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    },
+    "Identifikasjon": {
+      "type": "object",
+      "properties": {
+        "lokalId": {
+          "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "navnerom": {
+          "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+          "type": "string"
+        },
+        "versjonId": {
+          "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lokalId",
+        "navnerom"
+      ]
+    },
+    "KnustBergForekomst": {
+      "description": "En ansamling av bergarter som har eller kan få en økonomisk verdi som byggeråstoff. En forekomst må ha et estimat eller en beregning av volum og kvalitet.\n\n--Definition--\nA volume of naturally occurring rocks usually of economic value as construction material",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FellesegenskapRåstoff"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "avgrensning": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "KnustBergProspekt": {
+      "description": "område der det er potensial for en eller flere forekomster av bergarter egnet for byggeråstoffer basert på tidligere undersøkelser eller observasjoner, og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner for mineralressurser.\n\n--Definition--\nAn area that is a potential site of rock aggregate deposits, based on preliminary exploration, previous exploration.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/MineralRegistrering"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "avgrensning": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "KnustBergProvins": {
+      "description": "område definert av geologiske egenskaper som avgrenser mulighetene for funn av bestemte økonomisk interessante bergarter til byggeråstoff\n\n--Definition--\nGeologic provinces classified by (hard) rock aggregate resources.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/MineralRegistrering"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "avgrensning": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "KnustBergRegistrering": {
+      "description": "Ethvert volum av økonomisk interessant bergart til byggeråstoff\n\n--Definition--\nAny volume of rock applicable for construction purposes.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/MineralRegistrering"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "avgrensning": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "KnustBergUttak": {
+      "description": "uttakssted for produksjon av knust berg (pukk)\n\n-- Definition --\nCrushed rock aggregate extraction site",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identRastoffobj": {
+          "description": "forekomstobjektets identifikasjonskode\n\nMerknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).\n\nEksempel: 17290010101",
+          "type": "integer"
+        },
+        "forekomstNummer": {
+          "description": "unik nummerering av forekomsten som råstoffobjektet tilhører\n\nMerknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten\n\nEks. 1729001",
+          "type": "integer"
+        },
+        "ressursType": {
+          "description": "hvilken type råstoff som kan være/er gjenstand for utvinning.\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode\n\n-- Definition --\nValues indicating the type of commodity.\nwhat type of raw material that may be/is subject to extraction\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc.",
+          "$ref": "#/definitions/RessursType"
+        },
+        "råstoffBetydning": {
+          "description": "hvilken betydning en mineralforekomst har med tanke på mulig økonomisk\nutnyttelse nå eller for framtiden. Skal begrunnes.\n\n-- Definition --\nhow important a geological resource or registration is as regards potential\ncommercial exploitation now or in the future",
+          "$ref": "#/definitions/RåstoffBetydning"
+        },
+        "mineralRegistreringType": {
+          "description": "hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.\nEksempler på dette er prospekt, registrering og forekomst.\n\n-- Definition -- The type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit",
+          "$ref": "#/definitions/MineralRegistreringType"
+        },
+        "ressursUndertype": {
+          "description": "underinndeling av materialtypene som kan være/er gjenstand for utvinning\nMerknad: Er en mer detaljert inndeling av det råstoff som utvinnes\n(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)\n\nsub-classification of material types that may be/are subject to extraction\nNote: a more detailed classification of the raw material that is extracted\n(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)",
+          "type": "string"
+        },
+        "navnRastoffobj": {
+          "description": "navn på forekomsten",
+          "type": "string"
+        },
+        "lokalNummer": {
+          "description": "nummerering av lokalitet i forekomsten\n\nMerknad: Er en del av FOREKOM_ID: Eks: 1729001(01)01",
+          "type": "integer"
+        },
+        "stedfestingVerifisert": {
+          "description": "angir om stedfestingen (koordinatene) er kontrollert og funnet i orden (verifisert)",
+          "type": "boolean"
+        },
+        "geolBeskrivelse": {
+          "description": "tekstlig beskrivelse av objektet",
+          "type": "string"
+        },
+        "geolBeskrivelseURL": {
+          "type": "string"
+        },
+        "antallAnalyser": {
+          "description": "antallet utførte kjemiske og/eller mekaniske analyser",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "@type",
+        "forekomstNummer",
+        "identRastoffobj",
+        "ressursType",
+        "råstoffBetydning"
+      ]
+    },
+    "Losmassetype": {
+      "description": "kvartærgeologiske løsmassetyper (jordartstyper)\n\nMerknad: Nærmere forklaring til definisjoner og dannelsesmåte er å finne i heftet; Kvartærgeologisk kart over Norge, 1:1 mill., tema jordarter (Thoresen M, Norges geologiske undersøkelse, 1991) og i NGU intern-rapport 2001.018 (Bergstrøm m.fl.).",
+      "type": "string",
+      "format": "uri"
+    },
+    "MasseuttakAktivitet": {
+      "description": "hvilken aktivitet det er i masseuttaket\n\n-- Definition --\nThe process of extracting metallic, non-metallic mineral, or industrial rock deposits from the Earth.\n\n-- Description --\nThe term may also include preliminary treatment eg. cleaning or sizing.",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "uttakPeriodeFraTil": {
+          "description": "den perioden masseuttaket/mineralutvinningen foregikk i\n-- Definition --\nPeriod, or extent in time, of  the mining activity.\n\n-- Description --\nThe beginning of the activity links the TM_Period to the TM_Instant at which it starts.  The ending links the TM_Period to the TM_Instant at which it ends.  For a variety of reasons, the position of the TM_Instant designated by \u0027begin\u0027 or \u0027end\u0027 may be inderterminate."
+        },
+        "aktivitetUttak": {
+          "description": "hvilken driftsmetode som er brukt ved uttaket\n\n-- Definition --\nThe type of mining activity.\n\n-- Description --\nEXAMPLE: Open Pit, Underground Mine, multiple, unspecified) or processing activity (eg Ore Processing) or production.\nUsing activity to distinguish between the extraction, processing and production activities allows distinguishing between ore mined/grade/recovery, ore treated/grade/recovery and produced payable/plant recovery."
+        },
+        "uttakMengde": {
+          "description": "hvor mye som er utvunnet\n\n-- Definition -- The amount of ore processed by the activity."
+        },
+        "prosessType": {
+          "description": "hvilken type prosesser som er benyttet ved uttaket\n\n-- Definition -- The type of processing carried out during the mining activity."
+        }
+      },
+      "required": [
+        "@type",
+        "aktivitetUttak",
+        "prosessType",
+        "uttakMengde",
+        "uttakPeriodeFraTil"
+      ]
+    },
+    "MineralRegistrering": {
+      "description": "registrering av en mineralansamling (opphopning, konsentrering) i naturen.\n\n-- Definition --\n\u003cfont color\u003d\"#400040\"\u003eA mineral accumulation in the lithosphere. \u003c/font\u003e",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FellesegenskaperGrus"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "område": {
+              "description": "objektets utstrekning",
+              "$ref": "https://geojson.org/schema/Polygon.json"
+            },
+            "posisjon": {
+              "description": "sted objektet eksisterer på",
+              "$ref": "https://geojson.org/schema/Point.json"
+            },
+            "identRåstoffobj": {
+              "description": "forekomstobjektets identifikasjonskode\n\nMerknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer). Eksempel: 17290010101\n\ndeposit object identification code   Note: Consists of a municipality number (4 digits) and a serial number (7 digits). Ideally the serial number should consist of an area number (3 digits), a location number (2 digits) and a test number (2 digits). For example: 17290010101",
+              "type": "integer"
+            },
+            "forekomstNummer": {
+              "description": "unik nummerering av forekomsten som råstoffobjektet tilhører\n\nMerknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten\n\nEks. 1729001",
+              "type": "integer"
+            },
+            "mineralRegistreringType": {
+              "description": "hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.\nEksempler på dette er prospekt, registrering og forekomst.\n\n-- Definition -- The type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit",
+              "$ref": "#/definitions/MineralRegistreringType"
+            },
+            "ressursType": {
+              "description": "hvilken type råstoff som kan være/er gjenstand for utvinning.\n\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode\n\n-- Definition --\nValues indicating the type of commodity.\nwhat type of raw material that may be/is subject to extraction\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc.",
+              "$ref": "#/definitions/RessursType"
+            },
+            "ressursUndertype": {
+              "description": "underinndeling av materialtypene som kan være/er gjenstand for utvinning\nMerknad: Er en mer detaljert inndeling av det råstoff som utvinnes\n(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)\n\nsub-classification of material types that may be/are subject to extraction\nNote: a more detailed classification of the raw material that is extracted\n(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)",
+              "type": "string"
+            },
+            "navnRåstoffobj": {
+              "description": "navn på mineralressursobjektet\n\nINSPIRE: name of raw material object",
+              "type": "string"
+            },
+            "omrNummer": {
+              "description": "nummerering av forekomsten (forekomstområdet) i kommunen.\nMerknad: Er en del av FOREKOM_ID. Eksempel 1729(001)01101.\n\ndeposit numbering (deposit area) in the municipality   Note: part of DEPOSIT_ID   For example: 1729(001)0101",
+              "type": "integer"
+            },
+            "typeRåstoffVirksomhet": {
+              "description": "angir type på eventuell aktivitet\n\nindicates type of any activities",
+              "$ref": "#/definitions/TypeRastoffVirksomhet"
+            },
+            "geolBeskrivelse": {
+              "description": "beskrivende tekstfelt eller link (URL) til tekstlig beskrivelse\n\ndescriptive text field or link (URL) to textual description",
+              "type": "string"
+            },
+            "antallAnalyser": {
+              "description": "antallet utførte kjemiske og/eller mekaniske analyser\n\nthe number of chemical and/or mechanical analyses performed",
+              "type": "integer"
+            },
+            "sisteBefaringDato": {
+              "description": "dato for siste feltbefaring av forekomsten",
+              "type": "string",
+              "format": "date"
+            },
+            "altForekomstNr": {
+              "description": "alternativ nummerering av forekomsten\nMerknad: Kan ha en bestemt form innen den enkelte forekomstdatabasen, og behøver ikke være unikt. Benyttes ofte for å peke tilbake på nummereringssystemer i eldre registre.\n\nalternative numbering of the deposit    Note: May have a specific form in the individual deposit database and does not need to be unique. Often used to refer back to numbering systems in older registers",
+              "type": "integer"
+            },
+            "historiskViktig": {
+              "description": "angivelse om forekomsten er historisk viktig",
+              "type": "boolean"
+            },
+            "faktaarkURL": {
+              "description": "link (URL) til forekomstens oppdaterte faktaark ifra NGUs database",
+              "type": "string"
+            },
+            "sluttbrukType": {
+              "description": "hva mineralet/bergarten kan brukes til. Eksempler på dette er byggeråstoffer, miljøkalk, slaggdanner etc.\n\n-- Definition -- The end-use potential of the mineral.\n-- Description --\nEXAMPLE: for energy, fertilizer, building raw material.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SluttbrukPotensial"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "forekomstNummer",
+            "identRåstoffobj",
+            "mineralRegistreringType",
+            "ressursType",
+            "ressursUndertype"
+          ]
+        }
+      ]
+    },
+    "MineralRegistreringType": {
+      "description": "Klassifisering av objekter i henhold til tilgjengelig kunnskapsnivå\n\n-- Definition --\nThe type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit.",
+      "type": "string",
+      "format": "uri"
+    },
+    "MinresPrøvepunkt": {
+      "description": "lokalitet hvor det er tatt (innsamlet) prøve(r) for videre bearbeidelse/analyse",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "https://geojson.org/schema/Point.json"
+            }
+          ]
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "ressursType": {
+          "description": "hvilken type råstoff som kan være/er gjenstand for utvinning",
+          "$ref": "#/definitions/RessursType"
+        },
+        "ressursUndertype": {
+          "description": "underinndeling av materialtypene som kan være/er gjenstand for utvinning",
+          "type": "string"
+        },
+        "identRåstoffobj": {
+          "description": "forekomstobjektets identifikasjonskode\n\nMerknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).\n\nEksempel: 17290010101",
+          "type": "integer"
+        },
+        "forekomstNummer": {
+          "description": "unik nummerering av forekomsten som råstoffobjektet tilhører\n\nMerknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten\n\nEks. 1729001",
+          "type": "integer"
+        },
+        "navnRåstoffobj": {
+          "description": "navn på råstoffobjekt",
+          "type": "string"
+        },
+        "prøveNummer": {
+          "description": "nummerering av prøvepunkt i forekomsten eller i lokaliteten\n\nMerknad: Er en del av FOREKOM_ID: Eks: 172900101(01)",
+          "type": "integer"
+        },
+        "antallAnalyser": {
+          "description": "antallet utførte kjemiske og/eller mekaniske analyser",
+          "type": "string"
+        },
+        "geolBeskrivelse": {
+          "description": "beskrivende tekstfelt eller link (URL) til tekstlig beskrivelse",
+          "type": "string"
+        },
+        "geolBeskrivelseURL": {
+          "description": "lenke (URL) til tekstlig beskrivelse av objektet",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "forekomstNummer",
+        "identRåstoffobj",
+        "ressursType"
+      ]
+    },
+    "Målemetode": {
+      "codelist": "http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.0/Målemetode",
+      "type": "string",
+      "format": "uri"
+    },
+    "Posisjonskvalitet": {
+      "type": "object",
+      "properties": {
+        "målemetode": {
+          "description": "metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss",
+          "$ref": "#/definitions/Målemetode"
+        },
+        "nøyaktighet": {
+          "description": "punktstandardavviket i grunnriss for punkter samt tverravvik for linjer\n\nMerknad:\nOppgitt i cm",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "målemetode"
+      ]
+    },
+    "RessursType": {
+      "description": "hvilken type råstoff som kan være/er gjenstand for utvinning.\n\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCodeValue\n\n-- Definition --\nValues indicating the type of commodity.\n\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc.",
+      "type": "string",
+      "format": "uri"
+    },
+    "RåstoffBetydning": {
+      "description": "En mineralforekomsts antatte betydning for fremtidig verdiskaping, i forhold til lokale, regionale og nasjonale forvaltningsnivå.\n\nKodelisten finnes ikke i INSPIRE-spesifikasjonen, men er en tilpasning til begrepsbruk i norsk lovverk (PBL §5.4 og KU-forskrift §10), KMDs nasjonale forventninger (2019-2023), og fra europeiske spesifikasjoner i Raw Materials Initiative.",
+      "type": "string",
+      "format": "uri"
+    },
+    "SandGrusForekomst": {
+      "description": "En ansamling av naturlig avsatt sand og grus  som har eller kan få en økonomisk verdi. En forekomst må ha et estimat eller en beregning av volum og kvalitet.\n\n--Definition--\nA mass of naturally occurring sand and gravel, usually of economic value, without regard to mode of origin.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FellesegenskapRåstoff"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "avgrensning": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "SandGrusProspekt": {
+      "description": "område der det er potensial for en eller flere forekomster av naturlig avsatt sand og grus basert på tidligere undersøkelser eller observasjoner, og der det anbefales videre undersøkelser. Prospekter kan anses som hensynssoner for mineralressurser.\n\n--Definition--\nAn  area  that  is  a  potential  site  of  mineral  deposits,  based  on  preliminary exploration, previous exploration. A geologic or geophysical anomaly, especially one recommended for additional exploration.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/MineralRegistrering"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "avgrensning": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "SandGrusRegistrering": {
+      "description": "Enhver ansamling av naturlig avsatt sand og grus\n\n--Definition--\nAny natural occurence of sand and gravel",
+      "allOf": [
+        {
+          "$ref": "#/definitions/MineralRegistrering"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "avgrensning": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "SandGrusUttak": {
+      "description": "lokalitet hvor naturlig avsatt sand og grus tas ut\n\nMerknad:  (massetak)",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identRastoffobj": {
+          "description": "forekomstobjektets identifikasjonskode\n\nMerknad: Består av kommunenummer (4 siffer), og et løpenummer (7 siffer). Ideelt sett består løpenummeret av et område nummer (3 siffer), lokalitetsnummer (2 siffer) og prøvenummer (2 siffer).\n\nEksempel: 17290010101",
+          "type": "integer"
+        },
+        "forekomstNummer": {
+          "description": "unik nummerering av forekomsten som råstoffobjektet tilhører\n\nMerknad: Benyttes som koplingsnøkkel mellom de ulike objektene i forekomsten. Mange viktige egenskaper finnes kun på områdeobjektet som er hovedobjektet til forekomsten\n\nEks. 1729001",
+          "type": "integer"
+        },
+        "ressursType": {
+          "description": "hvilken type råstoff som kan være/er gjenstand for utvinning.\nNB: Kodelisten er kun delvis harmonisert med Inspire CommodityCode\n\n-- Definition --\nValues indicating the type of commodity.\nwhat type of raw material that may be/is subject to extraction\n-- Description --\nEXAMPLE: Cu, Au, Dimension Stone etc.",
+          "$ref": "#/definitions/RessursType"
+        },
+        "råstoffBetydning": {
+          "description": "hvilken betydning en mineralforekomst har med tanke på mulig økonomisk\nutnyttelse nå eller for framtiden. Skal begrunnes.\n\n-- Definition --\nhow important a geological resource or registration is as regards potential\ncommercial exploitation now or in the future",
+          "$ref": "#/definitions/RåstoffBetydning"
+        },
+        "mineralRegistreringType": {
+          "description": "hvilken type mineralregistrering dette er inndelt etter kunnskapsnivå.\nEksempler på dette er prospekt, registrering og forekomst.\n\n-- Definition -- The type of mineral occurrence.\n\n-- Description --\nEXAMPLE: prospect, occurrence, mineral deposit, ore deposit",
+          "$ref": "#/definitions/MineralRegistreringType"
+        },
+        "ressursUndertype": {
+          "description": "underinndeling av materialtypene som kan være/er gjenstand for utvinning\nMerknad: Er en mer detaljert inndeling av det råstoff som utvinnes\n(hovedsakelig kjemiske elementer (Cu, Pb, Zn osv.) og mineralnavn)\n\nsub-classification of material types that may be/are subject to extraction\nNote: a more detailed classification of the raw material that is extracted\n(mainly chemical elements (Cu,Pb, Zn, etc.) and names of minerals)",
+          "type": "string"
+        },
+        "navnRastoffobj": {
+          "description": "navn på råstoffobjekt",
+          "type": "string"
+        },
+        "lokalNummer": {
+          "description": "nummerering av lokalitet i forekomsten\n\nMerknad: Er en del av FOREKOM_ID: Eks: 1729001(01)01",
+          "type": "integer"
+        },
+        "løsmassetype": {
+          "description": "kvartærgeologiske løsmassetyper (jordartstyper)",
+          "$ref": "#/definitions/Losmassetype"
+        },
+        "stedfestingVerifisert": {
+          "description": "angir om stedfestingen (koordinatene) er kontrollert og funnet i orden (verifisert)",
+          "type": "boolean"
+        },
+        "geolBeskrivelse": {
+          "description": "tekstlig beskrivelse av objektet",
+          "type": "string"
+        },
+        "geolBeskrivelseURL": {
+          "description": "lenke (URL) til tekstlig beskrivelse av objektet",
+          "type": "string"
+        },
+        "antallAnalyser": {
+          "description": "antallet utførte kjemiske og/eller mekaniske analyser",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "@type",
+        "forekomstNummer",
+        "identRastoffobj",
+        "ressursType",
+        "råstoffBetydning"
+      ]
+    },
+    "SluttbrukPotensial": {
+      "description": "bruksområde for type mineralressurs\n\n-- Definition --\nValues indicating the end-use potential of the mineral.\n\n-- Description --\n\u003cfont color\u003d\"#211d1e\"\u003eEXAMPLE: \u003c/font\u003efor energy, fertilizer, building raw material etc.",
+      "codelist": "http://inspire.ec.europa.eu/codelist/EndusePotentialValue",
+      "type": "string",
+      "format": "uri"
+    },
+    "TypeRastoffVirksomhet": {
+      "description": "angir type på eventuell aktivitet",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

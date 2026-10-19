@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><ShapeChangeResult xmlns="http://www.interactive-instruments.de/ShapeChange/Result" xmlns:r="http://www.interactive-instruments.de/ShapeChange/Result" config="/home/runner/work/ps_demo/ps_demo/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/schema/shapechange-config.xml" end="Mon Oct 19 10:54:04 UTC 2026" resultCode="0" start="Mon Oct 19 10:53:56 UTC 2026" version="4.0.0">
+  <Messages>
+    <ProcessFlowInfo message="---------- Semantic validation of ShapeChange configuration: START ----------"/>
+    <Info message="Validating input parameters."/>
+    <Info message="Validation of input parameters completed."/>
+    <Info message="Validating log parameters."/>
+    <Info message="Validation of log parameters completed."/>
+    <ProcessFlowInfo message="--- Validating target with @class 'de.interactive_instruments.shapechange.core.target.xmlschema.XmlSchema' and @inputs 'INPUT' ..."/>
+    <ProcessFlowInfo message="--- Validating target with @class 'de.interactive_instruments.shapechange.core.target.json.JsonSchemaTarget' and @inputs 'INPUT' ..."/>
+    <ProcessFlowInfo message="---------- Semantic validation of ShapeChange configuration: COMPLETE ----------"/>
+    <Warning message="The type 'AktivitetUttakType' of property 'MasseuttakAktivitet.aktivitetUttak' was not found.">
+      <Detail message="Context: Property 'grus-og-pukk-fra-datamodell::Grus-4.0_Utkast::MasseuttakAktivitet::aktivitetUttak'"/>
+    </Warning>
+    <Warning message="The type 'Quantity' of property 'MasseuttakAktivitet.uttakMengde' was not found.">
+      <Detail message="Context: Property 'grus-og-pukk-fra-datamodell::Grus-4.0_Utkast::MasseuttakAktivitet::uttakMengde'"/>
+    </Warning>
+    <Warning message="The type 'ProsessAktivitetType' of property 'MasseuttakAktivitet.prosessType' was not found.">
+      <Detail message="Context: Property 'grus-og-pukk-fra-datamodell::Grus-4.0_Utkast::MasseuttakAktivitet::prosessType'"/>
+    </Warning>
+    <ProcessFlowInfo message="Application schema found, package name: 'grus-og-pukk-fra-datamodell', target namespace: 'https://skjema.geonorge.no/SOSI/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/1.0'"/>
+    <ProcessFlowInfo message="Now processing target 'XML Schema' for input 'INPUT'."/>
+    <Error message="The type 'AktivitetUttakType' of property 'MasseuttakAktivitet.aktivitetUttak' was not found.">
+      <Detail message="Context: Property 'grus-og-pukk-fra-datamodell::Grus-4.0_Utkast::MasseuttakAktivitet::aktivitetUttak'"/>
+    </Error>
+    <Error message="The type 'Quantity' of property 'MasseuttakAktivitet.uttakMengde' was not found.">
+      <Detail message="Context: Property 'grus-og-pukk-fra-datamodell::Grus-4.0_Utkast::MasseuttakAktivitet::uttakMengde'"/>
+    </Error>
+    <Error message="The type 'ProsessAktivitetType' of property 'MasseuttakAktivitet.prosessType' was not found.">
+      <Detail message="Context: Property 'grus-og-pukk-fra-datamodell::Grus-4.0_Utkast::MasseuttakAktivitet::prosessType'"/>
+    </Error>
+    <ProcessFlowInfo message="Executed target class 'de.interactive_instruments.shapechange.core.target.xmlschema.XmlSchema' for input ID: 'INPUT'.&#10;-------------------------------------------------"/>
+    <ProcessFlowInfo message="Application schema found, package name: 'grus-og-pukk-fra-datamodell', target namespace: 'https://skjema.geonorge.no/SOSI/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/1.0'"/>
+    <ProcessFlowInfo message="Now processing target 'JSON Schema' for input 'INPUT'."/>
+    <Warning message="JSON Schema definition for type 'TM_Period' could not be identified. No map entry is defined for the type, and the type was not found in the model. No type restriction is created for properties with this type as value type."/>
+    <Warning message="JSON Schema definition for type 'AktivitetUttakType' could not be identified. No map entry is defined for the type, and the type was not found in the model. No type restriction is created for properties with this type as value type."/>
+    <Warning message="JSON Schema definition for type 'Quantity' could not be identified. No map entry is defined for the type, and the type was not found in the model. No type restriction is created for properties with this type as value type."/>
+    <Warning message="JSON Schema definition for type 'ProsessAktivitetType' could not be identified. No map entry is defined for the type, and the type was not found in the model. No type restriction is created for properties with this type as value type."/>
+    <ProcessFlowInfo message="Executed target class 'de.interactive_instruments.shapechange.core.target.json.JsonSchemaTarget' for input ID: 'INPUT'.&#10;-------------------------------------------------"/>
+  </Messages>
+  <Results>
+    <Result href="file:/home/runner/work/ps_demo/ps_demo/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/schema/xsd/INPUT/grus-og-pukk-fra-datamodell.xsd" scope="https://skjema.geonorge.no/SOSI/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/1.0" target="XML Schema">grus-og-pukk-fra-datamodell.xsd</Result>
+    <Result href="file:/home/runner/work/ps_demo/ps_demo/produktspesifikasjon/grus-og-pukk/grus-og-pukk-fra-datamodell/schema/jsonschema/INPUT/grusogpukkfradatamodell/grus-og-pukk-fra-datamodell.json" target="JSON Schema">grus-og-pukk-fra-datamodell.json</Result>
+  </Results>
+</ShapeChangeResult>

@@ -1,0 +1,189 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Grus og pukk - Grus og pukk fra datamodell - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class KnustBergRegistrering <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class GeolAvgrLinje <<featureType>> {
+    + grense [1] : Kurve
+  }
+
+  class KnustBergForekomst <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class KnustBergUttak <<featureType>> {
+    + identRastoffobj [1] : Integer
+    + forekomstNummer [1] : Integer
+    + ressursType [1] : RessursType
+    + råstoffBetydning [1] : RåstoffBetydning
+    + mineralRegistreringType [0..1] : MineralRegistreringType
+    + ressursUndertype [0..1] : CharacterString
+    + navnRastoffobj [0..1] : CharacterString
+    + lokalNummer [0..1] : Integer
+    + stedfestingVerifisert [0..1] : Boolean
+    + geolBeskrivelse [0..1] : CharacterString
+    + geolBeskrivelseURL [0..1] : CharacterString
+    + antallAnalyser [0..1] : Integer
+  }
+
+  abstract class MineralRegistrering <<featureType>> {
+    + område [0..1] : Flate
+    + posisjon [0..1] : Punkt
+    + identRåstoffobj [1] : Integer
+    + forekomstNummer [1] : Integer
+    + mineralRegistreringType [1] : MineralRegistreringType
+    + ressursType [1] : RessursType
+    + ressursUndertype [1] : CharacterString
+    + navnRåstoffobj [0..1] : CharacterString
+    + omrNummer [0..1] : Integer
+    + typeRåstoffVirksomhet [0..1] : TypeRastoffVirksomhet
+    + geolBeskrivelse [0..1] : CharacterString
+    + antallAnalyser [0..1] : Integer
+    + sisteBefaringDato [0..1] : Date
+    + altForekomstNr [0..1] : Integer
+    + historiskViktig [0..1] : Boolean
+    + faktaarkURL [0..1] : CharacterString
+    + sluttbrukType [0..*] : SluttbrukPotensial
+  }
+
+  class Esker <<featureType>> {
+    + senterlinje [1] : Kurve
+  }
+
+  class SandGrusForekomst <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class SandGrusProspekt <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class MasseuttakAktivitet <<featureType>> {
+    + uttakPeriodeFraTil [1] : TM_Period
+    + aktivitetUttak [1] : AktivitetUttakType
+    + uttakMengde [1] : Quantity
+    + prosessType [1] : ProsessAktivitetType
+  }
+
+  abstract class "FellesegenskapRåstoff" as FellesegenskapR_stoff <<featureType>> {
+    + råstoffBetydning [1] : RåstoffBetydning
+  }
+
+  class SandGrusUttak <<featureType>> {
+    + identRastoffobj [1] : Integer
+    + forekomstNummer [1] : Integer
+    + ressursType [1] : RessursType
+    + råstoffBetydning [1] : RåstoffBetydning
+    + mineralRegistreringType [0..1] : MineralRegistreringType
+    + ressursUndertype [0..1] : CharacterString
+    + navnRastoffobj [0..1] : CharacterString
+    + lokalNummer [0..1] : Integer
+    + løsmassetype [0..1] : Losmassetype
+    + stedfestingVerifisert [0..1] : Boolean
+    + geolBeskrivelse [0..1] : CharacterString
+    + geolBeskrivelseURL [0..1] : CharacterString
+    + antallAnalyser [0..1] : Integer
+  }
+
+  abstract class FellesegenskaperGrus <<featureType>> {
+    + datauttaksdato [1] : Date
+    + førsteDatafangstdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + identifikasjon [0..1] : Identifikasjon
+    + kvalitet [0..1] : Posisjonskvalitet
+    + stedfestingVerifisert [0..1] : Boolean
+  }
+
+  class KnustBergProvins <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class KnustBergProspekt <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class "MinresPrøvepunkt" as MinresPr_vepunkt <<featureType>> {
+    + posisjon [0..1] : Punkt
+    + ressursType [1] : RessursType
+    + ressursUndertype [0..1] : CharacterString
+    + identRåstoffobj [1] : Integer
+    + forekomstNummer [1] : Integer
+    + navnRåstoffobj [0..1] : CharacterString
+    + prøveNummer [0..1] : Integer
+    + antallAnalyser [0..1] : CharacterString
+    + geolBeskrivelse [0..1] : CharacterString
+    + geolBeskrivelseURL [0..1] : CharacterString
+  }
+
+  class SandGrusRegistrering <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+
+  class Posisjonskvalitet <<dataType>> {
+    + målemetode [1] : Målemetode
+    + nøyaktighet [0..1] : Integer
+  }
+
+  class Masseuttak {
+  }
+}
+
+  MineralRegistrering <|-- KnustBergRegistrering
+  KnustBergRegistrering --> GeolAvgrLinje : avgrensning [0..*]
+  FellesegenskapR_stoff <|-- KnustBergForekomst
+  KnustBergForekomst --> GeolAvgrLinje : avgrensning [0..*]
+  Masseuttak <|-- KnustBergUttak
+  FellesegenskaperGrus <|-- MineralRegistrering
+  FellesegenskapR_stoff <|-- SandGrusForekomst
+  SandGrusForekomst --> GeolAvgrLinje : avgrensning [0..*]
+  MineralRegistrering <|-- SandGrusProspekt
+  SandGrusProspekt --> GeolAvgrLinje : avgrensning [0..*]
+  MassetakGruppeBeskrivelse <|-- MasseuttakAktivitet
+  MasseuttakAktivitet --> Masseuttak : assosiert masseuttak [1]
+  MineralRegistrering <|-- FellesegenskapR_stoff
+  Masseuttak <|-- SandGrusUttak
+  MineralRegistrering <|-- KnustBergProvins
+  KnustBergProvins --> GeolAvgrLinje : avgrensning [0..*]
+  MineralRegistrering <|-- KnustBergProspekt
+  KnustBergProspekt --> GeolAvgrLinje : avgrensning [0..*]
+  MineralRegistrering <|-- SandGrusRegistrering
+  SandGrusRegistrering --> GeolAvgrLinje : avgrensning [0..*]
+
+@enduml
