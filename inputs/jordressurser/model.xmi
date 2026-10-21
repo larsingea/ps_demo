@@ -1,0 +1,2067 @@
+<?xml  version='1.0' encoding='UTF-8' ?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0" xmlns:SOSI="http://www.sparxsystems.com/profiles/SOSI/1.0" xmlns:SOSI-UML-profil_5.1="http://www.sparxsystems.com/profiles/SOSI-UML-profil_5.1/1.0">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1622"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" name="Produktspesifikasjon Jordsmonn - 20260901" visibility="public">
+			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_7A1AE808_62A9_4fc9_BD6B_7F638E25E359" body="Lang kodeliste - vises ikke her"/>
+			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_75AA6841_FCE5_4372_BBAC_054B03244230" body="Kodelister"/>
+			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_39096ACA_7E42_487b_9859_AFCA9F54E96E" body="Etablerte datatype fra generelle typer"/>
+			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_82200269_FD86_4436_85C5_B8547FA6DB7E" body="Ekstern kodeliste"/>
+			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_2481D3BE_51AC_4a21_A654_E73C814F6CAE" body="Ekstern kodeliste"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" name="Jordsmonn" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D9969EE4_1061_4559_8AFF_464F2685D693" name="dominerendeTeksturOverflatesjikt" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_E70A1457_9266_4263_A11E_7762B2FE548C"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001_1061_4559_8AFF_464F2685D693" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000002_1061_4559_8AFF_464F2685D693" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_86CB8C60_0468_4097_9C12_4D1A507A5F48" name="forstyrrelser" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003_0468_4097_9C12_4D1A507A5F48" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000004_0468_4097_9C12_4D1A507A5F48" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_662A18C8_3DFE_4df7_98D2_7689259681D6" name="helling" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000005_3DFE_4df7_98D2_7689259681D6" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000006_3DFE_4df7_98D2_7689259681D6" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_0B34B868_FDC2_49ca_9A59_16BDE6D530D5" name="jordsmonnklassifikasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000007_FDC2_49ca_9A59_16BDE6D530D5" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000008_FDC2_49ca_9A59_16BDE6D530D5" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_37B9F563_921F_4f55_8DF1_4B7A8B73F7FE" name="kartleggingsmetodikk" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000009_921F_4f55_8DF1_4B7A8B73F7FE" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000010_921F_4f55_8DF1_4B7A8B73F7FE" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_10E3DF6D_FAD7_49f4_AAFE_F025B6B4AA71" name="kartleggingsår" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_453EB6B1_D543_4f3d_BC53_E79283F6736C"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000011_FAD7_49f4_AAFE_F025B6B4AA71" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000012_FAD7_49f4_AAFE_F025B6B4AA71" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_328E4C8B_24AC_4edf_A39F_8D747FE6E396" name="mestBegrensendeJordegenskap" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000013_24AC_4edf_A39F_8D747FE6E396" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000014_24AC_4edf_A39F_8D747FE6E396" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A47C18D4_070D_4d88_8742_768A09F495B1" name="naturligeDreneringsforhold" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000015_070D_4d88_8742_768A09F495B1" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000016_070D_4d88_8742_768A09F495B1" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D35CC6DF_01A2_4d7d_A2C1_985C7A6BF253" name="område" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_1605DB7C_9873_44b1_B339_282696451F1F"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000017_01A2_4d7d_A2C1_985C7A6BF253" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000018_01A2_4d7d_A2C1_985C7A6BF253" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7F03E7B0_5967_4787_838E_0950D6115E99" name="opprinneligLokalId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_992C4B6C_785C_48a4_81A2_5F957E9C8A6B"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000019_5967_4787_838E_0950D6115E99" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000020_5967_4787_838E_0950D6115E99" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B34A3DFA_EC87_436c_B213_960271A06529" name="organiskMateriale" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000021_EC87_436c_B213_960271A06529" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000022_EC87_436c_B213_960271A06529" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A775C653_E7DD_4884_A97F_7CFB5ED84CB4" name="steinBlokk" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_0C01951A_1859_4398_B60C_2DD7C946589E"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000023_E7DD_4884_A97F_7CFB5ED84CB4" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000024_E7DD_4884_A97F_7CFB5ED84CB4" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_FD2EABB4_50BE_4f4e_BFA1_53F4605F93F9" name="tilleggsinformasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000025_50BE_4f4e_BFA1_53F4605F93F9" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000026_50BE_4f4e_BFA1_53F4605F93F9" value="1"/>
+				</ownedAttribute>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_4E05CBD6_57A4_493b_8C9C_23795F69E15B" general="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874" isSubstitutable="true"/>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst4BE40C_60ED_4178_9296_E5F807C48E61" name="avgrensesAvJordsmonngrense" visibility="public" association="EAID_E34BE40C_60ED_4178_9296_E5F807C48E61" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000027__60ED_4178_9296_E5F807C48E61" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000028__60ED_4178_9296_E5F807C48E61" value="-1"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_E34BE40C_60ED_4178_9296_E5F807C48E61" visibility="public">
+				<memberEnd xmi:idref="EAID_dst4BE40C_60ED_4178_9296_E5F807C48E61"/>
+				<memberEnd xmi:idref="EAID_src4BE40C_60ED_4178_9296_E5F807C48E61"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src4BE40C_60ED_4178_9296_E5F807C48E61" visibility="public" association="EAID_E34BE40C_60ED_4178_9296_E5F807C48E61" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D" name="JordsmonnGrense" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_246874D2_BBE7_4f0e_93B9_B354DAB39E32" name="grense" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_C1D5F3D3_A6A7_4da1_8FBB_8E74FB3DB8C0"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000029_BBE7_4f0e_93B9_B354DAB39E32" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000030_BBE7_4f0e_93B9_B354DAB39E32" value="1"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874" name="Jordsmonn_Fellesegenskaper" visibility="public" isAbstract="true">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2B2775F6_8608_41fc_837D_FF7E227BB844" name="identifikasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000031_8608_41fc_837D_FF7E227BB844" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000032_8608_41fc_837D_FF7E227BB844" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_19A86943_7645_4ee0_BC22_F260435DE777" name="kopidata" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000033_7645_4ee0_BC22_F260435DE777" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000034_7645_4ee0_BC22_F260435DE777" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_3C1BE016_A84D_4539_9ADA_41395274ABAE" name="kvalitet" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_78F5192D_523F_4988_9000_6A7AD65E0132"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000035_A84D_4539_9ADA_41395274ABAE" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000036_A84D_4539_9ADA_41395274ABAE" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_9883E179_3DA5_4827_8C7D_26663FFF4CCC" name="verifiseringsdato" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000037_3DA5_4827_8C7D_26663FFF4CCC" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000038_3DA5_4827_8C7D_26663FFF4CCC" value="1"/>
+					<type xmi:idref="EAnone_DateTime"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_DB6406B0_C2AC_42d3_BB38_21786502FC9B" visibility="public" supplier="EAID_C01DD65F_7316_4988_924A_87336870F4D6" client="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF" name="Identifikasjon" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_DD14C240_15C5_4d8c_B33F_EEABB211DA55" name="lokalId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_453EB6B1_D543_4f3d_BC53_E79283F6736C"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000039_15C5_4d8c_B33F_EEABB211DA55" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000040_15C5_4d8c_B33F_EEABB211DA55" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D77CCFDF_607C_4423_B772_2C029F4BB0B1" name="navnerom" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000041_607C_4423_B772_2C029F4BB0B1" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000042_607C_4423_B772_2C029F4BB0B1" value="1"/>
+					<type xmi:idref="EAJava_CharacterString"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_74C15CA6_0E7E_4687_96B1_CAD97A7E811C" visibility="public" supplier="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76" client="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F" name="Kopidata" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E808FF3F_9E33_466f_85F6_2A089867D46B" name="kopidato" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000043_9E33_466f_85F6_2A089867D46B" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000044_9E33_466f_85F6_2A089867D46B" value="1"/>
+					<type xmi:idref="EAnone_DateTime"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7679E9AD_8183_4af9_A6B5_D785E32417D0" name="områdeId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#Integer"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000045_8183_4af9_A6B5_D785E32417D0" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000046_8183_4af9_A6B5_D785E32417D0" value="1"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7CF39825_313A_432f_921C_56FC398638DD" name="originalDatavert" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000047_313A_432f_921C_56FC398638DD" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000048_313A_432f_921C_56FC398638DD" value="1"/>
+					<type xmi:idref="EAnone_CharacterString"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_8D59D28D_786F_4b95_96B6_773308F13EA1" visibility="public" supplier="EAID_9F586B0A_3538_4b26_959E_B231270C2CD9" client="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_78F5192D_523F_4988_9000_6A7AD65E0132" name="Posisjonskvalitet" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_BA1F2B12_31D0_47cc_9995_FEEBE59F808A" name="målemetode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000049_31D0_47cc_9995_FEEBE59F808A" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000050_31D0_47cc_9995_FEEBE59F808A" value="1"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_238C523A_A77C_4eea_BC3B_B6BCEA157D3C" visibility="public" supplier="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474" client="EAID_78F5192D_523F_4988_9000_6A7AD65E0132"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_E70A1457_9266_4263_A11E_7762B2FE548C" name="DominerendeTeksturOverflatesjikt" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4" name="Forstyrrelser" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425" name="Helling" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A" name="Jordsmonnklassifikasjon" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C" name="Kartleggingsmetodikk" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C" name="MestBegrensendeJordegenskap" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8" name="NaturligeDreneringsforhold" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E" name="OrganiskMateriale" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_0C01951A_1859_4398_B60C_2DD7C946589E" name="SteinBlokk" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40" name="Tilleggsinformasjon" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768" name="Målemetode" visibility="public"/>
+			<packagedElement xmi:type="uml:Realization" xmi:id="EAID_2774B0D9_2E7F_4f47_A5D1_80111CE55E6E" visibility="public" supplier="EAPK_4502960B_D5B0_4377_8FCF_A32ED284FB20" client="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+		</packagedElement>
+		<thecustomprofile:persistence base_Class="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" persistence="transient"/>
+		<SOSI-UML-profil_5.1:FeatureType base_Class="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+		<thecustomprofile:SOSI_geometri base_Class="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" SOSI_geometri="FLATE;"/>
+		<thecustomprofile:SOSI_melding base_Class="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" SOSI_melding="Finnes i SOSI_db,men ingen ting skal overføres"/>
+		<thecustomprofile:persistence base_Class="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D" persistence="transient"/>
+		<SOSI-UML-profil_5.1:FeatureType base_Class="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+		<thecustomprofile:SOSI_geometri base_Class="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D" SOSI_geometri="KURVE;"/>
+		<thecustomprofile:SOSI_melding base_Class="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D" SOSI_melding="Finnes i SOSI_db,men ingen ting skal overføres"/>
+		<SOSI-UML-profil_5.1:FeatureType base_Class="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+		<SOSI-UML-profil_5.1:dataType base_Class="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF" SOSI_navn="IDENT"/>
+		<SOSI-UML-profil_5.1:dataType base_Class="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F" SOSI_navn="KOPIDATA"/>
+		<SOSI:dataType base_Class="EAID_78F5192D_523F_4988_9000_6A7AD65E0132" SOSI_navn="KVALITET"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_E70A1457_9266_4263_A11E_7762B2FE548C" asDictionary="true" SOSI_navn="DOMTEKSTUROVERFLATE" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/dominerendeteksturoverflatesjikt" SOSI_lengde="2"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4" asDictionary="true" SOSI_navn="FORSTYRRELSER" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/forstyrrelser" SOSI_lengde="2"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425" asDictionary="true" SOSI_navn="HELLING" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/helling" SOSI_lengde="2"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A" asDictionary="true" SOSI_navn="JMKLASSIFIKASJON" SOSI_datatype="T" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/jordsmonnklassifikasjon" SOSI_lengde="2"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C" asDictionary="true" SOSI_navn="KL_METODIKK" SOSI_datatype="T" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/kartleggingsmetodikk" SOSI_lengde="1"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C" asDictionary="true" SOSI_navn="MESTBEGRENSENDEJORDEGENSKAP" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/mestbegrensendejordegenskap" SOSI_lengde="2"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8" asDictionary="true" SOSI_navn="NATDRENFORHOLD" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/naturligedreneringsforhold" SOSI_lengde="1"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E" asDictionary="true" SOSI_navn="ORGANISKMATERIALE" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/organiskmateriale" SOSI_lengde="1"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_0C01951A_1859_4398_B60C_2DD7C946589E" asDictionary="true" SOSI_navn="STEINBLOKK" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/steinblokk" SOSI_lengde="2"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40" asDictionary="true" SOSI_navn="TILLEGG" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/jordsmonn/tilleggsinformasjon" SOSI_lengde="2"/>
+		<SOSI-UML-profil_5.1:CodeList base_Class="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768" asDictionary="true" SOSI_navn="MÅLEMETODE" SOSI_datatype="H" codeList="https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode" SOSI_lengde="2"/>
+		<SOSI:applicationSchema base_Package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" version="20260901" SOSI_versjon="5.0" xsdEncodingRule="sosi50" SOSI_modellstatus="gyldig" SOSI_kortnavn="Jordsmonn" SOSI_langnavn="Jordsmonn" xsdDocument="jordsmonn.xsd" SOSI_produktgruppe="nibio" xmlns="app" targetNamespace="https://skjema.test.geonorge.no/SOSI/produktspesifikasjon/jordsmonn/20260901"/>
+		<SOSI-UML-profil_5.1:ApplicationSchema base_Package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" version="20260901" designation="&quot;Data types - Soil characteristics&quot;@en" SOSI_versjon="5.0" xsdEncodingRule="sosi50" language="no" SOSI_modellstatus="gyldig" description="&quot;Data types - Soil characteristics is six thematic maps derived from soil data from NIBIO’s soil survey, as well as information on slope, stone and boulder content, supplementary information, mapping methodology, and year of mapping&quot;@en" SOSI_kortnavn="Jordsmonn" SOSI_langnavn="Jordsmonn" xsdDocument="jordsmonn.xsd" xmlns="app" targetNamespace="https://skjema.test.geonorge.no/SOSI/produktspesifikasjon/jordsmonn/20260901"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" xmi:type="uml:Package" name="Produktspesifikasjon Jordsmonn - 20260901" scope="public">
+				<model package2="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" package="EAPK_C46436B8_4AFA_4d8a_9EC7_0C194523F396" tpos="0" ea_localid="25033" ea_eleType="package"/>
+				<properties documentation="Produktspesifikasjonen omfatter jordbruksareal som har v&amp;#230;rt gjenstand for jordsmonnkartlegging. &#xA;Se www.nibio.no for mer informasjon om datasettet." isSpecification="false" sType="Package" nType="0" scope="public" stereotype="ApplicationSchema"/>
+				<project author="HeFo" version="1.0" phase="1.0" created="2023-11-17 09:05:57" modified="2026-09-07 08:56:34" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_C6293474_7827_a578_B54F_D881A756BD4A" name="catalogue-entry" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_A646FFA4_61D7_c761_BC42_5A9ACD8F7FB8" name="description" value="&quot;Data types - Soil characteristics is six thematic maps derived from soil data from NIBIO’s soil survey, as well as information on slope, stone and boulder content, supplementary information, mapping methodology, and year of mapping&quot;@en" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_EBABBC35_1E68_2c1e_9B66_D72EE7FAB6FA" name="designation" value="&quot;Data types - Soil characteristics&quot;@en" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_DEB7F7C4_4ED7_194e_ACC8_E8AF616A0A71" name="language" value="no" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_780F8C1B_FACE_88fa_899C_8162903AD825" name="SOSI_bildeAvModellelement" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_DEC125F0_3863_ad38_83DA_C0050F5463F4" name="SOSI_kortnavn" value="Jordsmonn" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_8B13C732_D9A5_ffd9_8547_8E4ED785ADB9" name="SOSI_langnavn" value="Jordsmonn" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_CBAC033E_1731_7217_A292_640D0CC532D8" name="SOSI_modellstatus" value="gyldig#NOTES#Values: utkast,utkastOgSkjult,foreslått,gyldig,fagligGodkjent,standardisert,erstattet,tilbaketrukket,ugyldig&#xA;Default: utkast&#xA;" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_A1457158_5AA0_4f5a_9945_6B8AAEDE3E29" name="SOSI_produktgruppe" value="nibio" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_A37A7EEB_7D1E_ca7d_884B_77F9D744CB72" name="SOSI_spesifikasjonstype" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_83FDE7A4_F7B7_a7f7_8DDF_3FA6133A2111" name="SOSI_versjon" value="5.0" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_393CD814_FBA7_2afb_BBC4_B21A7D73052F" name="targetNamespace" value="https://skjema.test.geonorge.no/SOSI/produktspesifikasjon/jordsmonn/20260901" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_6F40CEE6_0F99_7a0f_92F7_B31731D00A5B" name="version" value="20260901" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_08B91BD2_93C5_3493_90D1_3788F0C9DE70" name="xmlns" value="app" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_6E79370E_FD21_befd_AC65_5145C34CF98D" name="xsdDocument" value="jordsmonn.xsd#NOTES#Description: Navn på xsd fila! (test)&#xA;" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+					<tag xmi:id="EAID_BCD3CBEE_D761_d2d7_B5C0_2528201ABEF1" name="xsdEncodingRule" value="sosi50" modelElement="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={4C5DA476-EC80-4fdf-8C34-ED9A66B130F3}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=ApplicationSchema;FQName=SOSI-UML-profil 5.1::ApplicationSchema;@ENDSTEREO;$DES;$CLT={B057C1C9-AAD7-45ad-A735-6777CA0DA9AC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Jordsmonn"/>
+				<packageproperties version="1.0" xmiver="Enterprise Architect XMI/UML 1.3" tpos="0"/>
+				<paths xmlpath="SOSI Del 3\Skog og landskap\Produktspesifikasjon Jordsmonn - 20260901.xml"/>
+				<times created="2023-11-17 09:05:57" modified="2026-09-30 12:12:00" lastloaddate="2026-09-30 12:12:05" lastsavedate="2024-08-14 12:40:17"/>
+				<flags iscontrolled="1" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0" packageFlags="Recurse=0;VCCFG=SOSI;"/>
+			</element>
+			<element xmi:idref="EAID_2481D3BE_51AC_4a21_A654_E73C814F6CAE" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="0" ea_localid="243254" ea_eleType="element"/>
+				<properties documentation="Ekstern kodeliste" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="HeFo" version="1.0" phase="1.0" created="2026-06-02 09:05:21" modified="2026-06-02 09:05:29" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901"/>
+			</element>
+			<element xmi:idref="EAID_82200269_FD86_4436_85C5_B8547FA6DB7E" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="0" ea_localid="243265" ea_eleType="element"/>
+				<properties documentation="Ekstern kodeliste" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="HeFo" version="1.0" phase="1.0" created="2026-09-07 13:59:00" modified="2026-06-02 09:05:29" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901"/>
+			</element>
+			<element xmi:idref="EAID_39096ACA_7E42_487b_9859_AFCA9F54E96E" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="0" ea_localid="243256" ea_eleType="element"/>
+				<properties documentation="Etablerte datatype fra generelle typer" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="hfm" version="1.0" phase="1.0" created="2018-11-13 10:04:53" modified="2023-11-20 14:58:55" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901"/>
+			</element>
+			<element xmi:idref="EAID_75AA6841_FCE5_4372_BBAC_054B03244230" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="0" ea_localid="243262" ea_eleType="element"/>
+				<properties documentation="Kodelister" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="hfm" version="1.0" phase="1.0" created="2023-11-20 14:58:43" modified="2023-11-20 14:58:50" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901"/>
+			</element>
+			<element xmi:idref="EAID_7A1AE808_62A9_4fc9_BD6B_7F638E25E359" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="0" ea_localid="243264" ea_eleType="element"/>
+				<properties documentation="Lang kodeliste - vises ikke her" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="hfm" version="1.0" phase="1.0" created="2018-11-13 10:04:47" modified="2016-04-11 11:17:35" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901"/>
+			</element>
+			<element xmi:idref="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" xmi:type="uml:Class" name="Jordsmonn" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="1" ea_localid="243259" ea_eleType="element"/>
+				<properties documentation="geografisk omr&amp;#229;de med tiln&amp;#230;rmet enhetlige egenskaper i jordsmonnet&#xA;-- Definition -- &#xA;geographic area with approximately uniform soil characteristics" isSpecification="false" sType="Class" nType="0" alias="Soil" scope="public" stereotype="FeatureType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project created="2018-11-13 10:04:48" modified="2025-06-16 09:46:15" complexity="1" status="Proposed"/>
+				<code product_name="1"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_ED33D65F_D91B_e6d9_B760_045C3A212827" name="byValuePropertyType" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_465BEE89_9A25_079a_A8CC_91D8781C372A" name="definition" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_A646FFA4_1EC0_681e_8638_BD539025CB7F" name="description" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_EBABBC35_DB51_ccdb_8460_1298A1119775" name="designation" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_26B33348_11C4_a611_B6A5_E98B004FA84A" name="isCollection" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_F9638764_68C0_7668_8F9C_618731B99EA7" name="noPropertyType" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_381C93F8_B530_486e_9999_3140B8A01695" name="persistence" value="transient" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_780F8C1B_9B77_c59b_870A_3E4736EA9E9B" name="SOSI_bildeAvModellelement" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_FFFB5469_DEC2_44b9_8706_37470161F8FE" name="SOSI_geometri" value="FLATE;" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_8A086E1A_5321_41ab_9A31_080E6C5F2834" name="SOSI_melding" value="Finnes i SOSI_db,men ingen ting skal overføres" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+					<tag xmi:id="EAID_D92437BF_F4DB_36f4_BD16_A19D4871D00F" name="SOSI_presentasjonsnavn" modelElement="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={694C9C28-1AA1-4c27-89A4-CE0E2A287B85}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=FeatureType;FQName=SOSI-UML-profil 5.1::FeatureType;@ENDSTEREO;$DES;$CLT={46D8CD21-36D4-4271-98CC-D6EF356DBBED}$CLT;$ENDXREF;$XREFPROP=$XID={CBCC155C-E3C4-4839-BD31-FD70600AD758}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={46D8CD21-36D4-4271-98CC-D6EF356DBBED}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" persistence="Transient"/>
+				<attributes>
+					<attribute xmi:idref="EAID_D9969EE4_1061_4559_8AFF_464F2685D693" name="dominerendeTeksturOverflatesjikt" scope="Public">
+						<initial/>
+						<documentation value="Viser arealets dominerende tekstur (og grusinnhold) i overflatesjikt registrert under jordkartlegging i felt. &#xA;-- Definition -- &#xA;category for the dominant texture in the surface layer recorded during fieldwork."/>
+						<model ea_localid="1312874" ea_guid="{D9969EE4-1061-4559-8AFF-464F2685D693}"/>
+						<properties type="DominerendeTeksturOverflatesjikt" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="textureOfPloughedLayer"/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_4C84419D_152B_417d_B7B4_8180100D5525" name="SOSI_lengde" value="2"/>
+							<tag xmi:id="EAID_F65FEBD8_FDA8_4358_A9F1_B43764972346" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_CA6544EC_F65D_4998_8C2D_7E56088A7DCD" name="SOSI_navn" value="DOMTEKSTUROVERFLATE"/>
+							<tag xmi:id="EAID_3B4F08D0_FD6C_4fe1_B71F_8661B14688E6" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/dominerendeteksturoverflatesjikt"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_86CB8C60_0468_4097_9C12_4D1A507A5F48" name="forstyrrelser" scope="Public">
+						<initial/>
+						<documentation value="Viser hva slags menneskelig aktivitet, utover vanlig jordarbeiding/gr&amp;#248;fting, som har forstyrret arealet."/>
+						<model ea_localid="1312875" ea_guid="{86CB8C60-0468-4097-9C12-4D1A507A5F48}"/>
+						<properties type="Forstyrrelser" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="2"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="Disturbances"/>
+						<styleex value="volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_9144896A_0F92_409b_976A_5B3133AFB4CE" name="SOSI_navn" value="FORSTYRRELSER"/>
+							<tag xmi:id="EAID_148172FE_F128_4e3c_A01F_08EFB89F1563" name="SOSI_lengde" value="2"/>
+							<tag xmi:id="EAID_A9C91D23_9C8A_428e_8662_291CDA3C62A9" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_5513CE63_3237_4538_84FC_CCE4F9975B27" name="defaltCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/forstyrrelser"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_662A18C8_3DFE_4df7_98D2_7689259681D6" name="helling" scope="Public">
+						<initial/>
+						<documentation value="Viser dominerende helling p&amp;#229; arealet.&#xA;-- Definition -- &#xA;inclination class for the soil figure "/>
+						<model ea_localid="1312876" ea_guid="{662A18C8-3DFE-4df7-98D2-7689259681D6}"/>
+						<properties type="Helling" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="3"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="inclination"/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_6037711F_1876_4a3f_94C2_B12E5C767E3A" name="SOSI_lengde" value="2"/>
+							<tag xmi:id="EAID_CEF6C730_11DF_4aaa_8B5B_EA875A860FF5" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_D28D1C08_822E_43ef_8BD0_4360A3F84F91" name="SOSI_navn" value="HELLING"/>
+							<tag xmi:id="EAID_0CC775DB_0AAC_40c0_B4A5_22E9F6773041" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/helling"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_0B34B868_FDC2_49ca_9A59_16BDE6D530D5" name="jordsmonnklassifikasjon" scope="Public">
+						<initial/>
+						<documentation value="Viser hvilken jordgruppe som dominerer p&amp;#229; arealet&#xA;-- Definition -- &#xA;Shows which soiltype which is dominating the area. "/>
+						<model ea_localid="1312877" ea_guid="{0B34B868-FDC2-49ca-9A59-16BDE6D530D5}"/>
+						<properties type="Jordsmonnklassifikasjon" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="4"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="Soilclass"/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_B894E15F_CA50_4ccc_BDC4_9DFF64D56508" name="SOSI_lengde" value="2"/>
+							<tag xmi:id="EAID_9BC52E6B_BE5D_41e4_9ABB_07DB6347BF30" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_29C2FED9_9402_466f_AF14_A0AC3AF7182C" name="SOSI_navn" value="JMKLASSIFIKASJON"/>
+							<tag xmi:id="EAID_268F75F0_0BD0_4fea_8526_D181AF322F97" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/jordsmonnklassifikasjon"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_37B9F563_921F_4f55_8DF1_4B7A8B73F7FE" name="kartleggingsmetodikk" scope="Public">
+						<initial/>
+						<documentation value="Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under jordsmonnkartlegging.&#xA;--Definition--&#xA;Displays the methodolgy used during field mapping.&#xA;"/>
+						<model ea_localid="1312878" ea_guid="{37B9F563-921F-4f55-8DF1-4B7A8B73F7FE}"/>
+						<properties type="Kartleggingsmetodikk" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="5"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="Mapping method"/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_13184F58_37B0_45d5_9592_1DB80A34109A" name="SOSI_navn" value="KL_METODIKK"/>
+							<tag xmi:id="EAID_C61AA797_25D3_4688_875E_31FA78CC70E5" name="SOSI_lengde" value="1"/>
+							<tag xmi:id="EAID_77C0453D_1C78_44e8_993F_DCDAAE488A82" name="SOSI_datatype" value="H" notes="Values: H,T,D,DATO,DATOTID,BOOLSK&#xA;"/>
+							<tag xmi:id="EAID_794E1689_9329_4ab1_84AC_43E619FB514B" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/kartleggingsmetodikk"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_10E3DF6D_FAD7_49f4_AAFE_F025B6B4AA71" name="kartleggingsår" scope="Public">
+						<initial/>
+						<documentation value="Viser &amp;#229;rstall for n&amp;#229;r jordsmonnkartlegging er utf&amp;#248;rt.&#xA;-- Definition -- &#xA;year of mapping"/>
+						<model ea_localid="1312879" ea_guid="{10E3DF6D-FAD7-49f4-AAFE-F025B6B4AA71}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="6"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="mappingYear"/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_65B38AF3_8F23_442f_9E95_47BD826E5982" name="SOSI_lengde" value="5"/>
+							<tag xmi:id="EAID_6C4D0747_1970_413f_8403_FFB1C40D67AB" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_926172BD_F92C_4667_89E4_E9BF1EA890D2" name="SOSI_navn" value="KL_ÅR"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_328E4C8B_24AC_4edf_A39F_8D747FE6E396" name="mestBegrensendeJordegenskap" scope="Public">
+						<initial/>
+						<documentation value="Viser den jordegenskapen som er mest begrensende for bruken av arealet"/>
+						<model ea_localid="1312880" ea_guid="{328E4C8B-24AC-4edf-A39F-8D747FE6E396}"/>
+						<properties type="MestBegrensendeJordegenskap" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="7"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="Most limitating attribute"/>
+						<styleex value="volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_52ABB6DA_9713_4cc3_9AB3_BC63442D3E99" name="SOSI_lengde" value="2"/>
+							<tag xmi:id="EAID_3576E20E_5F50_48c5_9B52_A6FB2F07F1F6" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_88351DEA_565B_4689_8A2D_020A76A4A3A2" name="SOSI_navn" value="MESTBEGRENSENDEJORDEGENSKAP"/>
+							<tag xmi:id="EAID_F5AF1A34_A25A_46c6_BCC7_3412056F3B56" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/mestbegrensendejordegenskap"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_A47C18D4_070D_4d88_8742_768A09F495B1" name="naturligeDreneringsforhold" scope="Public">
+						<initial/>
+						<documentation value="Viser jordsmonnets naturlige evne til &amp;#229; bli kvitt overfl&amp;#248;dig vann."/>
+						<model ea_localid="1312881" ea_guid="{A47C18D4-070D-4d88-8742-768A09F495B1}"/>
+						<properties type="NaturligeDreneringsforhold" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="8"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="NaturalDrainage"/>
+						<styleex value="volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_86CA7452_4FDE_4142_AC75_E502FC7D5E1F" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_97EF5C58_CA15_421e_91AA_2EB23D052573" name="SOSI_lengde" value="1"/>
+							<tag xmi:id="EAID_D37C4EF4_33B1_4755_9493_A9FA6EE58C58" name="SOSI_navn" value="NATDRENFORHOLD"/>
+							<tag xmi:id="EAID_B7B75A23_17EA_40ad_8EAC_5173BE8362A9" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/naturligedreneringsforhold"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_D35CC6DF_01A2_4d7d_A2C1_985C7A6BF253" name="område" scope="Public">
+						<initial/>
+						<documentation value="objektets utstrekning&#xA;-- Definition -- &#xA;area over which an object extends"/>
+						<model ea_localid="1312873" ea_guid="{D35CC6DF-01A2-4d7d-A2C1-985C7A6BF253}"/>
+						<properties type="GM_Surface" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="extent"/>
+						<styleex value="volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_654347F2_C344_4798_96DD_D8E38BF9DFB9" name="SOSI_melding" value="Fant ikke denne i SOSI_db"/>
+							<tag xmi:id="EAID_3E5CEBFC_2787_4021_B5ED_8121253C29DC" name="SOSI_navn" value="Flate"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={57F04C53-1F55-4b85-8E86-DFA6E5C32266}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={D35CC6DF-01A2-4d7d-A2C1-985C7A6BF253}$CLT;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_7F03E7B0_5967_4787_838E_0950D6115E99" name="opprinneligLokalId" scope="Public">
+						<initial/>
+						<documentation value="Opprinnelig id i databasen&#xA;— Definition — &#xA;Original ID in the soil database"/>
+						<model ea_localid="1312885" ea_guid="{7F03E7B0-5967-4787-838E-0950D6115E99}"/>
+						<properties type="Integer" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="12"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_2CC89C07_6292_4468_B5EA_46999B548481" name="SOSI_navn" value="FIGURID"/>
+							<tag xmi:id="EAID_3BC3B692_A691_45b5_8F07_B44CA5D02F6C" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_AADDC94B_9B7C_4932_867F_2F51C0090911" name="SOSI_lengde" value="10"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_B34A3DFA_EC87_436c_B213_960271A06529" name="organiskMateriale" scope="Public">
+						<initial/>
+						<documentation value="Viser jordsmonnets innhold av organisk materiale i overflatesjiktet, samt tykkelse p&amp;#229; organisk jord der denne finnes."/>
+						<model ea_localid="1312882" ea_guid="{B34A3DFA-EC87-436c-B213-960271A06529}"/>
+						<properties type="OrganiskMateriale" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="9"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="Organic material"/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_1C961171_673B_4bd4_BBC7_9FEBE419BEE8" name="SOSI_navn" value="ORGANISKMATERIALE"/>
+							<tag xmi:id="EAID_7BA22B51_5C49_4f7a_AC79_3A7CC86D2518" name="SOSI_lengde" value="1"/>
+							<tag xmi:id="EAID_17B4010F_C261_4f19_B528_34831DE8BC0D" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_A5EC8870_1E20_4a35_838E_54222FCD87F5" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/organiskmateriale"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={31860C61-A794-4beb-A5C1-E21FBA3C963F}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={B34A3DFA-EC87-436c-B213-960271A06529}$CLT;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_A775C653_E7DD_4884_A97F_7CFB5ED84CB4" name="steinBlokk" scope="Public">
+						<initial/>
+						<documentation value="Viser stein- og blokkinnhold (0–50 cm) p&amp;#229; arealet p&amp;#229; kartleggingstidspunktet "/>
+						<model ea_localid="1312883" ea_guid="{A775C653-E7DD-4884-A97F-7CFB5ED84CB4}"/>
+						<properties type="SteinBlokk" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="10"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="Stones and rocks"/>
+						<styleex value="volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_13FA0FE2_8E0A_4bdb_B498_4D8011690159" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_670F0B70_BA06_404a_A5CB_4CDF9A1F743D" name="SOSI_lengde" value="2"/>
+							<tag xmi:id="EAID_96D4863F_01A4_41b7_95B0_13F7872CC0EA" name="SOSI_navn" value="STEINBLOKK"/>
+							<tag xmi:id="EAID_B4627657_5EA8_4f1d_8C1A_A797234B3389" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/steinblokk"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_FD2EABB4_50BE_4f4e_BFA1_53F4605F93F9" name="tilleggsinformasjon" scope="Public">
+						<initial/>
+						<documentation value="Viser tilleggsinformasjon om andre egenskaper ved arealet."/>
+						<model ea_localid="1312884" ea_guid="{FD2EABB4-50BE-4f4e-BFA1-53F4605F93F9}"/>
+						<properties type="Tilleggsinformasjon" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="11"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="Supplementary information"/>
+						<styleex value="volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_D4C20550_8067_4a77_A312_5F1C508EB1BC" name="SOSI_lengde" value="2"/>
+							<tag xmi:id="EAID_CE5CD2E5_70CB_4196_A8CA_4867AD2290DA" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_C6E1078D_C595_4a5b_8801_DC581E99F776" name="SOSI_navn" value="TILLEGG"/>
+							<tag xmi:id="EAID_BE792616_3D20_400d_83BE_914A1C4908BF" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/tilleggsinformasjon"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Generalization xmi:id="EAID_4E05CBD6_57A4_493b_8C9C_23795F69E15B" start="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" end="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+					<Association xmi:id="EAID_E34BE40C_60ED_4178_9296_E5F807C48E61" start="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" end="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D" xmi:type="uml:Class" name="JordsmonnGrense" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="2" ea_localid="243257" ea_eleType="element"/>
+				<properties documentation="grensen for jordsmonnflata&#xA;-- Definition -- &#xA;the boundary of an expanse of soil " isSpecification="false" sType="Class" nType="0" alias="SoilBoundary" scope="public" stereotype="FeatureType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project created="2018-11-13 10:05:01" modified="2025-05-15 12:16:15" complexity="1" status="Proposed"/>
+				<code product_name="1"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_ED33D65F_D91B_e6d9_8EF9_87B0FF85C961" name="byValuePropertyType" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_465BEE89_9A25_079a_9F28_56D2E0AB28B0" name="definition" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_A646FFA4_1EC0_681e_A7D1_534B43FDE20D" name="description" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_EBABBC35_DB51_ccdb_9402_B235B6441BE5" name="designation" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_26B33348_11C4_a611_8B48_BD846883ABF3" name="isCollection" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_F9638764_68C0_7668_A14F_789428104EE1" name="noPropertyType" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_02075AE4_F017_44d2_93A4_7B0BC3C1CBBE" name="persistence" value="transient" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_780F8C1B_9B77_c59b_A352_375AA8A75F50" name="SOSI_bildeAvModellelement" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_95EDD700_4FCF_4869_8466_66DF11654C84" name="SOSI_geometri" value="KURVE;" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_51D6D076_C03B_47c5_AAFE_0B9CBE09E481" name="SOSI_melding" value="Finnes i SOSI_db,men ingen ting skal overføres" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+					<tag xmi:id="EAID_D92437BF_F4DB_36f4_A4DD_EFE953BC8525" name="SOSI_presentasjonsnavn" modelElement="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={14793EFF-899A-4747-BDC7-FB670DB4B5FB}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=FeatureType;FQName=SOSI-UML-profil 5.1::FeatureType;@ENDSTEREO;$DES;$CLT={3F0365EC-8EB9-41d2-83B6-E574D924925D}$CLT;$ENDXREF;$XREFPROP=$XID={D7561D2C-1401-4fca-B07C-31BAD9A71E32}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={3F0365EC-8EB9-41d2-83B6-E574D924925D}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" persistence="Transient"/>
+				<attributes>
+					<attribute xmi:idref="EAID_246874D2_BBE7_4f0e_93B9_B354DAB39E32" name="grense" scope="Public">
+						<initial/>
+						<documentation value="forl&amp;#248;p som f&amp;#248;lger overgang mellom ulike fenomener&#xA;-- Definition -- &#xA;course follwing the transition between different real world phenomena"/>
+						<model ea_localid="1312869" ea_guid="{246874D2-BBE7-4f0e-93B9-B354DAB39E32}"/>
+						<properties type="GM_Curve" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="border"/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_14D552B8_A4D6_49e8_8D91_FEC09C093151" name="SOSI_melding" value="Fant ikke denne i SOSI_db"/>
+							<tag xmi:id="EAID_86CBBF9D_946E_4445_B1AF_CAC20E148598" name="SOSI_navn" value="Kurve"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Association xmi:id="EAID_E34BE40C_60ED_4178_9296_E5F807C48E61" start="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" end="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874" xmi:type="uml:Class" name="Jordsmonn_Fellesegenskaper" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="3" ea_localid="243272" ea_eleType="element"/>
+				<properties documentation="abstrakt objekttype som b&amp;#230;rer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.&#xA;Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagomr&amp;#229;demodeller." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="FeatureType" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="jonken" created="2025-05-06 11:44:47" modified="2025-05-06 13:29:50" complexity="1" status="Proposed"/>
+				<code product_name="1"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_ED33D65F_D91B_e6d9_953F_87537DD70E2B" name="byValuePropertyType" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+					<tag xmi:id="EAID_465BEE89_9A25_079a_89CD_54CC7EBCF377" name="definition" modelElement="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+					<tag xmi:id="EAID_A646FFA4_1EC0_681e_B2C4_668F2D7FBF9D" name="description" modelElement="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+					<tag xmi:id="EAID_EBABBC35_DB51_ccdb_B7DB_74FF28B1B18B" name="designation" modelElement="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+					<tag xmi:id="EAID_26B33348_11C4_a611_AE91_02D578A8440A" name="isCollection" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+					<tag xmi:id="EAID_F9638764_68C0_7668_BE13_F855A6986082" name="noPropertyType" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+					<tag xmi:id="EAID_780F8C1B_9B77_c59b_8D80_A31F5086192A" name="SOSI_bildeAvModellelement" modelElement="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+					<tag xmi:id="EAID_D92437BF_F4DB_36f4_9345_939CD6C31896" name="SOSI_presentasjonsnavn" modelElement="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={70D81423-4429-449c-8C6D-BAC4EFDF2C9A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=FeatureType;FQName=SOSI-UML-profil 5.1::FeatureType;@ENDSTEREO;$DES;$CLT={F076AB1D-6B87-4668-B019-062C0C6D3874}$CLT;$ENDXREF;$XREFPROP=$XID={F5D730C6-5DD8-4d7a-B95F-996B239B83B3}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={F076AB1D-6B87-4668-B019-062C0C6D3874}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" persistence="Transient"/>
+				<attributes>
+					<attribute xmi:idref="EAID_2B2775F6_8608_41fc_837D_FF7E227BB844" name="identifikasjon" scope="Public">
+						<initial/>
+						<documentation value="unik identifikasjon av et objekt "/>
+						<model ea_localid="1312889" ea_guid="{2B2775F6-8608-41fc-837D-FF7E227BB844}"/>
+						<properties type="Identifikasjon" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_FC6C6EA8_8F76_4c9c_943B_6ABBE8AD1BCA" name="SOSI_navn" value="IDENT"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={26DBB8A7-7C21-47c0-9BAF-97C73F911A6F}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={2B2775F6-8608-41fc-837D-FF7E227BB844}$CLT;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_19A86943_7645_4ee0_BC22_F260435DE777" name="kopidata" scope="Public">
+						<initial/>
+						<documentation value="angivelse av at objektet er hentet fra et kopidatasett og ikke fra originaldatasettet&#xA;&#xA;Merknad: Inneholder informasjon om når kopidatasettet ble kopiert fra originaldatasettet og hvem som er originaldataansvarlig"/>
+						<model ea_localid="1312890" ea_guid="{19A86943-7645-4ee0-BC22-F260435DE777}"/>
+						<properties type="Kopidata" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_E0719D0D_2BE6_40de_A33D_E8C8F5F38923" name="SOSI_navn" value="KOPIDATA"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_3C1BE016_A84D_4539_9ADA_41395274ABAE" name="kvalitet" scope="Public">
+						<initial/>
+						<documentation value="Beskrivelse av kvaliteten p&amp;#229; stedfestingen."/>
+						<model ea_localid="1312891" ea_guid="{3C1BE016-A84D-4539-9ADA-41395274ABAE}"/>
+						<properties type="Posisjonskvalitet" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="2"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_A1352405_581B_438b_98FC_BAB1154A132D" name="SOSI_navn" value="KVALITET"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_9883E179_3DA5_4827_8C7D_26663FFF4CCC" name="verifiseringsdato" scope="Public">
+						<initial/>
+						<documentation value="dato n&amp;#229;r dataene er fastsl&amp;#229;tt &amp;#229; v&amp;#230;re i samsvar med virkeligheten&#xA;Merknad: Verifiseringsdato er identisk med ..DATO i tidligere versjoner av SOSI"/>
+						<model ea_localid="1312892" ea_guid="{9883E179-3DA5-4827-8C7D-26663FFF4CCC}"/>
+						<properties type="DateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="3"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_8590D62E_070F_4711_A853_D3CCCD05C9E1" name="SOSI_datatype" value="DATOTID"/>
+							<tag xmi:id="EAID_3BB6151C_0A2A_4c81_BEEB_138155117263" name="SOSI_navn" value="VERIFISERINGSDATO"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Realisation xmi:id="EAID_DB6406B0_C2AC_42d3_BB38_21786502FC9B" start="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874" end="EAID_C01DD65F_7316_4988_924A_87336870F4D6"/>
+					<Generalization xmi:id="EAID_4E05CBD6_57A4_493b_8C9C_23795F69E15B" start="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" end="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF" xmi:type="uml:Class" name="Identifikasjon" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="4" ea_localid="243266" ea_eleType="element"/>
+				<properties documentation="Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. &#xA;Merknad 1: Denne objektidentifikasjonen m&amp;#229; ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. &#xA;Merknad 2: Denne unike identifikatoren vil ikke endres i l&amp;#248;pet av objektets levetid, og ikke gjenbrukes i andre objekt. " isSpecification="false" sType="Class" nType="0" alias="Identification" scope="public" stereotype="dataType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="bormor" version="1.0" phase="1.0" created="2025-05-06 11:44:47" modified="2026-06-02 08:57:15" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=0;BorderWidth=1;FontColor=0;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_54BE1B90_979A_5b97_A2AB_B2F56C957819" name="SOSI_navn" value="IDENT" modelElement="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF"/>
+					<tag xmi:id="EAID_D92437BF_7409_4d74_9688_44CA188E3C30" name="SOSI_presentasjonsnavn" modelElement="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={1C30B3DD-8146-4cd4-A919-275BC5EDF289}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=dataType;FQName=SOSI-UML-profil 5.1::dataType;@ENDSTEREO;$DES;$CLT={8C85BDD4-02E6-4947-A1FA-44FCF6206EBF}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" persistence="Persistent" ea_attsclassified="{2B2775F6-8608-41fc-837D-FF7E227BB844}"/>
+				<attributes>
+					<attribute xmi:idref="EAID_DD14C240_15C5_4d8c_B33F_EEABB211DA55" name="lokalId" scope="Public">
+						<initial/>
+						<documentation value="lokal identifikator av et objekt&#xA;Merknad: Det er dataleverend&amp;#248;rens ansvar &amp;#229; s&amp;#248;rge for at den lokale identifikatoren er unik innenfor navnerommet."/>
+						<model ea_localid="1312887" ea_guid="{DD14C240-15C5-4d8c-B33F-EEABB211DA55}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="localId"/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_3A85FE3A_875C_4a9b_986D_13052CB50F4E" name="SOSI_navn" value="LOKALID"/>
+							<tag xmi:id="EAID_93357C33_C909_4a39_B516_A9BB66089A84" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_51796C3F_F80D_4147_88FF_352DE88CE6B3" name="SOSI_lengde" value="100"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_D77CCFDF_607C_4423_B772_2C029F4BB0B1" name="navnerom" scope="Public">
+						<initial/>
+						<documentation value="navnerom som unikt identifiserer datakilden til et objekt, anbefales &amp;#229; v&amp;#230;re en http-URI&#xA;Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0&#xA;Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og m&amp;#229; v&amp;#230;re registrert i data.geonorge.no eller data.norge.no"/>
+						<model ea_localid="1312888" ea_guid="{D77CCFDF-607C-4423-B772-2C029F4BB0B1}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="namespace"/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_7C7216C0_985C_4c48_B35D_3F32D4F0BF7A" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_B9BA9655_E0C3_4a5c_BFF3_98AF35BCA744" name="SOSI_lengde" value="100"/>
+							<tag xmi:id="EAID_61E3E225_98D8_4bfb_8306_CFC0B43CD616" name="SOSI_navn" value="NAVNEROM"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Realisation xmi:id="EAID_74C15CA6_0E7E_4687_96B1_CAD97A7E811C" start="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF" end="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F" xmi:type="uml:Class" name="Kopidata" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="5" ea_localid="243258" ea_eleType="element"/>
+				<properties documentation="angivelse av at objektet er hentet fra en kopi av originaldata&#xA;Merknad: Kan benyttes dersom man gj&amp;#248;r et uttak av en database som ikke inneholder originaldataene.&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="dataType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="HeFo" created="2025-05-06 11:44:48" modified="2025-05-06 14:51:17" complexity="1" status="Proposed"/>
+				<code/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_54BE1B90_979A_5b97_9C43_BA0F0D9EB15F" name="SOSI_navn" value="KOPIDATA" modelElement="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F"/>
+					<tag xmi:id="EAID_D92437BF_7409_4d74_AD2D_D32237ACDBA6" name="SOSI_presentasjonsnavn" modelElement="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={6F84B0EB-CA34-4de7-B855-6B75B1CC0C3C}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=dataType;FQName=SOSI-UML-profil 5.1::dataType;@ENDSTEREO;$DES;$CLT={42279DC5-546E-408a-93CE-64724E8F1C3F}$CLT;$ENDXREF;$XREFPROP=$XID={0E541D92-B688-4615-A581-33A7A5BFB857}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={42279DC5-546E-408a-93CE-64724E8F1C3F}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" persistence="Transient" ea_attsclassified="{19A86943-7645-4ee0-BC22-F260435DE777}"/>
+				<attributes>
+					<attribute xmi:idref="EAID_E808FF3F_9E33_466f_85F6_2A089867D46B" name="kopidato" scope="Public">
+						<initial/>
+						<documentation value="dato når objektet ble kopiert fra originaldatasettet  &#xA;&#xA;Merknad:&#xA;Er en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase brukes til distribusjon.&#xA;Å kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato blir endret.&#xA;Eventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Datafangstdato og/eller Verifiseringsdato."/>
+						<model ea_localid="1312872" ea_guid="{E808FF3F-9E33-466f-85F6-2A089867D46B}"/>
+						<properties type="DateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="2"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_E00AD3E9_72BC_4589_A5CD_D76FE9FC5FC4" name="SOSI_navn" value="KOPIDATO"/>
+							<tag xmi:id="EAID_0DFAD81D_97A0_4468_8437_2F2E1497308B" name="SOSI_datatype" value="DATOTID"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_7679E9AD_8183_4af9_A6B5_D785E32417D0" name="områdeId" scope="Public">
+						<initial/>
+						<documentation value="identifikasjon av omr&amp;#229;de som dataene dekker&#xA;Merknad: Kan angis med kommunenummer eller fylkesnummer. Disse b&amp;#248;r spesifiseres n&amp;#230;rmere."/>
+						<model ea_localid="1312870" ea_guid="{7679E9AD-8183-4af9-A6B5-D785E32417D0}"/>
+						<properties type="Integer" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_066D5F3B_976A_41c6_8424_F5FAC22F7C4A" name="SOSI_navn" value="OMRÅDEID"/>
+							<tag xmi:id="EAID_8636D460_8CCD_4fca_8BC3_51CE306D8C33" name="SOSI_datatype" value="H"/>
+							<tag xmi:id="EAID_32C20839_7DC6_4f16_A5D3_1A996D05A566" name="SOSI_lengde" value="4"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_7CF39825_313A_432f_921C_56FC398638DD" name="originalDatavert" scope="Public">
+						<initial/>
+						<documentation value="ansvarlig etat for forvaltning av data"/>
+						<model ea_localid="1312871" ea_guid="{7CF39825-313A-432f-921C-56FC398638DD}"/>
+						<properties type="CharacterString" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex/>
+						<tags>
+							<tag xmi:id="EAID_2B8B8A40_D9E9_4497_9BF4_2D4497A35C4F" name="SOSI_navn" value="ORIGINALDATAVERT"/>
+							<tag xmi:id="EAID_336DD449_D38B_41e8_8136_49FA6CB24A17" name="SOSI_datatype" value="T"/>
+							<tag xmi:id="EAID_82406716_21A3_4ba2_9312_5E5C6EF0406A" name="SOSI_lengde" value="100"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Realisation xmi:id="EAID_8D59D28D_786F_4b95_96B6_773308F13EA1" start="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F" end="EAID_9F586B0A_3538_4b26_959E_B231270C2CD9"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_78F5192D_523F_4988_9000_6A7AD65E0132" xmi:type="uml:Class" name="Posisjonskvalitet" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="6" ea_localid="243263" ea_eleType="element"/>
+				<properties documentation="beskrivelse av kvaliteten p&amp;#229; stedfestingen.&#xA;Merknad: Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&amp;#248;ring av tildligere brukte kvalitetsegenskaper i SOSI." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="dataType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="kent" created="2026-06-02 08:17:27" modified="2026-09-07 15:04:33" complexity="1" status="Proposed"/>
+				<code product_name="1"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0D769646_FD7C_4d78_83B4_EE2DC9624D76" name="SOSI_navn" value="KVALITET" modelElement="EAID_78F5192D_523F_4988_9000_6A7AD65E0132"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={EAF7BFF5-F918-4e33-8DB1-3841DCD12CA7}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=dataType;GUID={CD6A9266-6921-409c-8DD5-275757EE3C8D};FQName=SOSI::dataType;@ENDSTEREO;$DES;$CLT={78F5192D-523F-4988-9000-6A7AD65E0132}$CLT;$ENDXREF;$XREFPROP=$XID={67F1AAF0-C089-469b-BF8C-3ACE32140F7B}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={78F5192D-523F-4988-9000-6A7AD65E0132}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" persistence="Transient" ea_attsclassified="{3C1BE016-A84D-4539-9ADA-41395274ABAE}"/>
+				<attributes>
+					<attribute xmi:idref="EAID_BA1F2B12_31D0_47cc_9995_FEEBE59F808A" name="målemetode" scope="Public">
+						<initial/>
+						<documentation value="metode for m&amp;#229;ling i grunnriss (x,y), og h&amp;#248;yde (z) n&amp;#229;r metoden er den samme som ved m&amp;#229;ling i grunnriss"/>
+						<model ea_localid="1312886" ea_guid="{BA1F2B12-31D0-47cc-9995-FEEBE59F808A}"/>
+						<properties type="Målemetode" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags>
+							<tag xmi:id="EAID_37EF6738_2B7E_4cb4_974B_5CEF7163037A" name="SOSI_navn" value="MÅLEMETODE"/>
+							<tag xmi:id="EAID_965FA260_25D7_4c02_9FEE_7807D27022C9" name="defaultCodeSpace" value="https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode"/>
+						</tags>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Realisation xmi:id="EAID_238C523A_A77C_4eea_BC3B_B6BCEA157D3C" start="EAID_78F5192D_523F_4988_9000_6A7AD65E0132" end="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_E70A1457_9266_4263_A11E_7762B2FE548C" xmi:type="uml:Class" name="DominerendeTeksturOverflatesjikt" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="7" ea_localid="243271" ea_eleType="element"/>
+				<properties documentation="Viser arealets dominerende tekstur (og grusinnhold) i overflatesjikt registrert under jordkartlegging i felt.&#xA;-- Definition - - &#xA;category for the dominant texture in the surface layer recorded during fieldwork.&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 10:26:35" modified="2026-09-07 15:03:08" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_88D9_6A4AB3587A28" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_E70A1457_9266_4263_A11E_7762B2FE548C"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_9191_AA988FD45784" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/dominerendeteksturoverflatesjikt" modelElement="EAID_E70A1457_9266_4263_A11E_7762B2FE548C"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_8834_8F8EF7AD98D7" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_E70A1457_9266_4263_A11E_7762B2FE548C"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_A4B2_126420002616" name="SOSI_lengde" value="2" modelElement="EAID_E70A1457_9266_4263_A11E_7762B2FE548C"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_824A_1BC6B09D77EC" name="SOSI_navn" value="DOMTEKSTUROVERFLATE" modelElement="EAID_E70A1457_9266_4263_A11E_7762B2FE548C"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_95D9_573DA6698A56" name="SOSI_presentasjonsnavn" modelElement="EAID_E70A1457_9266_4263_A11E_7762B2FE548C"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={912224E0-8879-4c8e-93DC-9D759ED0A0A6}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={E70A1457-9266-4263-A11E-7762B2FE548C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{D9969EE4-1061-4559-8AFF-464F2685D693}"/>
+			</element>
+			<element xmi:idref="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4" xmi:type="uml:Class" name="Forstyrrelser" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="8" ea_localid="243252" ea_eleType="element"/>
+				<properties documentation="Viser hva slags menneskelig aktivitet, utover vanlig jordarbeiding/gr&amp;#248;fting, som har forstyrret arealet." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:12:58" modified="2026-09-07 13:22:04" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_9192_8D173A83E45B" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_8657_7DBDD3330642" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/forstyrrelser" modelElement="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_B33B_75CA291E9568" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_A8BD_0A1B16DF3BDB" name="SOSI_lengde" value="2" modelElement="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_9C7B_80CA5F482AA7" name="SOSI_navn" value="FORSTYRRELSER" modelElement="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_9EDB_BC6FA371DC96" name="SOSI_presentasjonsnavn" modelElement="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={E4212DD5-BA38-42c3-87D4-FC64CC4D618E}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={0BD84BF9-45C8-47d2-97DA-695D1AEA58F4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{86CB8C60-0468-4097-9C12-4D1A507A5F48}"/>
+			</element>
+			<element xmi:idref="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425" xmi:type="uml:Class" name="Helling" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="9" ea_localid="243260" ea_eleType="element"/>
+				<properties documentation="Viser dominerende helling p&amp;#229; arealet.&#xA;-- Definition -- &#xA;inclination class for the soil figure &#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:00:58" modified="2026-09-07 13:22:23" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_8B61_698CB5ABC58D" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_B689_219181E11E69" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/helling" modelElement="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_9472_80805D29710D" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_95E4_4EA9023E9092" name="SOSI_lengde" value="2" modelElement="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_9607_1672113C745E" name="SOSI_navn" value="HELLING" modelElement="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_AD0A_A0637C82CC57" name="SOSI_presentasjonsnavn" modelElement="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={901D9793-CC05-44d4-A43F-FEA848D4535B}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={4CB1013A-3D0B-4af0-BD7A-9A31AF4AD425}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{662A18C8-3DFE-4df7-98D2-7689259681D6}"/>
+			</element>
+			<element xmi:idref="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A" xmi:type="uml:Class" name="Jordsmonnklassifikasjon" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="10" ea_localid="243261" ea_eleType="element"/>
+				<properties documentation="Viser hvilken jordgruppe som dominerer p&amp;#229; arealet&#xA;-- Definition -- &#xA;Shows which soiltype which is dominating the area. &#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:12:23" modified="2026-09-07 13:22:40" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_A4F9_A3042CB56707" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_83EF_5CBF76D0F9F6" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/jordsmonnklassifikasjon" modelElement="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_AD5C_C0A20A374A5D" name="SOSI_datatype" value="T#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_A82A_41FB557878BA" name="SOSI_lengde" value="2" modelElement="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_ADB1_96864CB5EC86" name="SOSI_navn" value="JMKLASSIFIKASJON" modelElement="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_81C6_7B8DCC56783E" name="SOSI_presentasjonsnavn" modelElement="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={1E166CB6-6774-4ddf-9C8F-58E09CC651DE}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={4E5DFD77-309C-4c52-8E16-7A621DFC503A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{0B34B868-FDC2-49ca-9A59-16BDE6D530D5}"/>
+			</element>
+			<element xmi:idref="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C" xmi:type="uml:Class" name="Kartleggingsmetodikk" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="11" ea_localid="243270" ea_eleType="element"/>
+				<properties documentation="Viser hvilken opprinnelig kartleggingsmetodikk som er brukt under jordsmonnkartlegging.&#xA;--Definition--&#xA;Displays the methodolgy used during field mapping.&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:12:00" modified="2026-09-07 13:22:59" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_B92A_F2CD47194B23" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_A85A_71F34A952029" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/kartleggingsmetodikk" modelElement="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_8A34_3B29B3442E60" name="SOSI_datatype" value="T#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_8EBC_CADF33DF11D3" name="SOSI_lengde" value="1" modelElement="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_B24C_BF32E3771CC2" name="SOSI_navn" value="KL_METODIKK" modelElement="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_A773_871C51E44838" name="SOSI_presentasjonsnavn" modelElement="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={6237C462-E544-4d50-8E85-66132C61E22E}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={DC81789C-4A01-4775-95C6-C96CEA34988C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{37B9F563-921F-4f55-8DF1-4B7A8B73F7FE}"/>
+			</element>
+			<element xmi:idref="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C" xmi:type="uml:Class" name="MestBegrensendeJordegenskap" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="12" ea_localid="243269" ea_eleType="element"/>
+				<properties documentation="Viser den jordegenskapen som er mest begrensende for bruken av arealet&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:10:58" modified="2026-09-07 13:23:15" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_89F2_C908897CA075" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_BF3D_94C1CF707F62" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/mestbegrensendejordegenskap" modelElement="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_A5CC_E95A52BB3188" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_AF2C_8B829B13F974" name="SOSI_lengde" value="2" modelElement="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_8504_06041C31A65E" name="SOSI_navn" value="MESTBEGRENSENDEJORDEGENSKAP" modelElement="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_ABB4_8F52EB552E1F" name="SOSI_presentasjonsnavn" modelElement="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={2661B72A-83F3-4bc8-BF6A-D96E35B67EFB}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={C4F4266C-FFD1-42d1-985A-427F4C12590C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{328E4C8B-24AC-4edf-A39F-8D747FE6E396}"/>
+			</element>
+			<element xmi:idref="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8" xmi:type="uml:Class" name="NaturligeDreneringsforhold" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="13" ea_localid="243255" ea_eleType="element"/>
+				<properties documentation="Viser jordsmonnets naturlige evne til &amp;#229; bli kvitt overfl&amp;#248;dig vann." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:11:28" modified="2026-09-07 13:23:32" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_9845_4972953A3863" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_8390_9CDF989C0A2F" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/naturligedreneringsforhold" modelElement="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_9AA4_389AB0F4E31A" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_907D_C075DC3FA7C0" name="SOSI_lengde" value="1" modelElement="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_81DA_3EF91E878F3A" name="SOSI_navn" value="NATDRENFORHOLD" modelElement="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_9216_1E1885312F33" name="SOSI_presentasjonsnavn" modelElement="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={29A9A981-DFD9-45f0-BEA6-A0DE63A0479A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={3061C298-9204-4341-A896-DCBC4DAF16D8}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{A47C18D4-070D-4d88-8742-768A09F495B1}"/>
+			</element>
+			<element xmi:idref="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E" xmi:type="uml:Class" name="OrganiskMateriale" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="14" ea_localid="243267" ea_eleType="element"/>
+				<properties documentation="Viser jordsmonnets innhold av organisk materiale i overflatesjiktet, samt tykkelse p&amp;#229; organisk jord der denne finnes.&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:10:26" modified="2026-09-07 13:23:48" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_A88B_501EFA0D3048" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_91FB_9BBBBB56C20A" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/organiskmateriale" modelElement="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_AA9A_151A2694F55D" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_BEF0_5CAF4668A70E" name="SOSI_lengde" value="1" modelElement="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_9B99_0101378355B6" name="SOSI_navn" value="ORGANISKMATERIALE" modelElement="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_BF56_27336704F671" name="SOSI_presentasjonsnavn" modelElement="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={91503BFB-E489-40a4-8B9A-A2B95C3EA75D}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={A95EEF51-8B61-4b12-A5B4-85DB61E9A62E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{B34A3DFA-EC87-436c-B213-960271A06529}"/>
+			</element>
+			<element xmi:idref="EAID_0C01951A_1859_4398_B60C_2DD7C946589E" xmi:type="uml:Class" name="SteinBlokk" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="15" ea_localid="243253" ea_eleType="element"/>
+				<properties documentation="Viser stein- og blokkinnhold (0–50 cm) p&amp;#229; arealet p&amp;#229; kartleggingstidspunktet &#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:06:02" modified="2026-09-07 13:24:13" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_945C_108279308E71" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_0C01951A_1859_4398_B60C_2DD7C946589E"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_89A5_F1DDA282A08D" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/steinblokk" modelElement="EAID_0C01951A_1859_4398_B60C_2DD7C946589E"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_83F8_E31949E6F51F" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_0C01951A_1859_4398_B60C_2DD7C946589E"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_B28A_F0469141FD93" name="SOSI_lengde" value="2" modelElement="EAID_0C01951A_1859_4398_B60C_2DD7C946589E"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_86D6_CCA8D830765F" name="SOSI_navn" value="STEINBLOKK" modelElement="EAID_0C01951A_1859_4398_B60C_2DD7C946589E"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_B249_74F771F672F6" name="SOSI_presentasjonsnavn" modelElement="EAID_0C01951A_1859_4398_B60C_2DD7C946589E"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={FABDE840-7159-4671-A07B-A26DF168BACA}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={0C01951A-1859-4398-B60C-2DD7C946589E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{A775C653-E7DD-4884-A97F-7CFB5ED84CB4}"/>
+			</element>
+			<element xmi:idref="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40" xmi:type="uml:Class" name="Tilleggsinformasjon" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="16" ea_localid="243273" ea_eleType="element"/>
+				<properties documentation="Viser tilleggsinformasjon om andre egenskaper ved arealet." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 13:09:37" modified="2026-09-07 14:52:18" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_910F_2AF7CA0FCCEE" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_9A41_256AE0F35811" name="codeList" value="https://register.geonorge.no/sosi-kodelister/jordsmonn/tilleggsinformasjon" modelElement="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_8E09_CFC009DF2E48" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_81F2_BB21150E592C" name="SOSI_lengde" value="2" modelElement="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_A9D6_2AA5E1140F8E" name="SOSI_navn" value="TILLEGG" modelElement="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_B9AD_3EA11D2B08F6" name="SOSI_presentasjonsnavn" modelElement="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={8D0BA73C-65E0-49da-AEB9-F4D08EE31DC5}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={FB190CDD-CB39-4000-9B59-AC17FCCA2B40}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{FD2EABB4-50BE-4f4e-BFA1-53F4605F93F9}"/>
+			</element>
+			<element xmi:idref="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768" xmi:type="uml:Class" name="Målemetode" scope="public">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="17" ea_localid="243268" ea_eleType="element"/>
+				<properties documentation="metode som ligger til grunn for registrering av posisjon&#xA;-- Definition - - &#xA;method on which registration of position is based&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="CodeList" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="hefo" version="1.0" phase="1.0" created="2026-09-07 09:59:41" modified="2026-09-07 14:52:02" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_0BE3FA2A_5C6F_ec5c_9C62_6B965B7B7CE1" name="asDictionary" value="true#NOTES#Values: true,false&#xA;" modelElement="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768"/>
+					<tag xmi:id="EAID_AE9A3B57_CB1C_9dcb_B480_B9E1FD4805BC" name="codeList" value="https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode" modelElement="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768"/>
+					<tag xmi:id="EAID_369B3079_DAFE_10da_901A_72313BA4AC1B" name="SOSI_datatype" value="H#NOTES#Values: T,H,D,DATO,REF,BOOLSK,DATOTID&#xA;" modelElement="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768"/>
+					<tag xmi:id="EAID_784CDCCC_2211_dc22_92D4_AC29F3EAACD4" name="SOSI_lengde" value="2" modelElement="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768"/>
+					<tag xmi:id="EAID_54BE1B90_4B95_c14b_B1E1_710A4F3AF2B6" name="SOSI_navn" value="MÅLEMETODE" modelElement="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768"/>
+					<tag xmi:id="EAID_D92437BF_87E4_1687_9688_61CE36862F61" name="SOSI_presentasjonsnavn" modelElement="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={9A0C2E13-F92E-48e1-BFB0-5E7C52476A84}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=SOSI-UML-profil 5.1::CodeList;@ENDSTEREO;$DES;$CLT={AF21B7F1-68E0-4364-9D05-A145A6D4E768}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Produktspesifikasjon Jordsmonn - 20260901" ea_attsclassified="{BA1F2B12-31D0-47cc-9995-FEEBE59F808A}"/>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_4E05CBD6_57A4_493b_8C9C_23795F69E15B">
+				<source xmi:idref="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED">
+					<model ea_localid="243259" type="Class" name="Jordsmonn"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874">
+					<model ea_localid="243272" type="Class" name="Jordsmonn_Fellesegenskaper"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="229103"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_E34BE40C_60ED_4178_9296_E5F807C48E61">
+				<source xmi:idref="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED">
+					<model ea_localid="243259" type="Class" name="Jordsmonn"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D">
+					<model ea_localid="243257" type="Class" name="JordsmonnGrense"/>
+					<role name="avgrensesAvJordsmonngrense" visibility="Public" targetScope="instance"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation value="avgrenser Jordsmonn"/>
+					<xrefs/>
+					<tags>
+						<tag xmi:id="EAID_141B48D4_AA99_4779_9701_A29BB4E1F496" name="SOSI_navn" value="AVGRENSES_AV_JORDSMONNGRENSE"/>
+					</tags>
+				</target>
+				<model ea_localid="229105"/>
+				<properties ea_type="Association" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation value="Avgrensing av jordsmonnsflater"/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels rb="0..*" rt="+avgrensesAvJordsmonngrense"/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags>
+					<tag xmi:id="EAID_4A266170_9EF5_40bd_B984_3BF58D0955D5" name="SOSI_navn" value="AVGRENSESAVSTØYGRENSE"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_DB6406B0_C2AC_42d3_BB38_21786502FC9B">
+				<source xmi:idref="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874">
+					<model ea_localid="243272" type="Class" name="Jordsmonn_Fellesegenskaper"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C01DD65F_7316_4988_924A_87336870F4D6">
+					<model ea_localid="2592" type="Class" name="SOSI_Objekt"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="229100"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_74C15CA6_0E7E_4687_96B1_CAD97A7E811C">
+				<source xmi:idref="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF">
+					<model ea_localid="243266" type="Class" name="Identifikasjon"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76">
+					<model ea_localid="2590" type="Class" name="Identifikasjon"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="229101"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_8D59D28D_786F_4b95_96B6_773308F13EA1">
+				<source xmi:idref="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F">
+					<model ea_localid="243258" type="Class" name="Kopidata"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_9F586B0A_3538_4b26_959E_B231270C2CD9">
+					<model ea_localid="5776" type="Class" name="Kopidata"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="229104"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_238C523A_A77C_4eea_BC3B_B6BCEA157D3C">
+				<source xmi:idref="EAID_78F5192D_523F_4988_9000_6A7AD65E0132">
+					<model ea_localid="243263" type="Class" name="Posisjonskvalitet"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474">
+					<model ea_localid="2588" type="Class" name="Posisjonskvalitet"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="229102"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_2774B0D9_2E7F_4f47_A5D1_80111CE55E6E">
+				<source xmi:idref="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC">
+					<model ea_localid="243251" type="Package" name="Produktspesifikasjon Jordsmonn - 20260901"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4502960B_D5B0_4377_8FCF_A32ED284FB20">
+					<model ea_localid="5700" type="Package" name="Generelle typer 5.1"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="229099"/>
+				<properties ea_type="Realisation" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
+				<packagedElement xmi:type="uml:Package" xmi:id="EAJavaTypesPackage" name="EA_Java_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_CharacterString" name="CharacterString" visibility="public"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Package" xmi:id="EAnoneTypesPackage" name="EA_none_Types_Package" visibility="public">
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_DateTime" name="DateTime" visibility="public"/>
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_CharacterString" name="CharacterString" visibility="public"/>
+				</packagedElement>
+			</packagedElement>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="thecustomprofile" nsPrefix="thecustomprofile" name="thecustomprofile" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="thecustomprofile">
+					<body> Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="persistence" name="persistence">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="persistence-base_Class" name="base_Class" association="Class_persistence">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="persistence-persistence" name="persistence">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_persistence" name="A_Class_persistence" memberEnd="extension_persistence persistence-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_persistence" name="extension_persistence" type="persistence" isComposite="true" lower="0" upper="1" memberEnd="extension_persistence persistence-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SOSI_melding" name="SOSI_melding">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SOSI_melding-base_Class" name="base_Class" association="Class_SOSI_melding">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SOSI_melding-SOSI_melding" name="SOSI_melding">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_SOSI_melding" name="A_Class_SOSI_melding" memberEnd="extension_SOSI_melding SOSI_melding-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_SOSI_melding" name="extension_SOSI_melding" type="SOSI_melding" isComposite="true" lower="0" upper="1" memberEnd="extension_SOSI_melding SOSI_melding-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SOSI_geometri" name="SOSI_geometri">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SOSI_geometri-base_Class" name="base_Class" association="Class_SOSI_geometri">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SOSI_geometri-SOSI_geometri" name="SOSI_geometri">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_SOSI_geometri" name="A_Class_SOSI_geometri" memberEnd="extension_SOSI_geometri SOSI_geometri-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_SOSI_geometri" name="extension_SOSI_geometri" type="SOSI_geometri" isComposite="true" lower="0" upper="1" memberEnd="extension_SOSI_geometri SOSI_geometri-base_Class"/>
+				</packagedElement>
+			</uml:Profile>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="D0C37C6B-E" nsPrefix="SOSI" name="SOSI" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="D0C37C6B-E">
+					<body>SOSI Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="topo" name="topo">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="topo-base_Aggregation" name="base_Aggregation" association="Aggregation_topo">
+						<type href="http://schema.omg.org/spec/UML/2.1/Aggregation"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Aggregation_topo" name="A_Aggregation_topo" memberEnd="extension_topo topo-base_Aggregation">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_topo" name="extension_topo" type="topo" isComposite="true" lower="0" upper="1" memberEnd="extension_topo topo-base_Aggregation"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="featureType" name="featureType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="featureType-base_Class" name="base_Class" association="Class_featureType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="featureType-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="featureType-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="featureType-byValuePropertyType" name="byValuePropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_featureType" name="A_Class_featureType" memberEnd="extension_featureType featureType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_featureType" name="extension_featureType" type="featureType" isComposite="true" lower="0" upper="1" memberEnd="extension_featureType featureType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Attribute" name="Attribute">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-base_Attribute" name="base_Attribute" association="Attribute_Attribute">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-isMetadata" name="isMetadata">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute-sequenceNumber" name="sequenceNumber">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_Attribute" name="A_Attribute_Attribute" memberEnd="extension_Attribute Attribute-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Attribute" name="extension_Attribute" type="Attribute" isComposite="true" lower="0" upper="1" memberEnd="extension_Attribute Attribute-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiKodelisteverdi" name="sosiKodelisteverdi">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiKodelisteverdi-base_Attribute" name="base_Attribute" association="Attribute_sosiKodelisteverdi">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiKodelisteverdi-SOSI_verdi" name="SOSI_verdi">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_sosiKodelisteverdi" name="A_Attribute_sosiKodelisteverdi" memberEnd="extension_sosiKodelisteverdi sosiKodelisteverdi-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiKodelisteverdi" name="extension_sosiKodelisteverdi" type="sosiKodelisteverdi" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiKodelisteverdi sosiKodelisteverdi-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="dataType" name="dataType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-base_Class" name="base_Class" association="Class_dataType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_dataType" name="A_Class_dataType" memberEnd="extension_dataType dataType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_dataType" name="extension_dataType" type="dataType" isComposite="true" lower="0" upper="1" memberEnd="extension_dataType dataType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="union" name="union">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="union-base_Class" name="base_Class" association="Class_union">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="union-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="union-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_union" name="A_Class_union" memberEnd="extension_union union-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_union" name="extension_union" type="union" isComposite="true" lower="0" upper="1" memberEnd="extension_union union-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="type" name="type">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-base_Class" name="base_Class" association="Class_type">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-xmlSchemaType" name="xmlSchemaType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="type-byValuePropertyType" name="byValuePropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_type" name="A_Class_type" memberEnd="extension_type type-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_type" name="extension_type" type="type" isComposite="true" lower="0" upper="1" memberEnd="extension_type type-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="codeList" name="codeList">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-base_Class" name="base_Class" association="Class_codeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-asDictionary" name="asDictionary">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-defaultCodeSpace" name="defaultCodeSpace">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-SOSI_datatype" name="SOSI_datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-codeList" name="codeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="codeList-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_codeList" name="A_Class_codeList" memberEnd="extension_codeList codeList-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_codeList" name="extension_codeList" type="codeList" isComposite="true" lower="0" upper="1" memberEnd="extension_codeList codeList-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiFremmednøklerAssosiasjon" name="sosiFremmednøklerAssosiasjon">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøklerAssosiasjon-base_Association" name="base_Association" association="Association_sosiFremmednøklerAssosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøklerAssosiasjon-SOSI_assosiasjon" name="SOSI_assosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_sosiFremmednøklerAssosiasjon" name="A_Association_sosiFremmednøklerAssosiasjon" memberEnd="extension_sosiFremmednøklerAssosiasjon sosiFremmednøklerAssosiasjon-base_Association">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiFremmednøklerAssosiasjon" name="extension_sosiFremmednøklerAssosiasjon" type="sosiFremmednøklerAssosiasjon" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiFremmednøklerAssosiasjon sosiFremmednøklerAssosiasjon-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="StringAttribute" name="StringAttribute">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="StringAttribute-base_Attribute" name="base_Attribute" association="Attribute_StringAttribute">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="StringAttribute-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="StringAttribute-length" name="length">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="StringAttribute-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_StringAttribute" name="A_Attribute_StringAttribute" memberEnd="extension_StringAttribute StringAttribute-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_StringAttribute" name="extension_StringAttribute" type="StringAttribute" isComposite="true" lower="0" upper="1" memberEnd="extension_StringAttribute StringAttribute-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiPrimærnøkkel" name="sosiPrimærnøkkel">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøkkel-base_Attribute" name="base_Attribute" association="Attribute_sosiPrimærnøkkel">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøkkel-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøkkel-SOSI_primærnøkkel" name="SOSI_primærnøkkel">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøkkel-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_sosiPrimærnøkkel" name="A_Attribute_sosiPrimærnøkkel" memberEnd="extension_sosiPrimærnøkkel sosiPrimærnøkkel-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiPrimærnøkkel" name="extension_sosiPrimærnøkkel" type="sosiPrimærnøkkel" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiPrimærnøkkel sosiPrimærnøkkel-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosienumeration" name="sosienumeration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosienumeration-base_Enumeration" name="base_Enumeration" association="Enumeration_sosienumeration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Enumeration"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Enumeration_sosienumeration" name="A_Enumeration_sosienumeration" memberEnd="extension_sosienumeration sosienumeration-base_Enumeration">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosienumeration" name="extension_sosienumeration" type="sosienumeration" isComposite="true" lower="0" upper="1" memberEnd="extension_sosienumeration sosienumeration-base_Enumeration"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiPrimærnøklerAssosiasjon" name="sosiPrimærnøklerAssosiasjon">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøklerAssosiasjon-base_Association" name="base_Association" association="Association_sosiPrimærnøklerAssosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiPrimærnøklerAssosiasjon-SOSI_assosiasjon" name="SOSI_assosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_sosiPrimærnøklerAssosiasjon" name="A_Association_sosiPrimærnøklerAssosiasjon" memberEnd="extension_sosiPrimærnøklerAssosiasjon sosiPrimærnøklerAssosiasjon-base_Association">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiPrimærnøklerAssosiasjon" name="extension_sosiPrimærnøklerAssosiasjon" type="sosiPrimærnøklerAssosiasjon" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiPrimærnøklerAssosiasjon sosiPrimærnøklerAssosiasjon-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="leaf" name="leaf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="leaf-base_Package" name="base_Package" association="Package_leaf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="leaf-xsdDocument" name="xsdDocument">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_leaf" name="A_Package_leaf" memberEnd="extension_leaf leaf-base_Package">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_leaf" name="extension_leaf" type="leaf" isComposite="true" lower="0" upper="1" memberEnd="extension_leaf leaf-base_Package"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="import" name="import">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="import-base_PackageImport" name="base_PackageImport" association="PackageImport_import">
+						<type href="http://schema.omg.org/spec/UML/2.1/PackageImport"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="PackageImport_import" name="A_PackageImport_import" memberEnd="extension_import import-base_PackageImport">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_import" name="extension_import" type="import" isComposite="true" lower="0" upper="1" memberEnd="extension_import import-base_PackageImport"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiRefAssosiasjon" name="sosiRefAssosiasjon">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiRefAssosiasjon-base_Association" name="base_Association" association="Association_sosiRefAssosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiRefAssosiasjon-SOSI_assosiasjon" name="SOSI_assosiasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_sosiRefAssosiasjon" name="A_Association_sosiRefAssosiasjon" memberEnd="extension_sosiRefAssosiasjon sosiRefAssosiasjon-base_Association">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiRefAssosiasjon" name="extension_sosiRefAssosiasjon" type="sosiRefAssosiasjon" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiRefAssosiasjon sosiRefAssosiasjon-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="sosiFremmednøkkel" name="sosiFremmednøkkel">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøkkel-base_Attribute" name="base_Attribute" association="Attribute_sosiFremmednøkkel">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøkkel-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøkkel-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="sosiFremmednøkkel-SOSI_fremmednøkkel" name="SOSI_fremmednøkkel">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_sosiFremmednøkkel" name="A_Attribute_sosiFremmednøkkel" memberEnd="extension_sosiFremmednøkkel sosiFremmednøkkel-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_sosiFremmednøkkel" name="extension_sosiFremmednøkkel" type="sosiFremmednøkkel" isComposite="true" lower="0" upper="1" memberEnd="extension_sosiFremmednøkkel sosiFremmednøkkel-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="enumeration" name="enumeration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-base_Class" name="base_Class" association="Class_enumeration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_enumeration" name="A_Class_enumeration" memberEnd="extension_enumeration enumeration-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_enumeration" name="extension_enumeration" type="enumeration" isComposite="true" lower="0" upper="1" memberEnd="extension_enumeration enumeration-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="KodelisteAttribute" name="KodelisteAttribute">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-base_Attribute" name="base_Attribute" association="Attribute_KodelisteAttribute">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-defaultCodeSpace" name="defaultCodeSpace">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-kodelister" name="kodelister">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="KodelisteAttribute-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_KodelisteAttribute" name="A_Attribute_KodelisteAttribute" memberEnd="extension_KodelisteAttribute KodelisteAttribute-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_KodelisteAttribute" name="extension_KodelisteAttribute" type="KodelisteAttribute" isComposite="true" lower="0" upper="1" memberEnd="extension_KodelisteAttribute KodelisteAttribute-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="applicationSchema" name="applicationSchema">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-base_Package" name="base_Package" association="Package_applicationSchema">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-version" name="version">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_dokumentasjon" name="SOSI_dokumentasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_versjon" name="SOSI_versjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-xsdEncodingRule" name="xsdEncodingRule">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_produsent" name="SOSI_produsent">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_organisasjon" name="SOSI_organisasjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_modellstatus" name="SOSI_modellstatus">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_kortnavn" name="SOSI_kortnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_langnavn" name="SOSI_langnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_spesifikasjonstype" name="SOSI_spesifikasjonstype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-xsdDocument" name="xsdDocument">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-SOSI_produktgruppe" name="SOSI_produktgruppe">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-xmlns" name="xmlns">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="applicationSchema-targetNamespace" name="targetNamespace">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_applicationSchema" name="A_Package_applicationSchema" memberEnd="extension_applicationSchema applicationSchema-base_Package">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_applicationSchema" name="extension_applicationSchema" type="applicationSchema" isComposite="true" lower="0" upper="1" memberEnd="extension_applicationSchema applicationSchema-base_Package"/>
+				</packagedElement>
+			</uml:Profile>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="9EECBE8B-D" nsPrefix="SOSI-UML-profil_5.1" name="SOSI-UML-profil 5.1" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="9EECBE8B-D">
+					<body>Versjon 1.0 av UML-profil basert på profilen som er definert i kap. 13 i Regler for UML-modellering 5.1. Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="dataType" name="dataType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-base_Class" name="base_Class" association="Class_dataType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="dataType-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_dataType" name="A_Class_dataType" memberEnd="extension_dataType dataType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_dataType" name="extension_dataType" type="dataType" isComposite="true" lower="0" upper="1" memberEnd="extension_dataType dataType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Rolle" name="Rolle">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-xsdEncodingRule" name="xsdEncodingRule">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-isMetadata" name="isMetadata">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-SOSI_datatype" name="SOSI_datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-inLineOrByReference" name="inLineOrByReference">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Rolle-sequenceNumber" name="sequenceNumber">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Egenskap" name="Egenskap">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-base_Attribute" name="base_Attribute" association="Attribute_Egenskap">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-isMetadata" name="isMetadata">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-SOSI_datatype" name="SOSI_datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-inLineOrByReference" name="inLineOrByReference">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Egenskap-sequenceNumber" name="sequenceNumber">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_Egenskap" name="A_Attribute_Egenskap" memberEnd="extension_Egenskap Egenskap-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Egenskap" name="extension_Egenskap" type="Egenskap" isComposite="true" lower="0" upper="1" memberEnd="extension_Egenskap Egenskap-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Union" name="Union">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Union-base_Class" name="base_Class" association="Class_Union">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Union" name="A_Class_Union" memberEnd="extension_Union Union-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Union" name="extension_Union" type="Union" isComposite="true" lower="0" upper="1" memberEnd="extension_Union Union-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="CodeList" name="CodeList">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-base_Class" name="base_Class" association="Class_CodeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-asDictionary" name="asDictionary">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-SOSI_datatype" name="SOSI_datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-codeList" name="codeList">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="CodeList-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_CodeList" name="A_Class_CodeList" memberEnd="extension_CodeList CodeList-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_CodeList" name="extension_CodeList" type="CodeList" isComposite="true" lower="0" upper="1" memberEnd="extension_CodeList CodeList-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ApplicationSchema" name="ApplicationSchema">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-base_Package" name="base_Package" association="Package_ApplicationSchema">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-version" name="version">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_versjon" name="SOSI_versjon">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-xsdEncodingRule" name="xsdEncodingRule">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-language" name="language">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_modellstatus" name="SOSI_modellstatus">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-catalogue-entry" name="catalogue-entry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_kortnavn" name="SOSI_kortnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_bildeAvModellelement" name="SOSI_bildeAvModellelement">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_langnavn" name="SOSI_langnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-SOSI_spesifikasjonstype" name="SOSI_spesifikasjonstype">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-xsdDocument" name="xsdDocument">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-xmlns" name="xmlns">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ApplicationSchema-targetNamespace" name="targetNamespace">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_ApplicationSchema" name="A_Package_ApplicationSchema" memberEnd="extension_ApplicationSchema ApplicationSchema-base_Package">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_ApplicationSchema" name="extension_ApplicationSchema" type="ApplicationSchema" isComposite="true" lower="0" upper="1" memberEnd="extension_ApplicationSchema ApplicationSchema-base_Package"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="FeatureType" name="FeatureType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-base_Class" name="base_Class" association="Class_FeatureType">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-SOSI_bildeAvModellelement" name="SOSI_bildeAvModellelement">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-noPropertyType" name="noPropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-isCollection" name="isCollection">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="FeatureType-byValuePropertyType" name="byValuePropertyType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_FeatureType" name="A_Class_FeatureType" memberEnd="extension_FeatureType FeatureType-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_FeatureType" name="extension_FeatureType" type="FeatureType" isComposite="true" lower="0" upper="1" memberEnd="extension_FeatureType FeatureType-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Kode" name="Kode">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-base_Attribute" name="base_Attribute" association="Attribute_Kode">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-designation" name="designation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-SOSI_bildeAvModellelement" name="SOSI_bildeAvModellelement">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-SOSI_verdi" name="SOSI_verdi">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kode-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_Kode" name="A_Attribute_Kode" memberEnd="extension_Kode Kode-base_Attribute">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_Kode" name="extension_Kode" type="Kode" isComposite="true" lower="0" upper="1" memberEnd="extension_Kode Kode-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="enumeration" name="enumeration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-base_Class" name="base_Class" association="Class_enumeration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-SOSI_navn" name="SOSI_navn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-SOSI_presentasjonsnavn" name="SOSI_presentasjonsnavn">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="enumeration-SOSI_lengde" name="SOSI_lengde">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_enumeration" name="A_Class_enumeration" memberEnd="extension_enumeration enumeration-base_Class">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_enumeration" name="extension_enumeration" type="enumeration" isComposite="true" lower="0" upper="1" memberEnd="extension_enumeration enumeration-base_Class"/>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams>
+			<diagram xmi:id="EAID_E48BDD8C_C20F_4f45_8FB5_6619D2A5CF54">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" localID="66295" owner="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="1"/>
+				<properties name="Pakkerealisering" type="Package"/>
+				<project author="aeb" version="1.0" created="2018-11-13 10:05:01" modified="2026-06-02 09:34:14"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=0;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;"/>
+				<style2 value="SaveTag=3D421409;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=0;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=526;Top=258;Right=810;Bottom=412;" subject="EAID_4502960B_D5B0_4377_8FCF_A32ED284FB20" seqno="1" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;AttPro=0;AttPri=0;AttPub=0;AttPkg=0;AttCustom=0;OpCustom=0;RzO=1;Constraint=1;DUID=F77D726C;"/>
+					<element geometry="Left=46;Top=169;Right=446;Bottom=502;" subject="EAID_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;Constraint=1;AttCustom=0;OpCustom=0;RzO=1;DUID=FC9019FD;"/>
+					<element geometry="SX=199;SY=-13;EX=-113;EY=-13;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_2774B0D9_2E7F_4f47_A5D1_80111CE55E6E" style="Mode=3;Color=-1;LWidth=0;SOID=FC9019FD;EOID=F77D726C;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_FEC5A057_7F0A_4390_8BEE_605AEB402912">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" localID="66296" owner="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="2"/>
+				<properties name="Hoveddiagram Produktspesifikasjon Jordsmonn" type="Logical"/>
+				<project author="hefo" version="1.0" created="2018-11-13 10:05:01" modified="2026-06-02 09:50:39"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=780;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="SaveTag=07BC171F;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;OPTIONS_38677406=Att=1:;OPTIONS_BDA37FE9=Att=1:;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=35;Top=406;Right=366;Bottom=504;" subject="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874" seqno="1" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Constraint=1;AttCustom=0;OpCustom=0;RzO=1;DUID=CBE756A9;"/>
+					<element geometry="Left=578;Top=173;Right=760;Bottom=236;" subject="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;AttCustom=0;OpCustom=0;AttInh=1;RzO=1;Constraint=1;DUID=BDA37FE9;"/>
+					<element geometry="Left=30;Top=117;Right=370;Bottom=387;" subject="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" seqno="3" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;AttCustom=0;OpCustom=0;AttInh=1;RzO=1;Constraint=1;DUID=38677406;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_4E05CBD6_57A4_493b_8C9C_23795F69E15B" style="Mode=3;Color=-1;LWidth=0;SOID=38677406;EOID=CBE756A9;Hidden=0;"/>
+					<element geometry="SX=169;SY=52;EX=-90;EY=4;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=128:CY=14:OX=-17:OY=-5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_E34BE40C_60ED_4178_9296_E5F807C48E61" style="Mode=3;Color=-1;LWidth=0;SOID=38677406;EOID=BDA37FE9;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_14CE3A63_3B96_45b2_978B_3D00B72A4E34">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" localID="66297" owner="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="3"/>
+				<properties name="Oversiktsdiagram Realiseringer fra SOSI-objekt" type="Logical"/>
+				<project author="aeb" version="1.0" created="2018-11-13 10:05:01" modified="2026-06-02 13:53:20"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=780;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;"/>
+				<style2 value="SaveTag=BCF65A9D;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=337;Top=28;Right=616;Bottom=360;" subject="EAID_C01DD65F_7316_4988_924A_87336870F4D6" seqno="1" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=CD100EA1;"/>
+					<element geometry="Left=674;Top=144;Right=909;Bottom=242;" subject="EAID_6237DC61_FAE6_496c_B447_76C63ECD774C" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=B03928C5;"/>
+					<element geometry="Left=339;Top=423;Right=609;Bottom=547;" subject="EAID_F5B362A3_06A4_42a8_AD9D_049B0D602474" seqno="3" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=050BB4B0;"/>
+					<element geometry="Left=339;Top=609;Right=616;Bottom=694;" subject="EAID_4A9408D5_ABE4_4fc8_A623_38C781199E76" seqno="4" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=2C0F583A;"/>
+					<element geometry="Left=40;Top=194;Right=201;Bottom=305;" subject="EAID_F076AB1D_6B87_4668_B019_062C0C6D3874" seqno="5" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;DUID=FF4CFFD0;"/>
+					<element geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_3993BABC_2793_4268_9A93_CB9749063D66" style="Mode=3;Color=-1;LWidth=0;SOID=CD100EA1;EOID=B03928C5;Hidden=0;"/>
+					<element geometry="SX=80;SY=-9;EX=-138;EY=-58;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_DB6406B0_C2AC_42d3_BB38_21786502FC9B" style="Mode=3;Color=-1;LWidth=0;SOID=FF4CFFD0;EOID=CD100EA1;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_01F16D7F_83ED_4ab3_B7BC_12AB85873679">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" localID="66298" owner="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="4"/>
+				<properties name="Oversiktsdiagram Realiseringer fra fagområder" type="Logical"/>
+				<project author="aeb" version="1.0" created="2018-11-13 10:05:01" modified="2025-05-28 13:10:44"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=2;DocSize.cx=780;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="SaveTag=B9B2B735;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;OPTIONS_6D914525=Att=1:;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=118;Top=373;Right=301;Bottom=438;" subject="EAID_3F0365EC_8EB9_41d2_83B6_E574D924925D" seqno="1" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;AttCustom=0;OpCustom=0;AttInh=1;RzO=1;DUID=6D914525;"/>
+					<element geometry="Left=34;Top=13;Right=374;Bottom=299;" subject="EAID_46D8CD21_36D4_4271_98CC_D6EF356DBBED" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;AttCustom=0;OpCustom=0;PType=0;RzO=1;AttInh=1;DUID=AAB1A228;"/>
+					<element geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=128:CY=14:OX=-17:OY=-4:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=9:OY=-5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_E34BE40C_60ED_4178_9296_E5F807C48E61" style="Mode=3;Color=-1;LWidth=0;SOID=AAB1A228;EOID=6D914525;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_1F492975_D2A0_42cc_BB10_5C9E26E186A8">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" localID="66299" owner="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="5"/>
+				<properties name="Oversiktsdiagram Kodelister og datatyper" type="Logical"/>
+				<project author="aeb" version="1.0" created="2018-11-13 10:05:01" modified="2026-09-07 14:49:13"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=2;DocSize.cx=780;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="SaveTag=A5745571;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=34;Top=131;Right=207;Bottom=207;" subject="EAID_8C85BDD4_02E6_4947_A1FA_44FCF6206EBF" seqno="1" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;AttCustom=0;OpCustom=0;RzO=1;DUID=662B68E2;"/>
+					<element geometry="Left=238;Top=131;Right=411;Bottom=216;" subject="EAID_42279DC5_546E_408a_93CE_64724E8F1C3F" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;DUID=A7080802;"/>
+					<element geometry="Left=438;Top=136;Right=623;Bottom=195;" subject="EAID_78F5192D_523F_4988_9000_6A7AD65E0132" seqno="3" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;DUID=0ED9EE99;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_446DB443_D898_4e0d_98AD_D2F8FEA50A40">
+				<model package="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" localID="66300" owner="EAPK_B057C1C9_AAD7_45ad_A735_6777CA0DA9AC" tpos="6"/>
+				<properties name="Oversiktsdiagram Eksterne kodelister" type="Logical"/>
+				<project author="aeb" version="1.0" created="2026-09-07 00:00:00" modified="2026-09-07 14:49:10"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=2;DocSize.cx=780;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="SaveTag=D0DDE6AA;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=976;Top=350;Right=1409;Bottom=479;" subject="EAID_AF21B7F1_68E0_4364_9D05_A145A6D4E768" seqno="1" style="DUID=70F0D678;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=976;Top=187;Right=1409;Bottom=316;" subject="EAID_FB190CDD_CB39_4000_9B59_AC17FCCA2B40" seqno="2" style="DUID=D12F2F69;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=977;Top=22;Right=1410;Bottom=151;" subject="EAID_0C01951A_1859_4398_B60C_2DD7C946589E" seqno="3" style="DUID=3A3CE6B4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=504;Top=508;Right=937;Bottom=637;" subject="EAID_A95EEF51_8B61_4b12_A5B4_85DB61E9A62E" seqno="4" style="DUID=0B9F3FF6;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=504;Top=350;Right=937;Bottom=479;" subject="EAID_3061C298_9204_4341_A896_DCBC4DAF16D8" seqno="5" style="DUID=18E838B0;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=22;Top=508;Right=455;Bottom=637;" subject="EAID_C4F4266C_FFD1_42d1_985A_427F4C12590C" seqno="6" style="DUID=BB1DF795;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=504;Top=187;Right=937;Bottom=316;" subject="EAID_DC81789C_4A01_4775_95C6_C96CEA34988C" seqno="7" style="DUID=18848FE2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=505;Top=22;Right=938;Bottom=151;" subject="EAID_4E5DFD77_309C_4c52_8E16_7A621DFC503A" seqno="8" style="DUID=02608BB2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=22;Top=350;Right=455;Bottom=479;" subject="EAID_4CB1013A_3D0B_4af0_BD7A_9A31AF4AD425" seqno="9" style="DUID=14618709;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=22;Top=187;Right=455;Bottom=316;" subject="EAID_0BD84BF9_45C8_47d2_97DA_695D1AEA58F4" seqno="10" style="DUID=50984841;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+					<element geometry="Left=23;Top=22;Right=456;Bottom=151;" subject="EAID_E70A1457_9266_4263_A11E_7762B2FE548C" seqno="11" style="DUID=F13F0132;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;Tag=1;AttCustom=0;OpCustom=0;RzO=1;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+		<EAStub xmi:id="EAID_453EB6B1_D543_4f3d_BC53_E79283F6736C" name="CharacterString" UMLType="Class"/>
+		<EAStub xmi:id="EAID_1605DB7C_9873_44b1_B339_282696451F1F" name="GM_Surface" UMLType="Class"/>
+		<EAStub xmi:id="EAID_992C4B6C_785C_48a4_81A2_5F957E9C8A6B" name="Integer" UMLType="Class"/>
+		<EAStub xmi:id="EAID_C1D5F3D3_A6A7_4da1_8FBB_8E74FB3DB8C0" name="GM_Curve" UMLType="Class"/>
+	</xmi:Extension>
+</xmi:XMI>
