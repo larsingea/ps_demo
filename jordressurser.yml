@@ -3,10 +3,6 @@ output_directory: produktspesifikasjon
 product_slug: jordressurser
 updated: '2026-10-21'
 scopes:
-- name: Datamodell fra GPKG
-  url: https://kartkatalog.geonorge.no/metadata/jordressurser/3690c283-a1f2-4e95-8cd4-2d6115eb28f7
-  generator: geopackage
-  description: GeoPackage (Geonorge filnedlastning)
 - name: SOSI UML-modell
   url: inputs/jordressurser/model.xmi
   generator: xmi
