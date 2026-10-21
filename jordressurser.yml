@@ -3,10 +3,6 @@ output_directory: produktspesifikasjon
 product_slug: jordressurser
 updated: '2026-10-21'
 scopes:
-- name: Jordressurser
-  url: https://ogcapi.nibio.no/felles/jordressurser
-  generator: ogc_feature_api
-  description: OGC API-Features fra Norsk institutt for bioøkonomi
 - name: Datamodell fra GPKG
   url: https://kartkatalog.geonorge.no/metadata/jordressurser/3690c283-a1f2-4e95-8cd4-2d6115eb28f7
   generator: geopackage
