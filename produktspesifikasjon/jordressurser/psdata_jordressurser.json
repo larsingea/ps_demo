@@ -114,7 +114,7 @@
       "specificationScope": {
         "scopeIdentification": "SOSI UML-modell",
         "level": "dataset",
-        "levelDescription": "Modell basert på opplastet XMI"
+        "levelDescription": "Modell basert på XMI fra SVN"
       }
     }
   ],
@@ -262,6 +262,25 @@
         ],
         "deliveryScope": "Tjeneste"
       }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: sosi-uml-modell",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/jordressurser/sosi-uml-modell/sosi-uml-modell.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
     }
   ],
   "metadataSection": {
@@ -294,15 +313,16 @@
     "om_produktet": 197,
     "formaal": 144,
     "bruksomraade": 31,
-    "omfang": 30,
+    "omfang": 31,
     "datainnhold_og_struktur": 0,
     "referansesystem": 24,
     "datakvalitet": 42,
     "datafangst_og_produksjon": 108,
     "vedlikehold": 4,
     "presentasjon": 0,
-    "leveranse": 39,
+    "leveranse": 45,
     "metadata": 17,
-    "tilleggsinformasjon": 47
+    "tilleggsinformasjon": 47,
+    "datamodell": 744
   }
 }
