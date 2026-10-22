@@ -102,7 +102,7 @@ Datasettet skal bidra til å løse kommunenes oppgaver med jordvern og jordbruk 
 
 **Nivå**: dataset
 
-**Nivåbeskrivelse**: Modell basert på opplastet XMI
+**Nivåbeskrivelse**: Modell basert på XMI fra SVN
 
 ## Datainnhold og struktur
 
@@ -159,6 +159,7 @@ Informasjon om hvordan egenskaper ved jord, helling, hyppig forekommende fjell i
 | Geonorge filnedlastning | [Lenke](https://kartkatalog.geonorge.no/metadata/jordressurser/3690c283-a1f2-4e95-8cd4-2d6115eb28f7) | GEONORGE:FILEDOWNLOAD | GeoPackage, GML | kommunevis, fylkesvis |
 | OGC API-Features | [Lenke](https://ogcapi.nibio.no/felles/jordressurser) | OGC:API-Features | GeoJSON | landsfiler |
 | WMS-tjeneste | [Lenke](https://wms.nibio.no/cgi-bin/jordressurser?service=wms&request=getcapabilities) | OGC:WMS | jpg, [{}] | landsfiler |
+| GeoPackage: sosi-uml-modell | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/jordressurser/sosi-uml-modell/sosi-uml-modell.gpkg) | Nedlasting | GPKG |  |
 
 ## Metadata
 
