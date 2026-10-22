@@ -102,6 +102,7 @@ Datasettet skal bidra til å løse kommunenes oppgaver med jordvern og jordbruk 
 
 **Nivå**: dataset
 
+**Nivåbeskrivelse**: Modell basert på opplastet XMI
 
 ## Datainnhold og struktur
 
