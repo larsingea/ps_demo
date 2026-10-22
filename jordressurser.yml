@@ -5,6 +5,6 @@ updated: '2026-10-21'
 outputs: geopackage
 scopes:
 - name: SOSI UML-modell
-  url: inputs/jordressurser/model.xmi
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Skog%20og%20landskap/Produktspesifikasjon%20Jordressurser%20-%2020260901.xml
   generator: xmi
-  description: Modell basert på opplastet XMI
+  description: Modell basert på XMI fra SVN
