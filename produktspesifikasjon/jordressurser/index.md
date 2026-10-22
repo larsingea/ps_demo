@@ -11,9 +11,9 @@ logo: "https://register.geonorge.no/data/organizations/988983837_NIBIO_liten.jpg
 
 Kartet Jordressurser rangerer jordbruksareal ut ifra de naturlige betingelsene for jordbruk. 
 
-Arealene har vært gjenstand for jordkartlegging og der delt inn i fire klasser basert på data om jordas egenskaper, helling, hyppige forekomster av fjell i dagen, samt innhold av stein- og blokk.  Det er ikke tatt hensyn til klima i rangeringen.
+Arealene har vært gjenstand for jordkartlegging og er delt inn i fire klasser basert på data om jordas egenskaper, helling, hyppige forekomster av fjell i dagen, samt innhold av stein- og blokk.  Det er ikke tatt hensyn til klima i rangeringen.
 
-Det brukes en skala som går fra de aller beste egenskapene til de mindre gode egenskapene egenskaper som påvirker plantedyrking og drifta på arealet.
+Det brukes en skala som går fra de aller beste egenskapene til de mindre gode egenskapene som påvirker plantedyrking og drifta på arealet.
 
 Kartfigurer fra det nasjonale jordkartleggings-programmet utgjør enhetene i kartet.  Kartlegging utføres på fulldyrka og overflatedyrka jord. 
 Kartfigurene er inndelt inn i fire klasser: 
@@ -166,7 +166,7 @@ Informasjon om hvordan egenskaper ved jord, helling, hyppig forekommende fjell i
 
 **Metadatastandardversjon**: 2003
 
-**Metadatadato**: 2026-10-15
+**Metadatadato**: 2026-10-22
 
 **språk**: nor
 
