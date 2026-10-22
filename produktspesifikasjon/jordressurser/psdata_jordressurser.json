@@ -113,7 +113,8 @@
     {
       "specificationScope": {
         "scopeIdentification": "SOSI UML-modell",
-        "level": "dataset"
+        "level": "dataset",
+        "levelDescription": "Modell basert på opplastet XMI"
       }
     }
   ],
@@ -293,7 +294,7 @@
     "om_produktet": 198,
     "formaal": 144,
     "bruksomraade": 31,
-    "omfang": 25,
+    "omfang": 30,
     "datainnhold_og_struktur": 0,
     "referansesystem": 24,
     "datakvalitet": 42,
