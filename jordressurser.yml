@@ -6,4 +6,4 @@ scopes:
 - name: SOSI UML-modell
   url: inputs/jordressurser/model.xmi
   generator: xmi
-  description: ''
+  description: Modell basert på opplastet XMI
