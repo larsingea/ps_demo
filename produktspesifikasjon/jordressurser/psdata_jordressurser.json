@@ -16,7 +16,7 @@
   },
   "identificationSection": {
     "title": "Jordressurser",
-    "abstract": "**Datasettet er ikke publisert enda, og kan derfor ikke lastes ned** \n\nKartet Jordressurser rangerer jordbruksareal ut ifra de naturlige betingelsene for jordbruk. \n\nArealene har vært gjenstand for jordkartlegging og der delt inn i fire klasser basert på data om jordas egenskaper, helling, hyppige forekomster av fjell i dagen, samt innhold av stein- og blokk.  Det er ikke tatt hensyn til klima i rangeringen.\n\nDet brukes en skala som går fra de aller beste egenskapene til de mindre gode egenskapene egenskaper som påvirker plantedyrking og drifta på arealet.\n\nKartfigurer fra det nasjonale jordkartleggings-programmet utgjør enhetene i kartet.  Kartlegging utføres på fulldyrka og overflatedyrka jord. \nKartfigurene er inndelt inn i fire klasser: \n1 = Svært gode jordressurser, \n2 = Gode jordressurser, \n3 = Middels gode jordressurser og \n4 = Mindre gode jordressurser.",
+    "abstract": "**Datasettet er ikke publisert enda, og kan derfor ikke lastes ned** \n\nKartet Jordressurser rangerer jordbruksareal ut ifra de naturlige betingelsene for jordbruk. \n\nArealene har vært gjenstand for jordkartlegging og er delt inn i fire klasser basert på data om jordas egenskaper, helling, hyppige forekomster av fjell i dagen, samt innhold av stein- og blokk.  Det er ikke tatt hensyn til klima i rangeringen.\n\nDet brukes en skala som går fra de aller beste egenskapene til de mindre gode egenskapene som påvirker plantedyrking og drifta på arealet.\n\nKartfigurer fra det nasjonale jordkartleggings-programmet utgjør enhetene i kartet.  Kartlegging utføres på fulldyrka og overflatedyrka jord. \nKartfigurene er inndelt inn i fire klasser: \n1 = Svært gode jordressurser, \n2 = Gode jordressurser, \n3 = Middels gode jordressurser og \n4 = Mindre gode jordressurser.",
     "purpose": {
       "summary": "I jordkartlegginga blir det lagt vekt på ni spesifikke egenskaper ved jordsmonnet, slik som tekstur, lagdeling og drenering. Dette er relativt stabile egenskaper ved jorda som lar seg bestemme ute i felt, in situ. En jordtype er en spesifikk, unik kombinasjon av disse ni egenskapene. Hver jordtype har et navn.\n\nI noen kartfigurer kan det være avvikende egenskaper enn dem som framkommer fra jordkartleggingen. I tillegg til jordtypene innenfor hver kartfigur, registreres også andre relevante egenskaper, slik som eventuell høy frekvens av fjellblotninger og innhold av stein og blokk i øverste 50 cm. Dominerende hellingsklasse i hver kartfigur tilordnes i etterkant av feltarbeidet.\n\nKlassene for innhold av stein og blokk påvirker klassetildelingen i Jordressurser. \n\nHelling er tilordnet som heltall, i prosent, og det er kartfigurenes gjennomsnittlige helling som brukes i dette kartet. \nDet er også ander tilleggsegenskaper om kartfiguren som påvirker klassetildelingen i Jordressurser.",
       "useCase": {
@@ -267,7 +267,7 @@
   "metadataSection": {
     "metadataStandard": "ISO19115",
     "metadataStandardVersion": "2003",
-    "metadataDate": "2026-10-15",
+    "metadataDate": "2026-10-22",
     "language": "nor",
     "contact": {
       "organizationName": "Norsk institutt for bioøkonomi",
@@ -291,7 +291,7 @@
   ],
   "chapterAutofill": {
     "om_spesifikasjonen": 12,
-    "om_produktet": 198,
+    "om_produktet": 197,
     "formaal": 144,
     "bruksomraade": 31,
     "omfang": 30,
