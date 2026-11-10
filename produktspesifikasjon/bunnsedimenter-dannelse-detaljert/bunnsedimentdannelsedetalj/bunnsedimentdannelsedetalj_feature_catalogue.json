@@ -1,0 +1,5014 @@
+[
+  {
+    "name": "Dataavgrensning",
+    "description": "Generell avgrensningslinje, f.eks. mellom datasett med ulik kvalitet, innhold eller detaljering",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      }
+    ]
+  },
+  {
+    "name": "Dekningsområde",
+    "description": "Dekningskart for løsmasse detaljert",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-polygon",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-polygon",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "lokalid",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "lokalid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objekttype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objekttype"
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database Merknad: Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Tidspunkt for siste endring på objektet Merknad: Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen)."
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt Merknad: Det er dataleverendørens ansvar  å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI. Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0 <br/>Merknad: Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)."
+          }
+        ]
+      },
+      {
+        "name": "informasjon",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Generell opplysning. Merknad: mulighet til å legge inn utfyllende informasjon om objektet."
+      },
+      {
+        "name": "datasettid",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "datasettid"
+      },
+      {
+        "name": "datasettnavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "datasettnavn"
+      },
+      {
+        "name": "doktema",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "doktema"
+      },
+      {
+        "name": "dataeier",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Rettighetshaver til datasettet/tjenesten"
+      },
+      {
+        "name": "dekningsstatus",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "dekningsstatus"
+      },
+      {
+        "name": "dekningsinfo",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Utfyllende informasjon om fullstendighet"
+      },
+      {
+        "name": "link",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til et informasjonselement, enten lokalt eller globalt"
+      }
+    ]
+  },
+  {
+    "name": "FiktivDelelinje",
+    "description": "Linje for å dele opp store flateobjekter<br/>Merknad: <br/>En del produktspesifikasjoner benytter spesifikke fiktive delelinjer.",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      }
+    ]
+  },
+  {
+    "name": "Kartbladkant",
+    "description": "Avgrensningslinje for et kart som dekker et nærmere angitt geografisk område, ofte basert på en offentlig kartbladinndeling",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "karttype",
+        "type": "Karttype",
+        "cardinality": "0..1",
+        "description": "Type kartbladinndeling",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "Norge250000ngo1948",
+              "label": "Norge250000ngo1948"
+            },
+            {
+              "value": "Norge250000utm",
+              "label": "Norge250000utm"
+            },
+            {
+              "value": "lokaltNettAsker",
+              "label": "lokaltNettAsker"
+            },
+            {
+              "value": "lokaltNettBergen_Askøy",
+              "label": "lokaltNettBergen_Askøy"
+            },
+            {
+              "value": "lokaltNettBodø",
+              "label": "lokaltNettBodø"
+            },
+            {
+              "value": "lokaltNettBærum",
+              "label": "lokaltNettBærum"
+            },
+            {
+              "value": "lokaltNettDrammen",
+              "label": "lokaltNettDrammen"
+            },
+            {
+              "value": "lokaltNettKristiansund",
+              "label": "lokaltNettKristiansund"
+            },
+            {
+              "value": "lokaltNettLillehammer",
+              "label": "lokaltNettLillehammer"
+            },
+            {
+              "value": "lokaltNettOslo",
+              "label": "lokaltNettOslo"
+            },
+            {
+              "value": "lokaltNettTrondheim",
+              "label": "lokaltNettTrondheim"
+            },
+            {
+              "value": "lokaltNettÅlesund",
+              "label": "lokaltNettÅlesund"
+            },
+            {
+              "value": "m711euref89",
+              "label": "m711euref89"
+            },
+            {
+              "value": "m711ngo1948",
+              "label": "m711ngo1948"
+            },
+            {
+              "value": "møre56A",
+              "label": "møre56A"
+            },
+            {
+              "value": "møre56B",
+              "label": "møre56B"
+            },
+            {
+              "value": "møre64A",
+              "label": "møre64A"
+            },
+            {
+              "value": "møre64B",
+              "label": "møre64B"
+            },
+            {
+              "value": "turkart50000euref89",
+              "label": "turkart50000euref89"
+            },
+            {
+              "value": "øk10000euref89",
+              "label": "øk10000euref89"
+            },
+            {
+              "value": "øk1000euref89",
+              "label": "øk1000euref89"
+            },
+            {
+              "value": "øk1000ngo1948",
+              "label": "øk1000ngo1948"
+            },
+            {
+              "value": "øk20000euref89",
+              "label": "øk20000euref89"
+            },
+            {
+              "value": "øk2000euref89",
+              "label": "øk2000euref89"
+            },
+            {
+              "value": "øk5000euref89",
+              "label": "øk5000euref89"
+            },
+            {
+              "value": "øk5000ngo1948",
+              "label": "øk5000ngo1948"
+            },
+            {
+              "value": "øk500euref89",
+              "label": "øk500euref89"
+            },
+            {
+              "value": "øk500ngo1948",
+              "label": "øk500ngo1948"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseAndrePkt",
+    "description": "Diverse kvartærgeologiske punkter",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-point",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-point",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "andreKvSymbol",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Kvartærgeologiske symboler som ikke er formelementer"
+      },
+      {
+        "name": "geolHorisontalverdi",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Verdi på måling i horisontalplanet (0-360°). Angir stupretning for linjestrukturer og strøkretning (i henhold til høyrehåndsregelen) for planstrukturer."
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseFlate",
+    "description": "Areal bestående av en løsmassetype (jordart)",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-polygon",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-polygon",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet."
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Bjektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "løsmassetype",
+        "type": "string",
+        "cardinality": "1..1",
+        "description": "Kvartærgeologiske løsmassetyper (jordartstyper)"
+      },
+      {
+        "name": "løsmassetypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Kvartærgeologiske løsmassetyper (jordartstyper)"
+      },
+      {
+        "name": "løsmassetypeBesk",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Kvartærgeologiske løsmassetyper (jordartstyper)"
+      },
+      {
+        "name": "infiltrasjonPotensial",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Løsmassenes egenskaper til å infiltrere og rense avløpsvann"
+      },
+      {
+        "name": "infiltrasjonPotensialNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Løsmassenes egenskaper til å infiltrere og rense avløpsvann"
+      },
+      {
+        "name": "infiltrasjonPotensialBesk",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Løsmassenes egenskaper til å infiltrere og rense avløpsvann"
+      },
+      {
+        "name": "grunnvannPotensial",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Løsmassenes potensial til å inneholde grunnvannsressurser"
+      },
+      {
+        "name": "grunnvannPotensialNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Løsmassenes potensial til å inneholde grunnvannsressurser"
+      },
+      {
+        "name": "grunnvannPotensialBesk",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Løsmassenes potensial til å inneholde grunnvannsressurser"
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolTemajustering",
+        "type": "GeolTemajustering",
+        "cardinality": "0..1",
+        "description": "Justering/endring av en automatisk klassifikasjon av geologisk tema",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "ikkeJustertTema",
+              "label": "ikkeJustertTema"
+            },
+            {
+              "value": "justertTema",
+              "label": "justertTema"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseGrense",
+    "description": "Avgrensning av ulike typer løsmasser (jordarter)",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "løsmasseAvvikKartdata",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Beskriver avvik fra forventet kvalitet i kvartærgeologiske kart innenfor den kartlagte målestokken. Denne egenskapen gir veiledning om hvilke kartdata som skal brukes med varsomhet og sammn med tilleggsinformasjon fra andre datakilder."
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseKornstørrelsePkt",
+    "description": "Punkter som beskriver kornstørrelse i området som de er plassert innenfor. Punktene har ikke en absolutt plassering, men er kartografisk plassert i det området som beskrives.",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-point",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-point",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "andreKvSymbol",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Kvartærgeologiske symboler som ikke er formelementer"
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseMarinGrensePkt",
+    "description": "Punktobservasjon for marin grense",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-point",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-point",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "marinGrenseRegType",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Høyeste havnivå etter siste istid"
+      },
+      {
+        "name": "marinGrenseType",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Type avsetning eller landskapsform registreringen er basert på"
+      },
+      {
+        "name": "inklModellering",
+        "type": "boolean",
+        "cardinality": "0..1",
+        "description": "Definerer om marin grense-observasjonen er inkludert (Ja) eller ikke (Nei) i modellering av marin grense og tidligere havdekte områder. Ekskludering av marin grense-observasjoner er basert på en regionalgeologisk vurdering."
+      },
+      {
+        "name": "høyde",
+        "type": "integer",
+        "cardinality": "1..1",
+        "description": "Et punkts vertikale avstand over en fysisk eller matematisk definert referanseflate [H]"
+      },
+      {
+        "name": "navn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Ord som noen eller noe kalles ved"
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseOverflateEgenskapPkt",
+    "description": "Punkter som beskriver overflatens karakter i området som de er plassert innenfor. Punktene har ikke en absolutt plassering, men er kartografisk plassert i det området som beskrives.",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-point",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-point",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "andreKvSymbol",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Kvartærgeologiske symboler som ikke er formelementer"
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseOverflateformLinje",
+    "description": "Observert overflateform med lineær utstrekning<br/>Eksempel: Terrassekant, vifte, haug, rygg",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "kvFormLinjetype",
+        "type": "string",
+        "cardinality": "1..1",
+        "description": "Kvartærgeologiske formelementlinjer"
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseOverflateformPkt",
+    "description": "Punktobservasjon av overflateform i løsmassene<br/>Eksempel: Dødisgrop, haug",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-point",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-point",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "kvFormPunkttype",
+        "type": "string",
+        "cardinality": "1..1",
+        "description": "Kvartærgeologiske formelementpunkter"
+      },
+      {
+        "name": "løsmassetype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Kvartærgeologiske løsmassetyper (jordartstyper)"
+      },
+      {
+        "name": "geolHorisontalverdi",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Verdi på måling i horisontalplanet (0-360°). Angir stupretning for linjestrukturer og strøkretning (i henhold til høyrehåndsregelen) for planstrukturer."
+      }
+    ]
+  },
+  {
+    "name": "LøsmasseTypePkt",
+    "description": "Små løsmasseavsetninger. Lokalitet for angivelse av løsmassetype som <br/>Symbol der utbredelsen er for liten til å registrere den som areal med hensyn til målestokken det er kartlagt i.",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-point",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-point",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "løsmassetype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Kvartærgeologiske løsmassetyper (jordartstyper)"
+      }
+    ]
+  },
+  {
+    "name": "StratigrafiPkt",
+    "description": "Lokalitet hvor det er gitt informasjon om sedimenters stratigrafi og kornstørrelse",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-point",
+      "crs": [
+        "#/crs",
+        "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-point",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      },
+      {
+        "name": "stratigrafiInfo",
+        "type": "string",
+        "cardinality": "1..1",
+        "description": "Kodet informasjon om mektighet og lagfølge i strategrafipunktet merket x<br/>Eks:<br/>X  3      - den kartlagte avsetning er 3 m mektig\r\nx  >2    - mektigheten til den kartlagte avsetningen er større enn 2 m\r\nx  1S/3SG/Fj   - den kartlagte avsetningenbestår av 1 m sand, under er det 3 m sandig grus over fjell<br/>X  2/5B/>1M  - den kartlagte avsetningen er 2 m mektig, under er det en 5 m mektig breelvavsetning over morenemateriale som er mer enn 1 m mektig"
+      }
+    ]
+  },
+  {
+    "name": "Temakartavgrensning",
+    "description": "Avgrensningslinje for et temakart",
+    "geometry": {
+      "itemType": "feature",
+      "type": "geometry-linestring",
+      "crs": [
+        "#/crs"
+      ],
+      "storageCrs": "http://www.opengis.net/def/crs/EPSG/0/25833",
+      "format": "geometry-linestring",
+      "ogcRole": "primary-geometry"
+    },
+    "attributes": [
+      {
+        "name": "objid",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "objid",
+        "ogcRole": "id"
+      },
+      {
+        "name": "objtype",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "objtype"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "cardinality": "0..1",
+        "description": "Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. <br/>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. <br/>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Lokal identifikator av et objekt<br/>Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet."
+          },
+          {
+            "name": "navnerom",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI<br/>Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\r\n<br/>Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no"
+          },
+          {
+            "name": "versjonId",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans)"
+          }
+        ]
+      },
+      {
+        "name": "førsteDigitaliseringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato når en representasjon av objektet i digital form første gang ble etablert<br/>Merknad: <br/>FørsteDigitaliseringsdato kan skille seg fra førsteDatafangstdato ved at den første datafangsten skjedde analogt og gjort om til digital form senere i en produksjonsprosess. <br/>Eventuelt at innlegging i databasen skjedde på et senere tidspunkt enn registreringen /observasjonen / målingen av objektet.",
+        "ogcRole": "primary-instant"
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "date (string)",
+        "cardinality": "0..1",
+        "description": "Dato for siste endring på objektetdataene <br/>Merknad: \r\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).<br/>-Definition-<br/>Date and time at which this version of the spatial object was inserted or changed in the spatial data set."
+      },
+      {
+        "name": "datauttaksdato",
+        "type": "date (string)",
+        "cardinality": "1..1",
+        "description": "Dato for uttak fra en database<br/>Merknad:<br/>Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase."
+      },
+      {
+        "name": "temakvalitet",
+        "type": "Temakvalitet",
+        "cardinality": "0..1",
+        "description": "Kvaliteten på registrering/kartlegging av tema sett i forhold til faktiske forhold i naturen. Ulik tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets økonomi. Med nøyaktighet i denne sammenheng menes hvor korrekt registreringen avspeiler objektets posisjon i naturen og presisjonen i valg av tematisk innhold i forhold til generalisering\r\n<br/>Merknad: Tematisk oppløsning/generaliseringsgrad kan være styrt av temaets samfunnsmessige betydning, områdets arealmessige betydning eller prosjektets målsetning",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "dårlig",
+              "label": "dårlig"
+            },
+            {
+              "value": "god",
+              "label": "god"
+            },
+            {
+              "value": "megetGod",
+              "label": "megetGod"
+            },
+            {
+              "value": "noeDårlig",
+              "label": "noeDårlig"
+            },
+            {
+              "value": "noksåGod",
+              "label": "noksåGod"
+            },
+            {
+              "value": "særdelesGod",
+              "label": "særdelesGod"
+            }
+          ]
+        }
+      },
+      {
+        "name": "egnetMålestokk",
+        "type": "integer",
+        "cardinality": "0..1",
+        "description": "Beskriver det målestokksområdet hvor dataene er best egnet. Egenskapen viser målestokktallet, eksempel: 1:50 000 = 50000.<br/>Objekter kan være utvalgt, plassert eller generalisert i forhold til egnet målestokk.\r\nDenne egenskapen kan benyttes for å velge hvilke objekter som skal tegnes ut i ulike målestokker."
+      },
+      {
+        "name": "geolPåvisningstype",
+        "type": "GeolPåvisningstype",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "0",
+              "label": "0"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            }
+          ]
+        }
+      },
+      {
+        "name": "geolPåvisningstypeNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Hvor sikkert et geologisk objekt er påvist i terrenget, eller hvilken metode som ligger til grunn for å påvisningen/registreringen\r\n-- Definition -- with what certainty a geological object has been identified in the terrain, or on which method the identification/registration is based"
+      },
+      {
+        "name": "opphav",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde\r\n<br/>Merknad: <br/>Kan også beskrive navn på person og årsak til oppdatering"
+      },
+      {
+        "name": "kvalitet",
+        "type": "Posisjonskvalitet",
+        "cardinality": "0..1",
+        "description": "Beskrivelse av kvaliteten på stedfestingen<br/>Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.",
+        "attributes": [
+          {
+            "name": "målemetode",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "målemetodeNavn",
+            "type": "string",
+            "cardinality": "0..1",
+            "description": "Metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss"
+          },
+          {
+            "name": "nøyaktighet",
+            "type": "integer",
+            "cardinality": "0..1",
+            "description": "Punktstandardavviket i grunnriss for punkter samt tverravvik for linjer<br/>Merknad:<br/>Oppgitt i cm"
+          }
+        ]
+      },
+      {
+        "name": "medium",
+        "type": "Medium",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc.",
+        "valueDomain": {
+          "type": "enumeration",
+          "listedValues": [
+            {
+              "value": "alltidIVann",
+              "label": "alltidIVann"
+            },
+            {
+              "value": "iBygning",
+              "label": "iBygning"
+            },
+            {
+              "value": "iLuft",
+              "label": "iLuft"
+            },
+            {
+              "value": "påIsbre",
+              "label": "påIsbre"
+            },
+            {
+              "value": "påSjøbunnen",
+              "label": "påSjøbunnen"
+            },
+            {
+              "value": "påTerrenget",
+              "label": "påTerrenget"
+            },
+            {
+              "value": "påVannoverflaten",
+              "label": "påVannoverflaten"
+            },
+            {
+              "value": "tidvisUnderVann",
+              "label": "tidvisUnderVann"
+            },
+            {
+              "value": "ukjent",
+              "label": "ukjent"
+            },
+            {
+              "value": "underIsbre",
+              "label": "underIsbre"
+            },
+            {
+              "value": "underSjøbunnen",
+              "label": "underSjøbunnen"
+            },
+            {
+              "value": "underTerrenget",
+              "label": "underTerrenget"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mediumNavn",
+        "type": "string",
+        "cardinality": "0..1",
+        "description": "Objektets beliggenhet i forhold til jordoverflaten<br/>Eksempel:\r\nPå bro, i tunnel, inne i et bygningsmessig anlegg, etc."
+      }
+    ]
+  }
+]
