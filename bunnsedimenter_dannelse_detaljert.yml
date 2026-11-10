@@ -4,6 +4,6 @@ product_slug: bunnsedimenter_dannelse_detaljert
 updated: '2026-11-10'
 scopes:
 - name: Bunnsedimentdannelsedetalj
-  url: https://ogcapitest.ngu.no/rest/services/bunnsedimentdannelsedetalj
+  url: https://geo.ngu.no/api/features/losmassedetaljert
   generator: ogc_feature_api
   description: OGC API-Features fra Norges geologiske undersøkelse
