@@ -1,0 +1,369 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Bunnsedimenter (dannelse), detaljert - Bunnsedimentdannelsedetalj - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class Dataavgrensning <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class "Dekningsområde" as Dekningsomr_de <<featureType>> {
+    + lokalid [0..1] : CharacterString
+    + objekttype [0..1] : CharacterString
+    + datauttaksdato [1..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + opphav [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + informasjon [0..1] : CharacterString
+    + datasettid [0..1] : CharacterString
+    + datasettnavn [0..1] : CharacterString
+    + doktema [0..1] : CharacterString
+    + dataeier [0..1] : CharacterString
+    + dekningsstatus [0..1] : CharacterString
+    + dekningsinfo [0..1] : CharacterString
+    + link [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Surface
+  }
+
+  class FiktivDelelinje <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class Kartbladkant <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + karttype [0..1] : Karttype
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class "LøsmasseAndrePkt" as L_smasseAndrePkt <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + andreKvSymbol [0..1] : CharacterString
+    + geolHorisontalverdi [0..1] : Integer
+
+    ..Geometri..
+    + geometry [1] : GM_Point
+  }
+
+  class "LøsmasseFlate" as L_smasseFlate <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + datauttaksdato [1..1] : Date
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + løsmassetype [1..1] : CharacterString
+    + løsmassetypeNavn [0..1] : CharacterString
+    + løsmassetypeBesk [0..1] : CharacterString
+    + infiltrasjonPotensial [0..1] : CharacterString
+    + infiltrasjonPotensialNavn [0..1] : CharacterString
+    + infiltrasjonPotensialBesk [0..1] : CharacterString
+    + grunnvannPotensial [0..1] : CharacterString
+    + grunnvannPotensialNavn [0..1] : CharacterString
+    + grunnvannPotensialBesk [0..1] : CharacterString
+    + egnetMålestokk [0..1] : Integer
+    + geolTemajustering [0..1] : GeolTemajustering
+
+    ..Geometri..
+    + geometry [1] : GM_Surface
+  }
+
+  class "LøsmasseGrense" as L_smasseGrense <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + løsmasseAvvikKartdata [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class "LøsmasseKornstørrelsePkt" as L_smasseKornst_rrelsePkt <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + andreKvSymbol [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Point
+  }
+
+  class "LøsmasseMarinGrensePkt" as L_smasseMarinGrensePkt <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + marinGrenseRegType [0..1] : CharacterString
+    + marinGrenseType [0..1] : CharacterString
+    + inklModellering [0..1] : Boolean
+    + høyde [1..1] : Integer
+    + navn [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Point
+  }
+
+  class "LøsmasseOverflateEgenskapPkt" as L_smasseOverflateEgenskapPkt <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + andreKvSymbol [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Point
+  }
+
+  class "LøsmasseOverflateformLinje" as L_smasseOverflateformLinje <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + kvFormLinjetype [1..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class "LøsmasseOverflateformPkt" as L_smasseOverflateformPkt <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + kvFormPunkttype [1..1] : CharacterString
+    + løsmassetype [0..1] : CharacterString
+    + geolHorisontalverdi [0..1] : Integer
+
+    ..Geometri..
+    + geometry [1] : GM_Point
+  }
+
+  class "LøsmasseTypePkt" as L_smasseTypePkt <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + løsmassetype [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Point
+  }
+
+  class StratigrafiPkt <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+    + stratigrafiInfo [1..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Point
+  }
+
+  class Temakartavgrensning <<featureType>> {
+    + objid [0..1] : Integer
+    + objtype [0..1] : CharacterString
+    + identifikasjon [0..1] : Identifikasjon
+    + førsteDigitaliseringsdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + datauttaksdato [1..1] : Date
+    + temakvalitet [0..1] : Temakvalitet
+    + egnetMålestokk [0..1] : Integer
+    + geolPåvisningstype [0..1] : GeolPåvisningstype
+    + geolPåvisningstypeNavn [0..1] : CharacterString
+    + opphav [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + mediumNavn [0..1] : CharacterString
+
+    ..Geometri..
+    + geometry [1] : GM_Curve
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [0..1] : CharacterString
+    + navnerom [0..1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+
+  class Posisjonskvalitet <<dataType>> {
+    + målemetode [0..1] : CharacterString
+    + målemetodeNavn [0..1] : CharacterString
+    + nøyaktighet [0..1] : Integer
+  }
+}
+
+@enduml
