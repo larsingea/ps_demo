@@ -1,0 +1,9 @@
+metadataId: 8baa6e54-774e-4789-9e64-1c50f32098f4
+output_directory: produktspesifikasjon
+product_slug: bunnsedimenter_dannelse_detaljert
+updated: '2026-11-10'
+scopes:
+- name: Bunnsedimentdannelsedetalj
+  url: https://ogcapitest.ngu.no/rest/services/bunnsedimentdannelsedetalj
+  generator: ogc_feature_api
+  description: OGC API-Features fra Norges geologiske undersøkelse
