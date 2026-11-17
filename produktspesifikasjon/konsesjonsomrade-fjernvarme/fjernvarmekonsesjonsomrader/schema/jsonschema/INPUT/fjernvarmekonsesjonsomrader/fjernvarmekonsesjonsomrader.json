@@ -1,0 +1,138 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://skjema.geonorge.no/SOSI/produktspesifikasjon/konsesjonsomrade-fjernvarme/fjernvarmekonsesjonsomrader/fjernvarmekonsesjonsomrader/fjernvarmekonsesjonsomrader.json",
+  "definitions": {
+    "Fjernvarmekonsesjonsområde": {
+      "description": "Område der det er gitt konsesjon for fjernvarme etter energiloven.",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Polygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon": {
+          "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "områdenavn": {
+          "description": "Navn på konsesjonsområdet, f.eks. tettstedet området dekker.",
+          "type": "string"
+        },
+        "konsesjon": {
+          "description": "Angir om det er gitt konsesjon for fjernvarme i området.",
+          "type": "boolean"
+        },
+        "målemetode": {
+          "description": "Metode som ligger til grunn for registrering av posisjon.",
+          "$ref": "#/definitions/Målemetode"
+        },
+        "kommunenummer": {
+          "description": "Firesifret kommunenummer der de to første sifrene angir fylkestilhørighet.",
+          "$ref": "#/definitions/Kommunenummer"
+        },
+        "informasjon": {
+          "description": "Utfyllende informasjon om objektet, f.eks. hvem som har utarbeidet dataene.",
+          "type": "string"
+        },
+        "opphav": {
+          "description": "Kilde eller tidspunkt for etablering av dataene.",
+          "type": "string"
+        },
+        "datafangstdato": {
+          "description": "Dato når objektet ble registrert/observert/målt første gang.",
+          "type": "string",
+          "format": "date"
+        },
+        "avgrensning": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon",
+        "kommunenummer",
+        "konsesjon",
+        "områdenavn"
+      ]
+    },
+    "Identifikasjon": {
+      "type": "object",
+      "properties": {
+        "lokalId": {
+          "description": "Lokal identifikator, tildelt av dataleverandør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet.",
+          "type": "string"
+        },
+        "navnerom": {
+          "description": "Navnerom som unikt identifiserer datakilden til objektet.",
+          "type": "string"
+        },
+        "versjonId": {
+          "description": "Identifikasjon av en spesiell versjon av et geografisk objekt (instans).",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lokalId",
+        "navnerom"
+      ]
+    },
+    "Kommunenummer": {
+      "codelist": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer",
+      "type": "string",
+      "format": "uri"
+    },
+    "Konsesjonsgrense": {
+      "description": "Grenselinje som avgrenser et fjernvarmekonsesjonsområde.",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/LineString.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon": {
+          "description": "Unik identifikasjon av et objekt, ivaretatt av den ansvarlige produsent/forvalter, som kan benyttes av eksterne applikasjoner som referanse til objektet.",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "opphav": {
+          "description": "Kilde eller tidspunkt for etablering av dataene.",
+          "type": "string"
+        },
+        "konsesjonsområde": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon",
+        "konsesjonsområde"
+      ]
+    },
+    "Målemetode": {
+      "codelist": "https://register.geonorge.no/sosi-kodelister/generelle-konsepter/5.1/målemetode",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}
