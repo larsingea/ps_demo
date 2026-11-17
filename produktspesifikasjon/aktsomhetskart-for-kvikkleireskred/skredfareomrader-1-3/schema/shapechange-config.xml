@@ -27,6 +27,26 @@
   </Transformer>
  </transformers>
  <targets>
+  <TargetXmlSchema class="de.interactive_instruments.shapechange.core.target.xmlschema.XmlSchema" mode="enabled" inputs="INPUT">
+   <targetParameter name="outputDirectory" value="/home/runner/work/ps_demo/ps_demo/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfareomrader-1-3/schema/xsd" />
+   <targetParameter name="defaultEncodingRule" value="sosi" />
+   <targetParameter name="documentationTemplate" value="[[documentation]]" />
+   <targetParameter name="documentationNoValue" value="" />
+   <rules>
+    <EncodingRule name="sosi" extends="iso19136_2007">
+     <rule name="rule-xsd-prop-length-size-pattern" />
+     <rule name="rule-xsd-all-tagged-values" />
+     <rule name="rule-xsd-all-notEncoded" />
+     <rule name="rule-xsd-pkg-schematron" />
+     <rule name="rule-xsd-prop-nillable" />
+     <rule name="rule-xsd-prop-targetCodeListURI" />
+    </EncodingRule>
+   </rules>
+   <xi:include href="https://shapechange.net/resources/config/StandardRules.xml" />
+   <xi:include href="https://shapechange.net/resources/config/StandardNamespaces.xml" />
+   <xi:include href="https://shapechange.net/resources/config/StandardMapEntries.xml" />
+   <xi:include href="file:///home/runner/work/ps_demo/ps_demo/.psactions/shapechange/data/StandardMapEntries_sosi.xml" />
+  </TargetXmlSchema>
   <Target class="de.interactive_instruments.shapechange.core.target.json.JsonSchemaTarget" mode="enabled" inputs="INPUT">
    <advancedProcessConfigurations>
     <JsonSchemaAnnotations>

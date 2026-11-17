@@ -37,7 +37,17 @@ Unntaket er der det ligger utløp fra registrerte faresoner utenom aktsomhetsomr
   - **Til**: 2026-11-10
 
 ## Om spesifikasjonen
+Denne produktspesifikasjonen er laget i en demo på Geonorge brukerkonferanse, hvor vi tester ut nytt verktøy; PS-editor. Produktspesifikasjonen er generert fra metadata i Geonorge og UML-modell fra SOSI modellregister. Begge deler er etablert av NVE, men produktspesifikasjonsdokumentet er ikke kvalitetssikret av NVE. Offisielle produktspesifikasjoner ligger i Geonorge sitt produktspesifikasjonsregister.
 
+## Historikk
+
+Testversjon.
+
+## Endringslogg
+
+| Versjon | Dato | Endring |
+|---------|------|---------|
+|TEST|10.11.2026|Ingen
 
 > **Denne versjonen av produktspesifikasjonen:** <br>
 > **Opprettet dato:** 2024-01-04<br>
@@ -187,6 +197,7 @@ Terrengkriteriene er beregnet automatisk i områder med mulig sammenhengende mar
 | Atom Feed | [Lenke](http://nedlasting.geonorge.no/geonorge/ATOM-feeds/KvikkleireAktsomhetskart_AtomFeedSOSI.xml) | W3C:AtomFeed | SOSI | fylkesvis, kommunevis, landsfiler |
 | Aktsomhetskart for kvikkleireskred WMS | [Lenke](https://kart.nve.no/enterprise/services/KvikkleireskredAktsomhet/MapServer/WMSServer?request=GetCapabilities&service=WMS) | WMS-tjeneste | PNG |  |
 | GeoPackage: skredfareomrader-1-3 | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfareomrader-1-3/skredfareomrader-1-3.gpkg) | Nedlasting | GPKG |  |
+| GML/XSD-skjema: skredfareomrader-1-3 | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfareomrader-1-3/schema/xsd/INPUT/skredfareomrader-1-3.xsd) | Nedlasting | XSD |  |
 | JSON Schema: skredfareomrader-1-3 | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/aktsomhetskart-for-kvikkleireskred/skredfareomrader-1-3/schema/jsonschema/INPUT/skredfareomrader13/skredfareomrader-1-3.json) | Nedlasting | JSON Schema |  |
 
 ## Metadata
@@ -195,7 +206,7 @@ Terrengkriteriene er beregnet automatisk i områder med mulig sammenhengende mar
 
 **Metadatastandardversjon**: 2003
 
-**Metadatadato**: 2026-11-11
+**Metadatadato**: 2026-11-17
 
 **språk**: nor
 
