@@ -30,7 +30,17 @@ Norge, Rijpfjorden, Kongsfjorden, Ålesund og Giske, Stavanger
   - **Til**: 2025-06-24
 
 ## Om spesifikasjonen
+Denne produktspesifikasjonen er laget i en demo på Geonorge brukerkonferanse, hvor vi tester ut nytt verktøy; PS-editor. Produktspesifikasjonen er generert fra metadata i Geonorge og datamodell fra OGC API-Features. Begge deler er etablert av NGU, men produktspesifikasjonsdokumentet er ikke kvalitetssikret av NGU. Offisielle produktspesifikasjoner ligger i Geonorge sitt produktspesifikasjonsregister.
 
+## Historikk
+
+TESTVERSJON
+
+## Endringslogg
+
+| Versjon | Dato | Endring |
+|---------|------|---------|
+|Test|17.11.2026|Ingen|
 
 > **Denne versjonen av produktspesifikasjonen:** <br>
 > **Opprettet dato:** <br>
@@ -187,7 +197,7 @@ Datatemaet Bunnsedimenter (dannelse) er basert på kornstørrelsesdata, tolkning
 
 **Metadatastandardversjon**: 2003
 
-**Metadatadato**: 2026-11-10
+**Metadatadato**: 2026-11-17
 
 **språk**: nor
 
