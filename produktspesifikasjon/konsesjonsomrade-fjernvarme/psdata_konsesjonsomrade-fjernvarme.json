@@ -99,7 +99,7 @@
     },
     {
       "specificationScope": {
-        "scopeIdentification": "Fjernvarmekosesjonsområder",
+        "scopeIdentification": "Fjernvarmekonsesjonsområder",
         "level": "dataset",
         "levelDescription": "Datamodell (Manuell datamodell)"
       }
@@ -139,6 +139,63 @@
           }
         ]
       }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: fjernvarmekonsesjonsomrader",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/konsesjonsomrade-fjernvarme/fjernvarmekonsesjonsomrader/fjernvarmekonsesjonsomrader.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GML/XSD-skjema: fjernvarmekonsesjonsomrader",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/konsesjonsomrade-fjernvarme/fjernvarmekonsesjonsomrader/schema/xsd/INPUT/fjernvarmekonsesjonsomrader.xsd",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "XSD"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "JSON Schema: fjernvarmekonsesjonsomrader",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/konsesjonsomrade-fjernvarme/fjernvarmekonsesjonsomrader/schema/jsonschema/INPUT/fjernvarmekonsesjonsomrader/fjernvarmekonsesjonsomrader.json",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "JSON Schema"
+          }
+        ]
+      }
     }
   ],
   "metadataSection": {
@@ -171,10 +228,10 @@
     "datafangst_og_produksjon": 0,
     "vedlikehold": 2,
     "presentasjon": 0,
-    "leveranse": 10,
+    "leveranse": 30,
     "metadata": 13,
     "tilleggsinformasjon": 0,
-    "datamodell": 254
+    "datamodell": 508
   },
   "specificationContact": "Lillestrøm kommune, [geodata@lillestrom.kommune.no](mailto:geodata@lillestrom.kommune.no)"
 }

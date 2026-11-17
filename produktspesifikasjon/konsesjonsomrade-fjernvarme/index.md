@@ -86,7 +86,7 @@ Plan- og byggesaksbehandling
 
 **Nivåbeskrivelse**: Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser
 
-### Fjernvarmekosesjonsområder
+### Fjernvarmekonsesjonsområder
 
 **Nivå**: dataset
 
@@ -96,15 +96,15 @@ Plan- og byggesaksbehandling
 
 
 
-### Datamodell - Fjernvarmekosesjonsområder
+### Datamodell - Fjernvarmekonsesjonsområder
 
 
 
-<a href="fjernvarmekosesjonsomrader/fjernvarmekosesjonsomrader_feature_catalogue.png" title="Klikk for stor visning"><img src="fjernvarmekosesjonsomrader/fjernvarmekosesjonsomrader_feature_catalogue.png" alt="Datamodell Fjernvarmekosesjonsområder" style="max-width: 100%; height: auto;" /></a>
+<a href="fjernvarmekonsesjonsomrader/fjernvarmekonsesjonsomrader_feature_catalogue.png" title="Klikk for stor visning"><img src="fjernvarmekonsesjonsomrader/fjernvarmekonsesjonsomrader_feature_catalogue.png" alt="Datamodell Fjernvarmekonsesjonsområder" style="max-width: 100%; height: auto;" /></a>
 
 
 
-➡️ [Se full datamodell for omfang "Fjernvarmekosesjonsområder" (diagram per pakke og objektkatalog)](fjernvarmekosesjonsomrader/objektkatalog.html)
+➡️ [Se full datamodell for omfang "Fjernvarmekonsesjonsområder" (diagram per pakke og objektkatalog)](fjernvarmekonsesjonsomrader/objektkatalog.html)
 
 ## Datakvalitet
 
@@ -121,6 +121,9 @@ Plan- og byggesaksbehandling
 | Tjeneste | Endepunkt | Type | Format | Leveranseenheter |
 | --- | --- | --- | --- | --- |
 | Egen nedlastningsside | [Lenke](https://nedlasting.geonorge.no/geonorge/kommunaleDokData/95867501-5b48-402d-8cb9-1d8a9b1c7bfc.zip) | WWW:DOWNLOAD-1.0-http--download | FGDB, SOSI, Shape | kommunevis |
+| GeoPackage: fjernvarmekonsesjonsomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/konsesjonsomrade-fjernvarme/fjernvarmekonsesjonsomrader/fjernvarmekonsesjonsomrader.gpkg) | Nedlasting | GPKG |  |
+| GML/XSD-skjema: fjernvarmekonsesjonsomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/konsesjonsomrade-fjernvarme/fjernvarmekonsesjonsomrader/schema/xsd/INPUT/fjernvarmekonsesjonsomrader.xsd) | Nedlasting | XSD |  |
+| JSON Schema: fjernvarmekonsesjonsomrader | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/konsesjonsomrade-fjernvarme/fjernvarmekonsesjonsomrader/schema/jsonschema/INPUT/fjernvarmekonsesjonsomrader/fjernvarmekonsesjonsomrader.json) | Nedlasting | JSON Schema |  |
 
 ## Metadata
 
