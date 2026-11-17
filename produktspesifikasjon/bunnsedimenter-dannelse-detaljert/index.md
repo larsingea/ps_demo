@@ -58,8 +58,7 @@ TESTVERSJON
 | SOSI | Samordnet Opplegg for Stedfestet Informasjon |
 | GML | Geography Markup Language |
 
-## Om produktet Bunnsedimenter (dannelse), detaljert
-
+## TEST AV NY PRODUKTSPESIFIKAJONSLØSNING
 
 > **Romlig representasjonstype:** Vektor<br>
 > **Unik identifikator:** <https://data.geonorge.no/sosi/geologi/bunnsediment_dannelse_detalj><br>
