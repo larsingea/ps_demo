@@ -31,13 +31,14 @@ skinparam stereotypeCFontColor #2D201A
 package "Objekttyper" {
 
   class "Bopliktområde" as Bopliktomr_de <<featureType>> {
-    + lokalId [0..1] : CharacterString
-    + kommunenavn [0..1] : Object
+    + geometri [1] : GM_Surface
+    + identifikasjon [1] : Identifikasjon
+    + kommunenavn [0..1] : Kommunenummer
     + kommunenummer [0..1] : CharacterString
     + forskriftsreferanse [0..1] : CharacterString
-    + ikrafttredelse [0..1] : DateTime
-    + opphevelse [0..1] : DateTime
-    + oppdateringsdato [0..1] : DateTime
+    + ikrafttredelse [0..1] : Date
+    + opphevelse [0..1] : Date
+    + oppdateringsdato [0..1] : Date
     + malemetode [0..1] : CharacterString
     + gjelderKunDelAvKommunen [0..1] : Boolean
     + gjelderForBruktSomHelarsbolig [0..1] : Boolean
@@ -45,9 +46,11 @@ package "Objekttyper" {
     + gjelderForUbebygdBoligtomt [0..1] : Boolean
     + harUnntakFraSlektskapsunntak [0..1] : Boolean
     + andreLokaleAvgrensninger [0..1] : CharacterString
+  }
 
-    ..Geometri..
-    + geometry [1] : GM_Object
+  class Identifikasjon <<dataType>> {
+    + lokalId [0..1] : CharacterString
+    + navnerom [1] : CharacterString
   }
 }
 

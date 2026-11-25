@@ -109,6 +109,13 @@
         "level": "dataset",
         "levelDescription": "OGC API-Features fra Landbruksdirektoratet"
       }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Bopliktsområder_filleveranse",
+        "level": "dataset",
+        "levelDescription": "Fillleveranser i form av GPKG og GeJson"
+      }
     }
   ],
   "dataQualitySection": {
@@ -140,6 +147,82 @@
           }
         }
       }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: bopliktsomrader-filleveranse",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktsomrader-filleveranse/bopliktsomrader-filleveranse.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GeoPackage: v1",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/v1/v1.gpkg",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "GPKG"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "JSON Schema: bopliktsomrader-filleveranse",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktsomrader-filleveranse/schema/jsonschema/INPUT/bopliktsomraderfilleveranse/bopliktsomrader-filleveranse.json",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "JSON Schema"
+          }
+        ]
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "JSON Schema: v1",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/v1/schema/jsonschema/INPUT/v1/v1.json",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "JSON Schema"
+          }
+        ]
+      }
     }
   ],
   "metadataSection": {
@@ -165,17 +248,17 @@
     "om_produktet": 266,
     "formaal": 32,
     "bruksomraade": 62,
-    "omfang": 28,
+    "omfang": 37,
     "datainnhold_og_struktur": 0,
     "referansesystem": 0,
     "datakvalitet": 10,
     "datafangst_og_produksjon": 0,
     "vedlikehold": 2,
     "presentasjon": 0,
-    "leveranse": 7,
+    "leveranse": 35,
     "metadata": 12,
     "tilleggsinformasjon": 97,
-    "datamodell": 69
+    "datamodell": 507
   },
   "specificationContact": "Landbruksdirektoratet, [vibeke.godal@landbruksdirektoratet.no](mailto:vibeke.godal@landbruksdirektoratet.no)"
 }
