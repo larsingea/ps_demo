@@ -2,8 +2,15 @@ metadataId: 49415185-d99f-4546-b976-18cfbf167827
 output_directory: produktspesifikasjon
 product_slug: omrader_med_nedsatt_konsesjon
 updated: '2026-11-25'
+outputs: geopackage,jsonschema,odcs
 scopes:
 - name: V1
   url: inputs/omrader-med-nedsatt-konsesjon/v1.feature_types.json
   generator: custom
   description: OGC API-Features fra Landbruksdirektoratet
+- name: Bopliktsområder_filleveranse
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Landbruksdirektoratet/Bopliktsomr%C3%A5der_Innlesing_20260101.xml
+  generator: xmi
+  description: Fillleveranser i form av GPKG og GeJson
+  package: EAPK_9BA2BD72_23AA_4538_BC50_65E4CFE07271
+  package_name: Bopliktområder innlesing
