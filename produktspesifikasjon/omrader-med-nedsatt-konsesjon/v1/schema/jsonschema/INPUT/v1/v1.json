@@ -1,0 +1,112 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://skjema.geonorge.no/SOSI/produktspesifikasjon/omrader-med-nedsatt-konsesjon/v1/v1/v1.json",
+  "definitions": {
+    "Bopliktområde": {
+      "description": "Bopliktområder for landbrukseiendomer",
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "$ref": "https://geojson.org/schema/Polygon.json"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identifikasjon": {
+          "description": "Identifiserer objektet",
+          "$ref": "#/definitions/Identifikasjon"
+        },
+        "kommunenavn": {
+          "description": "kommunenavn",
+          "$ref": "#/definitions/Kommunenummer"
+        },
+        "kommunenummer": {
+          "description": "kommunenummer",
+          "type": "string"
+        },
+        "forskriftsreferanse": {
+          "description": "forskriftsreferanse",
+          "type": "string"
+        },
+        "ikrafttredelse": {
+          "description": "ikrafttredelse",
+          "type": "string",
+          "format": "date"
+        },
+        "opphevelse": {
+          "description": "opphevelse",
+          "type": "string",
+          "format": "date"
+        },
+        "oppdateringsdato": {
+          "description": "oppdateringsdato",
+          "type": "string",
+          "format": "date"
+        },
+        "malemetode": {
+          "description": "malemetode",
+          "type": "string"
+        },
+        "gjelderKunDelAvKommunen": {
+          "description": "gjelderKunDelAvKommunen",
+          "type": "boolean"
+        },
+        "gjelderForBruktSomHelarsbolig": {
+          "description": "gjelderForBruktSomHelarsbolig",
+          "type": "boolean"
+        },
+        "gjelderForBoligIkkeTattIBruk": {
+          "description": "gjelderForBoligIkkeTattIBruk",
+          "type": "boolean"
+        },
+        "gjelderForUbebygdBoligtomt": {
+          "description": "gjelderForUbebygdBoligtomt",
+          "type": "boolean"
+        },
+        "harUnntakFraSlektskapsunntak": {
+          "description": "harUnntakFraSlektskapsunntak",
+          "type": "boolean"
+        },
+        "andreLokaleAvgrensninger": {
+          "description": "andreLokaleAvgrensninger",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "identifikasjon"
+      ]
+    },
+    "Identifikasjon": {
+      "type": "object",
+      "properties": {
+        "lokalId": {
+          "description": "Unik id",
+          "type": "string"
+        },
+        "navnerom": {
+          "description": "Navnerom for objektet",
+          "type": "string"
+        }
+      },
+      "required": [
+        "navnerom"
+      ]
+    },
+    "Kommunenummer": {
+      "enumDescription": {
+        "3105": {
+          "description": "Ringerike"
+        }
+      },
+      "type": "string",
+      "enum": [
+        "3105"
+      ]
+    }
+  }
+}

@@ -95,6 +95,12 @@ Områder med nedsatt konsesjon er en del av de egenskaper knyttet til en eiendom
 
 **Nivåbeskrivelse**: OGC API-Features fra Landbruksdirektoratet
 
+### Bopliktsområder_filleveranse
+
+**Nivå**: dataset
+
+**Nivåbeskrivelse**: Fillleveranser i form av GPKG og GeJson
+
 ## Datainnhold og struktur
 
 
@@ -108,6 +114,16 @@ Områder med nedsatt konsesjon er en del av de egenskaper knyttet til en eiendom
 
 
 ➡️ [Se full datamodell for omfang "V1" (diagram per pakke og objektkatalog)](v1/objektkatalog.html)
+
+### Datamodell - Bopliktsområder_filleveranse
+
+
+
+<a href="bopliktsomrader-filleveranse/bopliktsomrader-filleveranse_feature_catalogue.png" title="Klikk for stor visning"><img src="bopliktsomrader-filleveranse/bopliktsomrader-filleveranse_feature_catalogue.png" alt="Datamodell Bopliktsområder_filleveranse" style="max-width: 100%; height: auto;" /></a>
+
+
+
+➡️ [Se full datamodell for omfang "Bopliktsområder_filleveranse" (diagram per pakke og objektkatalog)](bopliktsomrader-filleveranse/objektkatalog.html)
 
 ## Datakvalitet
 
@@ -126,6 +142,10 @@ Områder med nedsatt konsesjon er en del av de egenskaper knyttet til en eiendom
 | Tjeneste | Endepunkt | Type | Format | Leveranseenheter |
 | --- | --- | --- | --- | --- |
 | OGC API-Features | [Lenke](https://inndelinger.api.kartverket.no/v1) | OGC:API-Features |  | landsfiler |
+| GeoPackage: bopliktsomrader-filleveranse | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktsomrader-filleveranse/bopliktsomrader-filleveranse.gpkg) | Nedlasting | GPKG |  |
+| GeoPackage: v1 | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/v1/v1.gpkg) | Nedlasting | GPKG |  |
+| JSON Schema: bopliktsomrader-filleveranse | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/bopliktsomrader-filleveranse/schema/jsonschema/INPUT/bopliktsomraderfilleveranse/bopliktsomrader-filleveranse.json) | Nedlasting | JSON Schema |  |
+| JSON Schema: v1 | [Lenke](https://raw.githubusercontent.com/larsingea/ps_demo/main/produktspesifikasjon/omrader-med-nedsatt-konsesjon/v1/schema/jsonschema/INPUT/v1/v1.json) | Nedlasting | JSON Schema |  |
 
 ## Metadata
 

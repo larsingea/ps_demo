@@ -1,0 +1,155 @@
+# Open Data Contract Standard (ODCS) v3.1.0 — generert fra datamodellen.
+apiVersion: v3.1.0
+kind: DataContract
+id: urn:odcs:omr-der-med-nedsatt-konsesjon-v1:1.0.0
+version: 1.0.0
+status: active
+name: Områder med nedsatt konsesjon - V1
+tags:
+- Bopliktsområde
+- Bopliktsområdegrense
+- bopliktsomrade
+- forskriftsreferanse
+- ikrafttredelse
+- opphevelse
+- kommunenavn
+- kommunenummer
+- gjelderKunDelAvKommunen
+- harUsikkerAvgrensning
+- gjelderForBruktSomHelarsbolig
+- gjelderForBoligIkkeTattIBruk
+- gjelderForUbebygdBoligtomt
+- harUnntakFraSlektskapsunntak
+- andreLokaleAvgrensninger
+- Åpne data
+price:
+  priceAmount: 0
+  priceUnit: dataset
+description:
+  limitations: Åpne data. Lisens
+  purpose: "Områder med nedsatt konsesjon er hjemlet i konsesjonsloven (https://lovdata.no/dokument/NL/lov/2003-11-28-98)\
+    \ og er fastsatt ved kommunale forskrifter (https://www.landbruksdirektoratet.no/nb/eiendom/konsesjon-paa-eiendom/kommuner-med-nedsatt-konsesjonsgrense-nullgrense).\
+    \ \n\nFormålet med datasettet er å ha en nasjonal oversikt og tilgang til områder\
+    \ med nedsatt konsesjonsgrense."
+authoritativeDefinitions:
+- url: https://data.geonorge.no/sosi/plan/bopliktomrader
+  type: businessDefinition
+  description: Produktets identifikator
+- url: https://kartkatalog.geonorge.no/metadata/49415185-d99f-4546-b976-18cfbf167827
+  type: businessDefinition
+  description: Metadata i Kartkatalogen
+team:
+  members:
+  - username: vibeke.godal@landbruksdirektoratet.no
+    name: Vibeke Godal
+    description: Landbruksdirektoratet
+    role: owner
+  - username: kundesenter@kartverket.no
+    name: Kartverket
+    role: pointOfContact, publisher
+support:
+- channel: Landbruksdirektoratet
+  tool: email
+  url: mailto:vibeke.godal@landbruksdirektoratet.no
+  scope: issues
+  description: Kontaktpunkt hos Landbruksdirektoratet
+slaProperties:
+- property: frequency
+  value: Etter behov
+  driver: operational
+customProperties:
+- property: license
+  value: No conditions apply to access and use
+- property: licenseUrl
+  value: http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse/noConditionsApply
+- property: accessConstraints
+  value: Åpne data
+- property: useConstraints
+  value: Lisens
+- property: equivalentScale
+  value: '5000'
+- property: spatialRepresentationType
+  value: Vektor
+- property: language
+  value: nor
+servers:
+- server: ogc-api-features
+  type: api
+  location: https://inndelinger.api.kartverket.no/v1
+  description: OGC API-Features
+schema:
+- name: Bopliktområde
+  physicalName: bopliktomr_de
+  logicalType: object
+  physicalType: table
+  description: Bopliktområder for landbrukseiendomer
+  customProperties:
+  - property: sosiObjektType
+    value: Bopliktområde
+  properties:
+  - name: geometri
+    logicalType: object
+    physicalType: geometry(Surface)
+    required: true
+    customProperties:
+    - property: geometryType
+      value: Surface
+  - name: identifikasjon
+    logicalType: object
+    properties:
+    - name: lokalId
+      logicalType: string
+      description: Unik id
+    - name: navnerom
+      logicalType: string
+      description: Navnerom for objektet
+      required: true
+    description: Identifiserer objektet
+    required: true
+    primaryKey: true
+  - name: kommunenavn
+    logicalType: string
+    logicalTypeOptions:
+      pattern: ^(3105)$
+    customProperties:
+    - property: allowedValues
+      value:
+      - value: '3105'
+        label: Ringerike
+    description: kommunenavn
+  - name: kommunenummer
+    logicalType: string
+    description: kommunenummer
+  - name: forskriftsreferanse
+    logicalType: string
+    description: forskriftsreferanse
+  - name: ikrafttredelse
+    logicalType: timestamp
+    description: ikrafttredelse
+  - name: opphevelse
+    logicalType: timestamp
+    description: opphevelse
+  - name: oppdateringsdato
+    logicalType: timestamp
+    description: oppdateringsdato
+  - name: malemetode
+    logicalType: string
+    description: malemetode
+  - name: gjelderKunDelAvKommunen
+    logicalType: boolean
+    description: gjelderKunDelAvKommunen
+  - name: gjelderForBruktSomHelarsbolig
+    logicalType: boolean
+    description: gjelderForBruktSomHelarsbolig
+  - name: gjelderForBoligIkkeTattIBruk
+    logicalType: boolean
+    description: gjelderForBoligIkkeTattIBruk
+  - name: gjelderForUbebygdBoligtomt
+    logicalType: boolean
+    description: gjelderForUbebygdBoligtomt
+  - name: harUnntakFraSlektskapsunntak
+    logicalType: boolean
+    description: harUnntakFraSlektskapsunntak
+  - name: andreLokaleAvgrensninger
+    logicalType: string
+    description: andreLokaleAvgrensninger
